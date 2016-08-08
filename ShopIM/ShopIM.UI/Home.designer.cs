@@ -240,7 +240,7 @@
             this.metroTabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroTabPage2.BackgroundImage")));
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
+            this.metroTabPage2.HorizontalScrollbarSize = 6;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Size = new System.Drawing.Size(542, 308);
@@ -249,14 +249,14 @@
             this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
+            this.metroTabPage2.VerticalScrollbarSize = 7;
             this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
             // 
             // metroTabPage3
             // 
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
+            this.metroTabPage3.HorizontalScrollbarSize = 6;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Name = "metroTabPage3";
             this.metroTabPage3.Size = new System.Drawing.Size(542, 308);
@@ -265,7 +265,7 @@
             this.metroTabPage3.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
+            this.metroTabPage3.VerticalScrollbarSize = 7;
             // 
             // Home
             // 
@@ -281,7 +281,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Home";
             this.Text = "   ";
-            this.Load += new System.EventHandler(this.Home_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
