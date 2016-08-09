@@ -110,6 +110,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShopIM.DAL\ShopIM.DAL.csproj">
+      <Project>{fe86faaa-2864-4d37-a55a-ea1660992756}</Project>
+      <Name>ShopIM.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopIM.Entity\ShopIM.Entity.csproj">
+      <Project>{115635C8-0513-432C-B1F8-6DAF4AEDEDBC}</Project>
+      <Name>ShopIM.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

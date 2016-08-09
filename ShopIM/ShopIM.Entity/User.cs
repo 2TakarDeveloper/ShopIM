@@ -10,12 +10,17 @@ namespace ShopIM.Entity
     {
         public User(string userName, string userPassword)
         {
-            this.UserName = userName;
-            this.UserPassword = userPassword;
+            UserName = userName;
+            UserPassword = userPassword;
         }
 
-        private string UserName {get; set;}
-        private string UserPassword { get; set; }
+        public User()
+        {
+
+        }
+
+        public string UserName {get; set;}
+        public string UserPassword { get; set; }
 
     }
 }

@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MetroFramework.Forms;
+using ShopIM.Entity;
+using ShopIM.DAL;
 
-namespace ProductInventory
+namespace ShopIM.UI
 {
     public partial class Login : MetroForm
     {
@@ -23,31 +17,20 @@ namespace ProductInventory
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //Home hm = new Home();
-            //hm.Show();
+            string userName = UserNameField.Text;
+            string userPasword = PasswordField.Text;
+            User user = new User(userName,userPasword);
+            LoginRepo loginRepo= new LoginRepo();
+            if (loginRepo.ValidUser(user))
+            {
+                Console.WriteLine("UserFound");
+            }
+
+
         }
     }
 }

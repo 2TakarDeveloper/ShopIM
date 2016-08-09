@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE86FAAA-2864-4D37-A55A-EA1660992756}</ProjectGuid>
+    <ProjectGuid>{CD43EBC4-4C31-41B9-9E77-C1FA7437B30D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShopIM.DAL</RootNamespace>
-    <AssemblyName>ShopIM.DAL</AssemblyName>
+    <RootNamespace>ShopIM.FrameWork</RootNamespace>
+    <AssemblyName>ShopIM.FrameWork</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,18 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginRepo.cs" />
+    <Compile Include="SqlDbDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ShopIM.Entity\ShopIM.Entity.csproj">
-      <Project>{115635C8-0513-432C-B1F8-6DAF4AEDEDBC}</Project>
-      <Name>ShopIM.Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ShopIM.FrameWork\ShopIM.FrameWork.csproj">
-      <Project>{CD43EBC4-4C31-41B9-9E77-C1FA7437B30D}</Project>
-      <Name>ShopIM.FrameWork</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
