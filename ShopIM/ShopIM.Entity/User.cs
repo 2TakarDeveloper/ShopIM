@@ -13,7 +13,7 @@ namespace ShopIM.Entity
             UserName = userName;
             UserPassword = userPassword;
         }
-
+        public void investor() { };
         public User()
         {
 
