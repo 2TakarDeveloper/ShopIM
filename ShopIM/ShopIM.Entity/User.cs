@@ -8,7 +8,7 @@ namespace ShopIM.Entity
 {
     public class User
     {
-        private User(string userName, string userPassword)
+        public User(string userName, string userPassword)
         {
             UserName = userName;
             UserPassword = userPassword;
