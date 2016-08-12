@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using MetroFramework;
 using MetroFramework.Forms;
 using ShopIM.Entity;
-using ShopIM.DAL;
+using ShopIM.Repo;
 
 namespace ShopIM.UI
 {
@@ -24,11 +26,15 @@ namespace ShopIM.UI
             string userName = UserNameField.Text;
             string userPasword = PasswordField.Text;
             User user = new User(userName,userPasword);
-            LoginRepo loginRepo= new LoginRepo();
-            if (loginRepo.ValidUser(user))
+            
+            UserRepo userRepo= new UserRepo();
+            List<User> userList =userRepo.GetUsers();
+
+            if (userList.Contains(user))
             {
-                Console.WriteLine("UserFound");
+                MetroMessageBox.Show(this, "User Found");
             }
+
 
 
         }
