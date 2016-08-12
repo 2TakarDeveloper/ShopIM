@@ -26,24 +26,15 @@ namespace ShopIM.UI
 
             string userName = UserNameField.Text;
             string userPasword = PasswordField.Text;
-            List<User> userList;
-            using (var context = new SHOPIMDBEntities())
+            UserRepo userRepo = new UserRepo();
+            if (userRepo.ValidateUser(userName, userPasword))
             {
-                var users = from user in context.Users
-                            where user.UserName == userName && user.UserPassword == userPasword
-                            select user;
-
-                userList = users.ToList();
-
-            }
-            if (userList.Count>0)
-            {
-                this.Hide();
+                Hide();
                 new Home(this).Show();
             }
             else
             {
-                MetroMessageBox.Show(this, "Wrong UserName or Password");
+                MetroMessageBox.Show(this, "Wrong User Name or Password");
             }
         }
     }

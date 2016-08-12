@@ -76,6 +76,7 @@
     <Compile Include="User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
