@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+
+using System.Linq;
 using MetroFramework;
 using MetroFramework.Forms;
-using ShopIM.Entity;
-using ShopIM.Repo;
+using Data;
 
 namespace ShopIM.UI
 {
@@ -23,20 +24,20 @@ namespace ShopIM.UI
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
+
             string userName = UserNameField.Text;
             string userPasword = PasswordField.Text;
-            User user = new User(userName,userPasword);
-            
-            UserRepo userRepo= new UserRepo();
-            List<User> userList =userRepo.GetUsers();
-
-            if (userList.Contains(user))
+            List<User> userList;
+            using (var context = new SHOPIMDBEntities())
             {
-                MetroMessageBox.Show(this, "User Found");
+                var users = from user in context.Users
+                            where user.UserName == userName && user.UserPassword == userPasword
+                            select user;
+
+                userList = users.ToList();
+
             }
-
-
-
+            MetroMessageBox.Show(this, userList.Count > 0 ? "User Found" : "User Not Found");
         }
     }
 }
