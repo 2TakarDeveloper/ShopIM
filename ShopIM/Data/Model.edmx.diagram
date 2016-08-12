@@ -6,8 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="2b98290961db48dfbaea8facc930a124" Name="Diagram1">
         <EntityTypeShape EntityType="SHOPIMDBModel.Product" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SHOPIMDBModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SHOPIMDBModel.ProductInfo" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPIMDBModel.User" Width="1.5" PointX="5.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPIMDBModel.ProductInfo" Width="1.5" PointX="3.125" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="SHOPIMDBModel.FK_ProductInfo_ToTable" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
