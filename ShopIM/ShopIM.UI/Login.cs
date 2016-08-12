@@ -36,7 +36,15 @@ namespace ShopIM.UI
                 userList = users.ToList();
 
             }
-            MetroMessageBox.Show(this, userList.Count > 0 ? "User Found" : "User Not Found");
+            if (userList.Count>0)
+            {
+                this.Hide();
+                new Home(this).Show();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Wrong UserName or Password");
+            }
         }
     }
 }

@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MetroFramework.Forms;
 
-namespace ProductInventory
+namespace ShopIM.UI
 {
     public partial class Home :MetroForm
     {
-        public Home()
+        private Login login;
+        public Home(Login login)
         {
+            this.login = login;
             InitializeComponent();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            login.Dispose();
         }
 
         private void mENUToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,7 +44,7 @@ namespace ProductInventory
 
         private void newProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            new NewProduct().Show();
         }
 
         private void metroTabPage2_Click(object sender, EventArgs e)
