@@ -15,7 +15,7 @@ namespace ShopIM.Entity
         }
         public void investor() { }
         public User()
-        {
+        { 
 
         }
 
