@@ -54,6 +54,7 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
             this.splitContainer1.Panel2.Controls.Add(this.metroLabel10);
             this.splitContainer1.Panel2.Controls.Add(this.metroLabel9);
             this.splitContainer1.Panel2.Controls.Add(this.metroLabel8);
@@ -351,6 +353,13 @@
             this.metroButton3.TabIndex = 1;
             this.metroButton3.UseSelectable = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(157, 86);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
+            // 
             // NewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,5 +408,6 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
