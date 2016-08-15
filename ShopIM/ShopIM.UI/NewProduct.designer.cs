@@ -1,4 +1,4 @@
-﻿namespace ProductInventory
+﻿namespace ShopIM.UI
 {
     partial class NewProduct
     {

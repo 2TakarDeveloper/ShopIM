@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using MetroFramework;
 using MetroFramework.Forms;
-using ShopIM.Entity;
-using ShopIM.DAL;
+using Data;
 
 namespace ShopIM.UI
 {
@@ -21,16 +23,19 @@ namespace ShopIM.UI
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
+
             string userName = UserNameField.Text;
             string userPasword = PasswordField.Text;
-            User user = new User(userName,userPasword);
-            LoginRepo loginRepo= new LoginRepo();
-            if (loginRepo.ValidUser(user))
+            UserRepo userRepo = new UserRepo();
+            if (userRepo.ValidateUser(userName, userPasword))
             {
-                Console.WriteLine("UserFound");
+                Hide();
+                new Home(this).Show();
             }
-
-
+            else
+            {
+                MetroMessageBox.Show(this, "Wrong User Name or Password");
+            }
         }
     }
 }

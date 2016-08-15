@@ -51,7 +51,8 @@
             this.UserNameField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.UserNameField.CustomButton.UseSelectable = true;
             this.UserNameField.CustomButton.Visible = false;
-            this.UserNameField.Lines = new string[0];
+            this.UserNameField.Lines = new string[] {
+        "Admin"};
             this.UserNameField.Location = new System.Drawing.Point(167, 77);
             this.UserNameField.MaxLength = 32767;
             this.UserNameField.Name = "UserNameField";
@@ -63,6 +64,7 @@
             this.UserNameField.ShortcutsEnabled = true;
             this.UserNameField.Size = new System.Drawing.Size(217, 23);
             this.UserNameField.TabIndex = 3;
+            this.UserNameField.Text = "Admin";
             this.UserNameField.UseSelectable = true;
             this.UserNameField.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.UserNameField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -82,11 +84,12 @@
             this.PasswordField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PasswordField.CustomButton.UseSelectable = true;
             this.PasswordField.CustomButton.Visible = false;
-            this.PasswordField.Lines = new string[0];
+            this.PasswordField.Lines = new string[] {
+        "admin"};
             this.PasswordField.Location = new System.Drawing.Point(167, 106);
             this.PasswordField.MaxLength = 32767;
             this.PasswordField.Name = "PasswordField";
-            this.PasswordField.PasswordChar = '\0';
+            this.PasswordField.PasswordChar = '●';
             this.PasswordField.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.PasswordField.SelectedText = "";
             this.PasswordField.SelectionLength = 0;
@@ -94,7 +97,9 @@
             this.PasswordField.ShortcutsEnabled = true;
             this.PasswordField.Size = new System.Drawing.Size(217, 23);
             this.PasswordField.TabIndex = 3;
+            this.PasswordField.Text = "admin";
             this.PasswordField.UseSelectable = true;
+            this.PasswordField.UseSystemPasswordChar = true;
             this.PasswordField.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PasswordField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
