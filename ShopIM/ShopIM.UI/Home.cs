@@ -17,49 +17,49 @@ namespace ShopIM.UI
             login.Dispose();
         }
 
-    //    private void mENUToolStripMenuItem_Click(object sender, EventArgs e)
-    //    {
+        private void mENUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
-    //    }
+        }
 
-    //    private void toolStripMenuItem2_Click(object sender, EventArgs e)
-    //    {
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
 
-    //    }
+        }
 
-    //    private void toolStripMenuItem1_Click(object sender, EventArgs e)
-    //    {
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
 
-    //    }
+        }
 
-    //    private void metroTabPage3_Click(object sender, EventArgs e)
-    //    {
+        private void metroTabPage3_Click(object sender, EventArgs e)
+        {
 
-    //    }
+        }
 
-    //    private void toolStripMenuItem4_Click(object sender, EventArgs e)
-    //    {
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
 
-    //    }
+        }
 
-    //    private void newProductToolStripMenuItem_Click(object sender, EventArgs e)
-    //    {
-    //        new NewProduct().Show();
-    //    }
+        private void newProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new NewProduct().Show();
+        }
 
-    //    private void metroTabPage2_Click(object sender, EventArgs e)
-    //    {
+        private void metroTabPage2_Click(object sender, EventArgs e)
+        {
 
-    //    }
+        }
 
-    //    private void Home_Load(object sender, EventArgs e)
-    //    {
+        private void Home_Load(object sender, EventArgs e)
+        {
 
-    //    }
+        }
 
-    //    private void productListToolStripMenuItem_Click(object sender, EventArgs e)
-    //    {
+        private void productListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
-    //    }
-    //}
+        }
+    }
 }
