@@ -47,6 +47,7 @@
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.stockUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +59,7 @@
             this.mENUToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 23);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(120, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(28, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.UseWaitCursor = true;
@@ -180,7 +181,8 @@
             this.newProductToolStripMenuItem,
             this.productListToolStripMenuItem,
             this.productCatagoriesToolStripMenuItem,
-            this.productPricingToolStripMenuItem});
+            this.productPricingToolStripMenuItem,
+            this.stockUpdateToolStripMenuItem});
             this.toolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
@@ -225,6 +227,7 @@
             this.productPricingToolStripMenuItem.Name = "productPricingToolStripMenuItem";
             this.productPricingToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
             this.productPricingToolStripMenuItem.Text = "Product Pricing";
+            this.productPricingToolStripMenuItem.Click += new System.EventHandler(this.productPricingToolStripMenuItem_Click);
             // 
             // metroTabControl1
             // 
@@ -255,7 +258,7 @@
             this.metroTabPage2.UseWaitCursor = true;
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 2;
+            this.metroTabPage2.VerticalScrollbarSize = 1;
             this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
             // 
             // metroTabPage3
@@ -272,7 +275,13 @@
             this.metroTabPage3.UseWaitCursor = true;
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 2;
+            this.metroTabPage3.VerticalScrollbarSize = 1;
+            // 
+            // stockUpdateToolStripMenuItem
+            // 
+            this.stockUpdateToolStripMenuItem.Name = "stockUpdateToolStripMenuItem";
+            this.stockUpdateToolStripMenuItem.Size = new System.Drawing.Size(215, 34);
+            this.stockUpdateToolStripMenuItem.Text = "Stock Update";
             // 
             // Home
             // 
@@ -318,5 +327,6 @@
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
+        private System.Windows.Forms.ToolStripMenuItem stockUpdateToolStripMenuItem;
     }
 }
