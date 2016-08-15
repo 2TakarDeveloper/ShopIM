@@ -61,5 +61,10 @@ namespace ShopIM.UI
         {
 
         }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
