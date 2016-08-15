@@ -5,12 +5,12 @@ namespace ShopIM.UI
 {
     public partial class Home :MetroForm
     {
-        private Login login;
-        public Home(Login login)
-        {
-            this.login = login;
-            InitializeComponent();
-        }
+        ////private Login login;
+        ////public Home(Login login)
+        ////{
+        ////    this.login = login;
+        ////    InitializeComponent();
+        ////}
 
         protected override void OnClosed(EventArgs e)
         {
@@ -48,6 +48,16 @@ namespace ShopIM.UI
         }
 
         private void metroTabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productListToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

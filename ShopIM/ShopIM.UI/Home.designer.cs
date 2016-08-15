@@ -58,15 +58,17 @@
             this.mENUToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 23);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(102, 34);
+            this.menuStrip1.Size = new System.Drawing.Size(120, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.UseWaitCursor = true;
             // 
             // mENUToolStripMenuItem
             // 
-            this.mENUToolStripMenuItem.AutoSize = false;
+            this.mENUToolStripMenuItem.AutoToolTip = true;
             this.mENUToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.mENUToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mENUToolStripMenuItem.CheckOnClick = true;
             this.mENUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
@@ -77,7 +79,7 @@
             this.mENUToolStripMenuItem.Name = "mENUToolStripMenuItem";
             this.mENUToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
             this.mENUToolStripMenuItem.ShowShortcutKeys = false;
-            this.mENUToolStripMenuItem.Size = new System.Drawing.Size(60, 30);
+            this.mENUToolStripMenuItem.Size = new System.Drawing.Size(20, 20);
             this.mENUToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.mENUToolStripMenuItem.ToolTipText = "Click Here To See Full List Of Function";
             this.mENUToolStripMenuItem.Click += new System.EventHandler(this.mENUToolStripMenuItem_Click);
@@ -203,6 +205,7 @@
             this.productListToolStripMenuItem.Name = "productListToolStripMenuItem";
             this.productListToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
             this.productListToolStripMenuItem.Text = "Product List";
+            this.productListToolStripMenuItem.Click += new System.EventHandler(this.productListToolStripMenuItem_Click);
             // 
             // productCatagoriesToolStripMenuItem
             // 
@@ -234,38 +237,41 @@
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabControl1.UseSelectable = true;
+            this.metroTabControl1.UseWaitCursor = true;
             // 
             // metroTabPage2
             // 
             this.metroTabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroTabPage2.BackgroundImage")));
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 4;
+            this.metroTabPage2.HorizontalScrollbarSize = 2;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Size = new System.Drawing.Size(662, 317);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "HOMEPAGE";
             this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTabPage2.UseWaitCursor = true;
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 5;
+            this.metroTabPage2.VerticalScrollbarSize = 3;
             this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
             // 
             // metroTabPage3
             // 
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 4;
+            this.metroTabPage3.HorizontalScrollbarSize = 2;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(542, 317);
+            this.metroTabPage3.Size = new System.Drawing.Size(662, 317);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "NEW PRODUCT";
             this.metroTabPage3.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTabPage3.UseWaitCursor = true;
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 5;
+            this.metroTabPage3.VerticalScrollbarSize = 3;
             // 
             // Home
             // 
@@ -274,13 +280,15 @@
             this.ClientSize = new System.Drawing.Size(710, 439);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.menuStrip1);
-            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Home";
             this.Text = "   ";
+            this.UseWaitCursor = true;
+            this.Load += new System.EventHandler(this.Home_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
