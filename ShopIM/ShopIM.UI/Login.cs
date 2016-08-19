@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MetroFramework;
 using MetroFramework.Forms;
-using Data;
+using ShopIM.Data;
 
 namespace ShopIM.UI
 {
@@ -26,11 +26,11 @@ namespace ShopIM.UI
 
             string userName = UserNameField.Text;
             string userPasword = PasswordField.Text;
-            UserRepo userRepo = new UserRepo();
-            if (userRepo.ValidateUser(userName, userPasword))
+            LoginRepo loginRepo = new LoginRepo();
+            if (loginRepo.ValidateUser(userName, userPasword))
             {
                 Hide();
-                new Home(this).Show();
+                new DashBoard(this).Show();
             }
             else
             {

@@ -7,15 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Data
+namespace ShopIM.Data
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class User
+    
+    public partial class Inventory
     {
-        public int UserId { get; set; }
-        public string UserName { get; set; }
-        public string UserPassword { get; set; }
+        public int Sl_ { get; set; }
+        public virtual Product Product { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+        public int InventoryNo { get; set; }
+        public Nullable<System.DateTime> PurchaseDate { get; set; }
+    
+        
     }
 }

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Data
+namespace ShopIM.Data
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SHOPIMDBEntities : DbContext
+    public partial class ShopIMDBEntities : DbContext
     {
-        public SHOPIMDBEntities()
-            : base("name=SHOPIMDBEntities")
+        public ShopIMDBEntities()
+            : base("name=ShopIMDBEntities")
         {
         }
     
@@ -25,8 +25,8 @@ namespace Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Inventory> Inventories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<ProductInfo> ProductInfoes { get; set; }
     }
 }

@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Data
+namespace ShopIM.Data
 {
-    using System;
+ 
     using System.Collections.Generic;
     
     public partial class Product
@@ -17,15 +17,25 @@ namespace Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            this.ProductInfoes = new HashSet<ProductInfo>();
+            this.Inventories = new HashSet<Inventory>();
         }
     
-        public int ProductId { get; set; }
-        public string ProductName { get; set; }
-        public string ProductType { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
         public string Vendor { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductInfo> ProductInfoes { get; set; }
+        public virtual ICollection<Inventory> Inventories { get; set; }
+
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
+
     }
+
+
 }

@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace ShopIM.Data
 {
-    public class UserRepo
+    public class LoginRepo
     {
-        public bool ValidateUser(string userName, string userPassword)
+        public bool ValidateUser(string userName, string userPasword)
         {
+
             List<User> userList;
-            using (var context = new SHOPIMDBEntities())
+            using (var context = new ShopIMDBEntities())
             {
                 var users = from user in context.Users
-                            where user.UserName == userName && user.UserPassword == userPassword
+                            where user.userName == userName && user.userPassword == userPasword
                             select user;
 
                 userList = users.ToList();
@@ -22,6 +23,5 @@ namespace Data
             }
             return userList.Count > 0;
         }
-
     }
 }

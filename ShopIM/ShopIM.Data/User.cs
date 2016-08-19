@@ -7,17 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Data
+namespace ShopIM.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductInfo
+    public partial class User
     {
-        public int ProductId { get; set; }
-        public int Quantity { get; set; }
-        public double Price { get; set; }
-    
-        public virtual Product Product { get; set; }
+        public int Id { get; set; }
+        public string userName { get; set; }
+        public string userPassword { get; set; }
     }
 }
