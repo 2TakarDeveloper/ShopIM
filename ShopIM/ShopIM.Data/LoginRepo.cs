@@ -12,9 +12,9 @@ namespace ShopIM.Data
         {
 
             List<User> userList;
-            using (var context = new ShopIMDBEntities())
+            using (ShopIMDBEntities context = new ShopIMDBEntities())
             {
-                var users = from user in context.Users
+                IQueryable<User> users = from user in context.Users
                             where user.userName == userName && user.userPassword == userPasword
                             select user;
 

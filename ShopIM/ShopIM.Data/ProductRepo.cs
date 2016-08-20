@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ShopIM.Data
 {
@@ -23,12 +23,31 @@ namespace ShopIM.Data
             return productList;
         }
 
+        public static void  AddProduct(Product product)
+        {
+            using (var context = new ShopIMDBEntities())
+            {
+                context.Products.Add(product);
+                context.SaveChanges();
+            }
+        }
+
+        public static void RemoveSelectedProducts(Product selectedProduct)
+        {
+
+            
+                using (ShopIMDBEntities context = new ShopIMDBEntities())
+                {
+                //need to fix and delete from DB
+
+                    context.Products.Attach(selectedProduct);
+                    context.Products.Remove(selectedProduct);
+                    context.SaveChanges();
+
+                }
+            
 
 
-
-
-
-
-
+        }
     }
 }

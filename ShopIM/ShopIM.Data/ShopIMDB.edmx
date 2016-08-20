@@ -64,7 +64,6 @@
             <PropertyRef Name="Sl_" />
           </Key>
           <Property Name="Sl_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Double" Nullable="false" />
           <Property Name="InventoryNo" Type="Int32" Nullable="false" />
@@ -92,14 +91,6 @@
         <Association Name="FK_Inventory_Product">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Inventory">
-              <PropertyRef Name="ProductId" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ShopIMDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Inventories" EntityType="Self.Inventory" />
@@ -120,7 +111,6 @@
             <EntityTypeMapping TypeName="ShopIMDBModel.Inventory">
               <MappingFragment StoreEntitySet="Inventory">
                 <ScalarProperty Name="Sl_" ColumnName="Sl#" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="InventoryNo" ColumnName="InventoryNo" />
@@ -147,6 +137,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Inventory_Product" TypeName="ShopIMDBModel.FK_Inventory_Product" StoreEntitySet="Inventory">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Id" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="Inventory">
+              <ScalarProperty Name="Sl_" ColumnName="Sl#" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -162,7 +160,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

@@ -15,7 +15,7 @@ namespace ShopIM.Data
             List<Inventory> productList=new List<Inventory>();
             using (var context = new ShopIMDBEntities())
             {
-                var inventories = context.Inventories.Join(context.Products, inventory => inventory.ProductId,
+                var inventories = context.Inventories.Join(context.Products, inventory => inventory.Product.Id,
                     product => product.Id, (inventory, product) => new {inventory, product});
 
                 foreach (var variable in inventories)

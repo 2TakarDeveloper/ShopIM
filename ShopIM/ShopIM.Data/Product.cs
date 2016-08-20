@@ -9,7 +9,7 @@
 
 namespace ShopIM.Data
 {
- 
+    using System;
     using System.Collections.Generic;
     
     public partial class Product
@@ -28,14 +28,9 @@ namespace ShopIM.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inventory> Inventories { get; set; }
 
-
         public override string ToString()
         {
             return Name;
         }
-
-
     }
-
-
 }

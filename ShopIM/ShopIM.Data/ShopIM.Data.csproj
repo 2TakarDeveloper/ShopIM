@@ -67,47 +67,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Inventory.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ShopIMDB.tt</DependentUpon>
     </Compile>
     <Compile Include="InventoryRepo.cs" />
     <Compile Include="LoginRepo.cs" />
-    <Compile Include="Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ShopIMDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopIMDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopIMDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShopIMDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopIMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShopIMDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopIMDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ShopIMDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model.Context.tt">
+    <Content Include="ShopIMDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <DependentUpon>ShopIMDB.edmx</DependentUpon>
+      <LastGenOutput>ShopIMDB.Context.cs</LastGenOutput>
     </Content>
     <Content Include="ShopIMDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ShopIMDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShopIMDB.edmx</DependentUpon>
+      <LastGenOutput>ShopIMDB.cs</LastGenOutput>
     </Content>
     <Content Include="ShopIMDB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -115,17 +115,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
-    <None Include="Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="ShopIMDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShopIMDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ShopIMDB.edmx.diagram">
+      <DependentUpon>ShopIMDB.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
