@@ -38,7 +38,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabPane = new MetroFramework.Controls.MetroTabControl();
-            this.HomeTab = new MetroFramework.Controls.MetroTabPage();
             this.ProductTab = new MetroFramework.Controls.MetroTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -52,32 +51,30 @@
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.nameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.NameLable = new MetroFramework.Controls.MetroLabel();
-            this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
-            this.idTextbox = new MetroFramework.Controls.MetroTextBox();
-            this.IdLable = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.RemoveButton = new MetroFramework.Controls.MetroButton();
             this.EditButton = new MetroFramework.Controls.MetroButton();
             this.AddButton = new MetroFramework.Controls.MetroButton();
             this.ProductGrid = new MetroFramework.Controls.MetroGrid();
+            this.HomeTab = new MetroFramework.Controls.MetroTabPage();
             this.InventoryTab = new MetroFramework.Controls.MetroTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.InventoryRemove = new MetroFramework.Controls.MetroButton();
+            this.InventoryEditButton = new MetroFramework.Controls.MetroButton();
+            this.InventoryAddButton = new MetroFramework.Controls.MetroButton();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.DatePicker = new MetroFramework.Controls.MetroDateTime();
+            this.PurchaseDateLable = new MetroFramework.Controls.MetroLabel();
+            this.QuantityTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.QuantityLable = new MetroFramework.Controls.MetroLabel();
+            this.PriceTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.ProductPicker = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.InventoryGrid = new MetroFramework.Controls.MetroGrid();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.PriceTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.InventoryNoTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.DatePicker = new MetroFramework.Controls.MetroDateTime();
             this.TabPane.SuspendLayout();
             this.ProductTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -86,7 +83,6 @@
             this.metroPanel8.SuspendLayout();
             this.metroPanel6.SuspendLayout();
             this.metroPanel7.SuspendLayout();
-            this.metroPanel5.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).BeginInit();
             this.InventoryTab.SuspendLayout();
@@ -106,25 +102,11 @@
             this.TabPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabPane.Location = new System.Drawing.Point(20, 60);
             this.TabPane.Name = "TabPane";
-            this.TabPane.SelectedIndex = 1;
+            this.TabPane.SelectedIndex = 0;
             this.TabPane.Size = new System.Drawing.Size(677, 436);
             this.TabPane.TabIndex = 0;
             this.TabPane.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TabPane.UseSelectable = true;
-            // 
-            // HomeTab
-            // 
-            this.HomeTab.HorizontalScrollbarBarColor = true;
-            this.HomeTab.HorizontalScrollbarHighlightOnWheel = false;
-            this.HomeTab.HorizontalScrollbarSize = 10;
-            this.HomeTab.Location = new System.Drawing.Point(4, 38);
-            this.HomeTab.Name = "HomeTab";
-            this.HomeTab.Size = new System.Drawing.Size(669, 394);
-            this.HomeTab.TabIndex = 1;
-            this.HomeTab.Text = "Home";
-            this.HomeTab.VerticalScrollbarBarColor = true;
-            this.HomeTab.VerticalScrollbarHighlightOnWheel = false;
-            this.HomeTab.VerticalScrollbarSize = 10;
             // 
             // ProductTab
             // 
@@ -177,7 +159,6 @@
             this.metroPanel2.Controls.Add(this.metroPanel8);
             this.metroPanel2.Controls.Add(this.metroPanel6);
             this.metroPanel2.Controls.Add(this.metroPanel7);
-            this.metroPanel2.Controls.Add(this.metroPanel5);
             this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
@@ -198,7 +179,7 @@
             this.metroPanel8.HorizontalScrollbarBarColor = true;
             this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel8.HorizontalScrollbarSize = 10;
-            this.metroPanel8.Location = new System.Drawing.Point(0, 182);
+            this.metroPanel8.Location = new System.Drawing.Point(0, 124);
             this.metroPanel8.Name = "metroPanel8";
             this.metroPanel8.Size = new System.Drawing.Size(193, 66);
             this.metroPanel8.TabIndex = 4;
@@ -255,7 +236,7 @@
             this.metroPanel6.HorizontalScrollbarBarColor = true;
             this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel6.HorizontalScrollbarSize = 10;
-            this.metroPanel6.Location = new System.Drawing.Point(0, 124);
+            this.metroPanel6.Location = new System.Drawing.Point(0, 66);
             this.metroPanel6.Name = "metroPanel6";
             this.metroPanel6.Size = new System.Drawing.Size(193, 58);
             this.metroPanel6.TabIndex = 4;
@@ -312,7 +293,7 @@
             this.metroPanel7.HorizontalScrollbarBarColor = true;
             this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel7.HorizontalScrollbarSize = 10;
-            this.metroPanel7.Location = new System.Drawing.Point(0, 58);
+            this.metroPanel7.Location = new System.Drawing.Point(0, 0);
             this.metroPanel7.Name = "metroPanel7";
             this.metroPanel7.Size = new System.Drawing.Size(193, 66);
             this.metroPanel7.TabIndex = 3;
@@ -361,63 +342,6 @@
             this.NameLable.TabIndex = 2;
             this.NameLable.Text = "Name";
             // 
-            // metroPanel5
-            // 
-            this.metroPanel5.Controls.Add(this.idTextbox);
-            this.metroPanel5.Controls.Add(this.IdLable);
-            this.metroPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel5.HorizontalScrollbarBarColor = true;
-            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel5.HorizontalScrollbarSize = 10;
-            this.metroPanel5.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel5.Name = "metroPanel5";
-            this.metroPanel5.Size = new System.Drawing.Size(193, 58);
-            this.metroPanel5.TabIndex = 2;
-            this.metroPanel5.VerticalScrollbarBarColor = true;
-            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel5.VerticalScrollbarSize = 10;
-            // 
-            // idTextbox
-            // 
-            // 
-            // 
-            // 
-            this.idTextbox.CustomButton.Image = null;
-            this.idTextbox.CustomButton.Location = new System.Drawing.Point(171, 1);
-            this.idTextbox.CustomButton.Name = "";
-            this.idTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.idTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.idTextbox.CustomButton.TabIndex = 1;
-            this.idTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.idTextbox.CustomButton.UseSelectable = true;
-            this.idTextbox.CustomButton.Visible = false;
-            this.idTextbox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.idTextbox.Lines = new string[0];
-            this.idTextbox.Location = new System.Drawing.Point(0, 19);
-            this.idTextbox.MaxLength = 32767;
-            this.idTextbox.Name = "idTextbox";
-            this.idTextbox.PasswordChar = '\0';
-            this.idTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.idTextbox.SelectedText = "";
-            this.idTextbox.SelectionLength = 0;
-            this.idTextbox.SelectionStart = 0;
-            this.idTextbox.ShortcutsEnabled = true;
-            this.idTextbox.Size = new System.Drawing.Size(193, 23);
-            this.idTextbox.TabIndex = 3;
-            this.idTextbox.UseSelectable = true;
-            this.idTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.idTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // IdLable
-            // 
-            this.IdLable.AutoSize = true;
-            this.IdLable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.IdLable.Location = new System.Drawing.Point(0, 0);
-            this.IdLable.Name = "IdLable";
-            this.IdLable.Size = new System.Drawing.Size(21, 19);
-            this.IdLable.TabIndex = 2;
-            this.IdLable.Text = "ID";
-            // 
             // metroPanel1
             // 
             this.metroPanel1.Controls.Add(this.RemoveButton);
@@ -454,6 +378,7 @@
             this.EditButton.TabIndex = 3;
             this.EditButton.Text = "Edit";
             this.EditButton.UseSelectable = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // AddButton
             // 
@@ -513,6 +438,20 @@
             this.ProductGrid.Size = new System.Drawing.Size(438, 368);
             this.ProductGrid.TabIndex = 1;
             // 
+            // HomeTab
+            // 
+            this.HomeTab.HorizontalScrollbarBarColor = true;
+            this.HomeTab.HorizontalScrollbarHighlightOnWheel = false;
+            this.HomeTab.HorizontalScrollbarSize = 10;
+            this.HomeTab.Location = new System.Drawing.Point(4, 38);
+            this.HomeTab.Name = "HomeTab";
+            this.HomeTab.Size = new System.Drawing.Size(669, 394);
+            this.HomeTab.TabIndex = 1;
+            this.HomeTab.Text = "Home";
+            this.HomeTab.VerticalScrollbarBarColor = true;
+            this.HomeTab.VerticalScrollbarHighlightOnWheel = false;
+            this.HomeTab.VerticalScrollbarSize = 10;
+            // 
             // InventoryTab
             // 
             this.InventoryTab.Controls.Add(this.tableLayoutPanel3);
@@ -562,9 +501,9 @@
             // 
             // metroPanel3
             // 
-            this.metroPanel3.Controls.Add(this.metroButton1);
-            this.metroPanel3.Controls.Add(this.metroButton2);
-            this.metroPanel3.Controls.Add(this.metroButton3);
+            this.metroPanel3.Controls.Add(this.InventoryRemove);
+            this.metroPanel3.Controls.Add(this.InventoryEditButton);
+            this.metroPanel3.Controls.Add(this.InventoryAddButton);
             this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
@@ -577,42 +516,44 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
-            // metroButton1
+            // InventoryRemove
             // 
-            this.metroButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton1.Location = new System.Drawing.Point(0, 46);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(193, 23);
-            this.metroButton1.TabIndex = 4;
-            this.metroButton1.Text = "Remove";
-            this.metroButton1.UseSelectable = true;
+            this.InventoryRemove.Dock = System.Windows.Forms.DockStyle.Top;
+            this.InventoryRemove.Location = new System.Drawing.Point(0, 46);
+            this.InventoryRemove.Name = "InventoryRemove";
+            this.InventoryRemove.Size = new System.Drawing.Size(193, 23);
+            this.InventoryRemove.TabIndex = 4;
+            this.InventoryRemove.Text = "Remove";
+            this.InventoryRemove.UseSelectable = true;
+            this.InventoryRemove.Click += new System.EventHandler(this.InventoryRemove_Click);
             // 
-            // metroButton2
+            // InventoryEditButton
             // 
-            this.metroButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton2.Location = new System.Drawing.Point(0, 23);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(193, 23);
-            this.metroButton2.TabIndex = 3;
-            this.metroButton2.Text = "Edit";
-            this.metroButton2.UseSelectable = true;
+            this.InventoryEditButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.InventoryEditButton.Location = new System.Drawing.Point(0, 23);
+            this.InventoryEditButton.Name = "InventoryEditButton";
+            this.InventoryEditButton.Size = new System.Drawing.Size(193, 23);
+            this.InventoryEditButton.TabIndex = 3;
+            this.InventoryEditButton.Text = "Edit";
+            this.InventoryEditButton.UseSelectable = true;
             // 
-            // metroButton3
+            // InventoryAddButton
             // 
-            this.metroButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton3.Location = new System.Drawing.Point(0, 0);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(193, 23);
-            this.metroButton3.TabIndex = 2;
-            this.metroButton3.Text = "Add";
-            this.metroButton3.UseSelectable = true;
+            this.InventoryAddButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.InventoryAddButton.Location = new System.Drawing.Point(0, 0);
+            this.InventoryAddButton.Name = "InventoryAddButton";
+            this.InventoryAddButton.Size = new System.Drawing.Size(193, 23);
+            this.InventoryAddButton.TabIndex = 2;
+            this.InventoryAddButton.Text = "Add";
+            this.InventoryAddButton.UseSelectable = true;
+            this.InventoryAddButton.Click += new System.EventHandler(this.InventoryAddButton_Click);
             // 
             // metroPanel4
             // 
             this.metroPanel4.Controls.Add(this.DatePicker);
-            this.metroPanel4.Controls.Add(this.metroLabel6);
-            this.metroPanel4.Controls.Add(this.InventoryNoTextBox);
-            this.metroPanel4.Controls.Add(this.metroLabel5);
+            this.metroPanel4.Controls.Add(this.PurchaseDateLable);
+            this.metroPanel4.Controls.Add(this.QuantityTextBox);
+            this.metroPanel4.Controls.Add(this.QuantityLable);
             this.metroPanel4.Controls.Add(this.PriceTextBox);
             this.metroPanel4.Controls.Add(this.metroLabel3);
             this.metroPanel4.Controls.Add(this.ProductPicker);
@@ -628,6 +569,107 @@
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
+            // DatePicker
+            // 
+            this.DatePicker.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DatePicker.Location = new System.Drawing.Point(0, 151);
+            this.DatePicker.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DatePicker.Name = "DatePicker";
+            this.DatePicker.Size = new System.Drawing.Size(193, 29);
+            this.DatePicker.TabIndex = 13;
+            // 
+            // PurchaseDateLable
+            // 
+            this.PurchaseDateLable.AutoSize = true;
+            this.PurchaseDateLable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PurchaseDateLable.Location = new System.Drawing.Point(0, 132);
+            this.PurchaseDateLable.Name = "PurchaseDateLable";
+            this.PurchaseDateLable.Size = new System.Drawing.Size(88, 19);
+            this.PurchaseDateLable.TabIndex = 12;
+            this.PurchaseDateLable.Text = "PurchaseDate";
+            // 
+            // QuantityTextBox
+            // 
+            // 
+            // 
+            // 
+            this.QuantityTextBox.CustomButton.Image = null;
+            this.QuantityTextBox.CustomButton.Location = new System.Drawing.Point(171, 1);
+            this.QuantityTextBox.CustomButton.Name = "";
+            this.QuantityTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.QuantityTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.QuantityTextBox.CustomButton.TabIndex = 1;
+            this.QuantityTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.QuantityTextBox.CustomButton.UseSelectable = true;
+            this.QuantityTextBox.CustomButton.Visible = false;
+            this.QuantityTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.QuantityTextBox.Lines = new string[0];
+            this.QuantityTextBox.Location = new System.Drawing.Point(0, 109);
+            this.QuantityTextBox.MaxLength = 32767;
+            this.QuantityTextBox.Name = "QuantityTextBox";
+            this.QuantityTextBox.PasswordChar = '\0';
+            this.QuantityTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.QuantityTextBox.SelectedText = "";
+            this.QuantityTextBox.SelectionLength = 0;
+            this.QuantityTextBox.SelectionStart = 0;
+            this.QuantityTextBox.ShortcutsEnabled = true;
+            this.QuantityTextBox.Size = new System.Drawing.Size(193, 23);
+            this.QuantityTextBox.TabIndex = 11;
+            this.QuantityTextBox.UseSelectable = true;
+            this.QuantityTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.QuantityTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // QuantityLable
+            // 
+            this.QuantityLable.AutoSize = true;
+            this.QuantityLable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.QuantityLable.Location = new System.Drawing.Point(0, 90);
+            this.QuantityLable.Name = "QuantityLable";
+            this.QuantityLable.Size = new System.Drawing.Size(58, 19);
+            this.QuantityLable.TabIndex = 10;
+            this.QuantityLable.Text = "Quantity";
+            // 
+            // PriceTextBox
+            // 
+            // 
+            // 
+            // 
+            this.PriceTextBox.CustomButton.Image = null;
+            this.PriceTextBox.CustomButton.Location = new System.Drawing.Point(171, 1);
+            this.PriceTextBox.CustomButton.Name = "";
+            this.PriceTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PriceTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.PriceTextBox.CustomButton.TabIndex = 1;
+            this.PriceTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.PriceTextBox.CustomButton.UseSelectable = true;
+            this.PriceTextBox.CustomButton.Visible = false;
+            this.PriceTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PriceTextBox.Lines = new string[0];
+            this.PriceTextBox.Location = new System.Drawing.Point(0, 67);
+            this.PriceTextBox.MaxLength = 32767;
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.PasswordChar = '\0';
+            this.PriceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.PriceTextBox.SelectedText = "";
+            this.PriceTextBox.SelectionLength = 0;
+            this.PriceTextBox.SelectionStart = 0;
+            this.PriceTextBox.ShortcutsEnabled = true;
+            this.PriceTextBox.Size = new System.Drawing.Size(193, 23);
+            this.PriceTextBox.TabIndex = 5;
+            this.PriceTextBox.UseSelectable = true;
+            this.PriceTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.PriceTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroLabel3.Location = new System.Drawing.Point(0, 48);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(38, 19);
+            this.metroLabel3.TabIndex = 4;
+            this.metroLabel3.Text = "Price";
             // 
             // ProductPicker
             // 
@@ -741,107 +783,6 @@
             this.metroGrid1.Size = new System.Drawing.Size(649, 374);
             this.metroGrid1.TabIndex = 2;
             // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroLabel3.Location = new System.Drawing.Point(0, 48);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(38, 19);
-            this.metroLabel3.TabIndex = 4;
-            this.metroLabel3.Text = "Price";
-            // 
-            // PriceTextBox
-            // 
-            // 
-            // 
-            // 
-            this.PriceTextBox.CustomButton.Image = null;
-            this.PriceTextBox.CustomButton.Location = new System.Drawing.Point(171, 1);
-            this.PriceTextBox.CustomButton.Name = "";
-            this.PriceTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.PriceTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.PriceTextBox.CustomButton.TabIndex = 1;
-            this.PriceTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.PriceTextBox.CustomButton.UseSelectable = true;
-            this.PriceTextBox.CustomButton.Visible = false;
-            this.PriceTextBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PriceTextBox.Lines = new string[0];
-            this.PriceTextBox.Location = new System.Drawing.Point(0, 67);
-            this.PriceTextBox.MaxLength = 32767;
-            this.PriceTextBox.Name = "PriceTextBox";
-            this.PriceTextBox.PasswordChar = '\0';
-            this.PriceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.PriceTextBox.SelectedText = "";
-            this.PriceTextBox.SelectionLength = 0;
-            this.PriceTextBox.SelectionStart = 0;
-            this.PriceTextBox.ShortcutsEnabled = true;
-            this.PriceTextBox.Size = new System.Drawing.Size(193, 23);
-            this.PriceTextBox.TabIndex = 5;
-            this.PriceTextBox.UseSelectable = true;
-            this.PriceTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.PriceTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroLabel5.Location = new System.Drawing.Point(0, 90);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(82, 19);
-            this.metroLabel5.TabIndex = 6;
-            this.metroLabel5.Text = "Inventory no";
-            // 
-            // InventoryNoTextBox
-            // 
-            // 
-            // 
-            // 
-            this.InventoryNoTextBox.CustomButton.Image = null;
-            this.InventoryNoTextBox.CustomButton.Location = new System.Drawing.Point(171, 1);
-            this.InventoryNoTextBox.CustomButton.Name = "";
-            this.InventoryNoTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.InventoryNoTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.InventoryNoTextBox.CustomButton.TabIndex = 1;
-            this.InventoryNoTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.InventoryNoTextBox.CustomButton.UseSelectable = true;
-            this.InventoryNoTextBox.CustomButton.Visible = false;
-            this.InventoryNoTextBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.InventoryNoTextBox.Lines = new string[0];
-            this.InventoryNoTextBox.Location = new System.Drawing.Point(0, 109);
-            this.InventoryNoTextBox.MaxLength = 32767;
-            this.InventoryNoTextBox.Name = "InventoryNoTextBox";
-            this.InventoryNoTextBox.PasswordChar = '\0';
-            this.InventoryNoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.InventoryNoTextBox.SelectedText = "";
-            this.InventoryNoTextBox.SelectionLength = 0;
-            this.InventoryNoTextBox.SelectionStart = 0;
-            this.InventoryNoTextBox.ShortcutsEnabled = true;
-            this.InventoryNoTextBox.Size = new System.Drawing.Size(193, 23);
-            this.InventoryNoTextBox.TabIndex = 7;
-            this.InventoryNoTextBox.UseSelectable = true;
-            this.InventoryNoTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.InventoryNoTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroLabel6.Location = new System.Drawing.Point(0, 132);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(92, 19);
-            this.metroLabel6.TabIndex = 8;
-            this.metroLabel6.Text = "Purchase Date";
-            // 
-            // DatePicker
-            // 
-            this.DatePicker.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DatePicker.Location = new System.Drawing.Point(0, 151);
-            this.DatePicker.MinimumSize = new System.Drawing.Size(0, 29);
-            this.DatePicker.Name = "DatePicker";
-            this.DatePicker.Size = new System.Drawing.Size(193, 29);
-            this.DatePicker.TabIndex = 9;
-            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -861,8 +802,6 @@
             this.metroPanel6.PerformLayout();
             this.metroPanel7.ResumeLayout(false);
             this.metroPanel7.PerformLayout();
-            this.metroPanel5.ResumeLayout(false);
-            this.metroPanel5.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).EndInit();
             this.InventoryTab.ResumeLayout(false);
@@ -880,8 +819,8 @@
         #endregion
 
         private MetroFramework.Controls.MetroTabControl TabPane;
-        private MetroFramework.Controls.MetroTabPage ProductTab;
         private MetroFramework.Controls.MetroTabPage HomeTab;
+        private MetroFramework.Controls.MetroTabPage ProductTab;
         private MetroFramework.Controls.MetroTabPage InventoryTab;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -894,9 +833,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private MetroFramework.Controls.MetroPanel metroPanel3;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton InventoryRemove;
+        private MetroFramework.Controls.MetroButton InventoryEditButton;
+        private MetroFramework.Controls.MetroButton InventoryAddButton;
         private MetroFramework.Controls.MetroGrid InventoryGrid;
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroPanel metroPanel8;
@@ -908,17 +847,14 @@
         private MetroFramework.Controls.MetroPanel metroPanel7;
         private MetroFramework.Controls.MetroTextBox nameTextBox;
         private MetroFramework.Controls.MetroLabel NameLable;
-        private MetroFramework.Controls.MetroPanel metroPanel5;
-        private MetroFramework.Controls.MetroTextBox idTextbox;
-        private MetroFramework.Controls.MetroLabel IdLable;
         private MetroFramework.Controls.MetroPanel metroPanel4;
         private MetroFramework.Controls.MetroComboBox ProductPicker;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox PriceTextBox;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroDateTime DatePicker;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroTextBox InventoryNoTextBox;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel PurchaseDateLable;
+        private MetroFramework.Controls.MetroTextBox QuantityTextBox;
+        private MetroFramework.Controls.MetroLabel QuantityLable;
     }
 }

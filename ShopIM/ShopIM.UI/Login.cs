@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using MetroFramework;
 using MetroFramework.Forms;
-using ShopIM.Data;
+using ShopIM.DAL;
 
 namespace ShopIM.UI
 {
@@ -26,8 +25,8 @@ namespace ShopIM.UI
 
             string userName = UserNameField.Text;
             string userPasword = PasswordField.Text;
-            LoginRepo loginRepo = new LoginRepo();
-            if (loginRepo.ValidateUser(userName, userPasword))
+            UserContext userContext=new UserContext();
+            if (userContext.ValidateUser(userName, userPasword))
             {
                 Hide();
                 new DashBoard(this).Show();
