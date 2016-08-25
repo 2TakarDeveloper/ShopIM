@@ -9,10 +9,10 @@ namespace ShopIM.Entity
     public class Inventory
     {
         [Key]
-        public string sl { get; set; }
-        public string productName { get; set; }
-        public int quantity { get; set; }
-        public double price { get; set; }
-        public DateTime purchaseDate { get; set; }
+        public int Sl { get; set; }
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+        public DateTime PurchaseDate { get; set; }
     }
 }

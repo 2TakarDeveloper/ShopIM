@@ -11,5 +11,9 @@ namespace ShopIM.Entity
         public string Vendor { get; set; }
         public string Type { get; set; }
 
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }

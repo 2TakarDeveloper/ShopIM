@@ -14,10 +14,12 @@ namespace ShopIM.UI
     public partial class DashBoard : MetroForm
     {
        
-        private ProductContext _productContext = new ProductContext();
- 
+        private readonly ProductContext _productContext = new ProductContext();
+        private InventoryContext _inventoryContext = new InventoryContext();
+
         private readonly Login _loginForm;
-        private List<Product> _selectedProducts=new List<Product>();
+        private readonly List<Product> _selectedProducts=new List<Product>();
+        private readonly List<Inventory> _selectedInventories = new List<Inventory>();
 
         public DashBoard(Login loginForm)
         {
@@ -41,8 +43,9 @@ namespace ShopIM.UI
 
         private void SetupInventoryTab()
         {
+            
             RefreshInventoryGrid();
-        
+            ProductPicker.DataSource = _productContext.GetAlProducts();
             InventoryGrid.Click += InventoryGrid_Click;
         }
 
@@ -50,12 +53,19 @@ namespace ShopIM.UI
         {
             try
             {
-           
-                //ProductPicker.SelectedText = inventory.Product.ToString();
-                //PriceTextBox.Text = inventory.Price.ToString();
-                //DatePicker.Value = (DateTime) inventory.PurchaseDate;
-                //QuantityTextBox.Text = inventory.Quantity.ToString();
-               
+
+                int length = InventoryGrid.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                for (int i = 0; i < length; i++)
+                {
+                    Inventory I = (Inventory)InventoryGrid.SelectedRows[i].DataBoundItem;
+                    ProductPicker.Text = I.ProductName;
+                    PriceTextBox.Text = I.Price.ToString();
+                    DatePicker.Value = I.PurchaseDate;
+                    QuantityTextBox.Text = I.Quantity.ToString();
+                    _selectedInventories.Add(I);
+
+                }
+
             }
             catch (Exception)
             {
@@ -114,9 +124,9 @@ namespace ShopIM.UI
             try
             {
                 ProductGrid.DataSource = _productContext.GetAlProducts();
-                //ProductPicker.DataSource = _productRepo.GetProducts();
+                ProductPicker.DataSource = _productContext.GetAlProducts();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 //ignored
             }
@@ -125,36 +135,22 @@ namespace ShopIM.UI
 
         private void RefreshInventoryGrid()
         {
-            //InventoryGrid.DataSource = _inventoryRepo.GetInventories();
-            //InventoryGrid.Columns[2].Visible = false;
-        }
-
-        private void RemoveButton_Click(object sender, EventArgs e)
-        {
+            InventoryGrid.DataSource = _inventoryContext.GetInventories();
             
-            try{
-               _productContext.RemoveProducts(_selectedProducts);
-            }catch (Exception exception)
-            {
-                MetroMessageBox.Show(this, exception.Message);
-            }
-
-            RefreshProductGrid();
         }
+
+       
 
         private void InventoryAddButton_Click(object sender, EventArgs e)
         {
             try
             {
-                //Inventory I = new Inventory();
-                //Product p;
-                //p = (Product)ProductPicker.SelectedValue;
-                //I.Product = p;
-                //I.Price = Int32.Parse(PriceTextBox.Text);
-                //I.InventoryNo= Int32.Parse(InventoryNoTextBox.Text);
-                //I.PurchaseDate = DatePicker.Value;
-                //I.Quantity= Int32.Parse(QuantityTextBox.Text);
-                //_inventoryRepo.AddInventory(I);
+                Inventory I = new Inventory();
+                I.ProductName = ProductPicker.Text; 
+                I.Price = Int32.Parse(PriceTextBox.Text);
+                I.PurchaseDate = DatePicker.Value;
+                I.Quantity = Int32.Parse(QuantityTextBox.Text);
+                _inventoryContext.AddInventory(I);
                 RefreshInventoryGrid();
             }
             catch (Exception exception)
@@ -189,9 +185,23 @@ namespace ShopIM.UI
         private void InventoryRemove_Click(object sender, EventArgs e)
         {
 
-            //new InventoryRepo().Remove(_selectedInventories);
+            _inventoryContext.RemoveInventories(_selectedInventories);
 
             RefreshInventoryGrid();
+        }
+
+        private void DeleteButton_Product_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _productContext.RemoveProducts(_selectedProducts);
+            }
+            catch (Exception exception)
+            {
+                MetroMessageBox.Show(this, exception.Message);
+            }
+
+            RefreshProductGrid();
         }
     }
 }
