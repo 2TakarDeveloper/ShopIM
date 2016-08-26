@@ -36,8 +36,12 @@ namespace ShopIM.DAL
                 foreach (var product in Products)
                 {
                     Product item = context.Set<Product>().FirstOrDefault(r => r.name == product.name);
-                    context.Products.Remove(item);
-                    context.SaveChanges();
+                    if (item != null)
+                    {
+                        context.Products.Remove(item);
+                        context.SaveChanges();
+                    }
+                   
                 }
             }
         }

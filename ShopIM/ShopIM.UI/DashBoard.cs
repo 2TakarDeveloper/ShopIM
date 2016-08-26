@@ -203,5 +203,29 @@ namespace ShopIM.UI
 
             RefreshProductGrid();
         }
+
+        private void InventoryEditButton_Click(object sender, EventArgs e)
+        {
+
+            Inventory inventory = new Inventory();
+            try
+            {
+                inventory.Price = int.Parse(PriceTextBox.Text);
+                inventory.PurchaseDate = DatePicker.Value;
+                inventory.Quantity = int.Parse(QuantityTextBox.Text);
+                inventory.Sl = _selectedInventories[0].Sl;
+                inventory.ProductName = _selectedInventories[0].ProductName;
+
+                _inventoryContext.UpdateInventory(inventory,_selectedInventories[0]);
+
+               RefreshInventoryGrid();
+            }
+            catch (Exception exception)
+            {
+
+                MetroMessageBox.Show(this, exception.Message);
+
+            }
+        }
     }
 }

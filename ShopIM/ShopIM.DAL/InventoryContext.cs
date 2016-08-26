@@ -42,6 +42,24 @@ namespace ShopIM.DAL
             }
         }
 
+        public void UpdateInventory(Inventory inventory, Inventory selectedInventory)
+        {
+
+            using (var context = new DatabaseContext())
+            {
+                Inventory I = context.Inventories.SingleOrDefault(a => a.Sl == selectedInventory.Sl);
+
+                I.Price = inventory.Price;
+                I.PurchaseDate = inventory.PurchaseDate;
+                I.Quantity = inventory.Quantity;
+
+                context.SaveChanges();
+
+            }
+
+
+        }
+
 
 
 
