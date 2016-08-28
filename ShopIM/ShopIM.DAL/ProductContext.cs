@@ -1,9 +1,6 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ShopIM.Entity;
 
 namespace ShopIM.DAL
@@ -35,13 +32,10 @@ namespace ShopIM.DAL
             {
                 foreach (var product in Products)
                 {
-                    Product item = context.Set<Product>().FirstOrDefault(r => r.name == product.name);
-                    if (item != null)
-                    {
-                        context.Products.Remove(item);
-                        context.SaveChanges();
-                    }
-                   
+                    var item = context.Set<Product>().FirstOrDefault(r => r.name == product.name);
+                    if (item == null) continue;
+                    context.Products.Remove(item);
+                    context.SaveChanges();
                 }
             }
         }
@@ -51,14 +45,13 @@ namespace ShopIM.DAL
      
               using (var context = new DatabaseContext())
                 {
-                    Product Product = context.Products.SingleOrDefault(a => a.name == selectedProduct.name);
+                    var Product = context.Products.SingleOrDefault(a => a.name == selectedProduct.name);
 
+                    if (Product == null) return;
                     Product.name = product.name;
                     Product.Type = product.Type;
                     Product.Vendor = product.Vendor;
-                   
                     context.SaveChanges();
-                    
                 }
             
             

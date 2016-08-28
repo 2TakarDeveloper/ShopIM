@@ -15,17 +15,21 @@ namespace ShopIM.UI
     {
        
         private readonly ProductContext _productContext = new ProductContext();
-        private InventoryContext _inventoryContext = new InventoryContext();
+        private readonly InventoryContext _inventoryContext = new InventoryContext();
 
         private readonly Login _loginForm;
         private readonly List<Product> _selectedProducts=new List<Product>();
         private readonly List<Inventory> _selectedInventories = new List<Inventory>();
 
-        public DashBoard(Login loginForm)
+        private string UserName { get; set; }
+
+        
+
+        public DashBoard(Login loginForm,string userName)
         {
             InitializeComponent();
             _loginForm = loginForm ;
-            
+            UserName = userName;
 
 
 
@@ -34,6 +38,12 @@ namespace ShopIM.UI
            
 
         }
+
+        private void SetupHomeTab()
+        {
+            
+        }
+
 
         private void SetupProductTab()
         {
@@ -95,25 +105,33 @@ namespace ShopIM.UI
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            try
+            if (string.IsNullOrWhiteSpace(nameTextBox.Text))
             {
-                Product product = new Product
+                MetroMessageBox.Show(this,"Name can't be left Empty", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
                 {
-                    
-                    name = nameTextBox.Text,
-                    Type = typeTextBox.Text,
-                    Vendor = vendorTextbox.Text
-                };
+                    Product product = new Product
+                    {
 
-                _productContext.AddProduct(product);
-                RefreshProductGrid();
-            }
-            catch (Exception exception)
-            {
-             
-                MetroMessageBox.Show(this, exception.Message);
+                        name = nameTextBox.Text,
+                        Type = typeTextBox.Text,
+                        Vendor = vendorTextbox.Text
+                    };
 
+                    _productContext.AddProduct(product);
+                    RefreshProductGrid();
+                }
+                catch (Exception exception)
+                {
+
+                    MetroMessageBox.Show(this, exception.InnerException.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
+           
 
         }
 
@@ -145,18 +163,21 @@ namespace ShopIM.UI
         {
             try
             {
-                Inventory I = new Inventory();
-                I.ProductName = ProductPicker.Text; 
-                I.Price = Int32.Parse(PriceTextBox.Text);
-                I.PurchaseDate = DatePicker.Value;
-                I.Quantity = Int32.Parse(QuantityTextBox.Text);
+                Inventory I = new Inventory
+                {
+                    ProductName = ProductPicker.Text,
+                    Price = int.Parse(PriceTextBox.Text),
+                    PurchaseDate = DatePicker.Value,
+                    Quantity = int.Parse(QuantityTextBox.Text)
+                };
+
                 _inventoryContext.AddInventory(I);
                 RefreshInventoryGrid();
             }
             catch (Exception exception)
             {
 
-                MetroMessageBox.Show(this, exception.Message);
+                MetroMessageBox.Show(this, exception.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -175,7 +196,7 @@ namespace ShopIM.UI
             catch (Exception exception)
             {
 
-                MetroMessageBox.Show(this, exception.Message);
+                MetroMessageBox.Show(this, exception.InnerException.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -198,7 +219,7 @@ namespace ShopIM.UI
             }
             catch (Exception exception)
             {
-                MetroMessageBox.Show(this, exception.Message);
+                MetroMessageBox.Show(this, exception.InnerException.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             RefreshProductGrid();
@@ -223,9 +244,18 @@ namespace ShopIM.UI
             catch (Exception exception)
             {
 
-                MetroMessageBox.Show(this, exception.Message);
+                MetroMessageBox.Show(this, exception.InnerException.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+
+        //Home Tiles
+
+        private void userTile_Click(object sender, EventArgs e)
+        {
+            UserForm userForm = new UserForm(UserName);
+            userForm.ShowDialog(this);
         }
     }
 }

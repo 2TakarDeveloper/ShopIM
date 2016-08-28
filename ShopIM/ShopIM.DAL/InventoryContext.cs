@@ -32,7 +32,7 @@ namespace ShopIM.DAL
             {
                 foreach (var inventory in inventories)
                 {
-                    Inventory item = context.Set<Inventory>().FirstOrDefault(r => r.ProductName == inventory.ProductName);
+                    Inventory item = context.Set<Inventory>().FirstOrDefault(r => r.Sl == inventory.Sl);
                     if(item!=null)
                     {
                         context.Inventories.Remove(item);

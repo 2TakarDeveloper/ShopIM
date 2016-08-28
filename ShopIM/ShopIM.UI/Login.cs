@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
 using ShopIM.DAL;
@@ -29,11 +29,11 @@ namespace ShopIM.UI
             if (userContext.ValidateUser(userName, userPasword))
             {
                 Hide();
-                new DashBoard(this).Show();
+                new DashBoard(this,userName).Show();
             }
             else
             {
-                MetroMessageBox.Show(this, "Wrong User Name or Password");
+                MetroMessageBox.Show(this, "Wrong Username/Passoword", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
