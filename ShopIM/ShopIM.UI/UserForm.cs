@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using MetroFramework;
 using ShopIM.DAL;
@@ -52,6 +46,12 @@ namespace ShopIM.UI
         private bool validatePass()
         {
             return newPassTextBox.Text.Equals(confirmPasswordTextBox.Text);
+        }
+
+        private void ClearLogButton_Click(object sender, EventArgs e)
+        {
+            VerificationForm verificationForm = new VerificationForm(_userName);
+            verificationForm.ShowDialog(this);
         }
     }
 }

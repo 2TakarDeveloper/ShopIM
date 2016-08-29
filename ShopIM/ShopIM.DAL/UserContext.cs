@@ -18,7 +18,12 @@ namespace ShopIM.DAL
                     where user.userName == name && user.userPassword == pass
                     select user).FirstOrDefault();
 
-                return User != null;
+                if (User == null) return false;
+                var log = new Log(name + " logged in");
+
+                context.Logs.Add(log);
+                context.SaveChanges();
+                return true;
             }
         }
 
@@ -35,6 +40,12 @@ namespace ShopIM.DAL
 
                 User.userPassword = pass;
                 context.SaveChanges();
+                var log = new Log(name + "'s Password was changed");
+
+                context.Logs.Add(log);
+                context.SaveChanges();
+
+
                 return true;
             }
         }

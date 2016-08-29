@@ -23,6 +23,12 @@ namespace ShopIM.DAL
             {
                 context.Inventories.Add(inventory);
                 context.SaveChanges();
+                var log = new Log(inventory.ProductName + " Added to the Inventory Table");
+
+                context.Logs.Add(log);
+                context.SaveChanges();
+
+
             }
         }
 
@@ -33,11 +39,16 @@ namespace ShopIM.DAL
                 foreach (var inventory in inventories)
                 {
                     Inventory item = context.Set<Inventory>().FirstOrDefault(r => r.Sl == inventory.Sl);
-                    if(item!=null)
-                    {
-                        context.Inventories.Remove(item);
-                        context.SaveChanges();
-                    }
+                    if (item == null) continue;
+                    context.Inventories.Remove(item);
+                    context.SaveChanges();
+
+                    var log = new Log(item.ProductName + " Was Removed from Inventory");
+
+                    context.Logs.Add(log);
+                    context.SaveChanges();
+
+
                 }
             }
         }
@@ -53,6 +64,11 @@ namespace ShopIM.DAL
                 I.PurchaseDate = inventory.PurchaseDate;
                 I.Quantity = inventory.Quantity;
 
+                context.SaveChanges();
+
+                var log = new Log(I.ProductName + "'s Information was Updated");
+
+                context.Logs.Add(log);
                 context.SaveChanges();
 
             }

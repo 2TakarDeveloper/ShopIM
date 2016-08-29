@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 
@@ -39,10 +40,7 @@ namespace ShopIM.UI
 
         }
 
-        private void SetupHomeTab()
-        {
-            
-        }
+       
 
 
         private void SetupProductTab()
@@ -124,15 +122,50 @@ namespace ShopIM.UI
                     _productContext.AddProduct(product);
                     RefreshProductGrid();
                 }
-                catch (Exception exception)
+                catch (DbUpdateException exception)
                 {
 
-                    MetroMessageBox.Show(this, exception.InnerException.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MetroMessageBox.Show(this, exception.InnerException.InnerException.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
            
 
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            Product product = new Product();
+            try
+            {
+                product.name = nameTextBox.Text;
+                product.Type = typeTextBox.Text;
+                product.Vendor = vendorTextbox.Text;
+                _productContext.UpdateProduct(product, _selectedProducts[0]);
+                RefreshProductGrid();
+            }
+            catch (Exception exception)
+            {
+
+                MetroMessageBox.Show(this, exception.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
+        }
+
+        private void DeleteButton_Product_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _productContext.RemoveProducts(_selectedProducts);
+            }
+            catch (Exception exception)
+            {
+                MetroMessageBox.Show(this, exception.InnerException.InnerException.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            RefreshProductGrid();
         }
 
 
@@ -151,11 +184,7 @@ namespace ShopIM.UI
             
         }
 
-        private void RefreshInventoryGrid()
-        {
-            InventoryGrid.DataSource = _inventoryContext.GetInventories();
-            
-        }
+        
 
        
 
@@ -166,7 +195,7 @@ namespace ShopIM.UI
                 Inventory I = new Inventory
                 {
                     ProductName = ProductPicker.Text,
-                    Price = int.Parse(PriceTextBox.Text),
+                    Price = double.Parse(PriceTextBox.Text),
                     PurchaseDate = DatePicker.Value,
                     Quantity = int.Parse(QuantityTextBox.Text)
                 };
@@ -182,26 +211,7 @@ namespace ShopIM.UI
             }
         }
 
-        private void EditButton_Click(object sender, EventArgs e)
-        {
-            Product product = new Product();
-            try
-            {
-                product.name = nameTextBox.Text;
-                product.Type = typeTextBox.Text;
-                product.Vendor = vendorTextbox.Text;
-                _productContext.UpdateProduct(product,_selectedProducts[0]);
-                RefreshProductGrid();
-            }
-            catch (Exception exception)
-            {
-
-                MetroMessageBox.Show(this, exception.InnerException.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-            
-        }
+        
 
         private void InventoryRemove_Click(object sender, EventArgs e)
         {
@@ -211,19 +221,7 @@ namespace ShopIM.UI
             RefreshInventoryGrid();
         }
 
-        private void DeleteButton_Product_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                _productContext.RemoveProducts(_selectedProducts);
-            }
-            catch (Exception exception)
-            {
-                MetroMessageBox.Show(this, exception.InnerException.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            RefreshProductGrid();
-        }
+        
 
         private void InventoryEditButton_Click(object sender, EventArgs e)
         {
@@ -231,7 +229,7 @@ namespace ShopIM.UI
             Inventory inventory = new Inventory();
             try
             {
-                inventory.Price = int.Parse(PriceTextBox.Text);
+                inventory.Price = double.Parse(PriceTextBox.Text);
                 inventory.PurchaseDate = DatePicker.Value;
                 inventory.Quantity = int.Parse(QuantityTextBox.Text);
                 inventory.Sl = _selectedInventories[0].Sl;
@@ -249,6 +247,11 @@ namespace ShopIM.UI
             }
         }
 
+        private void RefreshInventoryGrid()
+        {
+            InventoryGrid.DataSource = _inventoryContext.GetInventories();
+
+        }
 
         //Home Tiles
 
@@ -256,6 +259,18 @@ namespace ShopIM.UI
         {
             UserForm userForm = new UserForm(UserName);
             userForm.ShowDialog(this);
+        }
+
+        private void logTile_Click(object sender, EventArgs e)
+        {
+            LogForm logForm = new LogForm();
+            logForm.ShowDialog(this);
+        }
+
+        private void notificationTile_Click(object sender, EventArgs e)
+        {
+            NotificationForm notificationForm = new NotificationForm();
+            notificationForm.ShowDialog(this);
         }
     }
 }

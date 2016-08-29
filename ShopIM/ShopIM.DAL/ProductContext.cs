@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ShopIM.Entity;
@@ -23,6 +24,12 @@ namespace ShopIM.DAL
             {
                 context.Products.Add(product);
                 context.SaveChanges();
+                var log = new Log(product.name + " Added to the Products Table");
+               
+                context.Logs.Add(log);
+                context.SaveChanges();
+
+
             }
         }
 
@@ -35,6 +42,10 @@ namespace ShopIM.DAL
                     var item = context.Set<Product>().FirstOrDefault(r => r.name == product.name);
                     if (item == null) continue;
                     context.Products.Remove(item);
+                    context.SaveChanges();
+                    var log = new Log(product.name + " Removed from the Products Table");
+
+                    context.Logs.Add(log);
                     context.SaveChanges();
                 }
             }
@@ -52,7 +63,13 @@ namespace ShopIM.DAL
                     Product.Type = product.Type;
                     Product.Vendor = product.Vendor;
                     context.SaveChanges();
-                }
+
+                    var log = new Log(selectedProduct.name + " Was Modified");
+
+                    context.Logs.Add(log);
+                    context.SaveChanges();
+
+            }
             
             
         }

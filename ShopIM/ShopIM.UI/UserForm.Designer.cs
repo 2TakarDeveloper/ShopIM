@@ -36,6 +36,9 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.confirmPasswordTextBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.ClearLogButton = new MetroFramework.Controls.MetroButton();
+            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -193,11 +196,48 @@
             this.metroLabel4.TabIndex = 9;
             this.metroLabel4.Text = "Confrim Password:";
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.metroPanel1.Controls.Add(this.ClearLogButton);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroPanel1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(429, 60);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(200, 330);
+            this.metroPanel1.TabIndex = 11;
+            this.metroPanel1.UseCustomBackColor = true;
+            this.metroPanel1.UseCustomForeColor = true;
+            this.metroPanel1.UseStyleColors = true;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // ClearLogButton
+            // 
+            this.ClearLogButton.BackColor = System.Drawing.Color.Red;
+            this.ClearLogButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ClearLogButton.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.ClearLogButton.Location = new System.Drawing.Point(0, 0);
+            this.ClearLogButton.Name = "ClearLogButton";
+            this.ClearLogButton.Size = new System.Drawing.Size(200, 55);
+            this.ClearLogButton.TabIndex = 2;
+            this.ClearLogButton.Text = "Clear Log";
+            this.ClearLogButton.UseCustomBackColor = true;
+            this.ClearLogButton.UseCustomForeColor = true;
+            this.ClearLogButton.UseMnemonic = false;
+            this.ClearLogButton.UseSelectable = true;
+            this.ClearLogButton.Click += new System.EventHandler(this.ClearLogButton_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 410);
+            this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.confirmPasswordTextBox);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.newPassTextBox);
@@ -210,6 +250,7 @@
             this.Style = MetroFramework.MetroColorStyle.Brown;
             this.Text = "User Name Here";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.metroPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +266,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox confirmPasswordTextBox;
         private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroButton ClearLogButton;
     }
 }
