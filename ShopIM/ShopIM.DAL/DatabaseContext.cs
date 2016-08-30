@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ShopIM.Entity;
 
 namespace ShopIM.DAL
@@ -16,6 +12,7 @@ namespace ShopIM.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Log> Logs { get; set; }
-        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Config> Configs { get; set; }
+        
     }
 }

@@ -9,5 +9,12 @@ namespace ShopIM.Entity
         [Key]
         public int Sl { get; set; }
         public string message { get; set; }
+
+        public Notification() { }
+
+        public Notification(string message)
+        {
+            this.message = message;
+        }
     }
 }

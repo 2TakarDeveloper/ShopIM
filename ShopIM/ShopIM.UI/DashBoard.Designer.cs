@@ -45,6 +45,7 @@
             this.settingsTile = new MetroFramework.Controls.MetroTile();
             this.logTile = new MetroFramework.Controls.MetroTile();
             this.salesTile = new MetroFramework.Controls.MetroTile();
+            this.LockTile = new MetroFramework.Controls.MetroTile();
             this.ProductTab = new MetroFramework.Controls.MetroTabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -137,13 +138,14 @@
             this.TileHolder.ColumnCount = 4;
             this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.47619F));
             this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.52381F));
-            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
-            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
+            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
             this.TileHolder.Controls.Add(this.userTile, 0, 0);
             this.TileHolder.Controls.Add(this.notificationTile, 2, 0);
             this.TileHolder.Controls.Add(this.settingsTile, 3, 0);
             this.TileHolder.Controls.Add(this.logTile, 1, 0);
             this.TileHolder.Controls.Add(this.salesTile, 0, 1);
+            this.TileHolder.Controls.Add(this.LockTile, 3, 1);
             this.TileHolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TileHolder.Location = new System.Drawing.Point(10, 10);
             this.TileHolder.Name = "TileHolder";
@@ -161,7 +163,7 @@
             this.userTile.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.userTile.Location = new System.Drawing.Point(3, 3);
             this.userTile.Name = "userTile";
-            this.userTile.Size = new System.Drawing.Size(151, 183);
+            this.userTile.Size = new System.Drawing.Size(145, 183);
             this.userTile.TabIndex = 2;
             this.userTile.Text = "User";
             this.userTile.UseCustomBackColor = true;
@@ -172,12 +174,12 @@
             // notificationTile
             // 
             this.notificationTile.ActiveControl = null;
-            this.notificationTile.BackColor = System.Drawing.Color.OrangeRed;
+            this.notificationTile.BackColor = System.Drawing.Color.DarkSlateGray;
             this.notificationTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationTile.Location = new System.Drawing.Point(314, 3);
+            this.notificationTile.Location = new System.Drawing.Point(303, 3);
             this.notificationTile.Name = "notificationTile";
             this.TileHolder.SetRowSpan(this.notificationTile, 2);
-            this.notificationTile.Size = new System.Drawing.Size(187, 368);
+            this.notificationTile.Size = new System.Drawing.Size(175, 368);
             this.notificationTile.TabIndex = 5;
             this.notificationTile.Text = "Notification";
             this.notificationTile.UseCustomBackColor = true;
@@ -189,23 +191,23 @@
             this.settingsTile.ActiveControl = null;
             this.settingsTile.BackColor = System.Drawing.Color.Violet;
             this.settingsTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settingsTile.Location = new System.Drawing.Point(507, 3);
+            this.settingsTile.Location = new System.Drawing.Point(484, 3);
             this.settingsTile.Name = "settingsTile";
-            this.TileHolder.SetRowSpan(this.settingsTile, 2);
-            this.settingsTile.Size = new System.Drawing.Size(139, 368);
+            this.settingsTile.Size = new System.Drawing.Size(162, 183);
             this.settingsTile.TabIndex = 6;
             this.settingsTile.Text = "Settings";
             this.settingsTile.UseCustomBackColor = true;
             this.settingsTile.UseSelectable = true;
+            this.settingsTile.Click += new System.EventHandler(this.settingsTile_Click);
             // 
             // logTile
             // 
             this.logTile.ActiveControl = null;
             this.logTile.BackColor = System.Drawing.Color.YellowGreen;
             this.logTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logTile.Location = new System.Drawing.Point(160, 3);
+            this.logTile.Location = new System.Drawing.Point(154, 3);
             this.logTile.Name = "logTile";
-            this.logTile.Size = new System.Drawing.Size(148, 183);
+            this.logTile.Size = new System.Drawing.Size(143, 183);
             this.logTile.TabIndex = 4;
             this.logTile.Text = "Log";
             this.logTile.UseCustomBackColor = true;
@@ -216,16 +218,32 @@
             // salesTile
             // 
             this.salesTile.ActiveControl = null;
-            this.salesTile.BackColor = System.Drawing.Color.Orange;
+            this.salesTile.BackColor = System.Drawing.Color.LightSeaGreen;
             this.TileHolder.SetColumnSpan(this.salesTile, 2);
             this.salesTile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesTile.Location = new System.Drawing.Point(3, 192);
             this.salesTile.Name = "salesTile";
-            this.salesTile.Size = new System.Drawing.Size(305, 179);
+            this.salesTile.Size = new System.Drawing.Size(294, 179);
             this.salesTile.TabIndex = 3;
             this.salesTile.Text = "Sales";
             this.salesTile.UseCustomBackColor = true;
             this.salesTile.UseSelectable = true;
+            // 
+            // LockTile
+            // 
+            this.LockTile.ActiveControl = null;
+            this.LockTile.BackColor = System.Drawing.Color.Bisque;
+            this.LockTile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LockTile.Location = new System.Drawing.Point(484, 192);
+            this.LockTile.Name = "LockTile";
+            this.LockTile.Size = new System.Drawing.Size(162, 179);
+            this.LockTile.TabIndex = 7;
+            this.LockTile.Text = "Lock";
+            this.LockTile.UseCustomBackColor = true;
+            this.LockTile.UseCustomForeColor = true;
+            this.LockTile.UseMnemonic = false;
+            this.LockTile.UseSelectable = true;
+            this.LockTile.Click += new System.EventHandler(this.LockTile_Click);
             // 
             // ProductTab
             // 
@@ -980,5 +998,6 @@
         private MetroFramework.Controls.MetroTile settingsTile;
         private MetroFramework.Controls.MetroTile notificationTile;
         private System.Windows.Forms.TableLayoutPanel TileHolder;
+        private MetroFramework.Controls.MetroTile LockTile;
     }
 }

@@ -58,7 +58,10 @@ namespace ShopIM.DAL
 
             using (var context = new DatabaseContext())
             {
-                Inventory I = context.Inventories.SingleOrDefault(a => a.Sl == selectedInventory.Sl);
+                
+                var I = context.Inventories.SingleOrDefault(a => a.Sl == selectedInventory.Sl);
+
+
 
                 I.Price = inventory.Price;
                 I.PurchaseDate = inventory.PurchaseDate;
@@ -74,6 +77,32 @@ namespace ShopIM.DAL
             }
 
 
+        }
+
+        public List<Notification> CheckQuantity(int threashHold,out int length)
+        {
+            using (var context = new DatabaseContext())
+            {
+                List<Inventory> I = (from inventory in context.Inventories
+                                          where inventory.Quantity<threashHold
+                                         select inventory).ToList();
+               
+
+                length = I.Count;
+                List<Notification> notifications=new List<Notification>();
+
+                foreach (var inventory in I)
+                {
+                    
+                    Notification n = new Notification(inventory.ProductName+" Is short on stock");
+                    notifications.Add(n);
+
+
+                }
+
+                return notifications;
+
+            }
         }
 
 

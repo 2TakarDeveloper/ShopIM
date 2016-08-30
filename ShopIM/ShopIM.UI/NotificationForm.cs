@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.ComponentModel;
 using System.Windows.Forms;
 using ShopIM.DAL;
 using ShopIM.Entity;
@@ -9,12 +9,16 @@ namespace ShopIM.UI
 {
     public partial class NotificationForm : MetroFramework.Forms.MetroForm
     {
-        readonly NotificationContext _notificationContext = new NotificationContext();
+     
         readonly List<Notification> _notifications=new List<Notification>();
+        public  static List<Notification> Notifications= new List<Notification>();
+
+ 
         public NotificationForm()
         {
+            
             InitializeComponent();
-            NotificationGrid.DataSource = _notificationContext.GetLogs();
+            NotificationGrid.DataSource = Notifications;
             NotificationGrid.Click += NotificationGrid_Click;
         }
 
@@ -28,9 +32,8 @@ namespace ShopIM.UI
             }
         }
 
-        private void RemoveButton_Click(object sender, EventArgs e)
-        {
-            _notificationContext.Remove(_notifications);
-        }
+      
+
+       
     }
 }

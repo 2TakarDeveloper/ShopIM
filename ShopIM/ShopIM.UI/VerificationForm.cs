@@ -9,12 +9,28 @@ namespace ShopIM.UI
     public partial class VerificationForm : MetroFramework.Forms.MetroForm
     {
         private string userName;
+       
+
         public VerificationForm(string userName)
         {
+            Text = DashBoard.IsLocked ? "Locked" : "Verify Password";
             this.userName = userName;
+            
             InitializeComponent();
             
         
+
+        }
+
+        
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (DashBoard.IsLocked)
+            {
+                e.Cancel = true;
+            }
+            
 
         }
 
@@ -24,8 +40,18 @@ namespace ShopIM.UI
             if (new UserContext().ValidateUser(userName, password))
             {
                 new LogContext().clearLog();
-                MetroMessageBox.Show(this, "Operation Successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                if (DashBoard.IsLocked)
+                {
+                    DashBoard.IsLocked = false;
+                    Close();
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, "Operation Successful", "Notification", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    Close();
+                }
+            
 
             }
             else

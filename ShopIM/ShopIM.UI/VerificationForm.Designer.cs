@@ -92,7 +92,6 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.PasswordTextBox);
             this.Name = "VerificationForm";
-            this.Text = "Verify Password";
             this.ResumeLayout(false);
             this.PerformLayout();
 
