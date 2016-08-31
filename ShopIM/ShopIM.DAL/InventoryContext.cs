@@ -105,6 +105,16 @@ namespace ShopIM.DAL
             }
         }
 
+        public List<Inventory> SearchWithName(string name)
+        {
+            using (var context = new DatabaseContext())
+            {
+                return (from inventory in context.Inventories where inventory.ProductName==name select inventory).ToList();
+            }
+        }
+
+       
+
 
 
 

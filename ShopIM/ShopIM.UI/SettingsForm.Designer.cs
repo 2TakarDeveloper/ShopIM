@@ -30,11 +30,10 @@
         {
             this.SettingsTabPane = new MetroFramework.Controls.MetroTabControl();
             this.NotificationTab = new MetroFramework.Controls.MetroTabPage();
+            this.QuantityThreshHold = new MetroFramework.Controls.MetroTextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.AlertToggle = new MetroFramework.Controls.MetroToggle();
-            this.QuantityThreshHold = new MetroFramework.Controls.MetroTextBox();
             this.SettingsTabPane.SuspendLayout();
             this.NotificationTab.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +55,6 @@
             this.NotificationTab.Controls.Add(this.QuantityThreshHold);
             this.NotificationTab.Controls.Add(this.SaveButton);
             this.NotificationTab.Controls.Add(this.metroLabel2);
-            this.NotificationTab.Controls.Add(this.metroLabel1);
             this.NotificationTab.Controls.Add(this.AlertToggle);
             this.NotificationTab.HorizontalScrollbarBarColor = true;
             this.NotificationTab.HorizontalScrollbarHighlightOnWheel = false;
@@ -69,6 +67,36 @@
             this.NotificationTab.VerticalScrollbarBarColor = true;
             this.NotificationTab.VerticalScrollbarHighlightOnWheel = false;
             this.NotificationTab.VerticalScrollbarSize = 10;
+            // 
+            // QuantityThreshHold
+            // 
+            // 
+            // 
+            // 
+            this.QuantityThreshHold.CustomButton.Image = null;
+            this.QuantityThreshHold.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.QuantityThreshHold.CustomButton.Name = "";
+            this.QuantityThreshHold.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.QuantityThreshHold.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.QuantityThreshHold.CustomButton.TabIndex = 1;
+            this.QuantityThreshHold.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.QuantityThreshHold.CustomButton.UseSelectable = true;
+            this.QuantityThreshHold.CustomButton.Visible = false;
+            this.QuantityThreshHold.Lines = new string[0];
+            this.QuantityThreshHold.Location = new System.Drawing.Point(146, 76);
+            this.QuantityThreshHold.MaxLength = 32767;
+            this.QuantityThreshHold.Name = "QuantityThreshHold";
+            this.QuantityThreshHold.PasswordChar = '\0';
+            this.QuantityThreshHold.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.QuantityThreshHold.SelectedText = "";
+            this.QuantityThreshHold.SelectionLength = 0;
+            this.QuantityThreshHold.SelectionStart = 0;
+            this.QuantityThreshHold.ShortcutsEnabled = true;
+            this.QuantityThreshHold.Size = new System.Drawing.Size(122, 23);
+            this.QuantityThreshHold.TabIndex = 7;
+            this.QuantityThreshHold.UseSelectable = true;
+            this.QuantityThreshHold.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.QuantityThreshHold.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // SaveButton
             // 
@@ -90,20 +118,9 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(3, 76);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(147, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(128, 19);
             this.metroLabel2.TabIndex = 4;
-            this.metroLabel2.Text = "Quantity ThreshHold";
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(0, 21);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(42, 19);
-            this.metroLabel1.TabIndex = 3;
-            this.metroLabel1.Text = "Alert";
+            this.metroLabel2.Text = "Minimum Quanity";
             // 
             // AlertToggle
             // 
@@ -111,42 +128,12 @@
             this.AlertToggle.AutoSize = true;
             this.AlertToggle.Checked = true;
             this.AlertToggle.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.AlertToggle.Location = new System.Drawing.Point(93, 23);
+            this.AlertToggle.Location = new System.Drawing.Point(3, 23);
             this.AlertToggle.Name = "AlertToggle";
             this.AlertToggle.Size = new System.Drawing.Size(80, 17);
             this.AlertToggle.TabIndex = 2;
             this.AlertToggle.Text = "On";
             this.AlertToggle.UseSelectable = true;
-            // 
-            // QuantityThreshHold
-            // 
-            // 
-            // 
-            // 
-            this.QuantityThreshHold.CustomButton.Image = null;
-            this.QuantityThreshHold.CustomButton.Location = new System.Drawing.Point(100, 1);
-            this.QuantityThreshHold.CustomButton.Name = "";
-            this.QuantityThreshHold.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.QuantityThreshHold.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.QuantityThreshHold.CustomButton.TabIndex = 1;
-            this.QuantityThreshHold.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.QuantityThreshHold.CustomButton.UseSelectable = true;
-            this.QuantityThreshHold.CustomButton.Visible = false;
-            this.QuantityThreshHold.Lines = new string[0];
-            this.QuantityThreshHold.Location = new System.Drawing.Point(179, 76);
-            this.QuantityThreshHold.MaxLength = 32767;
-            this.QuantityThreshHold.Name = "QuantityThreshHold";
-            this.QuantityThreshHold.PasswordChar = '\0';
-            this.QuantityThreshHold.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.QuantityThreshHold.SelectedText = "";
-            this.QuantityThreshHold.SelectionLength = 0;
-            this.QuantityThreshHold.SelectionStart = 0;
-            this.QuantityThreshHold.ShortcutsEnabled = true;
-            this.QuantityThreshHold.Size = new System.Drawing.Size(122, 23);
-            this.QuantityThreshHold.TabIndex = 7;
-            this.QuantityThreshHold.UseSelectable = true;
-            this.QuantityThreshHold.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.QuantityThreshHold.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // SettingsForm
             // 
@@ -168,7 +155,6 @@
         private MetroFramework.Controls.MetroTabControl SettingsTabPane;
         private MetroFramework.Controls.MetroTabPage NotificationTab;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroToggle AlertToggle;
         private System.Windows.Forms.Button SaveButton;
         private MetroFramework.Controls.MetroTextBox QuantityThreshHold;

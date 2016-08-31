@@ -23,7 +23,7 @@ namespace ShopIM.UI
 
         private readonly Login _loginForm;
         public List<Product> SelectedProducts;
-        private List<Inventory> SelectedInventories;
+        public List<Inventory> SelectedInventories;
 
         private string UserName { get; set; }
 
@@ -329,6 +329,12 @@ namespace ShopIM.UI
         {
             var settingsForm=new SettingsForm(UpdateNotification);
             settingsForm.ShowDialog(this);
+        }
+
+        private void salesTile_Click(object sender, EventArgs e)
+        {
+            var salesForm = new SalesForm();
+            salesForm.ShowDialog(this);
         }
     }
 }
