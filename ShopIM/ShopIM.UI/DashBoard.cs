@@ -333,8 +333,11 @@ namespace ShopIM.UI
 
         private void salesTile_Click(object sender, EventArgs e)
         {
-            var salesForm = new SalesForm();
-            salesForm.ShowDialog(this);
+            
+                var salesForm = new SalesForm();
+           
+                salesForm.ShowDialog(this);
+            
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿
-
-
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -15,17 +13,77 @@ namespace ShopIM.UI
 
         public InventoryContext InventoryContext;
         public List<Inventory> SelectedInventories;
+        private List<Inventory> CartInventories;
+        private List<Inventory> Inventories;
+        private List<Inventory> selectedCartInventories;
+
 
 
         public SalesForm()
         {
             InventoryContext=new InventoryContext();
+            CartInventories=new List<Inventory>();
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
-            InventoryGrid.DataSource = InventoryContext.GetInventories();
+            Inventories= InventoryContext.GetInventories();
+            InventoryGrid.DataSource = Inventories;
             InventoryGrid.Columns[4].Visible = false;
             InventoryGrid.Click += InventoryGrid_Click;
+            CartGrid.Click += CartGrid_Click;
+           
+         
+
         }
+
+        private void CartGrid_Click(object sender, EventArgs e)
+        {
+            selectedCartInventories = new List<Inventory>();
+            int length = CartGrid.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            for (int i = 0; i < length; i++)
+            {
+                var I = (Inventory)CartGrid.SelectedRows[i].DataBoundItem;
+                selectedCartInventories.Add(I);
+
+            }
+        }
+
+        private void AddTocart(List<Inventory> inventories)
+        {
+            foreach (var inventory in inventories)
+            {
+                CartInventories.Add(inventory);
+                foreach (var i in Inventories)
+                {
+                    if (i.Sl != inventory.Sl) continue;
+                    i.Quantity -= inventory.Quantity;
+                    break;
+                }
+            }
+
+
+
+            
+            UpdateInventories();
+        }
+
+
+        
+
+        private void UpdateInventories()
+        {
+            CartGrid.DataSource = null;
+            CartGrid.DataSource = CartInventories;
+            CartGrid.Columns[4].Visible = false;
+
+
+          
+
+            InventoryGrid.DataSource = null;
+            InventoryGrid.DataSource = Inventories;
+            InventoryGrid.Columns[4].Visible = false;
+
+        }
+
 
         private void InventoryGrid_Click(object sender, EventArgs e)
         {
@@ -35,6 +93,7 @@ namespace ShopIM.UI
                 for (int i = 0; i < length; i++)
                 {
                     Inventory I = (Inventory)InventoryGrid.SelectedRows[i].DataBoundItem;
+                    if(I.Quantity>0)
                     SelectedInventories.Add(I);
 
                 }
@@ -42,7 +101,7 @@ namespace ShopIM.UI
            
         }
 
-        private void GoButton_Click(object sender, System.EventArgs e)
+        private void GoButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -69,10 +128,32 @@ namespace ShopIM.UI
         {
             if (SelectedInventories!=null)
             {
-                AddToCartForm addToCart = new AddToCartForm(SelectedInventories);
+                AddToCartForm addToCart = new AddToCartForm(SelectedInventories,AddTocart);
                 addToCart.ShowDialog(this);
             }
             
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            if (selectedCartInventories == null) return;
+            foreach (var inventories in selectedCartInventories)
+            {
+                foreach (var i in Inventories)
+                {
+                    if (i.Sl == inventories.Sl)
+                    {
+                        i.Quantity += inventories.Quantity;
+                        CartInventories.Remove(inventories);
+                        break;
+                    }
+                }
+
+            }
+
+
+            UpdateInventories();
+
         }
     }
 }

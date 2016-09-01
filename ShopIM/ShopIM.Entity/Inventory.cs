@@ -2,7 +2,7 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace ShopIM.Entity
 {
@@ -14,5 +14,20 @@ namespace ShopIM.Entity
         public int Quantity { get; set; }
         public double Price { get; set; }
         public DateTime PurchaseDate { get; set; }
+
+        public Inventory()
+        {
+            
+        }
+
+        public Inventory(Inventory inventory)
+        {
+            Sl = inventory.Sl;
+            ProductName = inventory.ProductName;
+            Quantity = inventory.Quantity;
+            Price = inventory.Price;
+            PurchaseDate = inventory.PurchaseDate;
+        }
+
     }
 }
