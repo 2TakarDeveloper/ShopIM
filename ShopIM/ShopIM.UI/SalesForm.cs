@@ -16,11 +16,12 @@ namespace ShopIM.UI
         private List<Inventory> CartInventories;
         private List<Inventory> Inventories;
         private List<Inventory> selectedCartInventories;
+      
 
 
-
-        public SalesForm()
+        public SalesForm(string username)
         {
+          
             InventoryContext=new InventoryContext();
             CartInventories=new List<Inventory>();
             InitializeComponent();

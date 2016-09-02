@@ -31,7 +31,8 @@ namespace ShopIM.UI
                 }
                 else
                 {
-                    new SalesForm().Show();
+                    //give different dashBoard
+
                 }
                 
             }

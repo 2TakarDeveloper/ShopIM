@@ -34,6 +34,7 @@ namespace ShopIM.UI
             
 
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             _loginForm = loginForm ;
             UserName = userName;
            
@@ -105,7 +106,8 @@ namespace ShopIM.UI
 
         protected override void OnClosed(EventArgs e)
         {
-            _loginForm.Dispose();
+            _loginForm.Show();
+          
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -302,7 +304,7 @@ namespace ShopIM.UI
 
         private void userTile_Click(object sender, EventArgs e)
         {
-            var userForm = new UserForm(UserName);
+            var userForm = new AdminPanel(UserName);
             userForm.ShowDialog(this);
         }
 
@@ -356,10 +358,17 @@ namespace ShopIM.UI
         private void salesTile_Click(object sender, EventArgs e)
         {
             
-                var salesForm = new SalesForm();
+                var salesForm = new SalesForm(UserName);
            
                 salesForm.ShowDialog(this);
             
+        }
+
+        private void LogOutTile_Click(object sender, EventArgs e)
+        {
+            
+            Close();
+
         }
     }
 }

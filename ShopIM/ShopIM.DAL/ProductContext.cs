@@ -69,7 +69,7 @@ namespace ShopIM.DAL
                     context.Logs.Add(log);
                     context.SaveChanges();
 
-            }
+               }
             
             
         }

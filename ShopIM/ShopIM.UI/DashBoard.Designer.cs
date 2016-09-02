@@ -40,6 +40,7 @@
             this.TabPane = new MetroFramework.Controls.MetroTabControl();
             this.HomeTab = new MetroFramework.Controls.MetroTabPage();
             this.TileHolder = new System.Windows.Forms.TableLayoutPanel();
+            this.LogOutTile = new MetroFramework.Controls.MetroTile();
             this.userTile = new MetroFramework.Controls.MetroTile();
             this.notificationTile = new MetroFramework.Controls.MetroTile();
             this.settingsTile = new MetroFramework.Controls.MetroTile();
@@ -136,10 +137,11 @@
             // TileHolder
             // 
             this.TileHolder.ColumnCount = 4;
-            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.47619F));
-            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.52381F));
+            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.46575F));
+            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.53425F));
             this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
-            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
+            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.TileHolder.Controls.Add(this.LogOutTile, 0, 1);
             this.TileHolder.Controls.Add(this.userTile, 0, 0);
             this.TileHolder.Controls.Add(this.notificationTile, 2, 0);
             this.TileHolder.Controls.Add(this.settingsTile, 3, 0);
@@ -155,6 +157,20 @@
             this.TileHolder.Size = new System.Drawing.Size(649, 374);
             this.TileHolder.TabIndex = 7;
             // 
+            // LogOutTile
+            // 
+            this.LogOutTile.ActiveControl = null;
+            this.LogOutTile.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.LogOutTile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogOutTile.Location = new System.Drawing.Point(295, 192);
+            this.LogOutTile.Name = "LogOutTile";
+            this.LogOutTile.Size = new System.Drawing.Size(175, 179);
+            this.LogOutTile.TabIndex = 8;
+            this.LogOutTile.Text = "Log Out";
+            this.LogOutTile.UseCustomBackColor = true;
+            this.LogOutTile.UseSelectable = true;
+            this.LogOutTile.Click += new System.EventHandler(this.LogOutTile_Click);
+            // 
             // userTile
             // 
             this.userTile.ActiveControl = null;
@@ -163,9 +179,9 @@
             this.userTile.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.userTile.Location = new System.Drawing.Point(3, 3);
             this.userTile.Name = "userTile";
-            this.userTile.Size = new System.Drawing.Size(143, 183);
+            this.userTile.Size = new System.Drawing.Size(191, 183);
             this.userTile.TabIndex = 2;
-            this.userTile.Text = "User";
+            this.userTile.Text = "Admin Panel";
             this.userTile.UseCustomBackColor = true;
             this.userTile.UseMnemonic = false;
             this.userTile.UseSelectable = true;
@@ -176,10 +192,9 @@
             this.notificationTile.ActiveControl = null;
             this.notificationTile.BackColor = System.Drawing.Color.DarkSlateGray;
             this.notificationTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationTile.Location = new System.Drawing.Point(298, 3);
+            this.notificationTile.Location = new System.Drawing.Point(295, 3);
             this.notificationTile.Name = "notificationTile";
-            this.TileHolder.SetRowSpan(this.notificationTile, 2);
-            this.notificationTile.Size = new System.Drawing.Size(175, 368);
+            this.notificationTile.Size = new System.Drawing.Size(175, 183);
             this.notificationTile.TabIndex = 5;
             this.notificationTile.Text = "Notification";
             this.notificationTile.UseCustomBackColor = true;
@@ -191,9 +206,9 @@
             this.settingsTile.ActiveControl = null;
             this.settingsTile.BackColor = System.Drawing.Color.Violet;
             this.settingsTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settingsTile.Location = new System.Drawing.Point(479, 3);
+            this.settingsTile.Location = new System.Drawing.Point(476, 3);
             this.settingsTile.Name = "settingsTile";
-            this.settingsTile.Size = new System.Drawing.Size(167, 183);
+            this.settingsTile.Size = new System.Drawing.Size(170, 183);
             this.settingsTile.TabIndex = 6;
             this.settingsTile.Text = "Settings";
             this.settingsTile.UseCustomBackColor = true;
@@ -205,9 +220,9 @@
             this.logTile.ActiveControl = null;
             this.logTile.BackColor = System.Drawing.Color.YellowGreen;
             this.logTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logTile.Location = new System.Drawing.Point(152, 3);
+            this.logTile.Location = new System.Drawing.Point(200, 3);
             this.logTile.Name = "logTile";
-            this.logTile.Size = new System.Drawing.Size(140, 183);
+            this.logTile.Size = new System.Drawing.Size(89, 183);
             this.logTile.TabIndex = 4;
             this.logTile.Text = "Log";
             this.logTile.UseCustomBackColor = true;
@@ -223,7 +238,7 @@
             this.salesTile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesTile.Location = new System.Drawing.Point(3, 192);
             this.salesTile.Name = "salesTile";
-            this.salesTile.Size = new System.Drawing.Size(289, 179);
+            this.salesTile.Size = new System.Drawing.Size(286, 179);
             this.salesTile.TabIndex = 3;
             this.salesTile.Text = "Sales";
             this.salesTile.UseCustomBackColor = true;
@@ -235,9 +250,9 @@
             this.LockTile.ActiveControl = null;
             this.LockTile.BackColor = System.Drawing.Color.Bisque;
             this.LockTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LockTile.Location = new System.Drawing.Point(479, 192);
+            this.LockTile.Location = new System.Drawing.Point(476, 192);
             this.LockTile.Name = "LockTile";
-            this.LockTile.Size = new System.Drawing.Size(167, 179);
+            this.LockTile.Size = new System.Drawing.Size(170, 179);
             this.LockTile.TabIndex = 7;
             this.LockTile.Text = "Lock";
             this.LockTile.UseCustomBackColor = true;
@@ -1000,5 +1015,6 @@
         private MetroFramework.Controls.MetroTile notificationTile;
         private System.Windows.Forms.TableLayoutPanel TileHolder;
         private MetroFramework.Controls.MetroTile LockTile;
+        private MetroFramework.Controls.MetroTile LogOutTile;
     }
 }

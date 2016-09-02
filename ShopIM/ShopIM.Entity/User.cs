@@ -8,8 +8,8 @@ namespace ShopIM.Entity
     {
         [Key]
         public int Sl { get; set; }
-        public string userName { get; set; }
-        public string userPassword { get; set; }
-        public string userType { get; set; }
+        public string UserName { get; set; }
+        public string UserPassword { get; set; }
+        public string UserType { get; set; }
     }
 }
