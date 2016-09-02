@@ -324,7 +324,7 @@ namespace ShopIM.UI
         {
             IsLocked = !IsLocked;
             
-            var verificationForm = new VerificationForm(LockTrigger);
+            var verificationForm = new VerificationForm(UserName,LockTrigger);
             verificationForm.ShowDialog(this);
 
            

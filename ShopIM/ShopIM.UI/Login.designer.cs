@@ -132,6 +132,7 @@
             this.ExitButton.TabIndex = 5;
             this.ExitButton.Text = "E&XIT";
             this.ExitButton.UseSelectable = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // LoginButton
             // 

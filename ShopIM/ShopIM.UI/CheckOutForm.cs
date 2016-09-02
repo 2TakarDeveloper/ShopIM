@@ -42,7 +42,7 @@ namespace ShopIM.UI
                     PurchaseDate = inventory.PurchaseDate,
                     SoldDate = DateTime.Now,
                     Quantity = inventory.Quantity,
-                    UserName = DashBoard.UserName,
+                    UserName = SalesForm.UserName,
                     Cost = new InventoryContext().SalesUpdate(inventory)
                 };
                 salesLog.NetProfit=(salesLog.Price*salesLog.Quantity-salesLog.Cost*salesLog.Quantity);

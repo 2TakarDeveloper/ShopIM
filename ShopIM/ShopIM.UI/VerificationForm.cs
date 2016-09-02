@@ -15,11 +15,11 @@ namespace ShopIM.UI
 
         private readonly Trigger _trigger;    
 
-        public VerificationForm(Trigger trigger)
+        public VerificationForm(string userName,Trigger trigger)
         {
             this._trigger = trigger;
             Text = DashBoard.IsLocked ? "Locked" : "Verify Password";
-            _userName = DashBoard.UserName;
+            _userName = userName;
             
             InitializeComponent();
             
@@ -31,7 +31,7 @@ namespace ShopIM.UI
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (DashBoard.IsLocked)
+            if (DashBoard.IsLocked ||NormalDashBoard.IsLocked)
             {
                 e.Cancel = true;
             }

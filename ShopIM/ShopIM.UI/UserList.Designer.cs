@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserGrid = new MetroFramework.Controls.MetroGrid();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -54,8 +54,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 425F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.83828F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.16171F));
             this.tableLayoutPanel1.Controls.Add(this.UserGrid, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -63,7 +63,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.61905F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(626, 413);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -72,46 +72,47 @@
             this.UserGrid.AllowUserToAddRows = false;
             this.UserGrid.AllowUserToDeleteRows = false;
             this.UserGrid.AllowUserToResizeRows = false;
+            this.UserGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.UserGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.UserGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UserGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.UserGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.UserGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UserGrid.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.UserGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserGrid.EnableHeadersVisualStyles = false;
             this.UserGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.UserGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.UserGrid.Location = new System.Drawing.Point(194, 13);
+            this.UserGrid.Location = new System.Drawing.Point(211, 13);
             this.UserGrid.Name = "UserGrid";
             this.UserGrid.ReadOnly = true;
             this.UserGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.UserGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.UserGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UserGrid.Size = new System.Drawing.Size(419, 387);
+            this.UserGrid.Size = new System.Drawing.Size(402, 387);
             this.UserGrid.TabIndex = 0;
             // 
             // splitContainer1
@@ -135,7 +136,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.RemoveButton);
             this.splitContainer1.Panel2.Controls.Add(this.EditButton);
             this.splitContainer1.Panel2.Controls.Add(this.AddButton);
-            this.splitContainer1.Size = new System.Drawing.Size(175, 387);
+            this.splitContainer1.Size = new System.Drawing.Size(192, 387);
             this.splitContainer1.SplitterDistance = 311;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -144,7 +145,7 @@
             this.AddButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.AddButton.Location = new System.Drawing.Point(0, 0);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(175, 23);
+            this.AddButton.Size = new System.Drawing.Size(192, 23);
             this.AddButton.TabIndex = 0;
             this.AddButton.Text = "Add";
             this.AddButton.UseSelectable = true;
@@ -155,7 +156,7 @@
             this.EditButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.EditButton.Location = new System.Drawing.Point(0, 23);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(175, 23);
+            this.EditButton.Size = new System.Drawing.Size(192, 23);
             this.EditButton.TabIndex = 1;
             this.EditButton.Text = "Edit";
             this.EditButton.UseSelectable = true;
@@ -166,7 +167,7 @@
             this.RemoveButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.RemoveButton.Location = new System.Drawing.Point(0, 46);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(175, 23);
+            this.RemoveButton.Size = new System.Drawing.Size(192, 23);
             this.RemoveButton.TabIndex = 2;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseSelectable = true;
@@ -188,7 +189,7 @@
             // 
             // 
             this.NameTextBox.CustomButton.Image = null;
-            this.NameTextBox.CustomButton.Location = new System.Drawing.Point(153, 1);
+            this.NameTextBox.CustomButton.Location = new System.Drawing.Point(170, 1);
             this.NameTextBox.CustomButton.Name = "";
             this.NameTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.NameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -207,7 +208,7 @@
             this.NameTextBox.SelectionLength = 0;
             this.NameTextBox.SelectionStart = 0;
             this.NameTextBox.ShortcutsEnabled = true;
-            this.NameTextBox.Size = new System.Drawing.Size(175, 23);
+            this.NameTextBox.Size = new System.Drawing.Size(192, 23);
             this.NameTextBox.TabIndex = 3;
             this.NameTextBox.UseSelectable = true;
             this.NameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -229,7 +230,7 @@
             // 
             // 
             this.PasswordTextBox.CustomButton.Image = null;
-            this.PasswordTextBox.CustomButton.Location = new System.Drawing.Point(153, 1);
+            this.PasswordTextBox.CustomButton.Location = new System.Drawing.Point(170, 1);
             this.PasswordTextBox.CustomButton.Name = "";
             this.PasswordTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.PasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -248,7 +249,7 @@
             this.PasswordTextBox.SelectionLength = 0;
             this.PasswordTextBox.SelectionStart = 0;
             this.PasswordTextBox.ShortcutsEnabled = true;
-            this.PasswordTextBox.Size = new System.Drawing.Size(175, 23);
+            this.PasswordTextBox.Size = new System.Drawing.Size(192, 23);
             this.PasswordTextBox.TabIndex = 5;
             this.PasswordTextBox.UseSelectable = true;
             this.PasswordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -275,7 +276,7 @@
             "SalesMan"});
             this.TypePicker.Location = new System.Drawing.Point(0, 103);
             this.TypePicker.Name = "TypePicker";
-            this.TypePicker.Size = new System.Drawing.Size(175, 29);
+            this.TypePicker.Size = new System.Drawing.Size(192, 29);
             this.TypePicker.TabIndex = 7;
             this.TypePicker.UseSelectable = true;
             // 
@@ -303,6 +304,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MetroFramework.Controls.MetroGrid UserGrid;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private MetroFramework.Controls.MetroComboBox TypePicker;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox PasswordTextBox;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox NameTextBox;
@@ -310,7 +313,5 @@
         private MetroFramework.Controls.MetroButton RemoveButton;
         private MetroFramework.Controls.MetroButton EditButton;
         private MetroFramework.Controls.MetroButton AddButton;
-        private MetroFramework.Controls.MetroComboBox TypePicker;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }

@@ -31,15 +31,24 @@ namespace ShopIM.UI
                 }
                 else
                 {
-                    //give different dashBoard
+                    new NormalDashBoard(this, userName).Show();
 
                 }
-                
+
+
+                UserNameField.Text = "";
+                PasswordField.Text = "";
+
             }
             else
             {
                 MetroMessageBox.Show(this, "Wrong Username/Passoword", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace ShopIM.UI
         private void ClearLogButton_Click(object sender, EventArgs e)
         {
             
-            VerificationForm verificationForm = new VerificationForm(clearLogTrigger);
+            VerificationForm verificationForm = new VerificationForm(DashBoard.UserName,clearLogTrigger);
             verificationForm.ShowDialog(this);
             
 
@@ -53,7 +53,7 @@ namespace ShopIM.UI
         private void ClearSalesLog_Click(object sender, EventArgs e)
         {
      
-            VerificationForm verificationForm = new VerificationForm(clearSalesLogTrigger);
+            VerificationForm verificationForm = new VerificationForm(DashBoard.UserName, clearSalesLogTrigger);
             verificationForm.ShowDialog(this);
            
             
@@ -81,7 +81,7 @@ namespace ShopIM.UI
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            VerificationForm verificationForm = new VerificationForm(UserListTrigger);
+            VerificationForm verificationForm = new VerificationForm(DashBoard.UserName, UserListTrigger);
             verificationForm.ShowDialog(this);
 
         }
