@@ -139,7 +139,7 @@
             this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.47619F));
             this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.52381F));
             this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
-            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.TileHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
             this.TileHolder.Controls.Add(this.userTile, 0, 0);
             this.TileHolder.Controls.Add(this.notificationTile, 2, 0);
             this.TileHolder.Controls.Add(this.settingsTile, 3, 0);
@@ -163,7 +163,7 @@
             this.userTile.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.userTile.Location = new System.Drawing.Point(3, 3);
             this.userTile.Name = "userTile";
-            this.userTile.Size = new System.Drawing.Size(144, 183);
+            this.userTile.Size = new System.Drawing.Size(143, 183);
             this.userTile.TabIndex = 2;
             this.userTile.Text = "User";
             this.userTile.UseCustomBackColor = true;
@@ -176,7 +176,7 @@
             this.notificationTile.ActiveControl = null;
             this.notificationTile.BackColor = System.Drawing.Color.DarkSlateGray;
             this.notificationTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationTile.Location = new System.Drawing.Point(300, 3);
+            this.notificationTile.Location = new System.Drawing.Point(298, 3);
             this.notificationTile.Name = "notificationTile";
             this.TileHolder.SetRowSpan(this.notificationTile, 2);
             this.notificationTile.Size = new System.Drawing.Size(175, 368);
@@ -191,9 +191,9 @@
             this.settingsTile.ActiveControl = null;
             this.settingsTile.BackColor = System.Drawing.Color.Violet;
             this.settingsTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settingsTile.Location = new System.Drawing.Point(481, 3);
+            this.settingsTile.Location = new System.Drawing.Point(479, 3);
             this.settingsTile.Name = "settingsTile";
-            this.settingsTile.Size = new System.Drawing.Size(165, 183);
+            this.settingsTile.Size = new System.Drawing.Size(167, 183);
             this.settingsTile.TabIndex = 6;
             this.settingsTile.Text = "Settings";
             this.settingsTile.UseCustomBackColor = true;
@@ -205,9 +205,9 @@
             this.logTile.ActiveControl = null;
             this.logTile.BackColor = System.Drawing.Color.YellowGreen;
             this.logTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logTile.Location = new System.Drawing.Point(153, 3);
+            this.logTile.Location = new System.Drawing.Point(152, 3);
             this.logTile.Name = "logTile";
-            this.logTile.Size = new System.Drawing.Size(141, 183);
+            this.logTile.Size = new System.Drawing.Size(140, 183);
             this.logTile.TabIndex = 4;
             this.logTile.Text = "Log";
             this.logTile.UseCustomBackColor = true;
@@ -223,7 +223,7 @@
             this.salesTile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesTile.Location = new System.Drawing.Point(3, 192);
             this.salesTile.Name = "salesTile";
-            this.salesTile.Size = new System.Drawing.Size(291, 179);
+            this.salesTile.Size = new System.Drawing.Size(289, 179);
             this.salesTile.TabIndex = 3;
             this.salesTile.Text = "Sales";
             this.salesTile.UseCustomBackColor = true;
@@ -235,9 +235,9 @@
             this.LockTile.ActiveControl = null;
             this.LockTile.BackColor = System.Drawing.Color.Bisque;
             this.LockTile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LockTile.Location = new System.Drawing.Point(481, 192);
+            this.LockTile.Location = new System.Drawing.Point(479, 192);
             this.LockTile.Name = "LockTile";
-            this.LockTile.Size = new System.Drawing.Size(165, 179);
+            this.LockTile.Size = new System.Drawing.Size(167, 179);
             this.LockTile.TabIndex = 7;
             this.LockTile.Text = "Lock";
             this.LockTile.UseCustomBackColor = true;

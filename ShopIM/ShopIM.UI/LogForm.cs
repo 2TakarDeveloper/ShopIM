@@ -23,6 +23,9 @@ namespace ShopIM.UI
             logTable.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             logTable.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            SalesLogGrid.DataSource = new SalesLogContext().GetSalesLog();
+
+
         }
 
     }

@@ -28,6 +28,29 @@ namespace ShopIM.DAL
         }
 
 
+        public bool ValidateUser(string name, string pass,out string userType)
+        {
+            using (var context = new DatabaseContext())
+            {
+                var User = (from user in context.Users
+                            where user.userName == name && user.userPassword == pass
+                            select user).FirstOrDefault();
+
+
+                userType = null;
+                if (User == null) return false;
+                userType = User.userType;
+
+                var log = new Log(name + " logged in");
+
+                context.Logs.Add(log);
+                context.SaveChanges();
+                return true;
+            }
+        }
+
+
+
         public bool ChangePassword(string name,string oldPass, string pass)
         {
             using (var context = new DatabaseContext())
@@ -49,5 +72,15 @@ namespace ShopIM.DAL
                 return true;
             }
         }
+
+        public void CreateNewUser(User user)
+        {
+            using (var context = new DatabaseContext())
+            {
+                context.Users.Add(user);
+                context.SaveChanges();
+            }
+        }
+
     }
 }

@@ -141,12 +141,10 @@ namespace ShopIM.UI
             {
                 foreach (var i in Inventories)
                 {
-                    if (i.Sl == inventories.Sl)
-                    {
-                        i.Quantity += inventories.Quantity;
-                        CartInventories.Remove(inventories);
-                        break;
-                    }
+                    if (i.Sl != inventories.Sl) continue;
+                    i.Quantity += inventories.Quantity;
+                    CartInventories.Remove(inventories);
+                    break;
                 }
 
             }
@@ -154,6 +152,13 @@ namespace ShopIM.UI
 
             UpdateInventories();
 
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            var checkOutForm= new CheckOutForm(CartInventories);
+            checkOutForm.ShowDialog(this);
+            UpdateInventories();
         }
     }
 }

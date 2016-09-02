@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.Diagnostics;
 using ShopIM.Entity;
 using System.Linq;
 
@@ -113,7 +114,28 @@ namespace ShopIM.DAL
             }
         }
 
-       
+        public double SalesUpdate(Inventory inventory)
+        {
+           
+            using (var context = new DatabaseContext())
+            {
+                var i = (from Inventory in context.Inventories
+                    where Inventory.Sl == inventory.Sl
+                    select Inventory).FirstOrDefault();
+
+
+                
+                i.Quantity -= inventory.Quantity;
+                context.SaveChanges();
+                return i.Price;
+
+
+            }
+
+
+
+
+        }
 
 
 

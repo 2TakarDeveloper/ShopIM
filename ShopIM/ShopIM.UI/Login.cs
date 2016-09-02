@@ -13,23 +13,27 @@ namespace ShopIM.UI
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
       
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-
+            string userType;
             string userName = UserNameField.Text;
             string userPasword = PasswordField.Text;
             UserContext userContext=new UserContext();
-            if (userContext.ValidateUser(userName, userPasword))
+            if (userContext.ValidateUser(userName, userPasword,out userType))
             {
                 Hide();
-                new DashBoard(this,userName).Show();
+
+                if (userType == "Admin")
+                {
+                    new DashBoard(this, userName).Show();
+                }
+                else
+                {
+                    new SalesForm().Show();
+                }
+                
             }
             else
             {

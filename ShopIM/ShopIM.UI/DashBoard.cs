@@ -25,7 +25,7 @@ namespace ShopIM.UI
         public List<Product> SelectedProducts;
         public List<Inventory> SelectedInventories;
 
-        private string UserName { get; set; }
+        public static string UserName { get; set; }
 
         
 
@@ -321,9 +321,31 @@ namespace ShopIM.UI
         private void LockTile_Click(object sender, EventArgs e)
         {
             IsLocked = !IsLocked;
-            var verificationForm = new VerificationForm(UserName);
+            
+            var verificationForm = new VerificationForm(LockTrigger);
             verificationForm.ShowDialog(this);
+
+           
+
         }
+
+        private void LockTrigger(string errorMsg,VerificationForm verificationForm)
+        {
+            if (errorMsg == "")
+            {
+                if (!IsLocked) return;
+                IsLocked = false;
+                verificationForm.Close();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, errorMsg, "Notification", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+            }
+
+        }
+
+
 
         private void settingsTile_Click(object sender, EventArgs e)
         {

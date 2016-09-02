@@ -8,13 +8,18 @@ namespace ShopIM.UI
 {
     public partial class VerificationForm : MetroFramework.Forms.MetroForm
     {
-        private string userName;
-       
+        private readonly string _userName;
 
-        public VerificationForm(string userName)
+
+        public delegate void Trigger(String errorMsg,VerificationForm verificationForm);
+
+        private readonly Trigger _trigger;    
+
+        public VerificationForm(Trigger trigger)
         {
+            this._trigger = trigger;
             Text = DashBoard.IsLocked ? "Locked" : "Verify Password";
-            this.userName = userName;
+            _userName = DashBoard.UserName;
             
             InitializeComponent();
             
@@ -36,27 +41,16 @@ namespace ShopIM.UI
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            string password = PasswordTextBox.Text;
-            if (new UserContext().ValidateUser(userName, password))
-            {
-                new LogContext().clearLog();
-                if (DashBoard.IsLocked)
-                {
-                    DashBoard.IsLocked = false;
-                    Close();
-                }
-                else
-                {
-                    MetroMessageBox.Show(this, "Operation Successful", "Notification", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    Close();
-                }
-            
 
+            string password = PasswordTextBox.Text;
+            var validUser = new UserContext().ValidateUser(_userName, password);
+            if (validUser)
+            {
+                _trigger("", this);
             }
             else
             {
-                MetroMessageBox.Show(this, "Wrong Password", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _trigger("Wrong Password", this);
             }
         }
     }
