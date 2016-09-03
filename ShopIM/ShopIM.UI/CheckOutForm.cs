@@ -11,11 +11,12 @@ namespace ShopIM.UI
     public partial class CheckOutForm : MetroFramework.Forms.MetroForm
     {
         private List<Inventory> cartInventories;
-
+        private SalesForm salesForm;
       
 
-        public CheckOutForm(List<Inventory> cartInventories)
+        public CheckOutForm(List<Inventory> cartInventories,SalesForm salesForm)
         {
+            this.salesForm = salesForm;
             InitializeComponent();
             this.cartInventories = cartInventories;
             CheckoutGrid.DataSource = cartInventories;
@@ -52,6 +53,8 @@ namespace ShopIM.UI
 
             }
             new SalesLogContext().AddSalesLog(salesLogs);
+            
+           salesForm.clearCart();
             Close();
         }
 

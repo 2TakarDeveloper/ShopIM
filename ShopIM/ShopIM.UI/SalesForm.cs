@@ -36,6 +36,16 @@ namespace ShopIM.UI
 
         }
 
+
+        public void clearCart()
+        {
+            CartGrid.DataSource = null;
+            CartInventories=new List<Inventory>();
+            CartGrid.DataSource = CartInventories;
+            CartGrid.Columns[4].Visible = false;
+        }
+
+
         private void CartGrid_Click(object sender, EventArgs e)
         {
             selectedCartInventories = new List<Inventory>();
@@ -157,7 +167,7 @@ namespace ShopIM.UI
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            var checkOutForm= new CheckOutForm(CartInventories);
+            var checkOutForm= new CheckOutForm(CartInventories,this);
             checkOutForm.ShowDialog(this);
             UpdateInventories();
         }
