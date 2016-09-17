@@ -50,5 +50,45 @@ namespace ShopIM.UI
         {
             Close();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void metroLink1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PasswordField_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroPanel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void metroLink2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
