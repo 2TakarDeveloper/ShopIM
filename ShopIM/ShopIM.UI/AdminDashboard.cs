@@ -48,9 +48,9 @@ namespace ShopIM.UI
             metroPanelBackground.Controls.Add(salesControl);
         }
 
-        private void metroLink1_Click(object sender, EventArgs e)
+        private void SalesButton_Click(object sender, EventArgs e)
         {
-
+            LoadSales();
         }
     }
 }

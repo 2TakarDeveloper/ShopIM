@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.metroPanelSide = new MetroFramework.Controls.MetroPanel();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.metroLink11 = new MetroFramework.Controls.MetroLink();
-            this.metroLink7 = new MetroFramework.Controls.MetroLink();
-            this.metroLink6 = new MetroFramework.Controls.MetroLink();
-            this.metroLink5 = new MetroFramework.Controls.MetroLink();
-            this.metroLink4 = new MetroFramework.Controls.MetroLink();
-            this.metroLink3 = new MetroFramework.Controls.MetroLink();
+            this.SalesButton = new MetroFramework.Controls.MetroLink();
+            this.LogoutButton = new MetroFramework.Controls.MetroLink();
+            this.UserButton = new MetroFramework.Controls.MetroLink();
+            this.SettingsButton = new MetroFramework.Controls.MetroLink();
+            this.LockButton = new MetroFramework.Controls.MetroLink();
+            this.InventoryButton = new MetroFramework.Controls.MetroLink();
+            this.ProductButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanelBackground = new MetroFramework.Controls.MetroPanel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -51,13 +51,13 @@
             this.metroPanelSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.metroPanelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
-            this.metroPanelSide.Controls.Add(this.metroLink1);
-            this.metroPanelSide.Controls.Add(this.metroLink11);
-            this.metroPanelSide.Controls.Add(this.metroLink7);
-            this.metroPanelSide.Controls.Add(this.metroLink6);
-            this.metroPanelSide.Controls.Add(this.metroLink5);
-            this.metroPanelSide.Controls.Add(this.metroLink4);
-            this.metroPanelSide.Controls.Add(this.metroLink3);
+            this.metroPanelSide.Controls.Add(this.SalesButton);
+            this.metroPanelSide.Controls.Add(this.LogoutButton);
+            this.metroPanelSide.Controls.Add(this.UserButton);
+            this.metroPanelSide.Controls.Add(this.SettingsButton);
+            this.metroPanelSide.Controls.Add(this.LockButton);
+            this.metroPanelSide.Controls.Add(this.InventoryButton);
+            this.metroPanelSide.Controls.Add(this.ProductButton);
             this.metroPanelSide.Controls.Add(this.metroPanel1);
             this.metroPanelSide.HorizontalScrollbarBarColor = true;
             this.metroPanelSide.HorizontalScrollbarHighlightOnWheel = false;
@@ -71,105 +71,105 @@
             this.metroPanelSide.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanelSide.VerticalScrollbarSize = 10;
             // 
-            // metroLink1
+            // SalesButton
             // 
-            this.metroLink1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.metroLink1.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.metroLink1.Location = new System.Drawing.Point(2, 83);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(200, 50);
-            this.metroLink1.TabIndex = 18;
-            this.metroLink1.Text = "Sales";
-            this.metroLink1.UseCustomBackColor = true;
-            this.metroLink1.UseCustomForeColor = true;
-            this.metroLink1.UseSelectable = true;
-            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
+            this.SalesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.SalesButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.SalesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.SalesButton.Location = new System.Drawing.Point(2, 83);
+            this.SalesButton.Name = "SalesButton";
+            this.SalesButton.Size = new System.Drawing.Size(200, 50);
+            this.SalesButton.TabIndex = 18;
+            this.SalesButton.Text = "Sales";
+            this.SalesButton.UseCustomBackColor = true;
+            this.SalesButton.UseCustomForeColor = true;
+            this.SalesButton.UseSelectable = true;
+            this.SalesButton.Click += new System.EventHandler(this.SalesButton_Click);
             // 
-            // metroLink11
+            // LogoutButton
             // 
-            this.metroLink11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.metroLink11.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.metroLink11.Location = new System.Drawing.Point(0, 341);
-            this.metroLink11.Name = "metroLink11";
-            this.metroLink11.Size = new System.Drawing.Size(200, 50);
-            this.metroLink11.TabIndex = 17;
-            this.metroLink11.Text = "Logout";
-            this.metroLink11.UseCustomBackColor = true;
-            this.metroLink11.UseCustomForeColor = true;
-            this.metroLink11.UseSelectable = true;
+            this.LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.LogoutButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.LogoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.LogoutButton.Location = new System.Drawing.Point(0, 341);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(200, 50);
+            this.LogoutButton.TabIndex = 17;
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.UseCustomBackColor = true;
+            this.LogoutButton.UseCustomForeColor = true;
+            this.LogoutButton.UseSelectable = true;
             // 
-            // metroLink7
+            // UserButton
             // 
-            this.metroLink7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.metroLink7.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.metroLink7.Location = new System.Drawing.Point(0, 0);
-            this.metroLink7.Name = "metroLink7";
-            this.metroLink7.Size = new System.Drawing.Size(200, 77);
-            this.metroLink7.TabIndex = 16;
-            this.metroLink7.Text = "User";
-            this.metroLink7.UseCustomBackColor = true;
-            this.metroLink7.UseCustomForeColor = true;
-            this.metroLink7.UseSelectable = true;
+            this.UserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.UserButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.UserButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.UserButton.Location = new System.Drawing.Point(0, 0);
+            this.UserButton.Name = "UserButton";
+            this.UserButton.Size = new System.Drawing.Size(200, 77);
+            this.UserButton.TabIndex = 16;
+            this.UserButton.Text = "User";
+            this.UserButton.UseCustomBackColor = true;
+            this.UserButton.UseCustomForeColor = true;
+            this.UserButton.UseSelectable = true;
             // 
-            // metroLink6
+            // SettingsButton
             // 
-            this.metroLink6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.metroLink6.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.metroLink6.Location = new System.Drawing.Point(2, 237);
-            this.metroLink6.Name = "metroLink6";
-            this.metroLink6.Size = new System.Drawing.Size(200, 50);
-            this.metroLink6.TabIndex = 15;
-            this.metroLink6.Text = "Settings";
-            this.metroLink6.UseCustomBackColor = true;
-            this.metroLink6.UseCustomForeColor = true;
-            this.metroLink6.UseSelectable = true;
+            this.SettingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.SettingsButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.SettingsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.SettingsButton.Location = new System.Drawing.Point(2, 237);
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.Size = new System.Drawing.Size(200, 50);
+            this.SettingsButton.TabIndex = 15;
+            this.SettingsButton.Text = "Settings";
+            this.SettingsButton.UseCustomBackColor = true;
+            this.SettingsButton.UseCustomForeColor = true;
+            this.SettingsButton.UseSelectable = true;
             // 
-            // metroLink5
+            // LockButton
             // 
-            this.metroLink5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.metroLink5.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.metroLink5.Location = new System.Drawing.Point(0, 288);
-            this.metroLink5.Name = "metroLink5";
-            this.metroLink5.Size = new System.Drawing.Size(200, 50);
-            this.metroLink5.TabIndex = 15;
-            this.metroLink5.Text = "Lock";
-            this.metroLink5.UseCustomBackColor = true;
-            this.metroLink5.UseCustomForeColor = true;
-            this.metroLink5.UseSelectable = true;
+            this.LockButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.LockButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.LockButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.LockButton.Location = new System.Drawing.Point(0, 288);
+            this.LockButton.Name = "LockButton";
+            this.LockButton.Size = new System.Drawing.Size(200, 50);
+            this.LockButton.TabIndex = 15;
+            this.LockButton.Text = "Lock";
+            this.LockButton.UseCustomBackColor = true;
+            this.LockButton.UseCustomForeColor = true;
+            this.LockButton.UseSelectable = true;
             // 
-            // metroLink4
+            // InventoryButton
             // 
-            this.metroLink4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.metroLink4.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.metroLink4.Location = new System.Drawing.Point(0, 186);
-            this.metroLink4.Name = "metroLink4";
-            this.metroLink4.Size = new System.Drawing.Size(200, 50);
-            this.metroLink4.TabIndex = 14;
-            this.metroLink4.Text = "Inventory";
-            this.metroLink4.UseCustomBackColor = true;
-            this.metroLink4.UseCustomForeColor = true;
-            this.metroLink4.UseSelectable = true;
+            this.InventoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.InventoryButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.InventoryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.InventoryButton.Location = new System.Drawing.Point(0, 186);
+            this.InventoryButton.Name = "InventoryButton";
+            this.InventoryButton.Size = new System.Drawing.Size(200, 50);
+            this.InventoryButton.TabIndex = 14;
+            this.InventoryButton.Text = "Inventory";
+            this.InventoryButton.UseCustomBackColor = true;
+            this.InventoryButton.UseCustomForeColor = true;
+            this.InventoryButton.UseSelectable = true;
             // 
-            // metroLink3
+            // ProductButton
             // 
-            this.metroLink3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.metroLink3.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.metroLink3.Location = new System.Drawing.Point(0, 135);
-            this.metroLink3.Name = "metroLink3";
-            this.metroLink3.Size = new System.Drawing.Size(200, 50);
-            this.metroLink3.TabIndex = 13;
-            this.metroLink3.Text = "Products";
-            this.metroLink3.UseCustomBackColor = true;
-            this.metroLink3.UseCustomForeColor = true;
-            this.metroLink3.UseSelectable = true;
-            this.metroLink3.Click += new System.EventHandler(this.metroLink3_Click);
+            this.ProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.ProductButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.ProductButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.ProductButton.Location = new System.Drawing.Point(0, 135);
+            this.ProductButton.Name = "ProductButton";
+            this.ProductButton.Size = new System.Drawing.Size(200, 50);
+            this.ProductButton.TabIndex = 13;
+            this.ProductButton.Text = "Products";
+            this.ProductButton.UseCustomBackColor = true;
+            this.ProductButton.UseCustomForeColor = true;
+            this.ProductButton.UseSelectable = true;
+            this.ProductButton.Click += new System.EventHandler(this.metroLink3_Click);
             // 
             // metroPanel1
             // 
@@ -224,6 +224,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(136, 28);
             this.comboBox1.TabIndex = 18;
+            this.comboBox1.Text = "Name";
             // 
             // metroLink9
             // 
@@ -296,7 +297,7 @@
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.WaterMark = "Search";
+            this.metroTextBox1.PromptText = "Search";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
@@ -327,6 +328,7 @@
             this.Controls.Add(this.metroPanelSide);
             this.Name = "AdminDashboard";
             this.Style = MetroFramework.MetroColorStyle.White;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.metroPanelSide.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -338,17 +340,17 @@
         private MetroFramework.Controls.MetroPanel metroPanelSide;
         private MetroFramework.Controls.MetroPanel metroPanelBackground;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLink metroLink3;
-        private MetroFramework.Controls.MetroLink metroLink5;
-        private MetroFramework.Controls.MetroLink metroLink4;
-        private MetroFramework.Controls.MetroLink metroLink6;
-        private MetroFramework.Controls.MetroLink metroLink11;
-        private MetroFramework.Controls.MetroLink metroLink7;
+        private MetroFramework.Controls.MetroLink ProductButton;
+        private MetroFramework.Controls.MetroLink LockButton;
+        private MetroFramework.Controls.MetroLink InventoryButton;
+        private MetroFramework.Controls.MetroLink SettingsButton;
+        private MetroFramework.Controls.MetroLink LogoutButton;
+        private MetroFramework.Controls.MetroLink UserButton;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private MetroFramework.Controls.MetroLink metroLink13;
         private MetroFramework.Controls.MetroLink metroLink8;
         private MetroFramework.Controls.MetroLink metroLink9;
-        private MetroFramework.Controls.MetroLink metroLink1;
+        private MetroFramework.Controls.MetroLink SalesButton;
     }
 }

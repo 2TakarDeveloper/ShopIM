@@ -28,12 +28,12 @@ namespace ShopIM.UI
         {
             try
             {
-                OpenFileDialog fileDialog = new OpenFileDialog
+                var fileDialog = new OpenFileDialog
                 {
                     InitialDirectory = "C:/Picture/",
-                    Filter = @"Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*"
+                    Filter = @"BMP|*.bmp|GIF|*.gif|JPG|*.jpg;*.jpeg|PNG|*.png|TIFF|*.tif;*.tiff| All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff"
                 };
-
+                fileDialog.FilterIndex = 6;
                 if (fileDialog.ShowDialog() != DialogResult.OK) return;
 
                 ProductImage.Image = Image.FromFile(fileDialog.FileName);
