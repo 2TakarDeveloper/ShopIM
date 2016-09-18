@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.backgroundPanel = new MetroFramework.Controls.MetroPanel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.AddBtn = new MetroFramework.Controls.MetroButton();
             this.productListPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -54,6 +54,24 @@
             this.backgroundPanel.VerticalScrollbarHighlightOnWheel = false;
             this.backgroundPanel.VerticalScrollbarSize = 10;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.AddBtn);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.productListPanel);
+            this.splitContainer1.Size = new System.Drawing.Size(1148, 668);
+            this.splitContainer1.SplitterDistance = 39;
+            this.splitContainer1.TabIndex = 4;
+            // 
             // AddBtn
             // 
             this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -73,25 +91,6 @@
             this.productListPanel.Name = "productListPanel";
             this.productListPanel.Size = new System.Drawing.Size(1148, 625);
             this.productListPanel.TabIndex = 3;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.AddBtn);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.productListPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(1148, 668);
-            this.splitContainer1.SplitterDistance = 39;
-            this.splitContainer1.TabIndex = 4;
             // 
             // ProductsControl
             // 

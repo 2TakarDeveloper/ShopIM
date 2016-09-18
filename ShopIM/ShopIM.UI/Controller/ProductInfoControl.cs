@@ -13,19 +13,21 @@ namespace ShopIM.UI.Controller
 {
     public partial class ProductInfoControl : UserControl
     {
-        Product product;
+        readonly Product _product;
         public ProductInfoControl(Product product)
         {
-            this.product = product;
+            _product = product;
             InitializeComponent();
+            LoadProductInfo();
             
         }
-        private void loadProductInfo()
+        private void LoadProductInfo()
         {
-            ProductImage.ImageLocation = product.ImageURL;
-            name.Text = product.name;
-            Type.Text = product.Type;
-            metroLabel4.Text = product.Vendor;
+            ProductImage.Image = Image.FromFile(_product.ImageURL);
+            ProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            name.Text = _product.Name;
+            Type.Text = _product.Type;
+            VendorLable.Text = _product.Vendor;
         }
     }
 }

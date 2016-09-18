@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.metroLink2 = new MetroFramework.Controls.MetroLink();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.ProductImage = new System.Windows.Forms.PictureBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.VendorLable = new MetroFramework.Controls.MetroLabel();
             this.Type = new MetroFramework.Controls.MetroLabel();
             this.name = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.ProductImage = new System.Windows.Forms.PictureBox();
+            this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.metroLabel4);
+            this.metroPanel1.Controls.Add(this.VendorLable);
             this.metroPanel1.Controls.Add(this.Type);
             this.metroPanel1.Controls.Add(this.name);
             this.metroPanel1.Controls.Add(this.metroLabel3);
@@ -66,82 +66,16 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroLink1
+            // VendorLable
             // 
-            this.metroLink1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLink1.Location = new System.Drawing.Point(456, 3);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(35, 23);
-            this.metroLink1.TabIndex = 2;
-            this.metroLink1.Text = "X";
-            this.metroLink1.UseSelectable = true;
-            // 
-            // metroLink2
-            // 
-            this.metroLink2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLink2.Location = new System.Drawing.Point(407, 3);
-            this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(55, 23);
-            this.metroLink2.TabIndex = 3;
-            this.metroLink2.Text = "Update";
-            this.metroLink2.UseSelectable = true;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(197, 43);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(63, 25);
-            this.metroLabel1.TabIndex = 5;
-            this.metroLabel1.Text = "Name:";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(197, 68);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(53, 25);
-            this.metroLabel2.TabIndex = 6;
-            this.metroLabel2.Text = "Type:";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(197, 93);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(73, 25);
-            this.metroLabel3.TabIndex = 7;
-            this.metroLabel3.Text = "Vendor:";
-            // 
-            // ProductImage
-            // 
-            this.ProductImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ProductImage.Location = new System.Drawing.Point(8, 8);
-            this.ProductImage.Name = "ProductImage";
-            this.ProductImage.Size = new System.Drawing.Size(170, 170);
-            this.ProductImage.TabIndex = 4;
-            this.ProductImage.TabStop = false;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.Location = new System.Drawing.Point(266, 93);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(71, 25);
-            this.metroLabel4.TabIndex = 10;
-            this.metroLabel4.Text = "Vendor:";
+            this.VendorLable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.VendorLable.AutoSize = true;
+            this.VendorLable.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.VendorLable.Location = new System.Drawing.Point(266, 93);
+            this.VendorLable.Name = "VendorLable";
+            this.VendorLable.Size = new System.Drawing.Size(71, 25);
+            this.VendorLable.TabIndex = 10;
+            this.VendorLable.Text = "Vendor:";
             // 
             // Type
             // 
@@ -164,6 +98,72 @@
             this.name.Size = new System.Drawing.Size(62, 25);
             this.name.TabIndex = 8;
             this.name.Text = "Name:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(197, 93);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(73, 25);
+            this.metroLabel3.TabIndex = 7;
+            this.metroLabel3.Text = "Vendor:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(197, 68);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(53, 25);
+            this.metroLabel2.TabIndex = 6;
+            this.metroLabel2.Text = "Type:";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(197, 43);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(63, 25);
+            this.metroLabel1.TabIndex = 5;
+            this.metroLabel1.Text = "Name:";
+            // 
+            // ProductImage
+            // 
+            this.ProductImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProductImage.Location = new System.Drawing.Point(8, 8);
+            this.ProductImage.Name = "ProductImage";
+            this.ProductImage.Size = new System.Drawing.Size(170, 170);
+            this.ProductImage.TabIndex = 4;
+            this.ProductImage.TabStop = false;
+            // 
+            // metroLink2
+            // 
+            this.metroLink2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLink2.Location = new System.Drawing.Point(407, 3);
+            this.metroLink2.Name = "metroLink2";
+            this.metroLink2.Size = new System.Drawing.Size(55, 23);
+            this.metroLink2.TabIndex = 3;
+            this.metroLink2.Text = "Update";
+            this.metroLink2.UseSelectable = true;
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLink1.Location = new System.Drawing.Point(456, 3);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(35, 23);
+            this.metroLink1.TabIndex = 2;
+            this.metroLink1.Text = "X";
+            this.metroLink1.UseSelectable = true;
             // 
             // ProductInfoControl
             // 
@@ -188,7 +188,7 @@
         private System.Windows.Forms.PictureBox ProductImage;
         private MetroFramework.Controls.MetroLink metroLink2;
         private MetroFramework.Controls.MetroLink metroLink1;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel VendorLable;
         private MetroFramework.Controls.MetroLabel Type;
         private MetroFramework.Controls.MetroLabel name;
     }

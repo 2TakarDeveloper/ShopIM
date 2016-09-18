@@ -24,7 +24,7 @@ namespace ShopIM.DAL
             {
                 context.Products.Add(product);
                 context.SaveChanges();
-                var log = new Log(product.name + " Added to the Products Table");
+                var log = new Log(product.Name + " Added to the Products Table");
                
                 context.Logs.Add(log);
                 context.SaveChanges();
@@ -39,11 +39,11 @@ namespace ShopIM.DAL
             {
                 foreach (var product in Products)
                 {
-                    var item = context.Set<Product>().FirstOrDefault(r => r.name == product.name);
+                    var item = context.Set<Product>().FirstOrDefault(r => r.Name == product.Name);
                     if (item == null) continue;
                     context.Products.Remove(item);
                     context.SaveChanges();
-                    var log = new Log(product.name + " Removed from the Products Table");
+                    var log = new Log(product.Name + " Removed from the Products Table");
 
                     context.Logs.Add(log);
                     context.SaveChanges();
@@ -56,15 +56,15 @@ namespace ShopIM.DAL
      
               using (var context = new DatabaseContext())
                 {
-                    var Product = context.Products.SingleOrDefault(a => a.name == selectedProduct.name);
+                    var Product = context.Products.SingleOrDefault(a => a.Name == selectedProduct.Name);
 
                     if (Product == null) return;
-                    Product.name = product.name;
+                    Product.Name = product.Name;
                     Product.Type = product.Type;
                     Product.Vendor = product.Vendor;
                     context.SaveChanges();
 
-                    var log = new Log(selectedProduct.name + " Was Modified");
+                    var log = new Log(selectedProduct.Name + " Was Modified");
 
                     context.Logs.Add(log);
                     context.SaveChanges();
