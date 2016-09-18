@@ -28,149 +28,218 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UserNameField = new MetroFramework.Controls.MetroTextBox();
-            this.PasswordField = new MetroFramework.Controls.MetroTextBox();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.ExitButton = new MetroFramework.Controls.MetroButton();
             this.LoginButton = new MetroFramework.Controls.MetroButton();
+            this.PasswordField = new MetroFramework.Controls.MetroTextBox();
+            this.UserNameField = new MetroFramework.Controls.MetroTextBox();
+            this.metroPanel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // UserNameField
+            // metroPanel2
             // 
-            this.UserNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.metroPanel2.Controls.Add(this.metroLink2);
+            this.metroPanel2.Controls.Add(this.groupBox1);
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(349, 298);
+            this.metroPanel2.TabIndex = 9;
+            this.metroPanel2.UseCustomBackColor = true;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            this.metroPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.metroPanel2_Paint_1);
             // 
+            // metroLink2
             // 
+            this.metroLink2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.metroLink2.Image = global::ShopIM.UI.Properties.Resources.closebtn;
+            this.metroLink2.ImageSize = 25;
+            this.metroLink2.Location = new System.Drawing.Point(319, 0);
+            this.metroLink2.Name = "metroLink2";
+            this.metroLink2.NoFocusImage = global::ShopIM.UI.Properties.Resources.closebtn;
+            this.metroLink2.Size = new System.Drawing.Size(30, 30);
+            this.metroLink2.TabIndex = 11;
+            this.metroLink2.UseCustomBackColor = true;
+            this.metroLink2.UseCustomForeColor = true;
+            this.metroLink2.UseSelectable = true;
+            this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
             // 
-            this.UserNameField.CustomButton.Image = null;
-            this.UserNameField.CustomButton.Location = new System.Drawing.Point(195, 1);
-            this.UserNameField.CustomButton.Name = "";
-            this.UserNameField.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.UserNameField.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.UserNameField.CustomButton.TabIndex = 1;
-            this.UserNameField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.UserNameField.CustomButton.UseSelectable = true;
-            this.UserNameField.CustomButton.Visible = false;
-            this.UserNameField.Lines = new string[] {
-        "Admin"};
-            this.UserNameField.Location = new System.Drawing.Point(167, 77);
-            this.UserNameField.MaxLength = 32767;
-            this.UserNameField.Name = "UserNameField";
-            this.UserNameField.PasswordChar = '\0';
-            this.UserNameField.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.UserNameField.SelectedText = "";
-            this.UserNameField.SelectionLength = 0;
-            this.UserNameField.SelectionStart = 0;
-            this.UserNameField.ShortcutsEnabled = true;
-            this.UserNameField.Size = new System.Drawing.Size(217, 23);
-            this.UserNameField.TabIndex = 3;
-            this.UserNameField.Text = "Admin";
-            this.UserNameField.UseSelectable = true;
-            this.UserNameField.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.UserNameField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.groupBox1.Controls.Add(this.metroPanel1);
+            this.groupBox1.Controls.Add(this.metroLabel1);
+            this.groupBox1.Controls.Add(this.LoginButton);
+            this.groupBox1.Controls.Add(this.PasswordField);
+            this.groupBox1.Controls.Add(this.UserNameField);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Location = new System.Drawing.Point(15, 29);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(311, 228);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Welcome";
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(30, 55);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(250, 1);
+            this.metroPanel1.TabIndex = 10;
+            this.metroPanel1.UseCustomBackColor = true;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(134, 27);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(56, 25);
+            this.metroLabel1.TabIndex = 9;
+            this.metroLabel1.Text = "Login";
+            this.metroLabel1.UseCustomBackColor = true;
+            this.metroLabel1.UseCustomForeColor = true;
+            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(210)))), ((int)(((byte)(50)))));
+            this.LoginButton.DisplayFocus = true;
+            this.LoginButton.ForeColor = System.Drawing.Color.White;
+            this.LoginButton.Location = new System.Drawing.Point(30, 172);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(0);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(250, 35);
+            this.LoginButton.TabIndex = 5;
+            this.LoginButton.Text = "Login";
+            this.LoginButton.UseCustomBackColor = true;
+            this.LoginButton.UseCustomForeColor = true;
+            this.LoginButton.UseSelectable = true;
+            this.LoginButton.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // PasswordField
             // 
             this.PasswordField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PasswordField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             // 
             // 
             // 
             this.PasswordField.CustomButton.Image = null;
-            this.PasswordField.CustomButton.Location = new System.Drawing.Point(195, 1);
+            this.PasswordField.CustomButton.Location = new System.Drawing.Point(222, 2);
             this.PasswordField.CustomButton.Name = "";
-            this.PasswordField.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PasswordField.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.PasswordField.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.PasswordField.CustomButton.TabIndex = 1;
             this.PasswordField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PasswordField.CustomButton.UseSelectable = true;
             this.PasswordField.CustomButton.Visible = false;
-            this.PasswordField.Lines = new string[] {
-        "admin"};
-            this.PasswordField.Location = new System.Drawing.Point(167, 106);
+            this.PasswordField.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.PasswordField.Lines = new string[0];
+            this.PasswordField.Location = new System.Drawing.Point(30, 117);
             this.PasswordField.MaxLength = 32767;
             this.PasswordField.Name = "PasswordField";
             this.PasswordField.PasswordChar = '●';
+            this.PasswordField.PromptText = "Password";
             this.PasswordField.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.PasswordField.SelectedText = "";
             this.PasswordField.SelectionLength = 0;
             this.PasswordField.SelectionStart = 0;
             this.PasswordField.ShortcutsEnabled = true;
-            this.PasswordField.Size = new System.Drawing.Size(217, 23);
+            this.PasswordField.Size = new System.Drawing.Size(250, 30);
+            this.PasswordField.Style = MetroFramework.MetroColorStyle.Silver;
             this.PasswordField.TabIndex = 3;
-            this.PasswordField.Text = "admin";
+            this.PasswordField.UseCustomBackColor = true;
             this.PasswordField.UseSelectable = true;
             this.PasswordField.UseSystemPasswordChar = true;
+            this.PasswordField.WaterMark = "Password";
             this.PasswordField.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.PasswordField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.PasswordField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordField.Click += new System.EventHandler(this.PasswordField_Click);
             // 
-            // metroLabel1
+            // UserNameField
             // 
-            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(67, 77);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(85, 19);
-            this.metroLabel1.TabIndex = 4;
-            this.metroLabel1.Text = "USERNAME :";
+            this.UserNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserNameField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             // 
-            // metroLabel2
             // 
-            this.metroLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(67, 106);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(86, 19);
-            this.metroLabel2.TabIndex = 4;
-            this.metroLabel2.Text = "PASSWORD :";
             // 
-            // ExitButton
-            // 
-            this.ExitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ExitButton.Location = new System.Drawing.Point(167, 161);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(95, 30);
-            this.ExitButton.TabIndex = 5;
-            this.ExitButton.Text = "E&XIT";
-            this.ExitButton.UseSelectable = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
-            // 
-            // LoginButton
-            // 
-            this.LoginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LoginButton.Location = new System.Drawing.Point(286, 161);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(95, 30);
-            this.LoginButton.TabIndex = 5;
-            this.LoginButton.Text = "LOGIN";
-            this.LoginButton.UseSelectable = true;
-            this.LoginButton.Click += new System.EventHandler(this.metroButton2_Click);
+            this.UserNameField.CustomButton.Image = null;
+            this.UserNameField.CustomButton.Location = new System.Drawing.Point(222, 2);
+            this.UserNameField.CustomButton.Name = "";
+            this.UserNameField.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.UserNameField.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.UserNameField.CustomButton.TabIndex = 1;
+            this.UserNameField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.UserNameField.CustomButton.UseSelectable = true;
+            this.UserNameField.CustomButton.Visible = false;
+            this.UserNameField.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.UserNameField.Lines = new string[0];
+            this.UserNameField.Location = new System.Drawing.Point(30, 81);
+            this.UserNameField.MaxLength = 32767;
+            this.UserNameField.Name = "UserNameField";
+            this.UserNameField.PasswordChar = '\0';
+            this.UserNameField.PromptText = "User ID";
+            this.UserNameField.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.UserNameField.SelectedText = "";
+            this.UserNameField.SelectionLength = 0;
+            this.UserNameField.SelectionStart = 0;
+            this.UserNameField.ShortcutsEnabled = true;
+            this.UserNameField.Size = new System.Drawing.Size(250, 30);
+            this.UserNameField.Style = MetroFramework.MetroColorStyle.Silver;
+            this.UserNameField.TabIndex = 3;
+            this.UserNameField.UseCustomBackColor = true;
+            this.UserNameField.UseCustomForeColor = true;
+            this.UserNameField.UseSelectable = true;
+            this.UserNameField.WaterMark = "User ID";
+            this.UserNameField.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.UserNameField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 249);
-            this.Controls.Add(this.LoginButton);
-            this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.PasswordField);
-            this.Controls.Add(this.UserNameField);
+            this.ClientSize = new System.Drawing.Size(349, 298);
+            this.Controls.Add(this.metroPanel2);
             this.Name = "Login";
-            this.Text = "Login";
+            this.Style = MetroFramework.MetroColorStyle.Silver;
+            this.Load += new System.EventHandler(this.Login_Load);
+            this.metroPanel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroTextBox UserNameField;
-        private MetroFramework.Controls.MetroTextBox PasswordField;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
+        private MetroFramework.Controls.MetroLink metroLink2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroButton ExitButton;
         private MetroFramework.Controls.MetroButton LoginButton;
+        private MetroFramework.Controls.MetroTextBox PasswordField;
+        private MetroFramework.Controls.MetroTextBox UserNameField;
     }
 }
 

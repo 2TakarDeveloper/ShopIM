@@ -67,29 +67,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddToCartForm.cs">
+    <Compile Include="AddProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddToCartForm.Designer.cs">
-      <DependentUpon>AddToCartForm.cs</DependentUpon>
+    <Compile Include="AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckOutForm.cs">
+    <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckOutForm.Designer.cs">
-      <DependentUpon>CheckOutForm.cs</DependentUpon>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DashBoard.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Controller\ProductInfoControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DashBoard.Designer.cs">
-      <DependentUpon>DashBoard.cs</DependentUpon>
+    <Compile Include="Controller\ProductInfoControl.Designer.cs">
+      <DependentUpon>ProductInfoControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Controller\ProductsControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LogForm.Designer.cs">
-      <DependentUpon>LogForm.cs</DependentUpon>
+    <Compile Include="Controller\ProductsControl.Designer.cs">
+      <DependentUpon>ProductsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\SalesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\SalesControl.Designer.cs">
+      <DependentUpon>SalesControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -97,75 +103,26 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotificationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationForm.Designer.cs">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SalesForm.Designer.cs">
-      <DependentUpon>SalesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NormalDashBoard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NormalDashBoard.Designer.cs">
-      <DependentUpon>NormalDashBoard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsForm.Designer.cs">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminPanel.Designer.cs">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm.Designer.cs">
-      <DependentUpon>UserForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserList.Designer.cs">
-      <DependentUpon>UserList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VerificationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VerificationForm.Designer.cs">
-      <DependentUpon>VerificationForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AddToCartForm.resx">
-      <DependentUpon>AddToCartForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckOutForm.resx">
-      <DependentUpon>CheckOutForm.cs</DependentUpon>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DashBoard.resx">
-      <DependentUpon>DashBoard.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="Controller\ProductInfoControl.resx">
+      <DependentUpon>ProductInfoControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogForm.resx">
-      <DependentUpon>LogForm.cs</DependentUpon>
+    <EmbeddedResource Include="Controller\ProductsControl.resx">
+      <DependentUpon>ProductsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\SalesControl.resx">
+      <DependentUpon>SalesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotificationForm.resx">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -177,27 +134,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SalesForm.resx">
-      <DependentUpon>SalesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NormalDashBoard.resx">
-      <DependentUpon>NormalDashBoard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminPanel.resx">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserForm.resx">
-      <DependentUpon>UserForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserList.resx">
-      <DependentUpon>UserList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VerificationForm.resx">
-      <DependentUpon>VerificationForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -223,6 +159,30 @@
       <Project>{868e6c6e-9127-4b8b-a5ed-888c913e6fcc}</Project>
       <Name>ShopIM.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closebtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left%281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
