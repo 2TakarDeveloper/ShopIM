@@ -160,9 +160,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShopIM.DAL\ShopIM.DAL.csproj">
-      <Project>{580782b3-63a7-436c-9e7f-ba4f2f3d1a94}</Project>
-      <Name>ShopIM.DAL</Name>
+    <ProjectReference Include="..\ShopIM.BLL\ShopIM.BLL.csproj">
+      <Project>{ee57204c-8001-416c-89ec-f896d32851e9}</Project>
+      <Name>ShopIM.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ShopIM.Entity\ShopIM.Entity.csproj">
       <Project>{868e6c6e-9127-4b8b-a5ed-888c913e6fcc}</Project>
@@ -192,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\left%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product-images-not-available-img.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

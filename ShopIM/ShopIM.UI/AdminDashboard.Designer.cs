@@ -41,7 +41,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.metroLink9 = new MetroFramework.Controls.MetroLink();
             this.metroLink8 = new MetroFramework.Controls.MetroLink();
-            this.metroLink13 = new MetroFramework.Controls.MetroLink();
+            this.ExitButton = new MetroFramework.Controls.MetroLink();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroPanelSide.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +170,7 @@
             this.ProductButton.UseCustomBackColor = true;
             this.ProductButton.UseCustomForeColor = true;
             this.ProductButton.UseSelectable = true;
-            this.ProductButton.Click += new System.EventHandler(this.metroLink3_Click);
+            this.ProductButton.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // metroPanel1
             // 
@@ -209,7 +209,6 @@
             this.metroPanelBackground.VerticalScrollbarBarColor = true;
             this.metroPanelBackground.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanelBackground.VerticalScrollbarSize = 10;
-            this.metroPanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.metroPanelBackground_Paint);
             // 
             // comboBox1
             // 
@@ -261,21 +260,21 @@
             this.metroLink8.UseCustomForeColor = true;
             this.metroLink8.UseSelectable = true;
             // 
-            // metroLink13
+            // ExitButton
             // 
-            this.metroLink13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLink13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroLink13.Image = global::ShopIM.UI.Properties.Resources.closebtn;
-            this.metroLink13.ImageSize = 30;
-            this.metroLink13.Location = new System.Drawing.Point(855, 0);
-            this.metroLink13.Name = "metroLink13";
-            this.metroLink13.NoFocusImage = global::ShopIM.UI.Properties.Resources.closebtn;
-            this.metroLink13.Size = new System.Drawing.Size(35, 35);
-            this.metroLink13.TabIndex = 19;
-            this.metroLink13.UseCustomBackColor = true;
-            this.metroLink13.UseCustomForeColor = true;
-            this.metroLink13.UseSelectable = true;
-            this.metroLink13.Click += new System.EventHandler(this.metroLink13_Click);
+            this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ExitButton.Image = global::ShopIM.UI.Properties.Resources.closebtn;
+            this.ExitButton.ImageSize = 30;
+            this.ExitButton.Location = new System.Drawing.Point(855, 0);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.NoFocusImage = global::ShopIM.UI.Properties.Resources.closebtn;
+            this.ExitButton.Size = new System.Drawing.Size(35, 35);
+            this.ExitButton.TabIndex = 19;
+            this.ExitButton.UseCustomBackColor = true;
+            this.ExitButton.UseCustomForeColor = true;
+            this.ExitButton.UseSelectable = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_click);
             // 
             // metroTextBox1
             // 
@@ -322,7 +321,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.metroLink9);
             this.Controls.Add(this.metroLink8);
-            this.Controls.Add(this.metroLink13);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroPanelBackground);
@@ -330,7 +329,6 @@
             this.Name = "AdminDashboard";
             this.Style = MetroFramework.MetroColorStyle.White;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.metroPanelSide.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -349,7 +347,7 @@
         private MetroFramework.Controls.MetroLink UserButton;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private MetroFramework.Controls.MetroLink metroLink13;
+        private MetroFramework.Controls.MetroLink ExitButton;
         private MetroFramework.Controls.MetroLink metroLink8;
         private MetroFramework.Controls.MetroLink metroLink9;
         private MetroFramework.Controls.MetroLink SalesButton;

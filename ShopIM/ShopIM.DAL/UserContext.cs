@@ -18,12 +18,7 @@ namespace ShopIM.DAL
                     where user.UserName == name && user.UserPassword == pass
                     select user).FirstOrDefault();
 
-                if (User == null) return false;
-                var log = new Log(name + " logged in");
-
-                context.Logs.Add(log);
-                context.SaveChanges();
-                return true;
+                return User != null;
             }
         }
 
@@ -33,19 +28,17 @@ namespace ShopIM.DAL
             using (var context = new DatabaseContext())
             {
                 var User = (from user in context.Users
-                            where user.UserName == name && user.UserPassword == pass
-                            select user).FirstOrDefault();
+                    where user.UserName == name && user.UserPassword == pass
+                    select user).FirstOrDefault();
 
 
                 userType = null;
-                if (User == null) return false;
-                userType = User.UserType;
-
-                var log = new Log(name + " logged in");
-
-                context.Logs.Add(log);
-                context.SaveChanges();
-                return true;
+                if (User != null)
+                {
+                    userType = User.UserType;
+                    return true;
+                }
+                return false;
             }
         }
 

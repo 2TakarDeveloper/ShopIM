@@ -91,7 +91,7 @@
             this.VendorTextBox.MaxLength = 20;
             this.VendorTextBox.Name = "VendorTextBox";
             this.VendorTextBox.PasswordChar = '\0';
-            this.VendorTextBox.PromptText = "Vendor";
+            this.VendorTextBox.WaterMark = "Vendor";
             this.VendorTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.VendorTextBox.SelectedText = "";
             this.VendorTextBox.SelectionLength = 0;
@@ -127,7 +127,7 @@
             this.TypeTextBox.MaxLength = 20;
             this.TypeTextBox.Name = "TypeTextBox";
             this.TypeTextBox.PasswordChar = '\0';
-            this.TypeTextBox.PromptText = "Type";
+            this.TypeTextBox.WaterMark = "Type";
             this.TypeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TypeTextBox.SelectedText = "";
             this.TypeTextBox.SelectionLength = 0;
@@ -163,7 +163,7 @@
             this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.PasswordChar = '\0';
-            this.NameTextBox.PromptText = "Name";
+            this.NameTextBox.WaterMark = "Name";
             this.NameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.NameTextBox.SelectedText = "";
             this.NameTextBox.SelectionLength = 0;

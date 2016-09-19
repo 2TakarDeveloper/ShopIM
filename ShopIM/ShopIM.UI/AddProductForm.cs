@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MetroFramework;
+using ShopIM.BLL;
 using ShopIM.Entity;
 
 namespace ShopIM.UI
@@ -17,10 +19,11 @@ namespace ShopIM.UI
         private string _fileName;
         private string _sourceFile;
         public Product Product { get; set; }
+        private ProductRepo productRepo;
 
         public AddProductForm()
         {
-            
+            productRepo=new ProductRepo();
             InitializeComponent();
         }
 
@@ -53,6 +56,11 @@ namespace ShopIM.UI
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(NameTextBox.Text))
+                {
+                    throw new Exception("Name Can't be left Empty");
+                        
+                }
                 //Save the image in a local Directory
                 //get appdata/local
                 var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
@@ -61,33 +69,46 @@ namespace ShopIM.UI
                 if (!Directory.Exists(destinationPath))
                     Directory.CreateDirectory(destinationPath);
 
-                if (_fileName == null) return;
-                var destinationFile = Path.Combine(destinationPath, _fileName);
 
-                File.Copy(_sourceFile, destinationFile, true);
-
-                Product = new Product
-                {
-                    Name = NameTextBox.Text,
-                    Type = TypeTextBox.Text,
-                    Vendor = VendorTextBox.Text,
-                    ImageURL = destinationFile
-                };
-                DialogResult = DialogResult.OK;
-
-
-
-            }
-            catch (Exception)
-            {
-                //alert user that something has failed
-                DialogResult=DialogResult.No;
-            }
-            finally
-            {
+                    string destinationFile=null;
+                    if (_fileName != null)
+                    {
+                        destinationFile = Path.Combine(destinationPath, _fileName);
+                     }
                 
-                Close(); 
+
+
+                    Product = new Product
+                    {
+                        Name = NameTextBox.Text,
+                        Type = TypeTextBox.Text,
+                        Vendor = VendorTextBox.Text,
+                        ImageURL = destinationFile
+                    };
+
+
+                    productRepo.AddProduct(Product, _sourceFile, destinationFile);
+
+                    DialogResult = DialogResult.OK;
+                    Close();
+                
             }
+            catch (Exception exception)
+            {
+                if (exception.InnerException != null)
+                {
+                    if (exception.InnerException.InnerException != null)
+                        MetroMessageBox.Show(this, exception.InnerException.InnerException.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+             
+               
+                
+            }
+            
             
         }
     }

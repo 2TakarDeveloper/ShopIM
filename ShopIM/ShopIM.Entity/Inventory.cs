@@ -18,6 +18,9 @@ namespace ShopIM.Entity
         public double SellingPrice { get; set; }
         public DateTime PurchaseDate { get; set; }
         public string StockLocation { get; set; }
+        [ForeignKey("ProductName")]
+        public  Product Product { get; set; }
+
         public Inventory()
         {
             

@@ -2,7 +2,8 @@
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
-using ShopIM.DAL;
+using ShopIM.BLL;
+
 
 namespace ShopIM.UI
 {
@@ -15,54 +16,38 @@ namespace ShopIM.UI
 
       
 
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-           
-        }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void Login_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void metroPanel1_Paint(object sender, PaintEventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
-        private void metroLink1_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
+         
+            string username = UserNameField.Text;
+            string userPassword = PasswordField.Text;
+            string type;
+            UserRepo userRepo = new UserRepo();
+            if (userRepo.ValidateUser(username, userPassword, out type))
+            {
+                //next page
+                AdminDashboard adminDashboard = new AdminDashboard(username,type);
+                adminDashboard.Show();
+                Hide();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Invalid Username/Password", "Wrong Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
 
-        }
-
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void PasswordField_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroPanel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void metroLink2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

@@ -35,9 +35,9 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.ProductImage = new System.Windows.Forms.PictureBox();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.CrossButton = new MetroFramework.Controls.MetroLink();
+            this.ProductImage = new System.Windows.Forms.PictureBox();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.metroPanel1.Controls.Add(this.metroLabel1);
             this.metroPanel1.Controls.Add(this.ProductImage);
             this.metroPanel1.Controls.Add(this.metroLink2);
-            this.metroPanel1.Controls.Add(this.metroLink1);
+            this.metroPanel1.Controls.Add(this.CrossButton);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
@@ -135,16 +135,6 @@
             this.metroLabel1.TabIndex = 5;
             this.metroLabel1.Text = "Name:";
             // 
-            // ProductImage
-            // 
-            this.ProductImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ProductImage.Location = new System.Drawing.Point(8, 8);
-            this.ProductImage.Name = "ProductImage";
-            this.ProductImage.Size = new System.Drawing.Size(170, 170);
-            this.ProductImage.TabIndex = 4;
-            this.ProductImage.TabStop = false;
-            // 
             // metroLink2
             // 
             this.metroLink2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -155,15 +145,28 @@
             this.metroLink2.Text = "Update";
             this.metroLink2.UseSelectable = true;
             // 
-            // metroLink1
+            // CrossButton
             // 
-            this.metroLink1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLink1.Location = new System.Drawing.Point(456, 3);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(35, 23);
-            this.metroLink1.TabIndex = 2;
-            this.metroLink1.Text = "X";
-            this.metroLink1.UseSelectable = true;
+            this.CrossButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CrossButton.Location = new System.Drawing.Point(456, 3);
+            this.CrossButton.Name = "CrossButton";
+            this.CrossButton.Size = new System.Drawing.Size(35, 23);
+            this.CrossButton.TabIndex = 2;
+            this.CrossButton.Text = "X";
+            this.CrossButton.UseSelectable = true;
+            this.CrossButton.Click += new System.EventHandler(this.CrossButton_Click);
+            // 
+            // ProductImage
+            // 
+            this.ProductImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProductImage.ErrorImage = global::ShopIM.UI.Properties.Resources.product_images_not_available_img;
+            this.ProductImage.Location = new System.Drawing.Point(8, 8);
+            this.ProductImage.Name = "ProductImage";
+            this.ProductImage.Size = new System.Drawing.Size(170, 170);
+            this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductImage.TabIndex = 4;
+            this.ProductImage.TabStop = false;
             // 
             // ProductInfoControl
             // 
@@ -187,7 +190,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox ProductImage;
         private MetroFramework.Controls.MetroLink metroLink2;
-        private MetroFramework.Controls.MetroLink metroLink1;
+        private MetroFramework.Controls.MetroLink CrossButton;
         private MetroFramework.Controls.MetroLabel VendorLable;
         private MetroFramework.Controls.MetroLabel Type;
         private MetroFramework.Controls.MetroLabel name;
