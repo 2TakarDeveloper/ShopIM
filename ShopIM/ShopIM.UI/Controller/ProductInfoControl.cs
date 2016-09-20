@@ -16,15 +16,13 @@ namespace ShopIM.UI.Controller
 {
     public partial class ProductInfoControl : UserControl
     {
-        readonly Product _product;
+        private Product _product;
         private ProductRepo productRepo;
 
-        public delegate void Refresh();
-
-        private Refresh refreshPanel;
-        public ProductInfoControl(Product product,Refresh refreshPanel)
+       
+        public ProductInfoControl(Product product)
         {
-            this.refreshPanel = refreshPanel;
+         
             _product = product;
             productRepo=new ProductRepo();
             InitializeComponent();
@@ -91,11 +89,16 @@ namespace ShopIM.UI.Controller
             {
                 if (productForm.ShowDialog() == DialogResult.OK)
                 {
-                    if (new ProductRepo().UpdateProduct(productForm.Product, _product, productForm._desitnationFile,
-                        productForm._sourceFile))
+                    if (new ProductRepo().UpdateProduct(productForm.Product, _product, productForm._desitnationFile, productForm._sourceFile))
                     {
-                        refreshPanel();
-                        File.Delete(_product.ImageURL);
+                        string oldImage = _product.ImageURL;
+                        _product = productForm.Product;
+                        LoadProductInfo();
+                        if (!productForm.Product.ImageURL.Equals(oldImage))
+                        {
+                            File.Delete(oldImage);
+                        }
+                        
                     }
                   
                 }

@@ -27,6 +27,7 @@ namespace ShopIM.UI
             productRepo=new ProductRepo();
             InitializeComponent();
             Text = @"Add Product";
+            _desitnationFile = null;
         }
 
         public ProductForm(Product product)
@@ -34,16 +35,23 @@ namespace ShopIM.UI
             productRepo = new ProductRepo();
             InitializeComponent();
             Text = @"Edit Product";
+           
             NameTextBox.Text = product.Name;
             NameTextBox.ReadOnly = true;
             TypeTextBox.Text = product.Type;
             try
             {
-                ProductImage.Image = Image.FromFile(product.ImageURL);
+                using (FileStream fileStream = new FileStream(product.ImageURL, FileMode.Open, FileAccess.Read))
+                {
+                    ProductImage.Image = Image.FromStream(fileStream);
+                }
+              
+                _desitnationFile = product.ImageURL;
             }
             catch (Exception)
             {
                 ProductImage.Image = ProductImage.ErrorImage;
+                _desitnationFile = null;
             }
            
 
@@ -62,7 +70,11 @@ namespace ShopIM.UI
                 fileDialog.FilterIndex = 6;
                 if (fileDialog.ShowDialog() != DialogResult.OK) return;
 
-                ProductImage.Image = Image.FromFile(fileDialog.FileName);
+              
+                using (FileStream fileStream = new FileStream(fileDialog.FileName, FileMode.Open, FileAccess.Read))
+                {
+                    ProductImage.Image = Image.FromStream(fileStream);
+                }
 
                 _fileName = fileDialog.SafeFileName;
                 _sourceFile = fileDialog.FileName;
@@ -93,7 +105,7 @@ namespace ShopIM.UI
                     Directory.CreateDirectory(destinationPath);
 
 
-                     _desitnationFile = null;
+                 
                     if (_fileName != null)
                     {
                        _desitnationFile = Path.Combine(destinationPath, _fileName);

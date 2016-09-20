@@ -31,7 +31,7 @@ namespace ShopIM.UI.Controller
 
             foreach (var product in products)
             {
-                ProductInfoControl productsControl = new ProductInfoControl(product,LoadProducts);
+                ProductInfoControl productsControl = new ProductInfoControl(product);
                 productListPanel.Controls.Add(productsControl);
             }
             
