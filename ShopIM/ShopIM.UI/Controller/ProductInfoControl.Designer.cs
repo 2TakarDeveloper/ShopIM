@@ -29,29 +29,25 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.VendorLable = new MetroFramework.Controls.MetroLabel();
             this.Type = new MetroFramework.Controls.MetroLabel();
             this.name = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLink2 = new MetroFramework.Controls.MetroLink();
-            this.CrossButton = new MetroFramework.Controls.MetroLink();
             this.ProductImage = new System.Windows.Forms.PictureBox();
+            this.EditButton = new MetroFramework.Controls.MetroLink();
+            this.CrossButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.VendorLable);
             this.metroPanel1.Controls.Add(this.Type);
             this.metroPanel1.Controls.Add(this.name);
-            this.metroPanel1.Controls.Add(this.metroLabel3);
             this.metroPanel1.Controls.Add(this.metroLabel2);
             this.metroPanel1.Controls.Add(this.metroLabel1);
             this.metroPanel1.Controls.Add(this.ProductImage);
-            this.metroPanel1.Controls.Add(this.metroLink2);
+            this.metroPanel1.Controls.Add(this.EditButton);
             this.metroPanel1.Controls.Add(this.CrossButton);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
@@ -65,17 +61,6 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // VendorLable
-            // 
-            this.VendorLable.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.VendorLable.AutoSize = true;
-            this.VendorLable.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.VendorLable.Location = new System.Drawing.Point(266, 93);
-            this.VendorLable.Name = "VendorLable";
-            this.VendorLable.Size = new System.Drawing.Size(71, 25);
-            this.VendorLable.TabIndex = 10;
-            this.VendorLable.Text = "Vendor:";
             // 
             // Type
             // 
@@ -98,18 +83,6 @@
             this.name.Size = new System.Drawing.Size(62, 25);
             this.name.TabIndex = 8;
             this.name.Text = "Name:";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(197, 93);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(73, 25);
-            this.metroLabel3.TabIndex = 7;
-            this.metroLabel3.Text = "Vendor:";
             // 
             // metroLabel2
             // 
@@ -135,27 +108,6 @@
             this.metroLabel1.TabIndex = 5;
             this.metroLabel1.Text = "Name:";
             // 
-            // metroLink2
-            // 
-            this.metroLink2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLink2.Location = new System.Drawing.Point(407, 3);
-            this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(55, 23);
-            this.metroLink2.TabIndex = 3;
-            this.metroLink2.Text = "Update";
-            this.metroLink2.UseSelectable = true;
-            // 
-            // CrossButton
-            // 
-            this.CrossButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CrossButton.Location = new System.Drawing.Point(456, 3);
-            this.CrossButton.Name = "CrossButton";
-            this.CrossButton.Size = new System.Drawing.Size(35, 23);
-            this.CrossButton.TabIndex = 2;
-            this.CrossButton.Text = "X";
-            this.CrossButton.UseSelectable = true;
-            this.CrossButton.Click += new System.EventHandler(this.CrossButton_Click);
-            // 
             // ProductImage
             // 
             this.ProductImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -167,6 +119,28 @@
             this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProductImage.TabIndex = 4;
             this.ProductImage.TabStop = false;
+            // 
+            // EditButton
+            // 
+            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditButton.Location = new System.Drawing.Point(407, 3);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(55, 23);
+            this.EditButton.TabIndex = 3;
+            this.EditButton.Text = "Edit";
+            this.EditButton.UseSelectable = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // CrossButton
+            // 
+            this.CrossButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CrossButton.Location = new System.Drawing.Point(456, 3);
+            this.CrossButton.Name = "CrossButton";
+            this.CrossButton.Size = new System.Drawing.Size(35, 23);
+            this.CrossButton.TabIndex = 2;
+            this.CrossButton.Text = "X";
+            this.CrossButton.UseSelectable = true;
+            this.CrossButton.Click += new System.EventHandler(this.CrossButton_Click);
             // 
             // ProductInfoControl
             // 
@@ -185,13 +159,11 @@
         #endregion
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox ProductImage;
-        private MetroFramework.Controls.MetroLink metroLink2;
+        private MetroFramework.Controls.MetroLink EditButton;
         private MetroFramework.Controls.MetroLink CrossButton;
-        private MetroFramework.Controls.MetroLabel VendorLable;
         private MetroFramework.Controls.MetroLabel Type;
         private MetroFramework.Controls.MetroLabel name;
     }

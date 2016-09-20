@@ -1,13 +1,26 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Security.AccessControl;
 using ShopIM.Entity;
 
 namespace ShopIM.DAL
 {
     public class LogContext
     {
+
+        public void CreateLog(string logmsg)
+        {
+            using (var context = new DatabaseContext())
+            {
+
+                var log = new Log(logmsg);
+                context.Logs.Add(log);
+                context.SaveChanges();
+            }
+        }
+
 
         public List<Log> GetLogs()
         {

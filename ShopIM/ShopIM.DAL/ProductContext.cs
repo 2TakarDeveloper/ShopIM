@@ -1,7 +1,4 @@
-﻿
-
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ShopIM.Entity;
 
@@ -44,23 +41,18 @@ namespace ShopIM.DAL
             }
         }
 
-        public void UpdateProduct(Product product,Product selectedProduct)
+        public bool UpdateProduct(Product product,Product selectedProduct)
         {
      
               using (var context = new DatabaseContext())
                 {
                     var Product = context.Products.SingleOrDefault(a => a.Name == selectedProduct.Name);
 
-                    if (Product == null) return;
-                    Product.Name = product.Name;
+                    if (Product == null) return false;
                     Product.Type = product.Type;
-                    Product.Vendor = product.Vendor;
+                    Product.ImageURL = product.ImageURL;
                     context.SaveChanges();
-
-                    var log = new Log(selectedProduct.Name + " Was Modified");
-
-                    context.Logs.Add(log);
-                    context.SaveChanges();
+                    return true;
 
                }
             

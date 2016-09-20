@@ -14,18 +14,41 @@ using ShopIM.Entity;
 
 namespace ShopIM.UI
 {
-    public partial class AddProductForm : MetroFramework.Forms.MetroForm
+    public partial class ProductForm : MetroFramework.Forms.MetroForm
     {
         private string _fileName;
-        private string _sourceFile;
+        public string _sourceFile;
+        public string _desitnationFile;
         public Product Product { get; set; }
         private ProductRepo productRepo;
 
-        public AddProductForm()
+        public ProductForm()
         {
             productRepo=new ProductRepo();
             InitializeComponent();
+            Text = @"Add Product";
         }
+
+        public ProductForm(Product product)
+        {
+            productRepo = new ProductRepo();
+            InitializeComponent();
+            Text = @"Edit Product";
+            NameTextBox.Text = product.Name;
+            NameTextBox.ReadOnly = true;
+            TypeTextBox.Text = product.Type;
+            try
+            {
+                ProductImage.Image = Image.FromFile(product.ImageURL);
+            }
+            catch (Exception)
+            {
+                ProductImage.Image = ProductImage.ErrorImage;
+            }
+           
+
+        }
+
 
         private void AddPictureBtn_Click(object sender, EventArgs e)
         {
@@ -40,7 +63,7 @@ namespace ShopIM.UI
                 if (fileDialog.ShowDialog() != DialogResult.OK) return;
 
                 ProductImage.Image = Image.FromFile(fileDialog.FileName);
-                ProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
+
                 _fileName = fileDialog.SafeFileName;
                 _sourceFile = fileDialog.FileName;
 
@@ -70,11 +93,11 @@ namespace ShopIM.UI
                     Directory.CreateDirectory(destinationPath);
 
 
-                    string destinationFile=null;
+                     _desitnationFile = null;
                     if (_fileName != null)
                     {
-                        destinationFile = Path.Combine(destinationPath, _fileName);
-                     }
+                       _desitnationFile = Path.Combine(destinationPath, _fileName);
+                    }
                 
 
 
@@ -82,31 +105,19 @@ namespace ShopIM.UI
                     {
                         Name = NameTextBox.Text,
                         Type = TypeTextBox.Text,
-                        Vendor = VendorTextBox.Text,
-                        ImageURL = destinationFile
+                        ImageURL = _desitnationFile
                     };
 
 
-                    productRepo.AddProduct(Product, _sourceFile, destinationFile);
-
-                    DialogResult = DialogResult.OK;
-                    Close();
                 
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (Exception exception)
             {
-                if (exception.InnerException != null)
-                {
-                    if (exception.InnerException.InnerException != null)
-                        MetroMessageBox.Show(this, exception.InnerException.InnerException.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MetroMessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-             
                
-                
+               MetroMessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+ 
             }
             
             

@@ -16,7 +16,6 @@ namespace ShopIM.UI.Controller
 {
     public partial class ProductsControl : UserControl
     {
-        private Product Product { get; set; }
         private ProductRepo productRepo;
         public ProductsControl()
         {
@@ -32,7 +31,7 @@ namespace ShopIM.UI.Controller
 
             foreach (var product in products)
             {
-                ProductInfoControl productsControl = new ProductInfoControl(product);
+                ProductInfoControl productsControl = new ProductInfoControl(product,LoadProducts);
                 productListPanel.Controls.Add(productsControl);
             }
             
@@ -42,12 +41,30 @@ namespace ShopIM.UI.Controller
         private void AddBtn_Click(object sender, EventArgs e)
         {
             
-            AddProductForm addProductForm = new AddProductForm();
-            addProductForm.Text = @"NEW PRODUCT";
+            ProductForm addProductForm = new ProductForm();
             if (addProductForm.ShowDialog() == DialogResult.OK)
             {
-               
-                LoadProducts();
+                try
+                {
+                    if (productRepo.AddProduct(addProductForm.Product, addProductForm._sourceFile, addProductForm._desitnationFile))
+                    {
+                        LoadProducts();
+                    }
+                  
+                }
+                catch (Exception exception)
+                {
+                    if (exception.InnerException != null)
+                    {
+                        if (exception.InnerException.InnerException != null)
+                            MetroMessageBox.Show(this, exception.InnerException.InnerException.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MetroMessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                
             }
         }
     }

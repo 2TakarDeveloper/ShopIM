@@ -1,6 +1,6 @@
 ﻿namespace ShopIM.UI
 {
-    partial class AddProductForm
+    partial class ProductForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.AddPictureBtn = new MetroFramework.Controls.MetroButton();
-            this.VendorTextBox = new MetroFramework.Controls.MetroTextBox();
             this.TypeTextBox = new MetroFramework.Controls.MetroTextBox();
             this.NameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.SubmitButton = new MetroFramework.Controls.MetroButton();
@@ -42,7 +41,6 @@
             // metroPanel1
             // 
             this.metroPanel1.Controls.Add(this.AddPictureBtn);
-            this.metroPanel1.Controls.Add(this.VendorTextBox);
             this.metroPanel1.Controls.Add(this.TypeTextBox);
             this.metroPanel1.Controls.Add(this.NameTextBox);
             this.metroPanel1.Controls.Add(this.SubmitButton);
@@ -62,49 +60,13 @@
             // 
             // AddPictureBtn
             // 
-            this.AddPictureBtn.Location = new System.Drawing.Point(184, 116);
+            this.AddPictureBtn.Location = new System.Drawing.Point(184, 80);
             this.AddPictureBtn.Name = "AddPictureBtn";
             this.AddPictureBtn.Size = new System.Drawing.Size(75, 23);
             this.AddPictureBtn.TabIndex = 15;
             this.AddPictureBtn.Text = "Add Image";
             this.AddPictureBtn.UseSelectable = true;
             this.AddPictureBtn.Click += new System.EventHandler(this.AddPictureBtn_Click);
-            // 
-            // VendorTextBox
-            // 
-            // 
-            // 
-            // 
-            this.VendorTextBox.CustomButton.Image = null;
-            this.VendorTextBox.CustomButton.Location = new System.Drawing.Point(188, 2);
-            this.VendorTextBox.CustomButton.Name = "";
-            this.VendorTextBox.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.VendorTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.VendorTextBox.CustomButton.TabIndex = 1;
-            this.VendorTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.VendorTextBox.CustomButton.UseSelectable = true;
-            this.VendorTextBox.CustomButton.Visible = false;
-            this.VendorTextBox.DisplayIcon = true;
-            this.VendorTextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.VendorTextBox.Lines = new string[0];
-            this.VendorTextBox.Location = new System.Drawing.Point(184, 80);
-            this.VendorTextBox.MaxLength = 20;
-            this.VendorTextBox.Name = "VendorTextBox";
-            this.VendorTextBox.PasswordChar = '\0';
-            this.VendorTextBox.WaterMark = "Vendor";
-            this.VendorTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.VendorTextBox.SelectedText = "";
-            this.VendorTextBox.SelectionLength = 0;
-            this.VendorTextBox.SelectionStart = 0;
-            this.VendorTextBox.ShortcutsEnabled = true;
-            this.VendorTextBox.ShowClearButton = true;
-            this.VendorTextBox.Size = new System.Drawing.Size(216, 30);
-            this.VendorTextBox.Style = MetroFramework.MetroColorStyle.Orange;
-            this.VendorTextBox.TabIndex = 14;
-            this.VendorTextBox.UseSelectable = true;
-            this.VendorTextBox.WaterMark = "Vendor";
-            this.VendorTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.VendorTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // TypeTextBox
             // 
@@ -127,7 +89,7 @@
             this.TypeTextBox.MaxLength = 20;
             this.TypeTextBox.Name = "TypeTextBox";
             this.TypeTextBox.PasswordChar = '\0';
-            this.TypeTextBox.WaterMark = "Type";
+            this.TypeTextBox.PromptText = "Type";
             this.TypeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TypeTextBox.SelectedText = "";
             this.TypeTextBox.SelectionLength = 0;
@@ -163,7 +125,7 @@
             this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.PasswordChar = '\0';
-            this.NameTextBox.WaterMark = "Name";
+            this.NameTextBox.PromptText = "Name";
             this.NameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.NameTextBox.SelectedText = "";
             this.NameTextBox.SelectionLength = 0;
@@ -193,20 +155,22 @@
             this.ProductImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ProductImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ProductImage.ErrorImage = global::ShopIM.UI.Properties.Resources.product_images_not_available_img;
             this.ProductImage.InitialImage = global::ShopIM.UI.Properties.Resources.close;
             this.ProductImage.Location = new System.Drawing.Point(8, 8);
             this.ProductImage.Name = "ProductImage";
             this.ProductImage.Size = new System.Drawing.Size(170, 194);
+            this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProductImage.TabIndex = 4;
             this.ProductImage.TabStop = false;
             // 
-            // AddProductForm
+            // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 290);
             this.Controls.Add(this.metroPanel1);
-            this.Name = "AddProductForm";
+            this.Name = "ProductForm";
             this.Resizable = false;
             this.Text = "Header Text";
             this.metroPanel1.ResumeLayout(false);
@@ -221,7 +185,6 @@
         private MetroFramework.Controls.MetroButton SubmitButton;
         private System.Windows.Forms.PictureBox ProductImage;
         private MetroFramework.Controls.MetroButton AddPictureBtn;
-        private MetroFramework.Controls.MetroTextBox VendorTextBox;
         private MetroFramework.Controls.MetroTextBox TypeTextBox;
         private MetroFramework.Controls.MetroTextBox NameTextBox;
     }

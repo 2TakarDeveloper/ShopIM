@@ -18,8 +18,13 @@ namespace ShopIM.UI.Controller
     {
         readonly Product _product;
         private ProductRepo productRepo;
-        public ProductInfoControl(Product product)
+
+        public delegate void Refresh();
+
+        private Refresh refreshPanel;
+        public ProductInfoControl(Product product,Refresh refreshPanel)
         {
+            this.refreshPanel = refreshPanel;
             _product = product;
             productRepo=new ProductRepo();
             InitializeComponent();
@@ -30,7 +35,11 @@ namespace ShopIM.UI.Controller
         {
             try
             {
-                ProductImage.Image = Image.FromFile(_product.ImageURL);
+                using (FileStream fileStream = new FileStream(_product.ImageURL, FileMode.Open, FileAccess.Read))
+                {
+                    ProductImage.Image = Image.FromStream(fileStream);
+                }
+                
 
             }
             catch (Exception)
@@ -40,7 +49,7 @@ namespace ShopIM.UI.Controller
             
             name.Text = _product.Name;
             Type.Text = _product.Type;
-            VendorLable.Text = _product.Vendor;
+        
         }
 
       
@@ -52,7 +61,11 @@ namespace ShopIM.UI.Controller
             {
                 if (!productRepo.RemoveProduct(_product)) return;
                 Dispose();
-                File.Delete(_product.ImageURL);
+                if (!string.IsNullOrEmpty(_product.ImageURL))
+                {
+                    File.Delete(_product.ImageURL);
+                }
+              
             }
             catch (Exception exception)
             {
@@ -62,7 +75,41 @@ namespace ShopIM.UI.Controller
                 }
                 else
                 {
-                    MetroMessageBox.Show(this, exception.InnerException.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (exception.InnerException.InnerException != null)
+                        MetroMessageBox.Show(this, exception.InnerException.InnerException.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+           
+            ProductForm productForm = new ProductForm(_product);
+            try
+            {
+                if (productForm.ShowDialog() == DialogResult.OK)
+                {
+                    if (new ProductRepo().UpdateProduct(productForm.Product, _product, productForm._desitnationFile,
+                        productForm._sourceFile))
+                    {
+                        refreshPanel();
+                        File.Delete(_product.ImageURL);
+                    }
+                  
+                }
+            }
+            catch (Exception exception)
+            {
+                if (exception.InnerException != null)
+                {
+                    if (exception.InnerException.InnerException != null)
+                        MetroMessageBox.Show(this, exception.InnerException.InnerException.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
