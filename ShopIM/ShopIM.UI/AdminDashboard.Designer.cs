@@ -155,6 +155,7 @@
             this.InventoryButton.UseCustomBackColor = true;
             this.InventoryButton.UseCustomForeColor = true;
             this.InventoryButton.UseSelectable = true;
+            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
             // ProductButton
             // 

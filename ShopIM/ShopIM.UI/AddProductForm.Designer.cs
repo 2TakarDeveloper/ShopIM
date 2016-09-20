@@ -208,6 +208,7 @@
             this.Controls.Add(this.metroPanel1);
             this.Name = "AddProductForm";
             this.Resizable = false;
+            this.Text = "Header Text";
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).EndInit();
             this.ResumeLayout(false);

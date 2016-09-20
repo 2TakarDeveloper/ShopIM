@@ -52,5 +52,13 @@ namespace ShopIM.UI
         {
             LoadSales();
         }
+
+        private void InventoryButton_Click(object sender, EventArgs e)
+        {
+            InventoryControl inventoryControl = new InventoryControl();
+            metroPanelBackground.Controls.Clear();
+            inventoryControl.Dock = DockStyle.Fill;
+            metroPanelBackground.Controls.Add(inventoryControl);
+        }
     }
 }
