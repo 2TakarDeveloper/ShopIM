@@ -92,6 +92,7 @@
             this.metroLink1.UseCustomBackColor = true;
             this.metroLink1.UseSelectable = true;
             this.metroLink1.UseStyleColors = true;
+            this.metroLink1.UseVisualStyleBackColor = false;
             // 
             // SalesButton
             // 
@@ -107,6 +108,7 @@
             this.SalesButton.UseCustomBackColor = true;
             this.SalesButton.UseSelectable = true;
             this.SalesButton.UseStyleColors = true;
+            this.SalesButton.UseVisualStyleBackColor = false;
             this.SalesButton.Click += new System.EventHandler(this.SalesButton_Click);
             // 
             // LogoutButton
@@ -123,6 +125,7 @@
             this.LogoutButton.UseCustomBackColor = true;
             this.LogoutButton.UseSelectable = true;
             this.LogoutButton.UseStyleColors = true;
+            this.LogoutButton.UseVisualStyleBackColor = false;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // UserButton
@@ -139,6 +142,7 @@
             this.UserButton.UseCustomBackColor = true;
             this.UserButton.UseSelectable = true;
             this.UserButton.UseStyleColors = true;
+            this.UserButton.UseVisualStyleBackColor = false;
             // 
             // SettingsButton
             // 
@@ -154,6 +158,7 @@
             this.SettingsButton.UseCustomBackColor = true;
             this.SettingsButton.UseSelectable = true;
             this.SettingsButton.UseStyleColors = true;
+            this.SettingsButton.UseVisualStyleBackColor = false;
             // 
             // LockButton
             // 
@@ -169,6 +174,7 @@
             this.LockButton.UseCustomBackColor = true;
             this.LockButton.UseSelectable = true;
             this.LockButton.UseStyleColors = true;
+            this.LockButton.UseVisualStyleBackColor = false;
             this.LockButton.Click += new System.EventHandler(this.LockButton_Click);
             // 
             // InventoryButton
@@ -185,6 +191,7 @@
             this.InventoryButton.UseCustomBackColor = true;
             this.InventoryButton.UseSelectable = true;
             this.InventoryButton.UseStyleColors = true;
+            this.InventoryButton.UseVisualStyleBackColor = false;
             this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
             // ProductButton
@@ -201,6 +208,7 @@
             this.ProductButton.UseCustomBackColor = true;
             this.ProductButton.UseSelectable = true;
             this.ProductButton.UseStyleColors = true;
+            this.ProductButton.UseVisualStyleBackColor = false;
             this.ProductButton.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // metroPanel1
