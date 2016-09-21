@@ -1,20 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
+using System;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.IO;
 using System.Windows.Forms;
+using ShopIM.Entity;
 
 namespace ShopIM.UI.Controller
 {
     public partial class InventoryInfoControl : UserControl
     {
-        public InventoryInfoControl()
+        public InventoryInfoControl(Inventory inventory)
         {
             InitializeComponent();
+            try
+            {
+                using (var fileStream = new FileStream(inventory.Product.ImageURL, FileMode.Open, FileAccess.Read))
+                {
+                    ProductImage.Image = Image.FromStream(fileStream);
+                }
+            }
+            catch (Exception)
+            {
+                ProductImage.Image = ProductImage.ErrorImage;
+            }
+
+            Name.Text = inventory.ProductName;
+            Type.Text = inventory.Product.Type;
+            Vendor.Text = inventory.Vendor;
+            Quantity.Text = inventory.Quantity.ToString();
+            Threashold.Text = inventory.Threashold.ToString();
+            Price.Text=inventory.Price.ToString(CultureInfo.InvariantCulture);
+            SellingPrice.Text = inventory.SellingPrice.ToString(CultureInfo.InvariantCulture);
+            PurchaseDate.Text = inventory.PurchaseDate.ToShortDateString();
+            StockLocation.Text = inventory.StockLocation;
+
+
         }
     }
 }

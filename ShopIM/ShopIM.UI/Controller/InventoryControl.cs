@@ -10,12 +10,12 @@ namespace ShopIM.UI.Controller
     {
         public InventoryControl()
         {
-            SelectedInventories = new List<Inventory>();
+            
             InitializeComponent();
             LoadInventories();
         }
 
-        private List<Inventory> SelectedInventories { get; }
+        private List<Inventory> SelectedInventories { get; set; }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
@@ -38,8 +38,15 @@ namespace ShopIM.UI.Controller
         private void InventoryGrid_Click(object sender, EventArgs e)
         {
             var length = InventoryGrid.SelectedRows.Count;
+            SelectedInventories = new List<Inventory>();
             for (var i = 0; i < length; i++)
-                SelectedInventories.Add((Inventory) InventoryGrid.SelectedRows[i].DataBoundItem);
+            {
+                SelectedInventories.Add((Inventory)InventoryGrid.SelectedRows[i].DataBoundItem);
+            }
+                
+            InventorySplitContainer.Panel2.Controls.Clear();
+            InventorySplitContainer.Panel2.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
+           
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
@@ -56,8 +63,12 @@ namespace ShopIM.UI.Controller
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            if (new InventoryRepo().RemoveInventories(SelectedInventories))
-                LoadInventories();
+            if (SelectedInventories != null)
+            {
+                if (new InventoryRepo().RemoveInventories(SelectedInventories))
+                    LoadInventories();
+            }
+           
         }
     }
 }

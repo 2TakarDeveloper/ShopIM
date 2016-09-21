@@ -159,7 +159,7 @@
             this.PasswordField.MaxLength = 32767;
             this.PasswordField.Name = "PasswordField";
             this.PasswordField.PasswordChar = '●';
-            this.PasswordField.PromptText = "Password";
+
             this.PasswordField.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.PasswordField.SelectedText = "";
             this.PasswordField.SelectionLength = 0;
@@ -199,7 +199,7 @@
             this.UserNameField.MaxLength = 32767;
             this.UserNameField.Name = "UserNameField";
             this.UserNameField.PasswordChar = '\0';
-            this.UserNameField.PromptText = "User ID";
+    
             this.UserNameField.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.UserNameField.SelectedText = "";
             this.UserNameField.SelectionLength = 0;
