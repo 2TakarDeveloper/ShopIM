@@ -109,7 +109,6 @@
             this.TypeTextBox.MaxLength = 20;
             this.TypeTextBox.Name = "TypeTextBox";
             this.TypeTextBox.PasswordChar = '\0';
-            this.TypeTextBox.PromptText = "Password";
             this.TypeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TypeTextBox.SelectedText = "";
             this.TypeTextBox.SelectionLength = 0;
@@ -147,7 +146,6 @@
             this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.PasswordChar = '\0';
-            this.NameTextBox.PromptText = "Name";
             this.NameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.NameTextBox.SelectedText = "";
             this.NameTextBox.SelectionLength = 0;
@@ -210,7 +208,6 @@
             this.metroTextBox1.MaxLength = 20;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Confirm Password";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;

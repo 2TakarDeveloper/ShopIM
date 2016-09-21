@@ -36,7 +36,7 @@ namespace ShopIM.UI.Controller
                 ProductImage.Image = ProductImage.ErrorImage;
             }
 
-            name.Text = _product.Name;
+            nameLable.Text = _product.Name;
             Type.Text = _product.Type;
         }
 

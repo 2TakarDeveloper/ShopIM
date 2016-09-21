@@ -70,10 +70,10 @@
             this.Type.AutoSize = true;
             this.Type.Location = new System.Drawing.Point(79, 242);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(39, 19);
+            this.Type.Size = new System.Drawing.Size(36, 19);
             this.Type.Style = MetroFramework.MetroColorStyle.White;
             this.Type.TabIndex = 14;
-            this.Type.Text = "Type:";
+            this.Type.Text = "Type";
             this.Type.UseCustomBackColor = true;
             this.Type.UseStyleColors = true;
             // 
@@ -83,10 +83,10 @@
             this.name.AutoSize = true;
             this.name.Location = new System.Drawing.Point(79, 217);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(48, 19);
+            this.name.Size = new System.Drawing.Size(45, 19);
             this.name.Style = MetroFramework.MetroColorStyle.White;
             this.name.TabIndex = 13;
-            this.name.Text = "Name:";
+            this.name.Text = "Name";
             this.name.UseCustomBackColor = true;
             this.name.UseStyleColors = true;
             // 
@@ -459,7 +459,6 @@
             this.SubmitButton.UseCustomBackColor = true;
             this.SubmitButton.UseCustomForeColor = true;
             this.SubmitButton.UseSelectable = true;
-            this.SubmitButton.UseVisualStyleBackColor = false;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // metroLink1
@@ -473,7 +472,6 @@
             this.metroLink1.TabIndex = 21;
             this.metroLink1.UseCustomBackColor = true;
             this.metroLink1.UseSelectable = true;
-            this.metroLink1.UseVisualStyleBackColor = false;
             this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
             // InveontroyForm

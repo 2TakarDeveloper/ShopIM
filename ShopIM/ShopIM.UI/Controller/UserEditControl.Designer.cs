@@ -104,7 +104,6 @@
             this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.PasswordChar = '\0';
-            this.NameTextBox.PromptText = "Name";
             this.NameTextBox.ReadOnly = true;
             this.NameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.NameTextBox.SelectedText = "";
@@ -223,7 +222,6 @@
             this.metroTextBox1.MaxLength = 20;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Current Password";
             this.metroTextBox1.ReadOnly = true;
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
@@ -262,7 +260,6 @@
             this.metroTextBox2.MaxLength = 20;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.PromptText = "New Password";
             this.metroTextBox2.ReadOnly = true;
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";
@@ -301,7 +298,6 @@
             this.metroTextBox3.MaxLength = 20;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.PromptText = "Confirm Password";
             this.metroTextBox3.ReadOnly = true;
             this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox3.SelectedText = "";

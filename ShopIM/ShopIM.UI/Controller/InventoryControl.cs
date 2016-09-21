@@ -45,6 +45,7 @@ namespace ShopIM.UI.Controller
             }
                 
             InventorySplitContainer.Panel2.Controls.Clear();
+            if(SelectedInventories.Count>0)
             InventorySplitContainer.Panel2.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
            
         }
