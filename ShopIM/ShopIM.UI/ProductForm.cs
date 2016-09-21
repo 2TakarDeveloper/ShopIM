@@ -11,21 +11,21 @@ using System.IO;
 using MetroFramework;
 using ShopIM.BLL;
 using ShopIM.Entity;
+using System.Windows.Forms;
 
 namespace ShopIM.UI
 {
-    public partial class ProductForm : MetroFramework.Forms.MetroForm
+    public partial class ProductForm : Form
     {
         private string _fileName;
         public string _sourceFile;
         public string _desitnationFile;
         public Product Product { get; set; }
         private ProductRepo productRepo;
-
         public ProductForm()
         {
-            productRepo=new ProductRepo();
             InitializeComponent();
+            productRepo = new ProductRepo();
             Text = @"Add Product";
             _desitnationFile = null;
         }
@@ -35,7 +35,7 @@ namespace ShopIM.UI
             productRepo = new ProductRepo();
             InitializeComponent();
             Text = @"Edit Product";
-           
+
             NameTextBox.Text = product.Name;
             NameTextBox.ReadOnly = true;
             TypeTextBox.Text = product.Type;
@@ -45,7 +45,7 @@ namespace ShopIM.UI
                 {
                     ProductImage.Image = Image.FromStream(fileStream);
                 }
-              
+
                 _desitnationFile = product.ImageURL;
             }
             catch (Exception)
@@ -53,7 +53,7 @@ namespace ShopIM.UI
                 ProductImage.Image = ProductImage.ErrorImage;
                 _desitnationFile = null;
             }
-           
+
 
         }
 
@@ -70,7 +70,7 @@ namespace ShopIM.UI
                 fileDialog.FilterIndex = 6;
                 if (fileDialog.ShowDialog() != DialogResult.OK) return;
 
-              
+
                 using (FileStream fileStream = new FileStream(fileDialog.FileName, FileMode.Open, FileAccess.Read))
                 {
                     ProductImage.Image = Image.FromStream(fileStream);
@@ -94,7 +94,7 @@ namespace ShopIM.UI
                 if (string.IsNullOrWhiteSpace(NameTextBox.Text))
                 {
                     throw new Exception("Name Can't be left Empty");
-                        
+
                 }
                 //Save the image in a local Directory
                 //get appdata/local
@@ -105,34 +105,41 @@ namespace ShopIM.UI
                     Directory.CreateDirectory(destinationPath);
 
 
-                 
-                    if (_fileName != null)
-                    {
-                       _desitnationFile = Path.Combine(destinationPath, _fileName);
-                    }
-                
+
+                if (_fileName != null)
+                {
+                    _desitnationFile = Path.Combine(destinationPath, _fileName);
+                }
 
 
-                    Product = new Product
-                    {
-                        Name = NameTextBox.Text,
-                        Type = TypeTextBox.Text,
-                        ImageURL = _desitnationFile
-                    };
+
+                Product = new Product
+                {
+                    Name = NameTextBox.Text,
+                    Type = TypeTextBox.Text,
+                    ImageURL = _desitnationFile
+                };
 
 
-                
+
                 DialogResult = DialogResult.OK;
                 Close();
             }
             catch (Exception exception)
             {
-               
-               MetroMessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
- 
+
+                MetroMessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            
-            
+
+
+        }
+
+        private void metroLink1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
+    
+

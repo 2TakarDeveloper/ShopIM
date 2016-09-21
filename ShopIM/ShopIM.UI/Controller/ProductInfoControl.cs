@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using ShopIM.BLL;
 using ShopIM.Entity;
+using ShopIM.UI;
 
 namespace ShopIM.UI.Controller
 {

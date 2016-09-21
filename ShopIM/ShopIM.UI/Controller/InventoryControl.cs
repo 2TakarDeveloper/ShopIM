@@ -16,5 +16,11 @@ namespace ShopIM.UI.Controller
         {
             InitializeComponent();
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            InveontroyForm inveontroyForm = new InveontroyForm();
+            inveontroyForm.ShowDialog(this);
+        }
     }
 }

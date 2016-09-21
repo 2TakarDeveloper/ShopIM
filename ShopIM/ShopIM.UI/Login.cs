@@ -7,7 +7,7 @@ using ShopIM.BLL;
 
 namespace ShopIM.UI
 {
-    public partial class Login : MetroForm
+    public partial class Login : MetroFramework.Forms.MetroForm
     {
         public Login()
         {

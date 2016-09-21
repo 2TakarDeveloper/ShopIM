@@ -54,6 +54,7 @@
             // 
             // BackgroundTablePanel
             // 
+            this.BackgroundTablePanel.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundTablePanel.ColumnCount = 3;
             this.BackgroundTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.08362F));
             this.BackgroundTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.616725F));
@@ -267,6 +268,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.BackgroundTablePanel);
             this.Name = "SalesControl";
             this.Size = new System.Drawing.Size(1221, 618);

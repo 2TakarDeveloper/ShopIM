@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ShopIM.UI
 {
-    public partial class AdminDashboard : MetroFramework.Forms.MetroForm
+    public partial class AdminDashboard :MetroFramework.Forms.MetroForm
     {
         private  string UserName { get; set; }
         public AdminDashboard(string userName,string userType)
@@ -47,6 +47,17 @@ namespace ShopIM.UI
             metroPanelBackground.Controls.Clear();
             inventoryControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(inventoryControl);
+        }
+
+        private void LockButton_Click(object sender, EventArgs e)
+        {
+            SystemForm systemForm = new SystemForm();
+            systemForm.ShowDialog(this);
+        }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

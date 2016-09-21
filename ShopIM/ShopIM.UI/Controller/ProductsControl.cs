@@ -40,7 +40,7 @@ namespace ShopIM.UI.Controller
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            
+
             ProductForm addProductForm = new ProductForm();
             if (addProductForm.ShowDialog() == DialogResult.OK)
             {

@@ -33,9 +33,9 @@
             this.name = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.ProductImage = new System.Windows.Forms.PictureBox();
             this.EditButton = new MetroFramework.Controls.MetroLink();
             this.CrossButton = new MetroFramework.Controls.MetroLink();
+            this.ProductImage = new System.Windows.Forms.PictureBox();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             this.SuspendLayout();
@@ -108,16 +108,6 @@
             this.metroLabel1.TabIndex = 5;
             this.metroLabel1.Text = "Name:";
             // 
-            // ProductImage
-            // 
-            this.ProductImage.ErrorImage = global::ShopIM.UI.Properties.Resources.product_images_not_available_img;
-            this.ProductImage.Location = new System.Drawing.Point(8, 33);
-            this.ProductImage.Name = "ProductImage";
-            this.ProductImage.Size = new System.Drawing.Size(170, 169);
-            this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ProductImage.TabIndex = 4;
-            this.ProductImage.TabStop = false;
-            // 
             // EditButton
             // 
             this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -139,6 +129,16 @@
             this.CrossButton.Text = "X";
             this.CrossButton.UseSelectable = true;
             this.CrossButton.Click += new System.EventHandler(this.CrossButton_Click);
+            // 
+            // ProductImage
+            // 
+            this.ProductImage.ErrorImage = global::ShopIM.UI.Properties.Resources.product_images_not_available_img;
+            this.ProductImage.Location = new System.Drawing.Point(8, 33);
+            this.ProductImage.Name = "ProductImage";
+            this.ProductImage.Size = new System.Drawing.Size(170, 169);
+            this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductImage.TabIndex = 4;
+            this.ProductImage.TabStop = false;
             // 
             // ProductInfoControl
             // 

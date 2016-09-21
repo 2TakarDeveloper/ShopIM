@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InveontroyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InveontroyForm.Designer.cs">
+      <DependentUpon>InveontroyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemForm.Designer.cs">
+      <DependentUpon>SystemForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="InveontroyForm.resx">
+      <DependentUpon>InveontroyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +158,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SystemForm.resx">
+      <DependentUpon>SystemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,6 +178,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ShopIM.Library.csproj">
+      <Project>{74656D31-E2C0-411C-820E-01E363D54DB7}</Project>
+      <Name>ShopIM.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShopIM.BLL\ShopIM.BLL.csproj">
       <Project>{ee57204c-8001-416c-89ec-f896d32851e9}</Project>
       <Name>ShopIM.BLL</Name>
@@ -195,6 +217,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\product-images-not-available-img.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClosrRedBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

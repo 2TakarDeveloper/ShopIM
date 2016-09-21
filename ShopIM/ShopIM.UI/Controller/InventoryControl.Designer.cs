@@ -33,9 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backgroundPanel = new MetroFramework.Controls.MetroPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.AddBtn = new MetroFramework.Controls.MetroButton();
-            this.EditBtn = new MetroFramework.Controls.MetroButton();
             this.DeleteBtn = new MetroFramework.Controls.MetroButton();
+            this.EditBtn = new MetroFramework.Controls.MetroButton();
+            this.AddBtn = new MetroFramework.Controls.MetroButton();
             this.InventoryGrid = new MetroFramework.Controls.MetroGrid();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -80,14 +80,14 @@
             this.splitContainer1.SplitterDistance = 44;
             this.splitContainer1.TabIndex = 4;
             // 
-            // AddBtn
+            // DeleteBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(3, 6);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(94, 31);
-            this.AddBtn.TabIndex = 2;
-            this.AddBtn.Text = "Add";
-            this.AddBtn.UseSelectable = true;
+            this.DeleteBtn.Location = new System.Drawing.Point(203, 6);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(94, 31);
+            this.DeleteBtn.TabIndex = 4;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseSelectable = true;
             // 
             // EditBtn
             // 
@@ -98,14 +98,15 @@
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseSelectable = true;
             // 
-            // DeleteBtn
+            // AddBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(203, 6);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(94, 31);
-            this.DeleteBtn.TabIndex = 4;
-            this.DeleteBtn.Text = "Delete";
-            this.DeleteBtn.UseSelectable = true;
+            this.AddBtn.Location = new System.Drawing.Point(3, 6);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(94, 31);
+            this.AddBtn.TabIndex = 2;
+            this.AddBtn.Text = "Add";
+            this.AddBtn.UseSelectable = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // InventoryGrid
             // 
