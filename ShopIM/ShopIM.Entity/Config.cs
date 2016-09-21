@@ -1,5 +1,4 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ShopIM.Entity
 {
@@ -7,12 +6,8 @@ namespace ShopIM.Entity
     {
         [Key]
         public int Sl { get; set; }
-        public  int ThreshHold { get; set; }
+
+        public int ThreshHold { get; set; }
         public int Alert { get; set; }
-
-
-
-
-
     }
 }

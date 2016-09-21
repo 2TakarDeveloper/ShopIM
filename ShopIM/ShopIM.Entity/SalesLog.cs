@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ShopIM.Entity
@@ -9,7 +7,8 @@ namespace ShopIM.Entity
     {
         [Key]
         public int Sl { get; set; }
-        public  string ProductName { get; set; }
+
+        public string ProductName { get; set; }
         public DateTime PurchaseDate { get; set; }
         public DateTime SoldDate { get; set; }
         public double Cost { get; set; }

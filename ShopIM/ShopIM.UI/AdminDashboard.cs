@@ -1,36 +1,40 @@
-﻿using ShopIM.UI.Controller;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using MetroFramework.Forms;
+using ShopIM.UI.Controller;
 
 namespace ShopIM.UI
 {
-    public partial class AdminDashboard :MetroFramework.Forms.MetroForm
+    public partial class AdminDashboard : MetroForm
     {
-        private  string UserName { get; set; }
-        public AdminDashboard(string userName,string userType)
+        public AdminDashboard(string userName, string userType, Login login)
         {
+            Login = login;
             UserName = userName;
             InitializeComponent();
             UserButton.Text = UserName;
             LoadSales();
         }
 
+        private string UserName { get; }
+        private Login Login { get; }
+
         private void ExitButton_click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-      
 
         private void ProductButton_Click(object sender, EventArgs e)
         {
-            ProductsControl productsControl = new ProductsControl();
+            var productsControl = new ProductsControl();
             metroPanelBackground.Controls.Clear();
             metroPanelBackground.Controls.Add(productsControl);
         }
+
         private void LoadSales()
         {
-            SalesControl salesControl = new SalesControl();
+            var salesControl = new SalesControl();
             metroPanelBackground.Controls.Clear();
             salesControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(salesControl);
@@ -43,7 +47,7 @@ namespace ShopIM.UI
 
         private void InventoryButton_Click(object sender, EventArgs e)
         {
-            InventoryControl inventoryControl = new InventoryControl();
+            var inventoryControl = new InventoryControl();
             metroPanelBackground.Controls.Clear();
             inventoryControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(inventoryControl);
@@ -51,13 +55,18 @@ namespace ShopIM.UI
 
         private void LockButton_Click(object sender, EventArgs e)
         {
-            SystemForm systemForm = new SystemForm();
+            var systemForm = new SystemForm(UserName, Login, this);
             systemForm.ShowDialog(this);
         }
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
+        }
 
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Login.Show();
+            Close();
         }
     }
 }

@@ -26,9 +26,9 @@ namespace ShopIM.UI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=J:\\Programming\\IDE\\VisualStud" +
-            "io15\\Project\\ShopIM\\ShopIM\\ShopIM.Data\\ShopIMDB.mdf;Integrated Security=True;Con" +
-            "nect Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFileProductName=J:\\Programming\\IDE\\Vis" +
+            "ualStudio15\\Project\\ShopIM\\ShopIM\\ShopIM.Data\\ShopIMDB.mdf;Integrated Security=T" +
+            "rue;Connect Timeout=30")]
         public string ShopIMDBConnectionString {
             get {
                 return ((string)(this["ShopIMDBConnectionString"]));

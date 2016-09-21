@@ -8,10 +8,7 @@ namespace ShopIM.Library
 {
     public class SystemSettings
     {
-        public SystemSettings()
-        {
-            isSystemLocked = false;
-        }
+       
         public static bool isSystemLocked { get; set; }
     }
 }

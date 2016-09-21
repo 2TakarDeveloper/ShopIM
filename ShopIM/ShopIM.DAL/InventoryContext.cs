@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using ShopIM.Entity;
@@ -11,69 +12,102 @@ namespace ShopIM.DAL
 
         public List<Inventory> GetInventories()
         {
+            List<Inventory> InventoryList=new List<Inventory>();
             using (var context = new DatabaseContext())
             {
-                return (from inventory in context.Inventories select inventory).ToList();
-            }
-        }
-
-
-        public void AddInventory(Inventory inventory)
-        {
-            using (var context = new DatabaseContext())
-            {
-                context.Inventories.Add(inventory);
-                context.SaveChanges();
-                var log = new Log(inventory.ProductName + " Added to the Inventory Table");
-
-                context.Logs.Add(log);
-                context.SaveChanges();
-
-
-            }
-        }
-
-        public void RemoveInventories(List<Inventory> inventories)
-        {
-            using (var context = new DatabaseContext())
-            {
+                var inventories =
+                        from inventory in context.Inventories
+                        join product in context.Products on inventory.ProductName equals product.Name
+                        select new { inventory,product };
                 foreach (var inventory in inventories)
                 {
-                    Inventory item = context.Set<Inventory>().FirstOrDefault(r => r.Sl == inventory.Sl);
-                    if (item == null) continue;
-                    context.Inventories.Remove(item);
-                    context.SaveChanges();
-
-                    var log = new Log(item.ProductName + " Was Removed from Inventory");
-
-                    context.Logs.Add(log);
-                    context.SaveChanges();
-
+                    Inventory i = new Inventory();
+                    i = inventory.inventory;
+                    i.Product = inventory.product;
+                    InventoryList.Add(i);
 
                 }
+                return InventoryList;
             }
         }
 
-        public void UpdateInventory(Inventory inventory, Inventory selectedInventory)
+
+        public bool AddInventory(Inventory inventory)
+        {
+            using (var context = new DatabaseContext())
+            {
+                try
+                {
+                    context.Inventories.Add(inventory);
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+                
+               
+
+
+            }
+        }
+
+        public bool RemoveInventories(List<Inventory> inventories)
+        {
+            try
+            {
+                using (var context = new DatabaseContext())
+                {
+                    foreach (var inventory in inventories)
+                    {
+                        Inventory item = context.Set<Inventory>().FirstOrDefault(r => r.Sl == inventory.Sl);
+                        if (item == null) continue;
+                        context.Inventories.Remove(item);
+                        context.SaveChanges();
+
+
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+          
+        }
+
+        public bool UpdateInventory(Inventory inventory, Inventory selectedInventory)
         {
 
             using (var context = new DatabaseContext())
             {
+                try
+                {
+                    var I = context.Inventories.SingleOrDefault(a => a.Sl == selectedInventory.Sl);
+
+
+                    
+                    I.Price = inventory.Price;
+                    I.PurchaseDate = inventory.PurchaseDate;
+                    I.Quantity = inventory.Quantity;
+                    I.SellingPrice = inventory.SellingPrice;
+                    I.StockLocation = inventory.StockLocation;
+                    I.Threashold = inventory.Threashold;
+                    I.Vendor = inventory.Vendor;
+
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
                 
-                var I = context.Inventories.SingleOrDefault(a => a.Sl == selectedInventory.Sl);
 
-
-
-                I.Price = inventory.Price;
-                I.PurchaseDate = inventory.PurchaseDate;
-                I.Quantity = inventory.Quantity;
-
-                context.SaveChanges();
-
-                var log = new Log(I.ProductName + "'s Information was Updated");
-
-                context.Logs.Add(log);
-                context.SaveChanges();
+               
 
             }
 

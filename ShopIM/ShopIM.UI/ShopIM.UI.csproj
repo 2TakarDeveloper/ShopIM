@@ -45,26 +45,11 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InveontroyForm.cs">
@@ -178,10 +163,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ShopIM.Library.csproj">
-      <Project>{74656D31-E2C0-411C-820E-01E363D54DB7}</Project>
-      <Name>ShopIM.Library</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ShopIM.BLL\ShopIM.BLL.csproj">
       <Project>{ee57204c-8001-416c-89ec-f896d32851e9}</Project>
       <Name>ShopIM.BLL</Name>
@@ -189,6 +170,10 @@
     <ProjectReference Include="..\ShopIM.Entity\ShopIM.Entity.csproj">
       <Project>{868e6c6e-9127-4b8b-a5ed-888c913e6fcc}</Project>
       <Name>ShopIM.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopIM.Library\ShopIM.Library.csproj">
+      <Project>{6feafe62-6bbd-4063-867d-0a725de8c9fb}</Project>
+      <Name>ShopIM.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
