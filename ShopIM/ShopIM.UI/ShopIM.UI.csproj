@@ -56,10 +56,18 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\InventoryInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\InventoryInfoControl.Designer.cs">
+      <DependentUpon>InventoryInfoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="InveontroyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +124,9 @@
     <Compile Include="SystemForm.Designer.cs">
       <DependentUpon>SystemForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controller\InventoryInfoControl.resx">
+      <DependentUpon>InventoryInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InveontroyForm.resx">
       <DependentUpon>InveontroyForm.cs</DependentUpon>
     </EmbeddedResource>
