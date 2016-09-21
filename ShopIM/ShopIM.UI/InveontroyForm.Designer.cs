@@ -37,6 +37,7 @@
             this.DatePicker = new MetroFramework.Controls.MetroDateTime();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ProductNamePanel = new MetroFramework.Controls.MetroPanel();
             this.ProductPicker = new System.Windows.Forms.ComboBox();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.Threashold = new System.Windows.Forms.NumericUpDown();
@@ -53,15 +54,14 @@
             this.VendorTextBox = new MetroFramework.Controls.MetroTextBox();
             this.SubmitButton = new MetroFramework.Controls.MetroButton();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.ProductNamePanel = new MetroFramework.Controls.MetroPanel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Quantity)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.ProductNamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Threashold)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellingPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price)).BeginInit();
-            this.ProductNamePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Type
@@ -195,6 +195,21 @@
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Inventory Details";
+            // 
+            // ProductNamePanel
+            // 
+            this.ProductNamePanel.Controls.Add(this.ProductPicker);
+            this.ProductNamePanel.HorizontalScrollbarBarColor = true;
+            this.ProductNamePanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.ProductNamePanel.HorizontalScrollbarSize = 10;
+            this.ProductNamePanel.Location = new System.Drawing.Point(177, 29);
+            this.ProductNamePanel.Name = "ProductNamePanel";
+            this.ProductNamePanel.Size = new System.Drawing.Size(226, 26);
+            this.ProductNamePanel.TabIndex = 22;
+            this.ProductNamePanel.UseCustomBackColor = true;
+            this.ProductNamePanel.VerticalScrollbarBarColor = true;
+            this.ProductNamePanel.VerticalScrollbarHighlightOnWheel = false;
+            this.ProductNamePanel.VerticalScrollbarSize = 10;
             // 
             // ProductPicker
             // 
@@ -461,21 +476,6 @@
             this.metroLink1.UseVisualStyleBackColor = false;
             this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
-            // ProductNamePanel
-            // 
-            this.ProductNamePanel.Controls.Add(this.ProductPicker);
-            this.ProductNamePanel.HorizontalScrollbarBarColor = true;
-            this.ProductNamePanel.HorizontalScrollbarHighlightOnWheel = false;
-            this.ProductNamePanel.HorizontalScrollbarSize = 10;
-            this.ProductNamePanel.Location = new System.Drawing.Point(177, 23);
-            this.ProductNamePanel.Name = "ProductNamePanel";
-            this.ProductNamePanel.Size = new System.Drawing.Size(226, 26);
-            this.ProductNamePanel.TabIndex = 22;
-            this.ProductNamePanel.UseCustomBackColor = true;
-            this.ProductNamePanel.VerticalScrollbarBarColor = true;
-            this.ProductNamePanel.VerticalScrollbarHighlightOnWheel = false;
-            this.ProductNamePanel.VerticalScrollbarSize = 10;
-            // 
             // InveontroyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,10 +496,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.ProductNamePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Threashold)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellingPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price)).EndInit();
-            this.ProductNamePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

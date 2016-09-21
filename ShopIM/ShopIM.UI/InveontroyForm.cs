@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using MetroFramework;
+using MetroFramework.Controls;
 using ShopIM.BLL;
 using ShopIM.Entity;
 
@@ -35,7 +36,10 @@ namespace ShopIM.UI
             {
                 ProductImage.Image = ProductImage.ErrorImage;
             }
-            ProductPicker.Enabled = false;
+            ProductPicker.Dispose();
+            MetroLabel label = new MetroLabel();
+            label.Text = selectedInventory.ProductName;
+            ProductNamePanel.Controls.Add(label);
             name.Text = selectedInventory.Product.Name;
             Type.Text = selectedInventory.Product.Type;
             VendorTextBox.Text = selectedInventory.Vendor;
