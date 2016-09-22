@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using ShopIM.Entity;
 using ShopIM.UI.Controller;
 
 namespace ShopIM.UI
 {
     public partial class AdminDashboard : MetroForm
     {
-        public AdminDashboard(string userName, string userType, Login login)
+        private User User { get; set; }
+     
+        private Login Login { get; }
+        public AdminDashboard(User user, Login login)
         {
             Login = login;
-            UserName = userName;
+            User = user;
             InitializeComponent();
-            UserButton.Text = UserName;
+            UserButton.Text = User.UserName;
             LoadSales();
         }
 
-        private string UserName { get; }
-        private Login Login { get; }
+        
 
         private void ExitButton_click(object sender, EventArgs e)
         {
@@ -55,7 +58,7 @@ namespace ShopIM.UI
 
         private void LockButton_Click(object sender, EventArgs e)
         {
-            var systemForm = new SystemForm(UserName, Login, this);
+            var systemForm = new SystemForm(User.UserName, Login, this);
             systemForm.ShowDialog(this);
         }
 
@@ -71,7 +74,7 @@ namespace ShopIM.UI
 
         private void UserButton_Click(object sender, EventArgs e)
         {
-            var userEditControl = new UserEditControl();
+            var userEditControl = new UserEditControl(User,UserButton);
             metroPanelBackground.Controls.Clear();
             userEditControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(userEditControl);

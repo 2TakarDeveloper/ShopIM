@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,19 @@ namespace ShopIM.DAL
 {
     public class UserContext
     {
+        public User GetUser(string name, string pass)
+        {
+            using (var context = new DatabaseContext())
+            {
+                return (from user in context.Users
+                    where user.UserName == name && user.UserPassword == pass
+                    select user).FirstOrDefault();
+
+               
+            }
+        }
+
+
         public bool ValidateUser(string name, string pass)
         {
             using (var context = new DatabaseContext())
@@ -17,28 +31,7 @@ namespace ShopIM.DAL
                 var User = (from user in context.Users
                     where user.UserName == name && user.UserPassword == pass
                     select user).FirstOrDefault();
-
                 return User != null;
-            }
-        }
-
-
-        public bool ValidateUser(string name, string pass,out string userType)
-        {
-            using (var context = new DatabaseContext())
-            {
-                var User = (from user in context.Users
-                    where user.UserName == name && user.UserPassword == pass
-                    select user).FirstOrDefault();
-
-
-                userType = null;
-                if (User != null)
-                {
-                    userType = User.UserType;
-                    return true;
-                }
-                return false;
             }
         }
 
@@ -92,7 +85,7 @@ namespace ShopIM.DAL
             {
                 foreach (var user in users)
                 {
-                    var item = context.Set<User>().FirstOrDefault(r => r.UserName == user.UserName);
+                    var item = context.Set<User>().FirstOrDefault(r => r.Sl == user.Sl);
                     if (item == null) continue;
                     context.Users.Remove(item);
                     context.SaveChanges();
@@ -101,21 +94,34 @@ namespace ShopIM.DAL
         }
 
 
-        public void UpdateUser(User user, User selectedUser)
+        public bool UpdateUser(User user)
         {
-            using (var context = new DatabaseContext())
+            try
             {
-                var User = context.Users.SingleOrDefault(a => a.UserName == selectedUser.UserName);
+                using (var context = new DatabaseContext())
+                {
+                    var User = context.Users.SingleOrDefault(a => a.Sl == user.Sl);
 
-                if (User == null) return;
-                User.UserName = user.UserName;
-                User.UserPassword = user.UserPassword;
-                User.UserType = user.UserType;
-                context.SaveChanges();
-
-                
-
+                    if (User == null) return false;
+                    User.UserName = user.UserName;
+                    User.UserPassword = user.UserPassword;
+                    User.UserType = user.UserType;
+                    if (User.ImageURL != user.ImageURL)
+                    {
+                        //delete old file
+                        File.Delete(User.ImageURL);
+                        User.ImageURL = user.ImageURL;
+                    }
+                    
+                    context.SaveChanges();
+                    return true;
+                }
             }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
     }
 }

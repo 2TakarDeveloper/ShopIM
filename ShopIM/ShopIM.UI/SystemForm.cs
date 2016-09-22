@@ -38,8 +38,8 @@ namespace ShopIM.UI
         private void LoginButton_Click(object sender, EventArgs e)
         {
             var password = PasswordField.Text;
-            string type;
-            if (new UserRepo().ValidateUser(UserName, password, out type))
+
+            if (new UserRepo().ValidateUser(UserName, password))
             {
                 SystemSettings.isSystemLocked = false;
                 Close();

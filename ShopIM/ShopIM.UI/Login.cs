@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
 using ShopIM.BLL;
+using ShopIM.Entity;
 
 namespace ShopIM.UI
 {
@@ -29,10 +30,11 @@ namespace ShopIM.UI
             var userPassword = PasswordField.Text;
             string type;
             var userRepo = new UserRepo();
-            if (userRepo.ValidateUser(username, userPassword, out type))
+            User user = userRepo.GetUser(username, userPassword);   
+            if (user!=null)
             {
                 //next page
-                var adminDashboard = new AdminDashboard(username, type, this);
+                var adminDashboard = new AdminDashboard(user, this);
                 adminDashboard.Show();
                 Hide();
             }
