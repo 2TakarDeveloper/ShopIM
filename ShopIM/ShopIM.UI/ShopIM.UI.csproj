@@ -68,6 +68,12 @@
     <Compile Include="Controller\InventoryInfoControl.Designer.cs">
       <DependentUpon>InventoryInfoControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\UserEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\UserEditControl.Designer.cs">
+      <DependentUpon>UserEditControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="InveontroyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
     <EmbeddedResource Include="Controller\InventoryInfoControl.resx">
       <DependentUpon>InventoryInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\UserEditControl.resx">
+      <DependentUpon>UserEditControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InveontroyForm.resx">
       <DependentUpon>InveontroyForm.cs</DependentUpon>
@@ -242,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\done.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

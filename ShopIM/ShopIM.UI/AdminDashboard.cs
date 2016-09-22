@@ -68,5 +68,13 @@ namespace ShopIM.UI
             Login.Show();
             Close();
         }
+
+        private void UserButton_Click(object sender, EventArgs e)
+        {
+            var userEditControl = new UserEditControl();
+            metroPanelBackground.Controls.Clear();
+            userEditControl.Dock = DockStyle.Fill;
+            metroPanelBackground.Controls.Add(userEditControl);
+        }
     }
 }

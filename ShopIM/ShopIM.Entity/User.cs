@@ -10,5 +10,6 @@ namespace ShopIM.Entity
         public string UserName { get; set; }
         public string UserPassword { get; set; }
         public string UserType { get; set; }
+        public string ImageURL { get; set; }
     }
 }
