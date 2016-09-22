@@ -36,17 +36,17 @@
             this.DeleteBtn = new MetroFramework.Controls.MetroButton();
             this.EditBtn = new MetroFramework.Controls.MetroButton();
             this.AddBtn = new MetroFramework.Controls.MetroButton();
+            this.InventorySplitContainer = new System.Windows.Forms.SplitContainer();
             this.InventoryGrid = new MetroFramework.Controls.MetroGrid();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InventorySplitContainer)).BeginInit();
+            this.InventorySplitContainer.Panel1.SuspendLayout();
+            this.InventorySplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InventoryGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // backgroundPanel
@@ -80,7 +80,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel2.Controls.Add(this.InventorySplitContainer);
             this.splitContainer1.Size = new System.Drawing.Size(1168, 688);
             this.splitContainer1.SplitterDistance = 44;
             this.splitContainer1.TabIndex = 4;
@@ -114,6 +114,19 @@
             this.AddBtn.Text = "Add";
             this.AddBtn.UseSelectable = true;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
+            // InventorySplitContainer
+            // 
+            this.InventorySplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InventorySplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.InventorySplitContainer.Name = "InventorySplitContainer";
+            // 
+            // InventorySplitContainer.Panel1
+            // 
+            this.InventorySplitContainer.Panel1.Controls.Add(this.InventoryGrid);
+            this.InventorySplitContainer.Size = new System.Drawing.Size(1168, 640);
+            this.InventorySplitContainer.SplitterDistance = 946;
+            this.InventorySplitContainer.TabIndex = 1;
             // 
             // InventoryGrid
             // 
@@ -163,19 +176,6 @@
             this.InventoryGrid.TabIndex = 0;
             this.InventoryGrid.Click += new System.EventHandler(this.InventoryGrid_Click);
             // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.InventoryGrid);
-            this.splitContainer2.Size = new System.Drawing.Size(1168, 640);
-            this.splitContainer2.SplitterDistance = 946;
-            this.splitContainer2.TabIndex = 1;
-            // 
             // InventoryControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,10 +188,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.InventorySplitContainer.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.InventorySplitContainer)).EndInit();
+            this.InventorySplitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.InventoryGrid)).EndInit();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -204,6 +204,6 @@
         private MetroFramework.Controls.MetroButton DeleteBtn;
         private MetroFramework.Controls.MetroButton EditBtn;
         private MetroFramework.Controls.MetroGrid InventoryGrid;
-        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer InventorySplitContainer;
     }
 }

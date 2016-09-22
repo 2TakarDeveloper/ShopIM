@@ -75,7 +75,7 @@
             this.PasswordField.MaxLength = 32767;
             this.PasswordField.Name = "PasswordField";
             this.PasswordField.PasswordChar = '●';
-            this.PasswordField.PromptText = "Password";
+     
             this.PasswordField.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.PasswordField.SelectedText = "";
             this.PasswordField.SelectionLength = 0;
