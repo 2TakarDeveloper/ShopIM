@@ -124,6 +124,12 @@
     <Compile Include="SystemForm.Designer.cs">
       <DependentUpon>SystemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controller\InventoryInfoControl.resx">
       <DependentUpon>InventoryInfoControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +170,9 @@
     </Compile>
     <EmbeddedResource Include="SystemForm.resx">
       <DependentUpon>SystemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
