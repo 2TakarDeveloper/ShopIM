@@ -53,6 +53,7 @@
             this.VendorTextBox = new MetroFramework.Controls.MetroTextBox();
             this.SubmitButton = new MetroFramework.Controls.MetroButton();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.ProductNamePanel = new MetroFramework.Controls.MetroPanel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Quantity)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Threashold)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellingPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price)).BeginInit();
+            this.ProductNamePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Type
@@ -168,7 +170,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.ProductPicker);
+            this.groupBox2.Controls.Add(this.ProductNamePanel);
             this.groupBox2.Controls.Add(this.metroLabel10);
             this.groupBox2.Controls.Add(this.Threashold);
             this.groupBox2.Controls.Add(this.SellingPrice);
@@ -198,8 +200,9 @@
             // 
             this.ProductPicker.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ProductPicker.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.ProductPicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProductPicker.FormattingEnabled = true;
-            this.ProductPicker.Location = new System.Drawing.Point(177, 26);
+            this.ProductPicker.Location = new System.Drawing.Point(0, 0);
             this.ProductPicker.Name = "ProductPicker";
             this.ProductPicker.Size = new System.Drawing.Size(226, 26);
             this.ProductPicker.TabIndex = 33;
@@ -441,6 +444,7 @@
             this.SubmitButton.UseCustomBackColor = true;
             this.SubmitButton.UseCustomForeColor = true;
             this.SubmitButton.UseSelectable = true;
+            this.SubmitButton.UseVisualStyleBackColor = false;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // metroLink1
@@ -454,7 +458,23 @@
             this.metroLink1.TabIndex = 21;
             this.metroLink1.UseCustomBackColor = true;
             this.metroLink1.UseSelectable = true;
+            this.metroLink1.UseVisualStyleBackColor = false;
             this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
+            // 
+            // ProductNamePanel
+            // 
+            this.ProductNamePanel.Controls.Add(this.ProductPicker);
+            this.ProductNamePanel.HorizontalScrollbarBarColor = true;
+            this.ProductNamePanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.ProductNamePanel.HorizontalScrollbarSize = 10;
+            this.ProductNamePanel.Location = new System.Drawing.Point(177, 23);
+            this.ProductNamePanel.Name = "ProductNamePanel";
+            this.ProductNamePanel.Size = new System.Drawing.Size(226, 26);
+            this.ProductNamePanel.TabIndex = 22;
+            this.ProductNamePanel.UseCustomBackColor = true;
+            this.ProductNamePanel.VerticalScrollbarBarColor = true;
+            this.ProductNamePanel.VerticalScrollbarHighlightOnWheel = false;
+            this.ProductNamePanel.VerticalScrollbarSize = 10;
             // 
             // InveontroyForm
             // 
@@ -479,6 +499,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Threashold)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellingPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price)).EndInit();
+            this.ProductNamePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -509,5 +530,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private System.Windows.Forms.NumericUpDown Threashold;
         private System.Windows.Forms.ComboBox ProductPicker;
+        private MetroFramework.Controls.MetroPanel ProductNamePanel;
     }
 }
