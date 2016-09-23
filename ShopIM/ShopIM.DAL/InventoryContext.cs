@@ -53,21 +53,20 @@ namespace ShopIM.DAL
             }
         }
 
-        public bool RemoveInventories(List<Inventory> inventories)
+        public bool RemoveInventories(Inventory inventory)
         {
             try
             {
                 using (var context = new DatabaseContext())
                 {
-                    foreach (var inventory in inventories)
-                    {
+                    
                         Inventory item = context.Set<Inventory>().FirstOrDefault(r => r.Sl == inventory.Sl);
-                        if (item == null) continue;
+                        if (item == null) return false;
                         context.Inventories.Remove(item);
                         context.SaveChanges();
+                        return true;
 
 
-                    }
                 }
 
                 return true;

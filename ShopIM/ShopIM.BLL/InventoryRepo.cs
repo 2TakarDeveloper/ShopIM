@@ -40,19 +40,21 @@ namespace ShopIM.BLL
 
         public bool RemoveInventories(List<Inventory> selectedInventories)
         {
-            if (!new InventoryContext().RemoveInventories(selectedInventories))
+            foreach (var inventory in selectedInventories)
             {
-                return false;
-            }
-            else
-            {
-                foreach (var inventory in selectedInventories)
+                if (new InventoryContext().RemoveInventories(inventory))
                 {
-                    //new LogContext().CreateLog(inventory.ProductName + " was removed from database");
+                    //new LogContext().CreateLog(inventory.ProductName + " was removed from database"); 
                 }
-
-                return true;
+                else
+                {
+                    return false;
+                }
             }
+            return true;
+
+            
+           
         }
 
 
