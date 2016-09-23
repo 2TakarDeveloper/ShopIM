@@ -24,6 +24,7 @@ namespace ShopIM.UI.Controller
             StockInventories = new List<Inventory>();
             StockInventories = new InventoryRepo().GetInventories();
             StockInventoryGrid.DataSource = StockInventories;
+            StockInventoryGrid.Columns[2].Visible = false;
             StockInventoryGrid.Columns[4].Visible = false;
             StockInventoryGrid.Columns[7].Visible = false;
             StockInventoryGrid.Columns[8].Visible = false;
