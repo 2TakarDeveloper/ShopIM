@@ -79,5 +79,13 @@ namespace ShopIM.UI
             userEditControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(userEditControl);
         }
+
+        private void metroLink2_Click(object sender, EventArgs e)
+        {
+            var LlgControl = new LogControl();
+            metroPanelBackground.Controls.Clear();
+            LlgControl.Dock = DockStyle.Fill;
+            metroPanelBackground.Controls.Add(LlgControl);
+        }
     }
 }

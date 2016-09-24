@@ -50,9 +50,11 @@
             this.metroLink8 = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanelSide.SuspendLayout();
             this.MenuSlidePanel.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanelSide
@@ -60,6 +62,7 @@
             this.metroPanelSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.metroPanelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.metroPanelSide.Controls.Add(this.pictureBox1);
             this.metroPanelSide.Controls.Add(this.MenuSlidePanel);
             this.metroPanelSide.Controls.Add(this.UserButton);
             this.metroPanelSide.Controls.Add(this.metroPanel1);
@@ -116,6 +119,7 @@
             this.metroLink2.UseCustomBackColor = true;
             this.metroLink2.UseSelectable = true;
             this.metroLink2.UseStyleColors = true;
+            this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
             // 
             // metroLink1
             // 
@@ -417,6 +421,7 @@
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.PromptText = "Search";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
@@ -431,6 +436,16 @@
             this.metroTextBox1.WaterMark = "Search";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // AdminDashboard
             // 
@@ -455,6 +470,7 @@
             this.MenuSlidePanel.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,5 +498,6 @@
         private MetroFramework.Controls.MetroLink LockButton;
         private MetroFramework.Controls.MetroLink InventoryButton;
         private MetroFramework.Controls.MetroLink ProductButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

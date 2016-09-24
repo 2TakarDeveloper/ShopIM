@@ -68,6 +68,12 @@
     <Compile Include="Controller\InventoryInfoControl.Designer.cs">
       <DependentUpon>InventoryInfoControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\LogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\LogControl.Designer.cs">
+      <DependentUpon>LogControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\UserEditControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="Controller\InventoryInfoControl.resx">
       <DependentUpon>InventoryInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\LOgControl.resx">
+      <DependentUpon>LogControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\UserEditControl.resx">
       <DependentUpon>UserEditControl.cs</DependentUpon>
