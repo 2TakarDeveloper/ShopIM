@@ -77,5 +77,15 @@ namespace ShopIM.UI.Controller
 
           
         }
+
+        private void SalesControl_Load(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void metroPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
