@@ -11,21 +11,23 @@ namespace ShopIM.BLL
         {
 
             UserContext userContext = new UserContext();
-            if (userContext.ValidateUser(name, password))
-            {
-               
-                //new LogContext().CreateLog(name + " logged in");
+            if (!userContext.ValidateUser(name, password)) return false;
+            
 
-                return true;
-            }
-            return false;
+            return true;
         }
 
 
         public User GetUser(string name, string password)
         {
             UserContext userContext = new UserContext();
-            return userContext.GetUser(name, password);
+            User user= userContext.GetUser(name, password);
+            if (user!=null)
+            {
+                new LogRepo().CreateUserLog(name + " logged in");
+               
+            }
+            return user;
         }
 
         public bool UpdateUser(User user)

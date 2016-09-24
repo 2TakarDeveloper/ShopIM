@@ -26,7 +26,15 @@ namespace ShopIM.UI.Controller
             }
 
             Name.Text = inventory.ProductName;
-            Type.Text = inventory.Product.Type;
+            if (inventory.Product!= null)
+            {
+                Type.Text = inventory.Product.Type;
+            }
+            else
+            {
+                Type.Text = "";
+            }
+ 
             Vendor.Text = inventory.Vendor;
             Quantity.Text = inventory.Quantity.ToString();
             Threashold.Text = inventory.Threashold.ToString();

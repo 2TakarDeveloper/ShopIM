@@ -23,7 +23,7 @@ namespace ShopIM.BLL
             }
             else
             {
-                //new LogContext().CreateLog(inventory.ProductName + " Added to the Inventory Table");
+                new LogRepo().CreateUserLog(inventory.ProductName + " Added to the Inventory Table");
                 return false;
             }
         }
@@ -32,7 +32,7 @@ namespace ShopIM.BLL
         {
             if (new InventoryContext().UpdateInventory(inventory, selectedInventory))
             {
-                //new LogContext().CreateLog(selectedInventory.ProductName + " Was Modified");
+                new LogRepo().CreateUserLog(selectedInventory.ProductName + " Was Modified");
                 return true;
             }
             return false;
@@ -44,7 +44,7 @@ namespace ShopIM.BLL
             {
                 if (new InventoryContext().RemoveInventories(inventory))
                 {
-                    //new LogContext().CreateLog(inventory.ProductName + " was removed from database"); 
+                   new LogRepo().CreateUserLog(inventory.ProductName + " was removed from database"); 
                 }
                 else
                 {

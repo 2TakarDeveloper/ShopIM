@@ -10,21 +10,31 @@ namespace ShopIM.BLL
 {
     public class LogRepo
     {
-        public void CreateLog(string logmsg)
+        public void CreateUserLog(string logmsg)
         {
             new LogContext().CreateLog(logmsg);
         }
 
-        public List<Log> GetLogs()
+        public List<Log> GetUserLog()
         {
             return  new LogContext().GetLogs();
         }
 
-        public void ClearLog()
+        public void ClearUserLog()
         {
             new LogContext().clearLog();
         }
 
+        public List<SalesLog> GetSalesLog()
+        {
+            return new SalesLogContext().GetSalesLog();
+        }
+
+
+        public void ClearSalesLog()
+        {
+            new SalesLogContext().ClearLog();
+        }
 
     }
 }

@@ -30,7 +30,7 @@ namespace ShopIM.DAL
             }
         }
 
-        public void clearLog()
+        public void ClearLog()
         {
             using (var context = new DatabaseContext())
             {

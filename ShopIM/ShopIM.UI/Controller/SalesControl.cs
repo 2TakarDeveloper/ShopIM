@@ -16,6 +16,7 @@ namespace ShopIM.UI.Controller
             InitializeComponent();
             LoadInventories();
             CartInventories=new List<Inventory>();
+            InventoryInfoControlPanel.Controls.Add(new InventoryInfoControl(new Inventory()));
            
         }
 
@@ -73,17 +74,17 @@ namespace ShopIM.UI.Controller
             for (var i = 0; i < length; i++)
             {
                 SelectedInventories.Add((Inventory)StockInventoryGrid.SelectedRows[i].DataBoundItem);
-            }
+              
 
-          
+            }
+            InventoryInfoControlPanel.Controls.Clear();
+            if (SelectedInventories.Count > 0)
+                InventoryInfoControlPanel.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
+
+
         }
 
         private void SalesControl_Load(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void metroPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

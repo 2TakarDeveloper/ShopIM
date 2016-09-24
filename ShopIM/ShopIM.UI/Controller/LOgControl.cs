@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShopIM.BLL;
 
 namespace ShopIM.UI.Controller
 {
@@ -15,6 +16,22 @@ namespace ShopIM.UI.Controller
         public LogControl()
         {
             InitializeComponent();
+            UserLogGrid.DataSource=new LogRepo().GetUserLog();
+            SalesLogGrid.DataSource=new LogRepo().GetSalesLog();
+        }
+
+        private void UserLogClear_Click(object sender, EventArgs e)
+        {
+            new LogRepo().ClearUserLog();
+            UserLogGrid.DataSource = null;
+            UserLogGrid.DataSource = new LogRepo().GetUserLog();
+        }
+
+        private void SalesLogClear_Click(object sender, EventArgs e)
+        {
+            new LogRepo().ClearSalesLog();
+            SalesLogGrid.DataSource = null;
+            SalesLogGrid.DataSource = new LogRepo().GetSalesLog();
         }
     }
 }
