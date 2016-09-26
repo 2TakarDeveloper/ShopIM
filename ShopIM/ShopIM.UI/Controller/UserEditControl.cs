@@ -142,5 +142,10 @@ namespace ShopIM.UI.Controller
             }
 
         }
+
+        private void ChangePasswordBtn_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

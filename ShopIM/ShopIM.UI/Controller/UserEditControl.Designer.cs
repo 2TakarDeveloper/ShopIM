@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.ImageSubmit = new MetroFramework.Controls.MetroLink();
             this.NameSubmit = new MetroFramework.Controls.MetroLink();
             this.nameEdit = new MetroFramework.Controls.MetroLink();
             this.AddPictureBtn = new MetroFramework.Controls.MetroButton();
@@ -41,7 +42,7 @@
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.ProfileBox = new System.Windows.Forms.GroupBox();
-            this.ImageSubmit = new MetroFramework.Controls.MetroLink();
+            this.ChangePasswordBtn = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -54,6 +55,7 @@
             this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.metroPanel1.BackColor = System.Drawing.Color.White;
+            this.metroPanel1.Controls.Add(this.ChangePasswordBtn);
             this.metroPanel1.Controls.Add(this.ImageSubmit);
             this.metroPanel1.Controls.Add(this.NameSubmit);
             this.metroPanel1.Controls.Add(this.nameEdit);
@@ -72,6 +74,18 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // ImageSubmit
+            // 
+            this.ImageSubmit.Image = global::ShopIM.UI.Properties.Resources.done;
+            this.ImageSubmit.ImageSize = 25;
+            this.ImageSubmit.Location = new System.Drawing.Point(184, 37);
+            this.ImageSubmit.Name = "ImageSubmit";
+            this.ImageSubmit.Size = new System.Drawing.Size(35, 35);
+            this.ImageSubmit.TabIndex = 19;
+            this.ImageSubmit.UseSelectable = true;
+            this.ImageSubmit.Visible = false;
+            this.ImageSubmit.Click += new System.EventHandler(this.ImageSubmit_Click);
             // 
             // NameSubmit
             // 
@@ -191,6 +205,7 @@
             this.AccountBox.TabIndex = 11;
             this.AccountBox.TabStop = false;
             this.AccountBox.Text = "Change Password";
+            this.AccountBox.Visible = false;
             // 
             // metroLink3
             // 
@@ -334,17 +349,15 @@
             this.ProfileBox.TabStop = false;
             this.ProfileBox.Text = "Profile";
             // 
-            // ImageSubmit
+            // ChangePasswordBtn
             // 
-            this.ImageSubmit.Image = global::ShopIM.UI.Properties.Resources.done;
-            this.ImageSubmit.ImageSize = 25;
-            this.ImageSubmit.Location = new System.Drawing.Point(184, 37);
-            this.ImageSubmit.Name = "ImageSubmit";
-            this.ImageSubmit.Size = new System.Drawing.Size(35, 35);
-            this.ImageSubmit.TabIndex = 19;
-            this.ImageSubmit.UseSelectable = true;
-            this.ImageSubmit.Visible = false;
-            this.ImageSubmit.Click += new System.EventHandler(this.ImageSubmit_Click);
+            this.ChangePasswordBtn.Location = new System.Drawing.Point(9, 220);
+            this.ChangePasswordBtn.Name = "ChangePasswordBtn";
+            this.ChangePasswordBtn.Size = new System.Drawing.Size(114, 23);
+            this.ChangePasswordBtn.TabIndex = 20;
+            this.ChangePasswordBtn.Text = "Change Password";
+            this.ChangePasswordBtn.UseSelectable = true;
+            this.ChangePasswordBtn.Click += new System.EventHandler(this.ChangePasswordBtn_Click);
             // 
             // UserEditControl
             // 
@@ -377,5 +390,6 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroLink ImageSubmit;
+        private MetroFramework.Controls.MetroButton ChangePasswordBtn;
     }
 }

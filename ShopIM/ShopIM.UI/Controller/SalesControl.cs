@@ -16,7 +16,7 @@ namespace ShopIM.UI.Controller
             InitializeComponent();
             LoadInventories();
             CartInventories=new List<Inventory>();
-            InventoryInfoControlPanel.Controls.Add(new InventoryInfoControl(new Inventory()));
+            table.Controls.Add(new InventoryInfoControl(new Inventory()));
            
         }
 
@@ -53,18 +53,7 @@ namespace ShopIM.UI.Controller
 
         private void AddtoCartButton_Click(object sender, System.EventArgs e)
         {   
-            if(SelectedInventories==null)return;
-            
-            foreach (var inventory in SelectedInventories)
-            {
-                Inventory cartInventory= new Inventory(inventory);
-                cartInventory.Quantity = 1;
-                CartInventories.Add(cartInventory);
-
-
-            }
-
-            LoadCart();
+           
         }
 
         private void StockInventoryGrid_Click(object sender, System.EventArgs e)
@@ -77,14 +66,40 @@ namespace ShopIM.UI.Controller
               
 
             }
-            InventoryInfoControlPanel.Controls.Clear();
+            table.Controls.Clear();
             if (SelectedInventories.Count > 0)
-                InventoryInfoControlPanel.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
+                table.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
 
 
         }
 
         private void SalesControl_Load(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void metroButton4_Click(object sender, System.EventArgs e)
+        {
+            if (SelectedInventories == null) return;
+
+            foreach (var inventory in SelectedInventories)
+            {
+                Inventory cartInventory = new Inventory(inventory);
+                cartInventory.Quantity = 1;
+                CartInventories.Add(cartInventory);
+
+
+            }
+
+            LoadCart();
+        }
+
+        private void metroButton3_Click(object sender, System.EventArgs e)
         {
 
         }
