@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using ShopIM.Entity;
@@ -17,6 +19,22 @@ namespace ShopIM.UI
             User = user;
             InitializeComponent();
             UserButton.Text = User.UserName;
+            try
+            {
+                using (var fileStream = new FileStream(User.ImageURL, FileMode.Open, FileAccess.Read))
+                {
+                    UserImage.Image = Image.FromStream(fileStream);
+                    
+                }
+
+            }
+            catch (Exception)
+            {
+                UserImage.Image = UserImage.ErrorImage;
+
+            }
+
+
             LoadSales();
         }
 

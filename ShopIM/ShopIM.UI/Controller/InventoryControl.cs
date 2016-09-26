@@ -13,6 +13,8 @@ namespace ShopIM.UI.Controller
             
             InitializeComponent();
             LoadInventories();
+            InventorySplitContainer.Panel2.Controls.Clear();
+            InventorySplitContainer.Panel2.Controls.Add(new InventoryInfoControl(new Inventory()));
         }
 
         private List<Inventory> SelectedInventories { get; set; }
