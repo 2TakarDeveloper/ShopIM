@@ -46,6 +46,7 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.table = new MetroFramework.Controls.MetroPanel();
             this.splitContainerBackgriund = new System.Windows.Forms.SplitContainer();
+            this.InventoryInfoControlPanel = new System.Windows.Forms.SplitContainer();
             this.BackgroundTablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StockInventoryGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CartGrid)).BeginInit();
@@ -54,6 +55,9 @@
             this.splitContainerBackgriund.Panel1.SuspendLayout();
             this.splitContainerBackgriund.Panel2.SuspendLayout();
             this.splitContainerBackgriund.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryInfoControlPanel)).BeginInit();
+            this.InventoryInfoControlPanel.Panel2.SuspendLayout();
+            this.InventoryInfoControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackgroundTablePanel
@@ -278,10 +282,10 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.metroButton2.Location = new System.Drawing.Point(30, 309);
+            this.metroButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroButton2.Location = new System.Drawing.Point(0, 0);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(100, 30);
+            this.metroButton2.Size = new System.Drawing.Size(147, 104);
             this.metroButton2.TabIndex = 4;
             this.metroButton2.Text = "Check Out";
             this.metroButton2.UseSelectable = true;
@@ -313,12 +317,31 @@
             // 
             // splitContainerBackgriund.Panel2
             // 
-            this.splitContainerBackgriund.Panel2.AccessibleName = "InventoryInfoControlPanel";
+            this.splitContainerBackgriund.Panel2.AccessibleName = "panel2";
             this.splitContainerBackgriund.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.splitContainerBackgriund.Panel2.Controls.Add(this.metroButton2);
+            this.splitContainerBackgriund.Panel2.Controls.Add(this.InventoryInfoControlPanel);
             this.splitContainerBackgriund.Size = new System.Drawing.Size(738, 473);
             this.splitContainerBackgriund.SplitterDistance = 587;
             this.splitContainerBackgriund.TabIndex = 5;
+            // 
+            // InventoryInfoControlPanel
+            // 
+            this.InventoryInfoControlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InventoryInfoControlPanel.Location = new System.Drawing.Point(0, 0);
+            this.InventoryInfoControlPanel.Name = "InventoryInfoControlPanel";
+            this.InventoryInfoControlPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // InventoryInfoControlPanel.Panel1
+            // 
+            this.InventoryInfoControlPanel.Panel1.AccessibleName = "Panel1";
+            this.InventoryInfoControlPanel.Panel1.BackColor = System.Drawing.Color.White;
+            // 
+            // InventoryInfoControlPanel.Panel2
+            // 
+            this.InventoryInfoControlPanel.Panel2.Controls.Add(this.metroButton2);
+            this.InventoryInfoControlPanel.Size = new System.Drawing.Size(147, 473);
+            this.InventoryInfoControlPanel.SplitterDistance = 365;
+            this.InventoryInfoControlPanel.TabIndex = 6;
             // 
             // SalesControl
             // 
@@ -338,6 +361,9 @@
             this.splitContainerBackgriund.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBackgriund)).EndInit();
             this.splitContainerBackgriund.ResumeLayout(false);
+            this.InventoryInfoControlPanel.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryInfoControlPanel)).EndInit();
+            this.InventoryInfoControlPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -356,5 +382,6 @@
         private MetroFramework.Controls.MetroButton metroButton4;
         private MetroFramework.Controls.MetroGrid StockInventoryGrid;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.SplitContainer InventoryInfoControlPanel;
     }
 }
