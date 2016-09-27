@@ -145,7 +145,38 @@ namespace ShopIM.UI.Controller
 
         private void ChangePasswordBtn_Click(object sender, EventArgs e)
         {
-           
+            AccountBox.Visible = true;
+        }
+
+        private void SubmitPassword_Click(object sender, EventArgs e)
+        {
+            if (currentPaswordTextBox.Text.Equals(User.UserPassword))
+            {
+                if (NewPassTextBox.Text.Equals(ConfirmPassTextBox.Text))
+                {
+                    User.UserPassword = NewPassTextBox.Text;
+                    if (new UserRepo().UpdateUser(User))
+                    {
+                        MetroMessageBox.Show(this, "Password Successfully Changed", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        AccountBox.Visible = false;
+                    }
+
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, "Password Mismatch", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    currentPaswordTextBox.Text = "";
+                    NewPassTextBox.Text = "";
+                    ConfirmPassTextBox.Text = "";
+                }
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Wrong Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                currentPaswordTextBox.Text = "";
+                NewPassTextBox.Text = "";
+                ConfirmPassTextBox.Text = "";
+            }
         }
     }
 }

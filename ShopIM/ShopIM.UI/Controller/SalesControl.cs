@@ -16,7 +16,8 @@ namespace ShopIM.UI.Controller
             InitializeComponent();
             LoadInventories();
             CartInventories=new List<Inventory>();
-            table.Controls.Add(new InventoryInfoControl(new Inventory()));
+            splitContainerBackground.Panel2.Controls.Add(new InventoryInfoControl(new Inventory()));
+      
            
         }
 
@@ -51,10 +52,7 @@ namespace ShopIM.UI.Controller
 
         }
 
-        private void AddtoCartButton_Click(object sender, System.EventArgs e)
-        {   
-           
-        }
+  
 
         private void StockInventoryGrid_Click(object sender, System.EventArgs e)
         {
@@ -63,12 +61,11 @@ namespace ShopIM.UI.Controller
             for (var i = 0; i < length; i++)
             {
                 SelectedInventories.Add((Inventory)StockInventoryGrid.SelectedRows[i].DataBoundItem);
-              
-
+             
             }
-            table.Controls.Clear();
+            splitContainerBackground.Panel2.Controls.Clear();
             if (SelectedInventories.Count > 0)
-                table.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
+                splitContainerBackground.Panel2.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
 
 
         }
@@ -78,10 +75,7 @@ namespace ShopIM.UI.Controller
 
         }
 
-        private void metroButton1_Click(object sender, System.EventArgs e)
-        {
-
-        }
+   
 
         private void metroButton4_Click(object sender, System.EventArgs e)
         {
@@ -99,9 +93,5 @@ namespace ShopIM.UI.Controller
             LoadCart();
         }
 
-        private void metroButton3_Click(object sender, System.EventArgs e)
-        {
-
-        }
     }
 }
