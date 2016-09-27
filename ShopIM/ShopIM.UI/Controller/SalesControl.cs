@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using MetroFramework;
 using ShopIM.BLL;
 using ShopIM.Entity;
 
@@ -10,21 +11,24 @@ namespace ShopIM.UI.Controller
         List<Inventory> StockInventories { get; set; }
         List<Inventory> SelectedInventories { get; set; }
         List<Inventory> CartInventories { get; set; }
+        List<Inventory> SelectedCartInventories { get; set; }
 
         public SalesControl()
         {
             InitializeComponent();
-            LoadInventories();
+            
             CartInventories=new List<Inventory>();
+            StockInventories = new List<Inventory>();
             InventoryInfoControlPanel.Panel1.Controls.Add(new InventoryInfoControl(new Inventory()));
-      
-           
+            StockInventories = new InventoryRepo().GetInventories();
+            LoadInventories();
+
+
         }
 
         private void LoadInventories()
         {
-            StockInventories = new List<Inventory>();
-            StockInventories = new InventoryRepo().GetInventories();
+            StockInventoryGrid.DataSource = null;
             StockInventoryGrid.DataSource = StockInventories;
             StockInventoryGrid.Columns[2].Visible = false;
             StockInventoryGrid.Columns[4].Visible = false;
@@ -83,15 +87,66 @@ namespace ShopIM.UI.Controller
 
             foreach (var inventory in SelectedInventories)
             {
-                Inventory cartInventory = new Inventory(inventory);
-                cartInventory.Quantity = 1;
+                if (inventory.Quantity <= 0)
+                {
+                    MetroMessageBox.Show(this, "No more item's in Stock", "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                    
+                }
+                inventory.Quantity -= 1;
+                Inventory cartInventory = new Inventory(inventory) {Quantity = 1};
                 CartInventories.Add(cartInventory);
 
 
             }
-
+            LoadInventories();
             LoadCart();
         }
 
+        private void CartGrid_DoubleClick(object sender, System.EventArgs e)
+        {
+            
+            Inventory selectedCartInventory= (Inventory)CartGrid.SelectedRows[0].DataBoundItem;
+            Inventory sampleInventory = StockInventories.Find(i => i.ProductName == selectedCartInventory.ProductName);
+            if (selectedCartInventory != null)
+            {
+                ModifyCartItem modifyCartItem= new ModifyCartItem(selectedCartInventory,sampleInventory);
+                if (modifyCartItem.ShowDialog()==DialogResult.OK)
+                {
+                   LoadCart();
+                   LoadInventories();
+                }
+            }
+              
+            
+        }
+
+        private void CartGrid_Click(object sender, System.EventArgs e)
+        {
+            var length = CartGrid.SelectedRows.Count;
+            SelectedCartInventories = new List<Inventory>();
+            for (var i = 0; i < length; i++)
+            {
+                SelectedCartInventories.Add((Inventory)CartGrid.SelectedRows[i].DataBoundItem);
+
+            }
+        }
+
+        private void RemoveCartButton_Click(object sender, System.EventArgs e)
+        {
+            if (SelectedCartInventories != null)
+            {
+                foreach (var inventory in SelectedCartInventories)
+                {
+                    Inventory stockInventory = StockInventories.Find(i => i.ProductName == inventory.ProductName);
+                    stockInventory.Quantity += inventory.Quantity;
+                    CartInventories.Remove(inventory);
+                }
+            }
+
+            LoadCart();
+            LoadInventories();
+        }
     }
 }

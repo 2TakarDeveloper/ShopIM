@@ -1,6 +1,6 @@
 ﻿namespace ShopIM.UI
 {
-    partial class AddProduct
+    partial class ModifyCartItem
     {
         /// <summary>
         /// Required designer variable.
@@ -32,14 +32,14 @@
             this.SellingPrice = new System.Windows.Forms.NumericUpDown();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.NameLable = new MetroFramework.Controls.MetroLabel();
+            this.CancleButton = new MetroFramework.Controls.MetroLink();
             this.SubmitButton = new MetroFramework.Controls.MetroButton();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.SellingQuantity = new System.Windows.Forms.NumericUpDown();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellingPrice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SellingQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductImage
@@ -96,31 +96,32 @@
             this.metroLabel3.UseCustomBackColor = true;
             this.metroLabel3.UseStyleColors = true;
             // 
-            // metroLabel1
+            // NameLable
             // 
-            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(108, 235);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(100, 19);
-            this.metroLabel1.Style = MetroFramework.MetroColorStyle.White;
-            this.metroLabel1.TabIndex = 34;
-            this.metroLabel1.Text = "Product Name:";
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseStyleColors = true;
+            this.NameLable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NameLable.AutoSize = true;
+            this.NameLable.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.NameLable.Location = new System.Drawing.Point(108, 235);
+            this.NameLable.Name = "NameLable";
+            this.NameLable.Size = new System.Drawing.Size(100, 19);
+            this.NameLable.Style = MetroFramework.MetroColorStyle.White;
+            this.NameLable.TabIndex = 34;
+            this.NameLable.Text = "Product Name:";
+            this.NameLable.UseCustomBackColor = true;
+            this.NameLable.UseStyleColors = true;
             // 
-            // metroLink1
+            // CancleButton
             // 
-            this.metroLink1.BackColor = System.Drawing.Color.Transparent;
-            this.metroLink1.Image = global::ShopIM.UI.Properties.Resources.ClosrRedBtn;
-            this.metroLink1.ImageSize = 25;
-            this.metroLink1.Location = new System.Drawing.Point(233, 3);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(30, 30);
-            this.metroLink1.TabIndex = 35;
-            this.metroLink1.UseCustomBackColor = true;
-            this.metroLink1.UseSelectable = true;
+            this.CancleButton.BackColor = System.Drawing.Color.Transparent;
+            this.CancleButton.Image = global::ShopIM.UI.Properties.Resources.ClosrRedBtn;
+            this.CancleButton.ImageSize = 25;
+            this.CancleButton.Location = new System.Drawing.Point(233, 3);
+            this.CancleButton.Name = "CancleButton";
+            this.CancleButton.Size = new System.Drawing.Size(30, 30);
+            this.CancleButton.TabIndex = 35;
+            this.CancleButton.UseCustomBackColor = true;
+            this.CancleButton.UseSelectable = true;
+            this.CancleButton.Click += new System.EventHandler(this.CancleButton_Click);
             // 
             // SubmitButton
             // 
@@ -133,23 +134,24 @@
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(87, 31);
             this.SubmitButton.TabIndex = 36;
-            this.SubmitButton.Text = "Add";
+            this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseCustomBackColor = true;
             this.SubmitButton.UseCustomForeColor = true;
             this.SubmitButton.UseSelectable = true;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
-            // numericUpDown1
+            // SellingQuantity
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(108, 293);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.SellingQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SellingQuantity.Location = new System.Drawing.Point(108, 293);
+            this.SellingQuantity.Maximum = new decimal(new int[] {
             9999999,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(119, 29);
-            this.numericUpDown1.TabIndex = 38;
+            this.SellingQuantity.Name = "SellingQuantity";
+            this.SellingQuantity.Size = new System.Drawing.Size(119, 29);
+            this.SellingQuantity.TabIndex = 38;
             // 
             // metroLabel2
             // 
@@ -166,27 +168,28 @@
             this.metroLabel2.UseCustomBackColor = true;
             this.metroLabel2.UseStyleColors = true;
             // 
-            // AddProduct
+            // ModifyCartItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(270, 377);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.SellingQuantity);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.SubmitButton);
-            this.Controls.Add(this.metroLink1);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.CancleButton);
+            this.Controls.Add(this.NameLable);
             this.Controls.Add(this.SellingPrice);
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.ProductImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddProduct";
+            this.Name = "ModifyCartItem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "news";
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellingPrice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SellingQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,10 +201,10 @@
         private System.Windows.Forms.NumericUpDown SellingPrice;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLink metroLink1;
+        private MetroFramework.Controls.MetroLabel NameLable;
+        private MetroFramework.Controls.MetroLink CancleButton;
         private MetroFramework.Controls.MetroButton SubmitButton;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown SellingQuantity;
         private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }

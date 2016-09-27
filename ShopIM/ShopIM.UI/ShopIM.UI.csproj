@@ -86,11 +86,11 @@
     <Compile Include="InveontroyForm.Designer.cs">
       <DependentUpon>InveontroyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddProduct.cs">
+    <Compile Include="ModifyCartItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddProduct.Designer.cs">
-      <DependentUpon>AddProduct.cs</DependentUpon>
+    <Compile Include="ModifyCartItem.Designer.cs">
+      <DependentUpon>ModifyCartItem.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
@@ -160,8 +160,8 @@
     <EmbeddedResource Include="InveontroyForm.resx">
       <DependentUpon>InveontroyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddProduct.resx">
-      <DependentUpon>AddProduct.cs</DependentUpon>
+    <EmbeddedResource Include="ModifyCartItem.resx">
+      <DependentUpon>ModifyCartItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
