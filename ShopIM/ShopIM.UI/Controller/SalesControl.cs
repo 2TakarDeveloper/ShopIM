@@ -16,7 +16,7 @@ namespace ShopIM.UI.Controller
             InitializeComponent();
             LoadInventories();
             CartInventories=new List<Inventory>();
-            splitContainerBackground.Panel2.Controls.Add(new InventoryInfoControl(new Inventory()));
+            InventoryInfoControlPanel.Panel1.Controls.Add(new InventoryInfoControl(new Inventory()));
       
            
         }
@@ -63,9 +63,9 @@ namespace ShopIM.UI.Controller
                 SelectedInventories.Add((Inventory)StockInventoryGrid.SelectedRows[i].DataBoundItem);
              
             }
-            splitContainerBackground.Panel2.Controls.Clear();
+            InventoryInfoControlPanel.Panel1.Controls.Clear();
             if (SelectedInventories.Count > 0)
-                splitContainerBackground.Panel2.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
+                InventoryInfoControlPanel.Panel1.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
 
 
         }
