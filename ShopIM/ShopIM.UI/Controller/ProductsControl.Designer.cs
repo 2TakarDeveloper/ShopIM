@@ -32,6 +32,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.AddBtn = new MetroFramework.Controls.MetroButton();
             this.productListPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -41,6 +43,7 @@
             // 
             // backgroundPanel
             // 
+            this.backgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.backgroundPanel.Controls.Add(this.splitContainer1);
             this.backgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backgroundPanel.HorizontalScrollbarBarColor = true;
@@ -64,13 +67,15 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.AddBtn);
+            this.splitContainer1.Panel1.Controls.Add(this.metroTextBox1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.productListPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(1148, 668);
-            this.splitContainer1.SplitterDistance = 39;
+            this.splitContainer1.Size = new System.Drawing.Size(1144, 664);
+            this.splitContainer1.SplitterDistance = 38;
             this.splitContainer1.TabIndex = 4;
             // 
             // AddBtn
@@ -89,8 +94,63 @@
             this.productListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productListPanel.Location = new System.Drawing.Point(0, 0);
             this.productListPanel.Name = "productListPanel";
-            this.productListPanel.Size = new System.Drawing.Size(1148, 625);
+            this.productListPanel.Size = new System.Drawing.Size(1144, 622);
             this.productListPanel.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.DisplayMember = "Name";
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Name",
+            "Type",
+            "Vendor",
+            "Price Range"});
+            this.comboBox1.Location = new System.Drawing.Point(971, 5);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(136, 28);
+            this.comboBox1.TabIndex = 20;
+            this.comboBox1.Text = "Name";
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = global::ShopIM.UI.Properties.Resources.search;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(222, 2);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.DisplayIcon = true;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBox1.Icon = global::ShopIM.UI.Properties.Resources.search;
+            this.metroTextBox1.Lines = new string[0];
+            this.metroTextBox1.Location = new System.Drawing.Point(715, 3);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.PromptText = "Search";
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.ShowButton = true;
+            this.metroTextBox1.ShowClearButton = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(250, 30);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroTextBox1.TabIndex = 19;
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMark = "Search";
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // ProductsControl
             // 
@@ -115,5 +175,7 @@
         private MetroFramework.Controls.MetroButton AddBtn;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.FlowLayoutPanel productListPanel;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
     }
 }

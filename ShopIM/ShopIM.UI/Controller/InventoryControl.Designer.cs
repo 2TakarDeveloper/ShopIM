@@ -38,6 +38,8 @@
             this.AddBtn = new MetroFramework.Controls.MetroButton();
             this.InventorySplitContainer = new System.Windows.Forms.SplitContainer();
             this.InventoryGrid = new MetroFramework.Controls.MetroGrid();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -51,6 +53,7 @@
             // 
             // backgroundPanel
             // 
+            this.backgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.backgroundPanel.Controls.Add(this.splitContainer1);
             this.backgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backgroundPanel.HorizontalScrollbarBarColor = true;
@@ -74,6 +77,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.metroTextBox1);
             this.splitContainer1.Panel1.Controls.Add(this.DeleteBtn);
             this.splitContainer1.Panel1.Controls.Add(this.EditBtn);
             this.splitContainer1.Panel1.Controls.Add(this.AddBtn);
@@ -81,8 +86,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.InventorySplitContainer);
-            this.splitContainer1.Size = new System.Drawing.Size(1168, 688);
-            this.splitContainer1.SplitterDistance = 44;
+            this.splitContainer1.Size = new System.Drawing.Size(1164, 684);
+            this.splitContainer1.SplitterDistance = 43;
             this.splitContainer1.TabIndex = 4;
             // 
             // DeleteBtn
@@ -124,8 +129,8 @@
             // InventorySplitContainer.Panel1
             // 
             this.InventorySplitContainer.Panel1.Controls.Add(this.InventoryGrid);
-            this.InventorySplitContainer.Size = new System.Drawing.Size(1168, 640);
-            this.InventorySplitContainer.SplitterDistance = 946;
+            this.InventorySplitContainer.Size = new System.Drawing.Size(1164, 637);
+            this.InventorySplitContainer.SplitterDistance = 942;
             this.InventorySplitContainer.TabIndex = 1;
             // 
             // InventoryGrid
@@ -172,9 +177,64 @@
             this.InventoryGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.InventoryGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.InventoryGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.InventoryGrid.Size = new System.Drawing.Size(946, 640);
+            this.InventoryGrid.Size = new System.Drawing.Size(942, 637);
             this.InventoryGrid.TabIndex = 0;
             this.InventoryGrid.Click += new System.EventHandler(this.InventoryGrid_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.DisplayMember = "Name";
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Name",
+            "Type",
+            "Vendor",
+            "Price Range"});
+            this.comboBox1.Location = new System.Drawing.Point(1023, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(136, 28);
+            this.comboBox1.TabIndex = 20;
+            this.comboBox1.Text = "Name";
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = global::ShopIM.UI.Properties.Resources.search;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(222, 2);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.DisplayIcon = true;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBox1.Icon = global::ShopIM.UI.Properties.Resources.search;
+            this.metroTextBox1.Lines = new string[0];
+            this.metroTextBox1.Location = new System.Drawing.Point(767, 7);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.PromptText = "Search";
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.ShowButton = true;
+            this.metroTextBox1.ShowClearButton = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(250, 30);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroTextBox1.TabIndex = 19;
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMark = "Search";
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // InventoryControl
             // 
@@ -205,5 +265,7 @@
         private MetroFramework.Controls.MetroButton EditBtn;
         private MetroFramework.Controls.MetroGrid InventoryGrid;
         private System.Windows.Forms.SplitContainer InventorySplitContainer;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
     }
 }
