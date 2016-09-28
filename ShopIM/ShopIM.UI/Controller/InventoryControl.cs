@@ -73,5 +73,16 @@ namespace ShopIM.UI.Controller
             }
            
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Searchpicker.Text == "Name")
+            {
+                SearchBox.WaterMark = "Ex.Rose";
+            }else if (Searchpicker.Text == "Price Range")
+            {
+                SearchBox.WaterMark = "Ex:100-1000";
+            }
+        }
     }
 }

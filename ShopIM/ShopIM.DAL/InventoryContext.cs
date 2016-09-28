@@ -69,7 +69,7 @@ namespace ShopIM.DAL
 
                 }
 
-                return true;
+    
             }
             catch (Exception)
             {
@@ -147,20 +147,33 @@ namespace ShopIM.DAL
             }
         }
 
-        public double SalesUpdate(Inventory inventory)
+
+       
+
+
+        public bool SalesUpdate(Inventory inventory)
         {
            
             using (var context = new DatabaseContext())
             {
-                var i = (from Inventory in context.Inventories
-                    where Inventory.Sl == inventory.Sl
-                    select Inventory).FirstOrDefault();
+                try
+                {
+                    var i = (from Inventory in context.Inventories
+                        where Inventory.Sl == inventory.Sl
+                        select Inventory).FirstOrDefault();
 
 
+
+                    i.Quantity -= inventory.Quantity;
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+               
                 
-                i.Quantity -= inventory.Quantity;
-                context.SaveChanges();
-                return i.Price;
 
 
             }
