@@ -16,8 +16,11 @@ namespace ShopIM.UI
     public partial class CheckoutForm : Form
     {
         private List<Inventory> Inventories { get; set; }
-        public CheckoutForm(List<Inventory> inventories )
+        private String UserName { get; set; }
+
+        public CheckoutForm(List<Inventory> inventories,string userName )
         {
+            UserName = userName;
             Inventories = inventories;
             InitializeComponent();
             CheckoutGrid.DataSource = Inventories;
@@ -45,7 +48,7 @@ namespace ShopIM.UI
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (new InventoryRepo().SellProduct(Inventories))
+            if (new InventoryRepo().SellProduct(Inventories,UserName))
             {
                 DialogResult = DialogResult.OK;
             }

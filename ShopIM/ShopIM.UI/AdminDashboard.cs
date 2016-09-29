@@ -55,7 +55,7 @@ namespace ShopIM.UI
 
         private void LoadSales()
         {
-            var salesControl = new SalesControl();
+            var salesControl = new SalesControl(User.UserName);
             metroPanelBackground.Controls.Clear();
             salesControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(salesControl);

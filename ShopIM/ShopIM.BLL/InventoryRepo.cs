@@ -64,7 +64,7 @@ namespace ShopIM.BLL
           return  new InventoryContext().SearchWithName(text);
         }
 
-        public bool SellProduct(List<Inventory> inventories)
+        public bool SellProduct(List<Inventory> inventories,string userName)
         {
             foreach (var inventory in inventories)
             {
@@ -72,6 +72,11 @@ namespace ShopIM.BLL
                 {
                     return false;
                 }
+                //Add sales log
+                SalesLog salesLog=new SalesLog(inventory,userName);
+                new SalesLogContext().AddSalesLog(salesLog);
+
+
             }
             return true;
         }

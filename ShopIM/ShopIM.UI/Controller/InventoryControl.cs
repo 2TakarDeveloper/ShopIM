@@ -36,7 +36,9 @@ namespace ShopIM.UI.Controller
             var inventories = new InventoryRepo().GetInventories();
             InventoryGrid.DataSource = null;
             InventoryGrid.DataSource = inventories;
+            InventoryGrid.Columns[0].Visible = false;
             InventoryGrid.Columns[9].Visible = false;
+            InventoryGrid.Columns[11].Visible = false;
         }
 
         private void InventoryGrid_Click(object sender, EventArgs e)

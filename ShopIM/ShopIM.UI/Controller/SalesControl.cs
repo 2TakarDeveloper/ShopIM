@@ -13,10 +13,12 @@ namespace ShopIM.UI.Controller
         List<Inventory> CartInventories { get; set; }
         List<Inventory> SelectedCartInventories { get; set; }
 
-        public SalesControl()
+        private string UserName { get; set; }
+
+        public SalesControl(string userName)
         {
             InitializeComponent();
-            
+            UserName = userName;
             CartInventories=new List<Inventory>();
             StockInventories = new List<Inventory>();
             InventoryInfoControlPanel.Panel1.Controls.Add(new InventoryInfoControl(new Inventory()));
@@ -162,7 +164,7 @@ namespace ShopIM.UI.Controller
         {
             if(CartInventories.Count<=0)return;
             
-            CheckoutForm checkoutForm = new CheckoutForm(CartInventories);
+            CheckoutForm checkoutForm = new CheckoutForm(CartInventories,UserName);
             if (checkoutForm.ShowDialog() == DialogResult.OK)
             {
                 CartInventories = new List<Inventory>();

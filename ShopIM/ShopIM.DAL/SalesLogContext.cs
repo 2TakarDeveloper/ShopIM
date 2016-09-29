@@ -9,15 +9,14 @@ namespace ShopIM.DAL
 {
     public class SalesLogContext
     {
-        public void AddSalesLog(List<SalesLog> salesLogs)
+        public void AddSalesLog(SalesLog salesLog)
         {
             using (var context=new DatabaseContext())
             {
-                foreach (var salesLog in salesLogs)
-                {
+                
                     context.SalesLogs.Add(salesLog);
                     context.SaveChanges();
-                }
+                
             }
         }
 

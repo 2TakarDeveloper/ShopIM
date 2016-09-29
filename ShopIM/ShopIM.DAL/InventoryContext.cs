@@ -177,7 +177,7 @@ namespace ShopIM.DAL
 
         public bool SalesUpdate(Inventory inventory)
         {
-           
+            
             using (var context = new DatabaseContext())
             {
                 try

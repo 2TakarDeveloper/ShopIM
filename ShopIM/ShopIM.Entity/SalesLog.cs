@@ -16,5 +16,20 @@ namespace ShopIM.Entity
         public int Quantity { get; set; }
         public double NetProfit { get; set; }
         public string UserName { get; set; }
+
+        public SalesLog() { }
+
+        public SalesLog(Inventory soldInventory,String userName)
+        {
+            ProductName = soldInventory.ProductName;
+            PurchaseDate = soldInventory.PurchaseDate;
+            SoldDate=DateTime.Now;
+            Cost = soldInventory.Cost;
+            Price = soldInventory.SellingPrice;
+            Quantity = soldInventory.Quantity;
+            NetProfit = ( Quantity*Price- Quantity * Cost);
+            UserName = userName;
+        }
+
     }
 }

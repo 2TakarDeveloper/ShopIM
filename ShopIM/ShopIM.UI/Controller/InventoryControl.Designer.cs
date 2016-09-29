@@ -208,6 +208,7 @@
             this.InventoryGrid.AllowUserToAddRows = false;
             this.InventoryGrid.AllowUserToDeleteRows = false;
             this.InventoryGrid.AllowUserToResizeRows = false;
+            this.InventoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.InventoryGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.InventoryGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.InventoryGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
