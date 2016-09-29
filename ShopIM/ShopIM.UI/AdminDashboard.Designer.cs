@@ -32,14 +32,13 @@
             this.metroPanelSide = new MetroFramework.Controls.MetroPanel();
             this.menuSidePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.SalesButton = new MetroFramework.Controls.MetroLink();
             this.ProductButton = new MetroFramework.Controls.MetroLink();
             this.InventoryButton = new MetroFramework.Controls.MetroLink();
-            this.LockButton = new MetroFramework.Controls.MetroLink();
             this.SettingsButton = new MetroFramework.Controls.MetroLink();
-            this.LogoutButton = new MetroFramework.Controls.MetroLink();
-            this.SalesButton = new MetroFramework.Controls.MetroLink();
+            this.LockButton = new MetroFramework.Controls.MetroLink();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
-            this.UserImage = new System.Windows.Forms.PictureBox();
+            this.LogoutButton = new MetroFramework.Controls.MetroLink();
             this.UserButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanelBackground = new MetroFramework.Controls.MetroPanel();
@@ -49,10 +48,11 @@
             this.metroLink9 = new MetroFramework.Controls.MetroLink();
             this.metroLink8 = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
+            this.UserImage = new System.Windows.Forms.PictureBox();
             this.metroPanelSide.SuspendLayout();
             this.menuSidePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanelSide
@@ -110,6 +110,23 @@
             this.metroLink1.UseSelectable = true;
             this.metroLink1.UseStyleColors = true;
             // 
+            // SalesButton
+            // 
+            this.SalesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.SalesButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.SalesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.SalesButton.Location = new System.Drawing.Point(1, 53);
+            this.SalesButton.Margin = new System.Windows.Forms.Padding(1);
+            this.SalesButton.Name = "SalesButton";
+            this.SalesButton.Size = new System.Drawing.Size(215, 50);
+            this.SalesButton.Style = MetroFramework.MetroColorStyle.White;
+            this.SalesButton.TabIndex = 25;
+            this.SalesButton.Text = "Sales";
+            this.SalesButton.UseCustomBackColor = true;
+            this.SalesButton.UseSelectable = true;
+            this.SalesButton.UseStyleColors = true;
+            this.SalesButton.Click += new System.EventHandler(this.SalesButton_Click);
+            // 
             // ProductButton
             // 
             this.ProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
@@ -144,23 +161,6 @@
             this.InventoryButton.UseStyleColors = true;
             this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
-            // LockButton
-            // 
-            this.LockButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.LockButton.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.LockButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.LockButton.Location = new System.Drawing.Point(1, 261);
-            this.LockButton.Margin = new System.Windows.Forms.Padding(1);
-            this.LockButton.Name = "LockButton";
-            this.LockButton.Size = new System.Drawing.Size(215, 50);
-            this.LockButton.Style = MetroFramework.MetroColorStyle.White;
-            this.LockButton.TabIndex = 23;
-            this.LockButton.Text = "Lock";
-            this.LockButton.UseCustomBackColor = true;
-            this.LockButton.UseSelectable = true;
-            this.LockButton.UseStyleColors = true;
-            this.LockButton.Click += new System.EventHandler(this.LockButton_Click);
-            // 
             // SettingsButton
             // 
             this.SettingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
@@ -177,39 +177,22 @@
             this.SettingsButton.UseSelectable = true;
             this.SettingsButton.UseStyleColors = true;
             // 
-            // LogoutButton
+            // LockButton
             // 
-            this.LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.LogoutButton.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.LogoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.LogoutButton.Location = new System.Drawing.Point(1, 365);
-            this.LogoutButton.Margin = new System.Windows.Forms.Padding(1);
-            this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(215, 50);
-            this.LogoutButton.Style = MetroFramework.MetroColorStyle.White;
-            this.LogoutButton.TabIndex = 24;
-            this.LogoutButton.Text = "Logout";
-            this.LogoutButton.UseCustomBackColor = true;
-            this.LogoutButton.UseSelectable = true;
-            this.LogoutButton.UseStyleColors = true;
-            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
-            // 
-            // SalesButton
-            // 
-            this.SalesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.SalesButton.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.SalesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.SalesButton.Location = new System.Drawing.Point(1, 53);
-            this.SalesButton.Margin = new System.Windows.Forms.Padding(1);
-            this.SalesButton.Name = "SalesButton";
-            this.SalesButton.Size = new System.Drawing.Size(215, 50);
-            this.SalesButton.Style = MetroFramework.MetroColorStyle.White;
-            this.SalesButton.TabIndex = 25;
-            this.SalesButton.Text = "Sales";
-            this.SalesButton.UseCustomBackColor = true;
-            this.SalesButton.UseSelectable = true;
-            this.SalesButton.UseStyleColors = true;
-            this.SalesButton.Click += new System.EventHandler(this.SalesButton_Click);
+            this.LockButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.LockButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.LockButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.LockButton.Location = new System.Drawing.Point(1, 261);
+            this.LockButton.Margin = new System.Windows.Forms.Padding(1);
+            this.LockButton.Name = "LockButton";
+            this.LockButton.Size = new System.Drawing.Size(215, 50);
+            this.LockButton.Style = MetroFramework.MetroColorStyle.White;
+            this.LockButton.TabIndex = 23;
+            this.LockButton.Text = "Lock";
+            this.LockButton.UseCustomBackColor = true;
+            this.LockButton.UseSelectable = true;
+            this.LockButton.UseStyleColors = true;
+            this.LockButton.Click += new System.EventHandler(this.LockButton_Click);
             // 
             // metroLink2
             // 
@@ -228,16 +211,22 @@
             this.metroLink2.UseStyleColors = true;
             this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
             // 
-            // UserImage
+            // LogoutButton
             // 
-            this.UserImage.BackColor = System.Drawing.Color.Transparent;
-            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.UserImage.Location = new System.Drawing.Point(3, 3);
-            this.UserImage.Name = "UserImage";
-            this.UserImage.Size = new System.Drawing.Size(70, 70);
-            this.UserImage.TabIndex = 18;
-            this.UserImage.TabStop = false;
+            this.LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.LogoutButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.LogoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.LogoutButton.Location = new System.Drawing.Point(1, 365);
+            this.LogoutButton.Margin = new System.Windows.Forms.Padding(1);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(215, 50);
+            this.LogoutButton.Style = MetroFramework.MetroColorStyle.White;
+            this.LogoutButton.TabIndex = 24;
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.UseCustomBackColor = true;
+            this.LogoutButton.UseSelectable = true;
+            this.LogoutButton.UseStyleColors = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // UserButton
             // 
@@ -392,6 +381,17 @@
             this.ExitButton.UseSelectable = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_click);
             // 
+            // UserImage
+            // 
+            this.UserImage.BackColor = System.Drawing.Color.Transparent;
+            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserImage.Location = new System.Drawing.Point(3, 3);
+            this.UserImage.Name = "UserImage";
+            this.UserImage.Size = new System.Drawing.Size(70, 70);
+            this.UserImage.TabIndex = 18;
+            this.UserImage.TabStop = false;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,9 +411,9 @@
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.metroPanelSide.ResumeLayout(false);
             this.menuSidePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.ResumeLayout(false);
 
         }

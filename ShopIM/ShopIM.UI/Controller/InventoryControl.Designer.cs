@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backgroundPanel = new MetroFramework.Controls.MetroPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.Searchpicker = new System.Windows.Forms.ComboBox();
-            this.SearchBox = new MetroFramework.Controls.MetroTextBox();
             this.DeleteBtn = new MetroFramework.Controls.MetroButton();
             this.EditBtn = new MetroFramework.Controls.MetroButton();
             this.AddBtn = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.InventorySplitContainer = new System.Windows.Forms.SplitContainer();
             this.InventoryGrid = new MetroFramework.Controls.MetroGrid();
             this.backgroundPanel.SuspendLayout();
@@ -77,11 +78,12 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.Searchpicker);
-            this.splitContainer1.Panel1.Controls.Add(this.SearchBox);
             this.splitContainer1.Panel1.Controls.Add(this.DeleteBtn);
             this.splitContainer1.Panel1.Controls.Add(this.EditBtn);
             this.splitContainer1.Panel1.Controls.Add(this.AddBtn);
+            this.splitContainer1.Panel1.Controls.Add(this.metroButton1);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.metroTextBox1);
             // 
             // splitContainer1.Panel2
             // 
@@ -89,61 +91,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1164, 684);
             this.splitContainer1.SplitterDistance = 43;
             this.splitContainer1.TabIndex = 4;
-            // 
-            // Searchpicker
-            // 
-            this.Searchpicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Searchpicker.DisplayMember = "Name";
-            this.Searchpicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Searchpicker.FormattingEnabled = true;
-            this.Searchpicker.Items.AddRange(new object[] {
-            "Name",
-            "Price Range"});
-            this.Searchpicker.Location = new System.Drawing.Point(1023, 9);
-            this.Searchpicker.Name = "Searchpicker";
-            this.Searchpicker.Size = new System.Drawing.Size(136, 28);
-            this.Searchpicker.TabIndex = 20;
-            this.Searchpicker.Text = "Name";
-            this.Searchpicker.ValueMemberChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.Searchpicker.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // SearchBox
-            // 
-            this.SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.SearchBox.CustomButton.Image = global::ShopIM.UI.Properties.Resources.search;
-            this.SearchBox.CustomButton.Location = new System.Drawing.Point(222, 2);
-            this.SearchBox.CustomButton.Name = "";
-            this.SearchBox.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.SearchBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SearchBox.CustomButton.TabIndex = 1;
-            this.SearchBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.SearchBox.CustomButton.UseSelectable = true;
-            this.SearchBox.DisplayIcon = true;
-            this.SearchBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.SearchBox.Icon = global::ShopIM.UI.Properties.Resources.search;
-            this.SearchBox.Lines = new string[0];
-            this.SearchBox.Location = new System.Drawing.Point(767, 7);
-            this.SearchBox.MaxLength = 32767;
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.PasswordChar = '\0';
-            this.SearchBox.PromptText = "Search";
-            this.SearchBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.SearchBox.SelectedText = "";
-            this.SearchBox.SelectionLength = 0;
-            this.SearchBox.SelectionStart = 0;
-            this.SearchBox.ShortcutsEnabled = true;
-            this.SearchBox.ShowButton = true;
-            this.SearchBox.ShowClearButton = true;
-            this.SearchBox.Size = new System.Drawing.Size(250, 30);
-            this.SearchBox.Style = MetroFramework.MetroColorStyle.Orange;
-            this.SearchBox.TabIndex = 19;
-            this.SearchBox.UseSelectable = true;
-            this.SearchBox.WaterMark = "Search";
-            this.SearchBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.SearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // DeleteBtn
             // 
@@ -157,7 +104,7 @@
             // 
             // EditBtn
             // 
-            this.EditBtn.Location = new System.Drawing.Point(103, 5);
+            this.EditBtn.Location = new System.Drawing.Point(103, 6);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(94, 31);
             this.EditBtn.TabIndex = 3;
@@ -174,6 +121,71 @@
             this.AddBtn.Text = "Add";
             this.AddBtn.UseSelectable = true;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButton1.Location = new System.Drawing.Point(823, 9);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(82, 28);
+            this.metroButton1.TabIndex = 21;
+            this.metroButton1.Text = "Search";
+            this.metroButton1.UseSelectable = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.DisplayMember = "Name";
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Name",
+            "Type",
+            "Vendor",
+            "Price Range"});
+            this.comboBox1.Location = new System.Drawing.Point(679, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(136, 28);
+            this.comboBox1.TabIndex = 20;
+            this.comboBox1.Text = "Name";
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = global::ShopIM.UI.Properties.Resources.search;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(222, 2);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.DisplayIcon = true;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBox1.Icon = global::ShopIM.UI.Properties.Resources.search;
+            this.metroTextBox1.Lines = new string[0];
+            this.metroTextBox1.Location = new System.Drawing.Point(911, 6);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.PromptText = "Search";
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.ShowClearButton = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(250, 30);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroTextBox1.TabIndex = 19;
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMark = "Search";
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // InventorySplitContainer
             // 
@@ -197,23 +209,23 @@
             this.InventoryGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.InventoryGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.InventoryGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.InventoryGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.InventoryGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.InventoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.InventoryGrid.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InventoryGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.InventoryGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InventoryGrid.EnableHeadersVisualStyles = false;
             this.InventoryGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -222,14 +234,14 @@
             this.InventoryGrid.Name = "InventoryGrid";
             this.InventoryGrid.ReadOnly = true;
             this.InventoryGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.InventoryGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.InventoryGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.InventoryGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.InventoryGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.InventoryGrid.Size = new System.Drawing.Size(942, 637);
@@ -265,7 +277,8 @@
         private MetroFramework.Controls.MetroButton EditBtn;
         private MetroFramework.Controls.MetroGrid InventoryGrid;
         private System.Windows.Forms.SplitContainer InventorySplitContainer;
-        private System.Windows.Forms.ComboBox Searchpicker;
-        private MetroFramework.Controls.MetroTextBox SearchBox;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
     }
 }

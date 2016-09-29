@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckoutForm.Designer.cs">
+      <DependentUpon>CheckoutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\InventoryInfoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CheckoutForm.resx">
+      <DependentUpon>CheckoutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controller\InventoryInfoControl.resx">
       <DependentUpon>InventoryInfoControl.cs</DependentUpon>
     </EmbeddedResource>
