@@ -68,7 +68,7 @@ namespace ShopIM.UI
 
         private void InventoryButton_Click(object sender, EventArgs e)
         {
-            var inventoryControl = new InventoryControl();
+            var inventoryControl = new TableViewControl();
             metroPanelBackground.Controls.Clear();
             inventoryControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(inventoryControl);

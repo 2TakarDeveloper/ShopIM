@@ -110,11 +110,11 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controller\InventoryControl.cs">
+    <Compile Include="Controller\TableViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controller\InventoryControl.Designer.cs">
-      <DependentUpon>InventoryControl.cs</DependentUpon>
+    <Compile Include="Controller\TableViewControl.Designer.cs">
+      <DependentUpon>TableViewControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\ProductInfoControl.cs">
       <SubType>UserControl</SubType>
@@ -178,8 +178,8 @@
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controller\InventoryControl.resx">
-      <DependentUpon>InventoryControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controller\TableViewControl.resx">
+      <DependentUpon>TableViewControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\ProductInfoControl.resx">
       <DependentUpon>ProductInfoControl.cs</DependentUpon>

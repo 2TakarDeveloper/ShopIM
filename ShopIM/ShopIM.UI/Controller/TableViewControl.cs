@@ -6,11 +6,11 @@ using ShopIM.Entity;
 
 namespace ShopIM.UI.Controller
 {
-    public partial class InventoryControl : UserControl
+    public partial class TableViewControl : UserControl
     {
         private List<Inventory> SelectedInventories { get; set; }
 
-        public InventoryControl()
+        public TableViewControl()
         {
             
             InitializeComponent();

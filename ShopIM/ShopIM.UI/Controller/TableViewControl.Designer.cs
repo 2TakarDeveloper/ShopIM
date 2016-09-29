@@ -1,6 +1,6 @@
 ﻿namespace ShopIM.UI.Controller
 {
-    partial class InventoryControl
+    partial class TableViewControl
     {
         /// <summary> 
         /// Required designer variable.
