@@ -89,7 +89,7 @@ namespace ShopIM.DAL
 
 
                     
-                    I.Price = inventory.Price;
+                    I.Cost = inventory.Cost;
                     I.PurchaseDate = inventory.PurchaseDate;
                     I.Quantity = inventory.Quantity;
                     I.SellingPrice = inventory.SellingPrice;
@@ -141,9 +141,23 @@ namespace ShopIM.DAL
 
         public List<Inventory> SearchWithName(string name)
         {
+            List<Inventory> InventoryList = new List<Inventory>();
             using (var context = new DatabaseContext())
             {
-                return (from inventory in context.Inventories where inventory.ProductName==name select inventory).ToList();
+                var inventories =
+                        from inventory in context.Inventories
+                        join product in context.Products on inventory.ProductName equals product.Name
+                        where inventory.Product.Name==name
+                        select new { inventory, product };
+                foreach (var inventory in inventories)
+                {
+                    Inventory i = new Inventory();
+                    i = inventory.inventory;
+                    i.Product = inventory.product;
+                    InventoryList.Add(i);
+
+                }
+                return InventoryList;
             }
         }
 
@@ -153,7 +167,7 @@ namespace ShopIM.DAL
         {
             using (var context = new DatabaseContext())
             {
-                return (from inventory in context.Inventories where inventory.Price <=upper && inventory.Price>=lower select  inventory).ToList();
+                return (from inventory in context.Inventories where inventory.Cost <=upper && inventory.Cost>=lower select  inventory).ToList();
             }
         }
 
@@ -194,8 +208,6 @@ namespace ShopIM.DAL
         }
 
 
-
-
-
+      
     }
 }

@@ -30,12 +30,14 @@ namespace ShopIM.UI.Controller
         {
             StockInventoryGrid.DataSource = null;
             StockInventoryGrid.DataSource = StockInventories;
+            StockInventoryGrid.Columns[0].Visible = false;
             StockInventoryGrid.Columns[2].Visible = false;
             StockInventoryGrid.Columns[4].Visible = false;
             StockInventoryGrid.Columns[7].Visible = false;
             StockInventoryGrid.Columns[8].Visible = false;
             StockInventoryGrid.Columns[9].Visible = false;
-
+            StockInventoryGrid.Columns[10].Visible = false;
+            StockInventoryGrid.Columns[11].Visible = false;
 
         }
 
@@ -45,14 +47,17 @@ namespace ShopIM.UI.Controller
             CartGrid.DataSource = CartInventories;
 
             //hidden columns
+            CartGrid.Columns[0].Visible = false;
             CartGrid.Columns[2].Visible = false;
             CartGrid.Columns[4].Visible = false;
             CartGrid.Columns[5].Visible = false;
             CartGrid.Columns[7].Visible = false;
             CartGrid.Columns[8].Visible = false;
             CartGrid.Columns[9].Visible = false;
+            CartGrid.Columns[10].Visible = false;
+            CartGrid.Columns[11].Visible = false;
 
-           
+
 
         }
 
@@ -95,7 +100,10 @@ namespace ShopIM.UI.Controller
                     
                 }
                 inventory.Quantity -= 1;
-                Inventory cartInventory = new Inventory(inventory) {Quantity = 1};
+                Inventory cartInventory = new Inventory(inventory);
+                cartInventory.Quantity = 1;
+                cartInventory.TotalPrice = cartInventory.Quantity*cartInventory.SellingPrice;
+                cartInventory.TotalCost = cartInventory.Quantity*cartInventory.Cost;
                 CartInventories.Add(cartInventory);
 
 
@@ -106,6 +114,7 @@ namespace ShopIM.UI.Controller
 
         private void CartGrid_DoubleClick(object sender, System.EventArgs e)
         {
+            if(SelectedCartInventories.Count<=0)return;
             
             Inventory selectedCartInventory= (Inventory)CartGrid.SelectedRows[0].DataBoundItem;
             Inventory sampleInventory = StockInventories.Find(i => i.ProductName == selectedCartInventory.ProductName);
@@ -147,6 +156,24 @@ namespace ShopIM.UI.Controller
 
             LoadCart();
             LoadInventories();
+        }
+
+        private void CheckoutButton_Click(object sender, System.EventArgs e)
+        {
+            if(CartInventories.Count<=0)return;
+            
+            CheckoutForm checkoutForm = new CheckoutForm(CartInventories);
+            if (checkoutForm.ShowDialog() == DialogResult.OK)
+            {
+                CartInventories = new List<Inventory>();
+                StockInventories = new List<Inventory>();
+                InventoryInfoControlPanel.Panel1.Controls.Add(new InventoryInfoControl(new Inventory()));
+                StockInventories = new InventoryRepo().GetInventories();
+                LoadInventories();
+                CartGrid.DataSource = null;
+
+
+            }
         }
     }
 }

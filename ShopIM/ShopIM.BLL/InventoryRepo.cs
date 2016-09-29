@@ -57,6 +57,23 @@ namespace ShopIM.BLL
            
         }
 
+      
 
+        public List<Inventory> SearchByName(string text)
+        {
+          return  new InventoryContext().SearchWithName(text);
+        }
+
+        public bool SellProduct(List<Inventory> inventories)
+        {
+            foreach (var inventory in inventories)
+            {
+                if (!new InventoryContext().SalesUpdate(inventory))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

@@ -43,7 +43,7 @@
             this.SplitLine = new MetroFramework.Controls.MetroPanel();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.RemoveCartButton = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.CheckoutButton = new MetroFramework.Controls.MetroButton();
             this.table = new MetroFramework.Controls.MetroPanel();
             this.splitContainerBackgriund = new System.Windows.Forms.SplitContainer();
             this.InventoryInfoControlPanel = new System.Windows.Forms.SplitContainer();
@@ -114,6 +114,7 @@
             this.StockInventoryGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.StockInventoryGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.StockInventoryGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.StockInventoryGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -163,7 +164,7 @@
             this.CartGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.CartGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CartGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.CartGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.CartGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -283,15 +284,16 @@
             this.RemoveCartButton.UseSelectable = true;
             this.RemoveCartButton.Click += new System.EventHandler(this.RemoveCartButton_Click);
             // 
-            // metroButton2
+            // CheckoutButton
             // 
-            this.metroButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroButton2.Location = new System.Drawing.Point(0, 0);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(147, 104);
-            this.metroButton2.TabIndex = 4;
-            this.metroButton2.Text = "Check Out";
-            this.metroButton2.UseSelectable = true;
+            this.CheckoutButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CheckoutButton.Location = new System.Drawing.Point(0, 0);
+            this.CheckoutButton.Name = "CheckoutButton";
+            this.CheckoutButton.Size = new System.Drawing.Size(147, 104);
+            this.CheckoutButton.TabIndex = 4;
+            this.CheckoutButton.Text = "Check Out";
+            this.CheckoutButton.UseSelectable = true;
+            this.CheckoutButton.Click += new System.EventHandler(this.CheckoutButton_Click);
             // 
             // table
             // 
@@ -341,7 +343,7 @@
             // 
             // InventoryInfoControlPanel.Panel2
             // 
-            this.InventoryInfoControlPanel.Panel2.Controls.Add(this.metroButton2);
+            this.InventoryInfoControlPanel.Panel2.Controls.Add(this.CheckoutButton);
             this.InventoryInfoControlPanel.Size = new System.Drawing.Size(147, 473);
             this.InventoryInfoControlPanel.SplitterDistance = 365;
             this.InventoryInfoControlPanel.TabIndex = 6;
@@ -380,7 +382,7 @@
         private MetroFramework.Controls.MetroPanel table;
         private System.Windows.Forms.SplitContainer splitContainerBackgriund;
         private MetroFramework.Controls.MetroPanel SplitLine;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton CheckoutButton;
         private MetroFramework.Controls.MetroButton RemoveCartButton;
         private MetroFramework.Controls.MetroButton metroButton4;
         private MetroFramework.Controls.MetroGrid StockInventoryGrid;

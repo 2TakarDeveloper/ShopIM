@@ -16,9 +16,11 @@ namespace ShopIM.Entity
             Vendor = inventory.Vendor;
             ProductName = inventory.ProductName;
             Quantity = inventory.Quantity;
-            Price = inventory.Price;
+            Cost = inventory.Cost;
             SellingPrice = inventory.SellingPrice;
             PurchaseDate = inventory.PurchaseDate;
+            TotalCost = inventory.TotalCost;
+            TotalPrice = inventory.TotalPrice;
             StockLocation = inventory.StockLocation;
             Product = inventory.Product;
         }
@@ -30,8 +32,10 @@ namespace ShopIM.Entity
         public string Vendor { get; set; }
         public int Quantity { get; set; }
         public int Threashold { get; set; }
-        public double Price { get; set; }
+        public double Cost { get; set; }
         public double SellingPrice { get; set; }
+        public double TotalCost { get; set; }
+        public double TotalPrice { get; set; }
         public DateTime PurchaseDate { get; set; }
         public string StockLocation { get; set; }
 

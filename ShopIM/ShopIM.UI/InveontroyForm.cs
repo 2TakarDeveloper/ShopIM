@@ -46,7 +46,7 @@ namespace ShopIM.UI
             Quantity.Value = selectedInventory.Quantity;
             Threashold.Value = selectedInventory.Threashold;
             DatePicker.Value = selectedInventory.PurchaseDate;
-            Price.Value = (decimal) selectedInventory.Price;
+            Price.Value = (decimal) selectedInventory.Cost;
             SellingPrice.Value = (decimal) selectedInventory.SellingPrice;
             StockLocation.Text = selectedInventory.StockLocation;
         }
@@ -86,7 +86,7 @@ namespace ShopIM.UI
 
                 Inventory = new Inventory
                 {
-                    Price = (double) Price.Value,
+                    Cost = (double) Price.Value,
                     ProductName = name.Text,
                     PurchaseDate = DatePicker.Value,
                     Quantity = (int) Quantity.Value,
@@ -95,6 +95,8 @@ namespace ShopIM.UI
                     Threashold = (int) Threashold.Value,
                     Vendor = VendorTextBox.Text
                 };
+                Inventory.TotalCost = Inventory.Cost*Inventory.Quantity;
+                Inventory.TotalPrice = Inventory.SellingPrice*Inventory.Quantity;
 
                 DialogResult = DialogResult.OK;
             }

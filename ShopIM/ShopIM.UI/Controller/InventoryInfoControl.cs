@@ -26,19 +26,12 @@ namespace ShopIM.UI.Controller
             }
 
             Name.Text = inventory.ProductName;
-            if (inventory.Product!= null)
-            {
-                Type.Text = inventory.Product.Type;
-            }
-            else
-            {
-                Type.Text = "";
-            }
+            Type.Text = inventory.Product!= null ? inventory.Product.Type : "";
  
             Vendor.Text = inventory.Vendor;
             Quantity.Text = inventory.Quantity.ToString();
             Threashold.Text = inventory.Threashold.ToString();
-            Price.Text=inventory.Price.ToString(CultureInfo.InvariantCulture);
+            Price.Text=inventory.Cost.ToString(CultureInfo.InvariantCulture);
             SellingPrice.Text = inventory.SellingPrice.ToString(CultureInfo.InvariantCulture);
             PurchaseDate.Text = inventory.PurchaseDate.ToShortDateString();
             StockLocation.Text = inventory.StockLocation;

@@ -71,6 +71,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.metroButton1);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.metroTextBox1);
+            this.splitContainer1.Panel1.Margin = new System.Windows.Forms.Padding(5);
             // 
             // splitContainer1.Panel2
             // 
@@ -91,7 +92,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(782, 3);
+            this.metroButton1.Location = new System.Drawing.Point(1023, 3);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(82, 28);
             this.metroButton1.TabIndex = 21;
@@ -108,7 +109,7 @@
             "Type",
             "Vendor",
             "Price Range"});
-            this.comboBox1.Location = new System.Drawing.Point(640, 3);
+            this.comboBox1.Location = new System.Drawing.Point(625, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(136, 28);
             this.comboBox1.TabIndex = 20;
@@ -132,7 +133,7 @@
             this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox1.Icon = global::ShopIM.UI.Properties.Resources.search;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(872, 3);
+            this.metroTextBox1.Location = new System.Drawing.Point(767, 1);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';

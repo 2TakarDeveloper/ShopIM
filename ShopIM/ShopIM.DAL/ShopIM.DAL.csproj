@@ -54,7 +54,6 @@
     <Compile Include="LogContext.cs" />
     <Compile Include="ProductContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ConfigContext.cs" />
     <Compile Include="SalesLogContext.cs" />
     <Compile Include="UserContext.cs" />
   </ItemGroup>

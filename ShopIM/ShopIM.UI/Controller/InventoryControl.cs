@@ -8,6 +8,8 @@ namespace ShopIM.UI.Controller
 {
     public partial class InventoryControl : UserControl
     {
+        private List<Inventory> SelectedInventories { get; set; }
+
         public InventoryControl()
         {
             
@@ -17,7 +19,7 @@ namespace ShopIM.UI.Controller
             InventorySplitContainer.Panel2.Controls.Add(new InventoryInfoControl(new Inventory()));
         }
 
-        private List<Inventory> SelectedInventories { get; set; }
+       
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
@@ -76,13 +78,36 @@ namespace ShopIM.UI.Controller
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          /*  if (Searchpicker.Text == "Name")
+            if (Searchpicker.Text == @"Name")
             {
                 SearchBox.WaterMark = "Ex.Rose";
-            }else if (Searchpicker.Text == "Price Range")
+            }
+            else if (Searchpicker.Text == @"Price Range")
             {
                 SearchBox.WaterMark = "Ex:100-1000";
-            }*/
+            }
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (Searchpicker.Text == @"Name")
+            {
+                if (!string.IsNullOrWhiteSpace(SearchBox.Text))
+                {
+                    var inventories = new InventoryRepo().SearchByName(SearchBox.Text);
+                    InventoryGrid.DataSource = null;
+                    InventoryGrid.DataSource = inventories;
+                    InventoryGrid.Columns[9].Visible = false;
+                }
+            }
+            else if (Searchpicker.Text == @"Price Range")
+            {
+                if (!string.IsNullOrWhiteSpace(SearchBox.Text))
+                {
+                    //implement later
+                }
+            }
+
         }
     }
 }

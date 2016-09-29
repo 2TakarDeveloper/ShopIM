@@ -26,7 +26,7 @@ namespace ShopIM.UI
             InitializeComponent();
             NameLable.Text = inventory.ProductName;
             SellingPrice.Value = (decimal) inventory.SellingPrice;
-            SellingPrice.Minimum = (decimal) sampleInventory.Price;
+            SellingPrice.Minimum = (decimal) sampleInventory.Cost;
             SellingQuantity.Value = Inventory.Quantity;
             SellingQuantity.Maximum = StockInventory.Quantity+Inventory.Quantity;
             SellingQuantity.Minimum = 1;
@@ -57,6 +57,8 @@ namespace ShopIM.UI
              Inventory.Quantity = (int) SellingQuantity.Value;
             difference -= Inventory.Quantity;
             Inventory.SellingPrice = (double) SellingPrice.Value;
+            Inventory.TotalCost = Inventory.Quantity*Inventory.Cost;
+            Inventory.TotalPrice = Inventory.Quantity*Inventory.SellingPrice;
             StockInventory.Quantity += difference;
             
             DialogResult =DialogResult.OK;
