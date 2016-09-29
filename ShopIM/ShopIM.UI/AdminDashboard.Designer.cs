@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.metroPanelSide = new MetroFramework.Controls.MetroPanel();
             this.menuSidePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.AdminPanelButton = new MetroFramework.Controls.MetroLink();
             this.SalesButton = new MetroFramework.Controls.MetroLink();
             this.ProductButton = new MetroFramework.Controls.MetroLink();
             this.InventoryButton = new MetroFramework.Controls.MetroLink();
@@ -39,6 +39,7 @@
             this.LockButton = new MetroFramework.Controls.MetroLink();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
             this.LogoutButton = new MetroFramework.Controls.MetroLink();
+            this.UserImage = new System.Windows.Forms.PictureBox();
             this.UserButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanelBackground = new MetroFramework.Controls.MetroPanel();
@@ -48,11 +49,10 @@
             this.metroLink9 = new MetroFramework.Controls.MetroLink();
             this.metroLink8 = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
-            this.UserImage = new System.Windows.Forms.PictureBox();
             this.metroPanelSide.SuspendLayout();
             this.menuSidePanel.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
+            this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanelSide
@@ -81,7 +81,7 @@
             this.menuSidePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.menuSidePanel.AutoScroll = true;
-            this.menuSidePanel.Controls.Add(this.metroLink1);
+            this.menuSidePanel.Controls.Add(this.AdminPanelButton);
             this.menuSidePanel.Controls.Add(this.SalesButton);
             this.menuSidePanel.Controls.Add(this.ProductButton);
             this.menuSidePanel.Controls.Add(this.InventoryButton);
@@ -94,21 +94,22 @@
             this.menuSidePanel.Size = new System.Drawing.Size(217, 437);
             this.menuSidePanel.TabIndex = 19;
             // 
-            // metroLink1
+            // AdminPanelButton
             // 
-            this.metroLink1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.metroLink1.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.metroLink1.Location = new System.Drawing.Point(1, 1);
-            this.metroLink1.Margin = new System.Windows.Forms.Padding(1);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(215, 50);
-            this.metroLink1.Style = MetroFramework.MetroColorStyle.White;
-            this.metroLink1.TabIndex = 26;
-            this.metroLink1.Text = "Admin Panel";
-            this.metroLink1.UseCustomBackColor = true;
-            this.metroLink1.UseSelectable = true;
-            this.metroLink1.UseStyleColors = true;
+            this.AdminPanelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.AdminPanelButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.AdminPanelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.AdminPanelButton.Location = new System.Drawing.Point(1, 1);
+            this.AdminPanelButton.Margin = new System.Windows.Forms.Padding(1);
+            this.AdminPanelButton.Name = "AdminPanelButton";
+            this.AdminPanelButton.Size = new System.Drawing.Size(215, 50);
+            this.AdminPanelButton.Style = MetroFramework.MetroColorStyle.White;
+            this.AdminPanelButton.TabIndex = 26;
+            this.AdminPanelButton.Text = "Admin Panel";
+            this.AdminPanelButton.UseCustomBackColor = true;
+            this.AdminPanelButton.UseSelectable = true;
+            this.AdminPanelButton.UseStyleColors = true;
+            this.AdminPanelButton.Click += new System.EventHandler(this.AdminPanelButton_Click);
             // 
             // SalesButton
             // 
@@ -227,6 +228,17 @@
             this.LogoutButton.UseSelectable = true;
             this.LogoutButton.UseStyleColors = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
+            // UserImage
+            // 
+            this.UserImage.BackColor = System.Drawing.Color.Transparent;
+            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserImage.Location = new System.Drawing.Point(3, 3);
+            this.UserImage.Name = "UserImage";
+            this.UserImage.Size = new System.Drawing.Size(70, 70);
+            this.UserImage.TabIndex = 18;
+            this.UserImage.TabStop = false;
             // 
             // UserButton
             // 
@@ -381,17 +393,6 @@
             this.ExitButton.UseSelectable = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_click);
             // 
-            // UserImage
-            // 
-            this.UserImage.BackColor = System.Drawing.Color.Transparent;
-            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.UserImage.Location = new System.Drawing.Point(3, 3);
-            this.UserImage.Name = "UserImage";
-            this.UserImage.Size = new System.Drawing.Size(70, 70);
-            this.UserImage.TabIndex = 18;
-            this.UserImage.TabStop = false;
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,9 +412,9 @@
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.metroPanelSide.ResumeLayout(false);
             this.menuSidePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -431,7 +432,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLink metroLink2;
-        private MetroFramework.Controls.MetroLink metroLink1;
+        private MetroFramework.Controls.MetroLink AdminPanelButton;
         private MetroFramework.Controls.MetroLink SalesButton;
         private MetroFramework.Controls.MetroLink LogoutButton;
         private MetroFramework.Controls.MetroLink SettingsButton;

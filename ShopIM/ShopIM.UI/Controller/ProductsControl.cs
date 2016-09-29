@@ -54,5 +54,38 @@ namespace ShopIM.UI.Controller
                     }
                 }
         }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (SearchPicker.Text == @"Name")
+            {
+                if (!string.IsNullOrWhiteSpace(SearchBox.Text))
+                {
+                    var products = new ProductRepo().SearchByName(SearchBox.Text);
+        
+                    productListPanel.Controls.Clear();
+
+                    foreach (var product in products)
+                    {
+                        var productsControl = new ProductInfoControl(product);
+                        productListPanel.Controls.Add(productsControl);
+                    }
+
+                }
+            }
+            else if (SearchPicker.Text == @"Type")
+            {
+                if (string.IsNullOrWhiteSpace(SearchBox.Text)) return;
+                var products = new ProductRepo().SearchByType(SearchBox.Text);
+
+                productListPanel.Controls.Clear();
+
+                foreach (var product in products)
+                {
+                    var productsControl = new ProductInfoControl(product);
+                    productListPanel.Controls.Add(productsControl);
+                }
+            }
+        }
     }
 }

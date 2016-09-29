@@ -37,27 +37,6 @@ namespace ShopIM.DAL
 
 
 
-        public bool ChangePassword(string name,string oldPass, string pass)
-        {
-            using (var context = new DatabaseContext())
-            {
-                var User = (from user in context.Users
-                    where user.UserName == name && user.UserPassword==oldPass
-                    select user).FirstOrDefault();
-
-                if (User == null) return false;
-
-                User.UserPassword = pass;
-                context.SaveChanges();
-                var log = new Log(name + "'s Password was changed");
-
-                context.Logs.Add(log);
-                context.SaveChanges();
-
-
-                return true;
-            }
-        }
 
         public void CreateNewUser(User user)
         {
@@ -79,17 +58,16 @@ namespace ShopIM.DAL
             }
         }
 
-        public void RemoveUsers(List<User> users)
+        public void RemoveUsers(User user)
         {
             using (var context = new DatabaseContext())
             {
-                foreach (var user in users)
-                {
+                
                     var item = context.Set<User>().FirstOrDefault(r => r.Sl == user.Sl);
-                    if (item == null) continue;
+                    if (item == null) return;
                     context.Users.Remove(item);
                     context.SaveChanges();
-                }
+                
             }
         }
 
@@ -106,13 +84,13 @@ namespace ShopIM.DAL
                     User.UserName = user.UserName;
                     User.UserPassword = user.UserPassword;
                     User.UserType = user.UserType;
-                    if (User.ImageURL != user.ImageURL)
+                    if (User.ImageURL!=null && User.ImageURL != user.ImageURL)
                     {
                         //delete old file
                         File.Delete(User.ImageURL);
-                        User.ImageURL = user.ImageURL;
+                        
                     }
-                    
+                    User.ImageURL = user.ImageURL;
                     context.SaveChanges();
                     return true;
                 }

@@ -59,5 +59,14 @@ namespace ShopIM.BLL
             return true;
         }
 
+        public List<Product> SearchByName(string text)
+        {
+            return new ProductContext().SearchByName(text);
+        }
+
+        public List<Product> SearchByType(string text)
+        {
+            return new ProductContext().SearchByType(text);
+        }
     }
 }

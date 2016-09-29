@@ -37,7 +37,6 @@
             this.EditBtn = new MetroFramework.Controls.MetroButton();
             this.AddBtn = new MetroFramework.Controls.MetroButton();
             this.SearchButton = new MetroFramework.Controls.MetroButton();
-            this.Searchpicker = new System.Windows.Forms.ComboBox();
             this.SearchBox = new MetroFramework.Controls.MetroTextBox();
             this.InventorySplitContainer = new System.Windows.Forms.SplitContainer();
             this.InventoryGrid = new MetroFramework.Controls.MetroGrid();
@@ -82,7 +81,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.EditBtn);
             this.splitContainer1.Panel1.Controls.Add(this.AddBtn);
             this.splitContainer1.Panel1.Controls.Add(this.SearchButton);
-            this.splitContainer1.Panel1.Controls.Add(this.Searchpicker);
             this.splitContainer1.Panel1.Controls.Add(this.SearchBox);
             this.splitContainer1.Panel1.Margin = new System.Windows.Forms.Padding(5);
             this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(5);
@@ -133,23 +131,7 @@
             this.SearchButton.TabIndex = 21;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseSelectable = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // Searchpicker
-            // 
-            this.Searchpicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Searchpicker.DisplayMember = "Name";
-            this.Searchpicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Searchpicker.FormattingEnabled = true;
-            this.Searchpicker.Items.AddRange(new object[] {
-            "Name",
-            "Price Range"});
-            this.Searchpicker.Location = new System.Drawing.Point(674, 6);
-            this.Searchpicker.Name = "Searchpicker";
-            this.Searchpicker.Size = new System.Drawing.Size(136, 28);
-            this.Searchpicker.TabIndex = 20;
-            this.Searchpicker.Text = "Name";
-            this.Searchpicker.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+    
             // 
             // SearchBox
             // 
@@ -252,12 +234,12 @@
             this.InventoryGrid.TabIndex = 0;
             this.InventoryGrid.Click += new System.EventHandler(this.InventoryGrid_Click);
             // 
-            // InventoryControl
+            // TableViewControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.backgroundPanel);
-            this.Name = "InventoryControl";
+            this.Name = "TableViewControl";
             this.Size = new System.Drawing.Size(1168, 688);
             this.backgroundPanel.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -282,7 +264,6 @@
         private MetroFramework.Controls.MetroGrid InventoryGrid;
         private System.Windows.Forms.SplitContainer InventorySplitContainer;
         private MetroFramework.Controls.MetroButton SearchButton;
-        private System.Windows.Forms.ComboBox Searchpicker;
         private MetroFramework.Controls.MetroTextBox SearchBox;
     }
 }
