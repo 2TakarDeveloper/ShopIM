@@ -19,7 +19,7 @@ namespace ShopIM.DAL
                     where user.UserName == name && user.UserPassword == pass
                     select user).FirstOrDefault();
 
-               
+
             }
         }
 
@@ -38,13 +38,23 @@ namespace ShopIM.DAL
 
 
 
-        public void CreateNewUser(User user)
+        public bool CreateNewUser(User user)
         {
-            using (var context = new DatabaseContext())
+            try
             {
-                context.Users.Add(user);
-                context.SaveChanges();
+                using (var context = new DatabaseContext())
+                {
+                    context.Users.Add(user);
+                    context.SaveChanges();
+                }
+                return true;
             }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            
         }
 
         public List<User> GetUsers()

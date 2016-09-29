@@ -15,19 +15,21 @@ namespace ShopIM.UI.Controller
             
             InitializeComponent();
             LoadUsers();
-            //InventorySplitContainer.Panel2.Controls.Clear();
-           // InventorySplitContainer.Panel2.Controls.Add(new InventoryInfoControl(new Inventory()));
+           
         }
 
        
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            var UserForm = new UserForm {Text = @"Create New User"};
-            if (UserForm.ShowDialog() == DialogResult.OK)
+            UserForm userForm=new UserForm();
+            if (userForm.ShowDialog() == DialogResult.OK)
             {
-                new UserRepo().AddUser(UserForm.User);
-                LoadUsers();
+                if (new UserRepo().AddUser(userForm.User, userForm.SourceFile))
+                {
+                    LoadUsers();
+                }
+               
             }
         }
 
@@ -36,7 +38,11 @@ namespace ShopIM.UI.Controller
             var users = new UserRepo().GetUsers();
             InventoryGrid.DataSource = null;
             InventoryGrid.DataSource = users;
-          
+            InventoryGrid.Columns[0].Visible = false;
+            InventoryGrid.Columns[4].Visible = false;
+            InventorySplitContainer.Panel2.Controls.Clear();
+            InventorySplitContainer.Panel2.Controls.Add(new UserInfoControl(new User()));
+
         }
 
         private void InventoryGrid_Click(object sender, EventArgs e)
@@ -49,35 +55,35 @@ namespace ShopIM.UI.Controller
             }
                 
             InventorySplitContainer.Panel2.Controls.Clear();
-           // if(SelectedUsers.Count>0)
-           // InventorySplitContainer.Panel2.Controls.Add(new InventoryInfoControl(SelectedUsers[0]));
+           if(SelectedUsers.Count>0)
+            InventorySplitContainer.Panel2.Controls.Add(new UserInfoControl(SelectedUsers[0]));
            
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            if (InventoryGrid.SelectedRows.Count > 0)
-            {
-                //var inveontroyForm = new InveontroyForm(SelectedUsers[0]) {Text = @"Edit Inventory"};
+            //if (InventoryGrid.SelectedRows.Count > 0)
+            //{
+            //    var inveontroyForm = new InveontroyForm(SelectedUsers[0]) {Text = @"Edit Inventory"};
 
-                //if (inveontroyForm.ShowDialog() == DialogResult.OK)
-                //    if (new InventoryRepo().UpdateInventory(inveontroyForm.Inventory, SelectedUsers[0]))
-                //        SelectedUsers();
-            }
+            //    if (inveontroyForm.ShowDialog() == DialogResult.OK)
+            //        if (new InventoryRepo().UpdateInventory(inveontroyForm.Inventory, SelectedUsers[0]))
+            //            SelectedUsers();
+            //}
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            //if (SelectedInventories != null)
-            //{
-            //    if (new InventoryRepo().RemoveInventories(SelectedInventories))
-            //        LoadInventories();
-            //}
-           
+            if (SelectedUsers != null)
+            {
+                if (new UserRepo().RemoveUsers(SelectedUsers))
+                    LoadUsers();
+            }
+
         }
 
-   
 
-     
+
+
     }
 }

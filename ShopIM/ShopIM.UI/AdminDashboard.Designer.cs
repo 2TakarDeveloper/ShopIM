@@ -37,7 +37,7 @@
             this.InventoryButton = new MetroFramework.Controls.MetroLink();
             this.SettingsButton = new MetroFramework.Controls.MetroLink();
             this.LockButton = new MetroFramework.Controls.MetroLink();
-            this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.LogButton = new MetroFramework.Controls.MetroLink();
             this.LogoutButton = new MetroFramework.Controls.MetroLink();
             this.UserImage = new System.Windows.Forms.PictureBox();
             this.UserButton = new MetroFramework.Controls.MetroLink();
@@ -87,7 +87,7 @@
             this.menuSidePanel.Controls.Add(this.InventoryButton);
             this.menuSidePanel.Controls.Add(this.SettingsButton);
             this.menuSidePanel.Controls.Add(this.LockButton);
-            this.menuSidePanel.Controls.Add(this.metroLink2);
+            this.menuSidePanel.Controls.Add(this.LogButton);
             this.menuSidePanel.Controls.Add(this.LogoutButton);
             this.menuSidePanel.Location = new System.Drawing.Point(0, 80);
             this.menuSidePanel.Name = "menuSidePanel";
@@ -195,22 +195,22 @@
             this.LockButton.UseStyleColors = true;
             this.LockButton.Click += new System.EventHandler(this.LockButton_Click);
             // 
-            // metroLink2
+            // LogButton
             // 
-            this.metroLink2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.metroLink2.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.metroLink2.Location = new System.Drawing.Point(1, 313);
-            this.metroLink2.Margin = new System.Windows.Forms.Padding(1);
-            this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(215, 50);
-            this.metroLink2.Style = MetroFramework.MetroColorStyle.White;
-            this.metroLink2.TabIndex = 27;
-            this.metroLink2.Text = "Log";
-            this.metroLink2.UseCustomBackColor = true;
-            this.metroLink2.UseSelectable = true;
-            this.metroLink2.UseStyleColors = true;
-            this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
+            this.LogButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.LogButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.LogButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.LogButton.Location = new System.Drawing.Point(1, 313);
+            this.LogButton.Margin = new System.Windows.Forms.Padding(1);
+            this.LogButton.Name = "LogButton";
+            this.LogButton.Size = new System.Drawing.Size(215, 50);
+            this.LogButton.Style = MetroFramework.MetroColorStyle.White;
+            this.LogButton.TabIndex = 27;
+            this.LogButton.Text = "Log";
+            this.LogButton.UseCustomBackColor = true;
+            this.LogButton.UseSelectable = true;
+            this.LogButton.UseStyleColors = true;
+            this.LogButton.Click += new System.EventHandler(this.LogButton_click);
             // 
             // LogoutButton
             // 
@@ -431,7 +431,7 @@
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLink metroLink2;
+        private MetroFramework.Controls.MetroLink LogButton;
         private MetroFramework.Controls.MetroLink AdminPanelButton;
         private MetroFramework.Controls.MetroLink SalesButton;
         private MetroFramework.Controls.MetroLink LogoutButton;

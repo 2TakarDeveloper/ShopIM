@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.PasswordLable = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.TypeLable = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.NameLable = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.ProductImage = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -44,11 +44,11 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.metroLabel5);
+            this.metroPanel1.Controls.Add(this.PasswordLable);
             this.metroPanel1.Controls.Add(this.metroLabel6);
-            this.metroPanel1.Controls.Add(this.metroLabel3);
+            this.metroPanel1.Controls.Add(this.TypeLable);
             this.metroPanel1.Controls.Add(this.metroLabel4);
-            this.metroPanel1.Controls.Add(this.metroLabel2);
+            this.metroPanel1.Controls.Add(this.NameLable);
             this.metroPanel1.Controls.Add(this.metroLabel1);
             this.metroPanel1.Controls.Add(this.ProductImage);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
@@ -63,6 +63,63 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // PasswordLable
+            // 
+            this.PasswordLable.AutoSize = true;
+            this.PasswordLable.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.PasswordLable.Location = new System.Drawing.Point(105, 248);
+            this.PasswordLable.Name = "PasswordLable";
+            this.PasswordLable.Size = new System.Drawing.Size(70, 19);
+            this.PasswordLable.TabIndex = 10;
+            this.PasswordLable.Text = "password:";
+            this.PasswordLable.UseCustomBackColor = true;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.Location = new System.Drawing.Point(8, 242);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(91, 25);
+            this.metroLabel6.TabIndex = 9;
+            this.metroLabel6.Text = "Password:";
+            this.metroLabel6.UseCustomBackColor = true;
+            // 
+            // TypeLable
+            // 
+            this.TypeLable.AutoSize = true;
+            this.TypeLable.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.TypeLable.Location = new System.Drawing.Point(105, 223);
+            this.TypeLable.Name = "TypeLable";
+            this.TypeLable.Size = new System.Drawing.Size(37, 19);
+            this.TypeLable.TabIndex = 8;
+            this.TypeLable.Text = "Type";
+            this.TypeLable.UseCustomBackColor = true;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(8, 217);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(53, 25);
+            this.metroLabel4.TabIndex = 7;
+            this.metroLabel4.Text = "Type:";
+            this.metroLabel4.UseCustomBackColor = true;
+            // 
+            // NameLable
+            // 
+            this.NameLable.AutoSize = true;
+            this.NameLable.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.NameLable.Location = new System.Drawing.Point(105, 198);
+            this.NameLable.Name = "NameLable";
+            this.NameLable.Size = new System.Drawing.Size(48, 19);
+            this.NameLable.TabIndex = 6;
+            this.NameLable.Text = "Name:";
+            this.NameLable.UseCustomBackColor = true;
             // 
             // metroLabel1
             // 
@@ -101,70 +158,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Profile";
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(105, 198);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel2.TabIndex = 6;
-            this.metroLabel2.Text = "Name:";
-            this.metroLabel2.UseCustomBackColor = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(105, 223);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(37, 19);
-            this.metroLabel3.TabIndex = 8;
-            this.metroLabel3.Text = "Type";
-            this.metroLabel3.UseCustomBackColor = true;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(8, 217);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(53, 25);
-            this.metroLabel4.TabIndex = 7;
-            this.metroLabel4.Text = "Type:";
-            this.metroLabel4.UseCustomBackColor = true;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(105, 248);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(70, 19);
-            this.metroLabel5.TabIndex = 10;
-            this.metroLabel5.Text = "password:";
-            this.metroLabel5.UseCustomBackColor = true;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(8, 242);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(91, 25);
-            this.metroLabel6.TabIndex = 9;
-            this.metroLabel6.Text = "Password:";
-            this.metroLabel6.UseCustomBackColor = true;
-            // 
             // UserInfoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "UserInfoControl";
-            this.Size = new System.Drawing.Size(250, 463);
+            this.Size = new System.Drawing.Size(250, 383);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).EndInit();
@@ -179,10 +179,10 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox ProductImage;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel PasswordLable;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel TypeLable;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel NameLable;
     }
 }

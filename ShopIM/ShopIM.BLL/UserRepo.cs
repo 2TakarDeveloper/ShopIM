@@ -1,5 +1,7 @@
 ﻿
+using System;
 using System.Collections.Generic;
+using System.IO;
 using ShopIM.DAL;
 using ShopIM.Entity;
 
@@ -42,9 +44,38 @@ namespace ShopIM.BLL
             return  new UserContext().GetUsers();
         }
 
-        public void AddUser(User user)
+        public bool AddUser(User user,string sourceFile)
         {
-            new UserContext().CreateNewUser(user);
+            if (new UserContext().CreateNewUser(user))
+            {
+                new LogRepo().CreateUserLog(user.UserName + " Created");
+                //copy file in local Dir
+                if (user.ImageURL != null && sourceFile != null)
+                {
+                    File.Copy(sourceFile, user.ImageURL, true);
+                }
+                return true;
+
+
+            }
+            return false;
+        }
+
+        public bool RemoveUsers(List<User> selectedUsers)
+        {
+            try
+            {
+                foreach (var user in selectedUsers)
+                {
+                    new UserContext().RemoveUsers(user);
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
     }
 }

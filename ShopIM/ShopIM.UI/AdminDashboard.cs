@@ -18,6 +18,14 @@ namespace ShopIM.UI
             Login = login;
             User = user;
             InitializeComponent();
+            if (User.UserType != "Admin")
+            {
+                AdminPanelButton.Dispose();
+                ProductButton.Dispose();
+                InventoryButton.Dispose();
+                LogButton.Dispose();
+            }
+
             UserButton.Text = User.UserName;
             try
             {
@@ -98,7 +106,7 @@ namespace ShopIM.UI
             metroPanelBackground.Controls.Add(userEditControl);
         }
 
-        private void metroLink2_Click(object sender, EventArgs e)
+        private void LogButton_click(object sender, EventArgs e)
         {
             var LogControl = new LogControl();
             metroPanelBackground.Controls.Clear();

@@ -131,7 +131,6 @@
             this.SearchButton.TabIndex = 21;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseSelectable = true;
-    
             // 
             // SearchBox
             // 
@@ -182,7 +181,7 @@
             // 
             this.InventorySplitContainer.Panel1.Controls.Add(this.InventoryGrid);
             this.InventorySplitContainer.Size = new System.Drawing.Size(1164, 637);
-            this.InventorySplitContainer.SplitterDistance = 951;
+            this.InventorySplitContainer.SplitterDistance = 922;
             this.InventorySplitContainer.TabIndex = 1;
             // 
             // InventoryGrid
@@ -230,7 +229,7 @@
             this.InventoryGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.InventoryGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.InventoryGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.InventoryGrid.Size = new System.Drawing.Size(951, 637);
+            this.InventoryGrid.Size = new System.Drawing.Size(922, 637);
             this.InventoryGrid.TabIndex = 0;
             this.InventoryGrid.Click += new System.EventHandler(this.InventoryGrid_Click);
             // 
