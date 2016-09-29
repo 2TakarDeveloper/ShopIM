@@ -148,7 +148,17 @@ namespace ShopIM.DAL
         }
 
 
-       
+         
+        public List<Inventory> SearchWithPriceRange(double upper,double lower)
+        {
+            using (var context = new DatabaseContext())
+            {
+                return (from inventory in context.Inventories where inventory.Price <=upper && inventory.Price>=lower select  inventory).ToList();
+            }
+        }
+
+
+
 
 
         public bool SalesUpdate(Inventory inventory)

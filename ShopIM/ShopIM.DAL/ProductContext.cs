@@ -59,6 +59,27 @@ namespace ShopIM.DAL
             
         }
 
+        public List<Product> SearchByName(string productName)
+        {
+            using (var context = new DatabaseContext())
+            {
+                return (from product in context.Products where product.Name==productName select product).ToList();
+
+            }
+
+        }
+
+
+        public List<Product> SearchByType(string Type)
+        {
+            using (var context = new DatabaseContext())
+            {
+                return (from product in context.Products where product.Type == Type select product).ToList();
+
+            }
+
+        }
+
 
     }
 }
