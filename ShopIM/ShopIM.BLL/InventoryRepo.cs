@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ShopIM.DAL;
 using ShopIM.Entity;
+using ShopIM.Library;
 
 namespace ShopIM.BLL
 {
@@ -12,30 +13,32 @@ namespace ShopIM.BLL
     {
         public List<Inventory> GetInventories()
         {
+            NotificationManager.Notifications = new InventoryContext().CheckAvailablity();
             return new InventoryContext().GetInventories();
         }
 
         public bool AddInventory(Inventory inventory)
         {
-            if (!new InventoryContext().AddInventory(inventory))
+            if (new InventoryContext().AddInventory(inventory))
             {
+                new LogRepo().CreateUserLog(inventory.ProductName + " Added to the Inventory Table");
+                NotificationManager.Notifications = new InventoryContext().CheckAvailablity();
                 return false;
             }
             else
             {
-                new LogRepo().CreateUserLog(inventory.ProductName + " Added to the Inventory Table");
                 return false;
             }
+            
         }
 
         public bool UpdateInventory(Inventory inventory,Inventory selectedInventory)
         {
-            if (new InventoryContext().UpdateInventory(inventory, selectedInventory))
-            {
-                new LogRepo().CreateUserLog(selectedInventory.ProductName + " Was Modified");
-                return true;
-            }
-            return false;
+            if (!new InventoryContext().UpdateInventory(inventory, selectedInventory)) return false;
+            new LogRepo().CreateUserLog(selectedInventory.ProductName + " Was Modified");
+            NotificationManager.Notifications=new InventoryContext().CheckAvailablity();
+
+            return true;
         }
 
         public bool RemoveInventories(List<Inventory> selectedInventories)
@@ -44,7 +47,8 @@ namespace ShopIM.BLL
             {
                 if (new InventoryContext().RemoveInventories(inventory))
                 {
-                   new LogRepo().CreateUserLog(inventory.ProductName + " was removed from database"); 
+                   new LogRepo().CreateUserLog(inventory.ProductName + " was removed from database");
+                   NotificationManager.Notifications = new InventoryContext().CheckAvailablity();
                 }
                 else
                 {
@@ -64,6 +68,8 @@ namespace ShopIM.BLL
           return  new InventoryContext().SearchWithName(text);
         }
 
+
+
         public bool SellProduct(List<Inventory> inventories,string userName)
         {
             foreach (var inventory in inventories)
@@ -75,7 +81,7 @@ namespace ShopIM.BLL
                 //Add sales log
                 SalesLog salesLog=new SalesLog(inventory,userName);
                 new SalesLogContext().AddSalesLog(salesLog);
-
+                NotificationManager.Notifications = new InventoryContext().CheckAvailablity();
 
             }
             return true;

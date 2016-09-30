@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using ShopIM.Entity;
+using ShopIM.Library;
 using ShopIM.UI.Controller;
 
 namespace ShopIM.UI
@@ -24,6 +25,7 @@ namespace ShopIM.UI
                 ProductButton.Dispose();
                 InventoryButton.Dispose();
                 LogButton.Dispose();
+               
             }
 
             UserButton.Text = User.UserName;
@@ -44,9 +46,13 @@ namespace ShopIM.UI
 
 
             LoadSales();
+            UpdateNotification();
         }
 
-        
+        public static void UpdateNotification()
+        {
+            NotificationLink.Text = @"(" + NotificationManager.Notifications.Count + @")";
+        }
 
         private void ExitButton_click(object sender, EventArgs e)
         {
@@ -120,6 +126,10 @@ namespace ShopIM.UI
             metroPanelBackground.Controls.Clear();
             adminPanelControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(adminPanelControl);
+  
         }
+
+       
+
     }
 }

@@ -46,7 +46,7 @@
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLink9 = new MetroFramework.Controls.MetroLink();
+            this.NotificationLink = new MetroFramework.Controls.MetroLink();
             this.metroLink8 = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
             this.metroPanelSide.SuspendLayout();
@@ -346,23 +346,23 @@
             this.metroLabel1.UseCustomBackColor = true;
             this.metroLabel1.UseStyleColors = true;
             // 
-            // metroLink9
+            // NotificationLink
             // 
-            this.metroLink9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLink9.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.metroLink9.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.metroLink9.Image = global::ShopIM.UI.Properties.Resources.Notification;
-            this.metroLink9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroLink9.ImageSize = 30;
-            this.metroLink9.Location = new System.Drawing.Point(773, 0);
-            this.metroLink9.Name = "metroLink9";
-            this.metroLink9.Size = new System.Drawing.Size(56, 35);
-            this.metroLink9.TabIndex = 21;
-            this.metroLink9.Text = "(0)";
-            this.metroLink9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.metroLink9.UseCustomBackColor = true;
-            this.metroLink9.UseCustomForeColor = true;
-            this.metroLink9.UseSelectable = true;
+            this.NotificationLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NotificationLink.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.NotificationLink.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.NotificationLink.Image = global::ShopIM.UI.Properties.Resources.Notification;
+            this.NotificationLink.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NotificationLink.ImageSize = 30;
+            this.NotificationLink.Location = new System.Drawing.Point(773, 0);
+            this.NotificationLink.Name = "NotificationLink";
+            this.NotificationLink.Size = new System.Drawing.Size(56, 35);
+            this.NotificationLink.TabIndex = 21;
+            this.NotificationLink.Text = "(0)";
+            this.NotificationLink.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NotificationLink.UseCustomBackColor = true;
+            this.NotificationLink.UseCustomForeColor = true;
+            this.NotificationLink.UseSelectable = true;
             // 
             // metroLink8
             // 
@@ -400,7 +400,7 @@
             this.ClientSize = new System.Drawing.Size(921, 552);
             this.ControlBox = false;
             this.Controls.Add(this.metroPanel2);
-            this.Controls.Add(this.metroLink9);
+            this.Controls.Add(this.NotificationLink);
             this.Controls.Add(this.metroLink8);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.metroPanelBackground);
@@ -427,7 +427,6 @@
         private MetroFramework.Controls.MetroLink UserButton;
         private MetroFramework.Controls.MetroLink ExitButton;
         private MetroFramework.Controls.MetroLink metroLink8;
-        private MetroFramework.Controls.MetroLink metroLink9;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
@@ -441,5 +440,6 @@
         private MetroFramework.Controls.MetroLink ProductButton;
         private System.Windows.Forms.PictureBox UserImage;
         private System.Windows.Forms.FlowLayoutPanel menuSidePanel;
+        public MetroFramework.Controls.MetroLink NotificationLink;
     }
 }

@@ -24,6 +24,37 @@ namespace ShopIM.UI
         {
             InitializeComponent();
             Text = @"Create New User";
+            User = new User();
+        }
+
+
+        public UserForm(User user)
+        {
+            User = user;
+            InitializeComponent();
+            Text = @"Update User";
+            NameTextBox.Text = user.UserName;
+            NameTextBox.ReadOnly = true;
+            TypePicker.Text = User.UserType;
+            PasswordTextBox.Text = User.UserPassword;
+            ConfirmtextBox.Text = User.UserPassword;
+
+
+
+            try
+            {
+                using (var fileStream = new FileStream(user.ImageURL, FileMode.Open, FileAccess.Read))
+                {
+                    ProductImage.Image = Image.FromStream(fileStream);
+                }
+
+                DesitnationFile = user.ImageURL;
+            }
+            catch (Exception)
+            {
+                ProductImage.Image = ProductImage.ErrorImage;
+                DesitnationFile = null;
+            }
         }
 
         private void metroLink1_Click(object sender, EventArgs e)
@@ -60,13 +91,12 @@ namespace ShopIM.UI
                     DesitnationFile = Path.Combine(destinationPath, _fileName);
 
 
-                User = new User
-                {
-                    UserName = NameTextBox.Text,
-                    UserType = TypePicker.Text,
-                    UserPassword = ConfirmtextBox.Text,
-                    ImageURL = DesitnationFile
-                };
+                
+
+                User.UserName = NameTextBox.Text;
+                User.UserType = TypePicker.Text;
+                User.UserPassword = ConfirmtextBox.Text;
+                User.ImageURL = DesitnationFile;
 
 
                 DialogResult = DialogResult.OK;

@@ -36,40 +36,43 @@ namespace ShopIM.UI.Controller
         private void LoadUsers()
         {
             var users = new UserRepo().GetUsers();
-            InventoryGrid.DataSource = null;
-            InventoryGrid.DataSource = users;
-            InventoryGrid.Columns[0].Visible = false;
-            InventoryGrid.Columns[4].Visible = false;
-            InventorySplitContainer.Panel2.Controls.Clear();
-            InventorySplitContainer.Panel2.Controls.Add(new UserInfoControl(new User()));
+            UserGrid.DataSource = null;
+            UserGrid.DataSource = users;
+            UserGrid.Columns[0].Visible = false;
+            UserGrid.Columns[4].Visible = false;
+            UserSplitContainer.Panel2.Controls.Clear();
+            UserSplitContainer.Panel2.Controls.Add(new UserInfoControl(new User()));
 
         }
 
-        private void InventoryGrid_Click(object sender, EventArgs e)
+        private void UserGrid_Click(object sender, EventArgs e)
         {
-            var length = InventoryGrid.SelectedRows.Count;
+            var length = UserGrid.SelectedRows.Count;
             SelectedUsers = new List<User>();
             for (var i = 0; i < length; i++)
             {
-                SelectedUsers.Add((User)InventoryGrid.SelectedRows[i].DataBoundItem);
+                SelectedUsers.Add((User)UserGrid.SelectedRows[i].DataBoundItem);
             }
                 
-            InventorySplitContainer.Panel2.Controls.Clear();
+            UserSplitContainer.Panel2.Controls.Clear();
            if(SelectedUsers.Count>0)
-            InventorySplitContainer.Panel2.Controls.Add(new UserInfoControl(SelectedUsers[0]));
+            UserSplitContainer.Panel2.Controls.Add(new UserInfoControl(SelectedUsers[0]));
            
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            //if (InventoryGrid.SelectedRows.Count > 0)
-            //{
-            //    var inveontroyForm = new InveontroyForm(SelectedUsers[0]) {Text = @"Edit Inventory"};
+            if (UserGrid.SelectedRows.Count > 0)
+            {
+                var UserForm = new UserForm(SelectedUsers[0]);
 
-            //    if (inveontroyForm.ShowDialog() == DialogResult.OK)
-            //        if (new InventoryRepo().UpdateInventory(inveontroyForm.Inventory, SelectedUsers[0]))
-            //            SelectedUsers();
-            //}
+                if (UserForm.ShowDialog() == DialogResult.OK)
+                    if (new UserRepo().UpdateUser(UserForm.User))
+                    {
+                      LoadUsers();  
+                    }
+                       
+            }
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)

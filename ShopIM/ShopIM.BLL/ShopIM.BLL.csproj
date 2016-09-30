@@ -56,6 +56,10 @@
       <Project>{868e6c6e-9127-4b8b-a5ed-888c913e6fcc}</Project>
       <Name>ShopIM.Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShopIM.Library\ShopIM.Library.csproj">
+      <Project>{6feafe62-6bbd-4063-867d-0a725de8c9fb}</Project>
+      <Name>ShopIM.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

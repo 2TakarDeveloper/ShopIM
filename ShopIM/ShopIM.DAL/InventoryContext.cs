@@ -113,16 +113,16 @@ namespace ShopIM.DAL
 
         }
 
-        public List<Notification> CheckQuantity(int threashHold,out int length)
+        public List<Notification> CheckAvailablity()
         {
             using (var context = new DatabaseContext())
             {
                 List<Inventory> I = (from inventory in context.Inventories
-                                          where inventory.Quantity<threashHold
+                                          where inventory.Quantity<inventory.Threashold
                                          select inventory).ToList();
                
 
-                length = I.Count;
+
                 List<Notification> notifications=new List<Notification>();
 
                 foreach (var inventory in I)
