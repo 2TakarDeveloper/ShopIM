@@ -68,7 +68,7 @@ namespace ShopIM.UI
 
         private void InventoryButton_Click(object sender, EventArgs e)
         {
-            var inventoryControl = new TableViewControl();
+            var inventoryControl = new InventoryControl();
             metroPanelBackground.Controls.Clear();
             inventoryControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(inventoryControl);
@@ -100,10 +100,18 @@ namespace ShopIM.UI
 
         private void metroLink2_Click(object sender, EventArgs e)
         {
-            var LlgControl = new LogControl();
+            var LogControl = new LogControl();
             metroPanelBackground.Controls.Clear();
-            LlgControl.Dock = DockStyle.Fill;
-            metroPanelBackground.Controls.Add(LlgControl);
+            LogControl.Dock = DockStyle.Fill;
+            metroPanelBackground.Controls.Add(LogControl);
+        }
+
+        private void AdminPanelButton_Click(object sender, EventArgs e)
+        {
+            var adminPanelControl = new TableViewControl();
+            metroPanelBackground.Controls.Clear();
+            adminPanelControl.Dock = DockStyle.Fill;
+            metroPanelBackground.Controls.Add(adminPanelControl);
         }
     }
 }

@@ -68,6 +68,12 @@
     <Compile Include="CheckoutForm.Designer.cs">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\AdminPanelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\AdminPanelControl.Designer.cs">
+      <DependentUpon>AdminPanelControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\InventoryInfoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,11 +128,11 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controller\TableViewControl.cs">
+    <Compile Include="Controller\InventoryControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controller\TableViewControl.Designer.cs">
-      <DependentUpon>TableViewControl.cs</DependentUpon>
+    <Compile Include="Controller\InventoryControl.Designer.cs">
+      <DependentUpon>InventoryControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\ProductInfoControl.cs">
       <SubType>UserControl</SubType>
@@ -169,6 +175,9 @@
     <EmbeddedResource Include="CheckoutForm.resx">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controller\AdminPanelControl.resx">
+      <DependentUpon>AdminPanelControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controller\InventoryInfoControl.resx">
       <DependentUpon>InventoryInfoControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,8 +205,8 @@
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controller\TableViewControl.resx">
-      <DependentUpon>TableViewControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controller\InventoryControl.resx">
+      <DependentUpon>InventoryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\ProductInfoControl.resx">
       <DependentUpon>ProductInfoControl.cs</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using ShopIM.DAL;
 using ShopIM.Entity;
 
@@ -36,5 +37,14 @@ namespace ShopIM.BLL
             return new UserContext().UpdateUser(user);
         }
 
+        public List<User> GetUsers()
+        {
+            return  new UserContext().GetUsers();
+        }
+
+        public void AddUser(User user)
+        {
+            new UserContext().CreateNewUser(user);
+        }
     }
 }

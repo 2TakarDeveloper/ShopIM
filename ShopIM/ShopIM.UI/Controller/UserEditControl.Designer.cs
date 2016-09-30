@@ -39,10 +39,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AccountBox = new System.Windows.Forms.GroupBox();
             this.SubmitPassword = new MetroFramework.Controls.MetroLink();
-            this.currentPaswordTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.ProfileBox = new System.Windows.Forms.GroupBox();
             this.ConfirmPassTextBox = new MetroFramework.Controls.MetroTextBox();
             this.NewPassTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.currentPaswordTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.ProfileBox = new System.Windows.Forms.GroupBox();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -228,60 +228,6 @@
             this.SubmitPassword.UseSelectable = true;
             this.SubmitPassword.Click += new System.EventHandler(this.SubmitPassword_Click);
             // 
-            // currentPaswordTextBox
-            // 
-            this.currentPaswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            // 
-            // 
-            // 
-            this.currentPaswordTextBox.CustomButton.Image = null;
-            this.currentPaswordTextBox.CustomButton.Location = new System.Drawing.Point(188, 2);
-            this.currentPaswordTextBox.CustomButton.Name = "";
-            this.currentPaswordTextBox.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.currentPaswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.currentPaswordTextBox.CustomButton.TabIndex = 1;
-            this.currentPaswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.currentPaswordTextBox.CustomButton.UseSelectable = true;
-            this.currentPaswordTextBox.CustomButton.Visible = false;
-            this.currentPaswordTextBox.DisplayIcon = true;
-            this.currentPaswordTextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.currentPaswordTextBox.Lines = new string[0];
-            this.currentPaswordTextBox.Location = new System.Drawing.Point(17, 22);
-            this.currentPaswordTextBox.MaxLength = 20;
-            this.currentPaswordTextBox.Name = "currentPaswordTextBox";
-            this.currentPaswordTextBox.PasswordChar = '●';
-            this.currentPaswordTextBox.PromptText = "Current Password";
-            this.currentPaswordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.currentPaswordTextBox.SelectedText = "";
-            this.currentPaswordTextBox.SelectionLength = 0;
-            this.currentPaswordTextBox.SelectionStart = 0;
-            this.currentPaswordTextBox.ShortcutsEnabled = true;
-            this.currentPaswordTextBox.ShowClearButton = true;
-            this.currentPaswordTextBox.Size = new System.Drawing.Size(216, 30);
-            this.currentPaswordTextBox.Style = MetroFramework.MetroColorStyle.Orange;
-            this.currentPaswordTextBox.TabIndex = 20;
-            this.currentPaswordTextBox.UseCustomBackColor = true;
-            this.currentPaswordTextBox.UseSelectable = true;
-            this.currentPaswordTextBox.UseSystemPasswordChar = true;
-            this.currentPaswordTextBox.WaterMark = "Current Password";
-            this.currentPaswordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.currentPaswordTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // ProfileBox
-            // 
-            this.ProfileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ProfileBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ProfileBox.Controls.Add(this.metroPanel1);
-            this.ProfileBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ProfileBox.Location = new System.Drawing.Point(6, 21);
-            this.ProfileBox.Name = "ProfileBox";
-            this.ProfileBox.Size = new System.Drawing.Size(337, 470);
-            this.ProfileBox.TabIndex = 10;
-            this.ProfileBox.TabStop = false;
-            this.ProfileBox.Text = "Profile";
-            // 
             // ConfirmPassTextBox
             // 
             this.ConfirmPassTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -359,6 +305,60 @@
             this.NewPassTextBox.WaterMark = "New Password";
             this.NewPassTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NewPassTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // currentPaswordTextBox
+            // 
+            this.currentPaswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            // 
+            // 
+            // 
+            this.currentPaswordTextBox.CustomButton.Image = null;
+            this.currentPaswordTextBox.CustomButton.Location = new System.Drawing.Point(188, 2);
+            this.currentPaswordTextBox.CustomButton.Name = "";
+            this.currentPaswordTextBox.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.currentPaswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.currentPaswordTextBox.CustomButton.TabIndex = 1;
+            this.currentPaswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.currentPaswordTextBox.CustomButton.UseSelectable = true;
+            this.currentPaswordTextBox.CustomButton.Visible = false;
+            this.currentPaswordTextBox.DisplayIcon = true;
+            this.currentPaswordTextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.currentPaswordTextBox.Lines = new string[0];
+            this.currentPaswordTextBox.Location = new System.Drawing.Point(17, 22);
+            this.currentPaswordTextBox.MaxLength = 20;
+            this.currentPaswordTextBox.Name = "currentPaswordTextBox";
+            this.currentPaswordTextBox.PasswordChar = '●';
+            this.currentPaswordTextBox.PromptText = "Current Password";
+            this.currentPaswordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.currentPaswordTextBox.SelectedText = "";
+            this.currentPaswordTextBox.SelectionLength = 0;
+            this.currentPaswordTextBox.SelectionStart = 0;
+            this.currentPaswordTextBox.ShortcutsEnabled = true;
+            this.currentPaswordTextBox.ShowClearButton = true;
+            this.currentPaswordTextBox.Size = new System.Drawing.Size(216, 30);
+            this.currentPaswordTextBox.Style = MetroFramework.MetroColorStyle.Orange;
+            this.currentPaswordTextBox.TabIndex = 20;
+            this.currentPaswordTextBox.UseCustomBackColor = true;
+            this.currentPaswordTextBox.UseSelectable = true;
+            this.currentPaswordTextBox.UseSystemPasswordChar = true;
+            this.currentPaswordTextBox.WaterMark = "Current Password";
+            this.currentPaswordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.currentPaswordTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // ProfileBox
+            // 
+            this.ProfileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProfileBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ProfileBox.Controls.Add(this.metroPanel1);
+            this.ProfileBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ProfileBox.Location = new System.Drawing.Point(6, 21);
+            this.ProfileBox.Name = "ProfileBox";
+            this.ProfileBox.Size = new System.Drawing.Size(337, 470);
+            this.ProfileBox.TabIndex = 10;
+            this.ProfileBox.TabStop = false;
+            this.ProfileBox.Text = "Profile";
             // 
             // UserEditControl
             // 
