@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using ShopIM.Entity;
 using ShopIM.Library;
@@ -12,13 +13,14 @@ namespace ShopIM.UI
     public partial class AdminDashboard : MetroForm
     {
         private User User { get; set; }
-     
+        public static MetroLink Link { get; set; }
         private Login Login { get; }
         public AdminDashboard(User user, Login login)
         {
             Login = login;
             User = user;
             InitializeComponent();
+            Link = NotificationLink;
             if (User.UserType != "Admin")
             {
                 AdminPanelButton.Dispose();
@@ -51,7 +53,8 @@ namespace ShopIM.UI
 
         public static void UpdateNotification()
         {
-            NotificationLink.Text = @"(" + NotificationManager.Notifications.Count + @")";
+           
+            Link.Text = @"(" + NotificationManager.Notifications.Count + @")";
         }
 
         private void ExitButton_click(object sender, EventArgs e)

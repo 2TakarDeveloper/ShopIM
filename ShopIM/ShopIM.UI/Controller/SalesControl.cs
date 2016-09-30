@@ -171,6 +171,7 @@ namespace ShopIM.UI.Controller
                 StockInventories = new List<Inventory>();
                 InventoryInfoControlPanel.Panel1.Controls.Add(new InventoryInfoControl(new Inventory()));
                 StockInventories = new InventoryRepo().GetInventories();
+                AdminDashboard.UpdateNotification();
                 LoadInventories();
                 CartGrid.DataSource = null;
 

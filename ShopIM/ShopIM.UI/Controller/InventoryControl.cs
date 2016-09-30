@@ -33,6 +33,7 @@ namespace ShopIM.UI.Controller
 
         private void LoadInventories()
         {
+            AdminDashboard.UpdateNotification();
             var inventories = new InventoryRepo().GetInventories();
             InventoryGrid.DataSource = null;
             InventoryGrid.DataSource = inventories;
