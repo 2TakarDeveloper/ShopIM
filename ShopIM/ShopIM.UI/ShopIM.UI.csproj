@@ -86,6 +86,18 @@
     <Compile Include="Controller\UserEditControl.Designer.cs">
       <DependentUpon>UserEditControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\UserInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\UserInfoControl.Designer.cs">
+      <DependentUpon>UserInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateAdminForm.Designer.cs">
+      <DependentUpon>CreateAdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InveontroyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\UserEditControl.resx">
       <DependentUpon>UserEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\UserInfoControl.resx">
+      <DependentUpon>UserInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAdminForm.resx">
+      <DependentUpon>CreateAdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InveontroyForm.resx">
       <DependentUpon>InveontroyForm.cs</DependentUpon>
