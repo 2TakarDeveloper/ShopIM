@@ -30,13 +30,14 @@
         {
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.AddPictureBtn = new MetroFramework.Controls.MetroButton();
             this.TypeTextBox = new MetroFramework.Controls.MetroTextBox();
             this.NameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.SubmitButton = new MetroFramework.Controls.MetroButton();
             this.ProductImage = new System.Windows.Forms.PictureBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.metroComboBox1);
             this.metroPanel1.Controls.Add(this.metroTextBox1);
             this.metroPanel1.Controls.Add(this.AddPictureBtn);
             this.metroPanel1.Controls.Add(this.TypeTextBox);
@@ -69,12 +71,50 @@
             this.metroPanel1.Location = new System.Drawing.Point(18, 57);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.metroPanel1.Size = new System.Drawing.Size(289, 345);
+            this.metroPanel1.Size = new System.Drawing.Size(289, 386);
             this.metroPanel1.TabIndex = 4;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = null;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(188, 2);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.DisplayIcon = true;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBox1.Lines = new string[0];
+            this.metroTextBox1.Location = new System.Drawing.Point(8, 291);
+            this.metroTextBox1.MaxLength = 20;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.PromptText = "Confirm Password";
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.ShowClearButton = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(216, 30);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroTextBox1.TabIndex = 16;
+            this.metroTextBox1.UseCustomBackColor = true;
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMark = "Confirm Password";
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // AddPictureBtn
             // 
@@ -105,10 +145,11 @@
             this.TypeTextBox.DisplayIcon = true;
             this.TypeTextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.TypeTextBox.Lines = new string[0];
-            this.TypeTextBox.Location = new System.Drawing.Point(8, 219);
+            this.TypeTextBox.Location = new System.Drawing.Point(8, 255);
             this.TypeTextBox.MaxLength = 20;
             this.TypeTextBox.Name = "TypeTextBox";
             this.TypeTextBox.PasswordChar = '\0';
+            this.TypeTextBox.PromptText = "Password";
             this.TypeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TypeTextBox.SelectedText = "";
             this.TypeTextBox.SelectionLength = 0;
@@ -142,10 +183,11 @@
             this.NameTextBox.DisplayIcon = true;
             this.NameTextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.NameTextBox.Lines = new string[0];
-            this.NameTextBox.Location = new System.Drawing.Point(8, 183);
+            this.NameTextBox.Location = new System.Drawing.Point(8, 219);
             this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.PasswordChar = '\0';
+            this.NameTextBox.PromptText = "Name";
             this.NameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.NameTextBox.SelectedText = "";
             this.NameTextBox.SelectionLength = 0;
@@ -164,7 +206,7 @@
             // SubmitButton
             // 
             this.SubmitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(210)))), ((int)(((byte)(50)))));
-            this.SubmitButton.Location = new System.Drawing.Point(8, 314);
+            this.SubmitButton.Location = new System.Drawing.Point(8, 355);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(75, 23);
             this.SubmitButton.TabIndex = 11;
@@ -181,47 +223,10 @@
             this.ProductImage.InitialImage = global::ShopIM.UI.Properties.Resources.close;
             this.ProductImage.Location = new System.Drawing.Point(8, 8);
             this.ProductImage.Name = "ProductImage";
-            this.ProductImage.Size = new System.Drawing.Size(170, 162);
+            this.ProductImage.Size = new System.Drawing.Size(170, 159);
             this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProductImage.TabIndex = 4;
             this.ProductImage.TabStop = false;
-            // 
-            // metroTextBox1
-            // 
-            this.metroTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(188, 2);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.DisplayIcon = true;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(8, 255);
-            this.metroTextBox1.MaxLength = 20;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.ShowClearButton = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(216, 30);
-            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTextBox1.TabIndex = 16;
-            this.metroTextBox1.UseCustomBackColor = true;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "Confirm Password";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // groupBox1
             // 
@@ -229,17 +234,33 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(12, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 370);
+            this.groupBox1.Size = new System.Drawing.Size(301, 411);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Details";
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Admin",
+            "Salesman"});
+            this.metroComboBox1.Location = new System.Drawing.Point(8, 184);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(216, 29);
+            this.metroComboBox1.TabIndex = 17;
+            this.metroComboBox1.UseCustomBackColor = true;
+            this.metroComboBox1.UseCustomForeColor = true;
+            this.metroComboBox1.UseSelectable = true;
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-            this.ClientSize = new System.Drawing.Size(325, 418);
+            this.ClientSize = new System.Drawing.Size(325, 461);
             this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.groupBox1);
@@ -263,5 +284,6 @@
         private System.Windows.Forms.PictureBox ProductImage;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
     }
 }
