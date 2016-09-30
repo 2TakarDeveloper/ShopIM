@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.metroPanelSide = new MetroFramework.Controls.MetroPanel();
             this.menuSidePanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -45,18 +44,14 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanelBackground = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.Header = new MetroFramework.Controls.MetroLabel();
             this.NotificationLink = new MetroFramework.Controls.MetroLink();
             this.metroLink8 = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
-            this.NotificationContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.asdasdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroPanelSide.SuspendLayout();
             this.menuSidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.metroPanel2.SuspendLayout();
-            this.NotificationContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanelSide
@@ -304,8 +299,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel2.AutoScroll = true;
             this.metroPanel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroPanel2.Controls.Add(this.metroLabel2);
-            this.metroPanel2.Controls.Add(this.metroLabel1);
+            this.metroPanel2.Controls.Add(this.Header);
             this.metroPanel2.HorizontalScrollbar = true;
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
@@ -320,35 +314,20 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // metroLabel2
+            // Header
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.metroLabel2.Location = new System.Drawing.Point(3, 37);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(168, 25);
-            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "Directory>Directory";
-            this.metroLabel2.UseCustomBackColor = true;
-            this.metroLabel2.UseStyleColors = true;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 12);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(74, 25);
-            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Header";
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseStyleColors = true;
+            this.Header.AutoSize = true;
+            this.Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Header.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.Header.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Header.Location = new System.Drawing.Point(3, 12);
+            this.Header.Name = "Header";
+            this.Header.Size = new System.Drawing.Size(74, 25);
+            this.Header.Style = MetroFramework.MetroColorStyle.Silver;
+            this.Header.TabIndex = 2;
+            this.Header.Text = "Header";
+            this.Header.UseCustomBackColor = true;
+            this.Header.UseStyleColors = true;
             // 
             // NotificationLink
             // 
@@ -398,20 +377,6 @@
             this.ExitButton.UseSelectable = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_click);
             // 
-            // NotificationContextMenu
-            // 
-            this.NotificationContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asdasdToolStripMenuItem});
-            this.NotificationContextMenu.Name = "NotificationContextMenu";
-            this.NotificationContextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.NotificationContextMenu.Size = new System.Drawing.Size(153, 48);
-            // 
-            // asdasdToolStripMenuItem
-            // 
-            this.asdasdToolStripMenuItem.Name = "asdasdToolStripMenuItem";
-            this.asdasdToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.asdasdToolStripMenuItem.Text = "asdasd";
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,7 +399,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
-            this.NotificationContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -448,8 +412,7 @@
         private MetroFramework.Controls.MetroLink ExitButton;
         private MetroFramework.Controls.MetroLink metroLink8;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel Header;
         private MetroFramework.Controls.MetroLink LogButton;
         private MetroFramework.Controls.MetroLink AdminPanelButton;
         private MetroFramework.Controls.MetroLink SalesButton;
@@ -461,7 +424,5 @@
         private System.Windows.Forms.PictureBox UserImage;
         private System.Windows.Forms.FlowLayoutPanel menuSidePanel;
         public MetroFramework.Controls.MetroLink NotificationLink;
-        private System.Windows.Forms.ContextMenuStrip NotificationContextMenu;
-        private System.Windows.Forms.ToolStripMenuItem asdasdToolStripMenuItem;
     }
 }

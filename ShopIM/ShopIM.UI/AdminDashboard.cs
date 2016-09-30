@@ -17,9 +17,11 @@ namespace ShopIM.UI
         private Login Login { get; }
         public AdminDashboard(User user, Login login)
         {
+            
             Login = login;
             User = user;
             InitializeComponent();
+            Header.Text = @"Sales";
             Link = NotificationLink;
             if (User.UserType != "Admin")
             {
@@ -68,6 +70,7 @@ namespace ShopIM.UI
             var productsControl = new ProductsControl();
             metroPanelBackground.Controls.Clear();
             metroPanelBackground.Controls.Add(productsControl);
+            Header.Text = @"Products";
         }
 
         private void LoadSales()
@@ -76,10 +79,12 @@ namespace ShopIM.UI
             metroPanelBackground.Controls.Clear();
             salesControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(salesControl);
+
         }
 
         private void SalesButton_Click(object sender, EventArgs e)
         {
+            Header.Text = @"Sales";
             LoadSales();
         }
 
@@ -89,6 +94,7 @@ namespace ShopIM.UI
             metroPanelBackground.Controls.Clear();
             inventoryControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(inventoryControl);
+            Header.Text = @"Inventory";
         }
 
         private void LockButton_Click(object sender, EventArgs e)
@@ -109,6 +115,7 @@ namespace ShopIM.UI
 
         private void UserButton_Click(object sender, EventArgs e)
         {
+            Header.Text = @"User";
             var userEditControl = new UserEditControl(User,UserButton);
             metroPanelBackground.Controls.Clear();
             userEditControl.Dock = DockStyle.Fill;
@@ -117,6 +124,7 @@ namespace ShopIM.UI
 
         private void LogButton_click(object sender, EventArgs e)
         {
+            Header.Text = @"Logs";
             var LogControl = new LogControl();
             metroPanelBackground.Controls.Clear();
             LogControl.Dock = DockStyle.Fill;
@@ -125,6 +133,7 @@ namespace ShopIM.UI
 
         private void AdminPanelButton_Click(object sender, EventArgs e)
         {
+            Header.Text = @"Admin Panel";
             var adminPanelControl = new TableViewControl();
             metroPanelBackground.Controls.Clear();
             adminPanelControl.Dock = DockStyle.Fill;
@@ -134,7 +143,13 @@ namespace ShopIM.UI
 
         private void NotificationLink_Click(object sender, EventArgs e)
         {
-            NotificationContextMenu.Show(NotificationLink, 0, NotificationLink.Height);
+            ContextMenuStrip notificationContextMenu=new ContextMenuStrip();
+            foreach (var notification in NotificationManager.Notifications)
+            {
+                notificationContextMenu.Items.Add(notification.message);
+            }
+            
+            notificationContextMenu.Show(NotificationLink.Left, 30);
             // NotificationContextMenu.
             
            // ToolStripItemCollection ToolStripItemCollection = new ToolStripItemCollection(NotificationContextMenu,NotificationManager.Notifications);
