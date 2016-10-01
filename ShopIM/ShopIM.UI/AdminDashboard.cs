@@ -132,7 +132,14 @@ namespace ShopIM.UI
   
         }
 
-       
+        private void NotificationLink_Click(object sender, EventArgs e)
+        {
+            NotificationContextMenu.Show(NotificationLink, 0, NotificationLink.Height);
+            // NotificationContextMenu.
+            
+           // ToolStripItemCollection ToolStripItemCollection = new ToolStripItemCollection(NotificationContextMenu,NotificationManager.Notifications);
 
+
+        }
     }
 }

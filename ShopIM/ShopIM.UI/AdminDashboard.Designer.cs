@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.metroPanelSide = new MetroFramework.Controls.MetroPanel();
             this.menuSidePanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -49,10 +50,13 @@
             this.NotificationLink = new MetroFramework.Controls.MetroLink();
             this.metroLink8 = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
+            this.NotificationContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.asdasdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroPanelSide.SuspendLayout();
             this.menuSidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.metroPanel2.SuspendLayout();
+            this.NotificationContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanelSide
@@ -363,6 +367,7 @@
             this.NotificationLink.UseCustomBackColor = true;
             this.NotificationLink.UseCustomForeColor = true;
             this.NotificationLink.UseSelectable = true;
+            this.NotificationLink.Click += new System.EventHandler(this.NotificationLink_Click);
             // 
             // metroLink8
             // 
@@ -393,6 +398,20 @@
             this.ExitButton.UseSelectable = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_click);
             // 
+            // NotificationContextMenu
+            // 
+            this.NotificationContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asdasdToolStripMenuItem});
+            this.NotificationContextMenu.Name = "NotificationContextMenu";
+            this.NotificationContextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.NotificationContextMenu.Size = new System.Drawing.Size(153, 48);
+            // 
+            // asdasdToolStripMenuItem
+            // 
+            this.asdasdToolStripMenuItem.Name = "asdasdToolStripMenuItem";
+            this.asdasdToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.asdasdToolStripMenuItem.Text = "asdasd";
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,6 +434,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            this.NotificationContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -441,5 +461,7 @@
         private System.Windows.Forms.PictureBox UserImage;
         private System.Windows.Forms.FlowLayoutPanel menuSidePanel;
         public MetroFramework.Controls.MetroLink NotificationLink;
+        private System.Windows.Forms.ContextMenuStrip NotificationContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem asdasdToolStripMenuItem;
     }
 }
