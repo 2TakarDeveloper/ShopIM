@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using ShopIM.BLL;
 using ShopIM.Entity;
+using ShopIM.Library;
 
 namespace ShopIM.UI.Controller
 {
@@ -33,7 +34,8 @@ namespace ShopIM.UI.Controller
 
         private void LoadInventories()
         {
-            AdminDashboard.UpdateNotification();
+            if(SystemSettings.IsNotificationsOn)
+                AdminDashboard.UpdateNotification();
             var inventories = new InventoryRepo().GetInventories();
             InventoryGrid.DataSource = null;
             InventoryGrid.DataSource = inventories;

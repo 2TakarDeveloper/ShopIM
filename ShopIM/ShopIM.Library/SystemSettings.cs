@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ShopIM.Library
 {
-    public class SystemSettings
+    public static class SystemSettings
     {
        
-        public static bool isSystemLocked { get; set; }
+        public static bool IsSystemLocked { get; set; }
+        public  static bool IsNotificationsOn { get; set; }
     }
 }

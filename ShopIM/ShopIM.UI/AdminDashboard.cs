@@ -13,7 +13,7 @@ namespace ShopIM.UI
     public partial class AdminDashboard : MetroForm
     {
         private User User { get; set; }
-        public static MetroLink Link { get; set; }
+        private static MetroLink Link { get; set; }
         private Login Login { get; }
         public AdminDashboard(User user, Login login)
         {
@@ -38,7 +38,9 @@ namespace ShopIM.UI
                 using (var fileStream = new FileStream(User.ImageURL, FileMode.Open, FileAccess.Read))
                 {
                     UserImage.Image = Image.FromStream(fileStream);
-                    
+                  
+
+
                 }
 
             }
@@ -50,12 +52,14 @@ namespace ShopIM.UI
 
 
             LoadSales();
+            
+            if(SystemSettings.IsNotificationsOn)
             UpdateNotification();
         }
 
         public static void UpdateNotification()
         {
-           
+            
             Link.Text = @"(" + NotificationManager.Notifications.Count + @")";
         }
 
@@ -125,10 +129,10 @@ namespace ShopIM.UI
         private void LogButton_click(object sender, EventArgs e)
         {
             Header.Text = @"Logs";
-            var LogControl = new LogControl();
+            var logControl = new LogControl();
             metroPanelBackground.Controls.Clear();
-            LogControl.Dock = DockStyle.Fill;
-            metroPanelBackground.Controls.Add(LogControl);
+            logControl.Dock = DockStyle.Fill;
+            metroPanelBackground.Controls.Add(logControl);
         }
 
         private void AdminPanelButton_Click(object sender, EventArgs e)
@@ -150,10 +154,8 @@ namespace ShopIM.UI
                 
             }
             
-            notificationContextMenu.Show(NotificationLink.Left, 30);
-            // NotificationContextMenu.
-            
-           // ToolStripItemCollection ToolStripItemCollection = new ToolStripItemCollection(NotificationContextMenu,NotificationManager.Notifications);
+            notificationContextMenu.Show(NotificationLink,NotificationLink.Location,ToolStripDropDownDirection.BelowLeft);
+           
 
 
         }

@@ -358,9 +358,11 @@
             this.UserImage.BackColor = System.Drawing.Color.Transparent;
             this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.DefaultUserImage1;
             this.UserImage.Location = new System.Drawing.Point(3, 3);
             this.UserImage.Name = "UserImage";
             this.UserImage.Size = new System.Drawing.Size(70, 70);
+            this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UserImage.TabIndex = 18;
             this.UserImage.TabStop = false;
             // 

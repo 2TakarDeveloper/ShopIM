@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.SettingsToggle = new MetroFramework.Controls.MetroToggle();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.metroLabel1);
-            this.groupBox1.Controls.Add(this.metroToggle1);
+            this.groupBox1.Controls.Add(this.SettingsToggle);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
@@ -49,16 +49,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings Panel";
-            // 
-            // metroToggle1
-            // 
-            this.metroToggle1.AutoSize = true;
-            this.metroToggle1.Location = new System.Drawing.Point(161, 39);
-            this.metroToggle1.Name = "metroToggle1";
-            this.metroToggle1.Size = new System.Drawing.Size(80, 24);
-            this.metroToggle1.TabIndex = 0;
-            this.metroToggle1.Text = "Off";
-            this.metroToggle1.UseSelectable = true;
             // 
             // metroLabel1
             // 
@@ -69,6 +59,19 @@
             this.metroLabel1.Size = new System.Drawing.Size(82, 19);
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "Notification:";
+            // 
+            // SettingsToggle
+            // 
+            this.SettingsToggle.AutoSize = true;
+            this.SettingsToggle.Checked = true;
+            this.SettingsToggle.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.SettingsToggle.Location = new System.Drawing.Point(161, 39);
+            this.SettingsToggle.Name = "SettingsToggle";
+            this.SettingsToggle.Size = new System.Drawing.Size(80, 24);
+            this.SettingsToggle.TabIndex = 0;
+            this.SettingsToggle.Text = "On";
+            this.SettingsToggle.UseSelectable = true;
+            this.SettingsToggle.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
             // 
             // SettingsControl
             // 
@@ -87,6 +90,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroToggle metroToggle1;
+        private MetroFramework.Controls.MetroToggle SettingsToggle;
     }
 }

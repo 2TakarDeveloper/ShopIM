@@ -32,7 +32,7 @@ namespace ShopIM.UI
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            e.Cancel = SystemSettings.isSystemLocked;
+            e.Cancel = SystemSettings.IsSystemLocked;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace ShopIM.UI
 
             if (new UserRepo().ValidateUser(UserName, password))
             {
-                SystemSettings.isSystemLocked = false;
+                SystemSettings.IsSystemLocked = false;
                 Close();
             }
             else

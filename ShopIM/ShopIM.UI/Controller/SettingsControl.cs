@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShopIM.BLL;
+using ShopIM.Entity;
+using ShopIM.Library;
 
 namespace ShopIM.UI.Controller
 {
@@ -15,6 +18,24 @@ namespace ShopIM.UI.Controller
         public SettingsControl()
         {
             InitializeComponent();
+            SettingsToggle.CheckState = SystemSettings.IsNotificationsOn ? CheckState.Checked : CheckState.Unchecked;
+        }
+
+        private void metroToggle1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SettingsToggle.Checked)
+            {
+                SystemSettings.IsNotificationsOn = true;
+                new InventoryRepo().CheckAvailability();
+            }
+            else
+            {
+                SystemSettings.IsNotificationsOn = false;
+                NotificationManager.Notifications = new List<Notification>();
+            }
+
+           
+            AdminDashboard.UpdateNotification();
         }
     }
 }
