@@ -21,7 +21,8 @@ namespace ShopIM.UI.Controller
             UserName = userName;
             CartInventories=new List<Inventory>();
             StockInventories = new List<Inventory>();
-            InventoryInfoControlPanel.Panel1.Controls.Add(new InventoryInfoControl(new Inventory()));
+            ProductViewPanel.Controls.Clear();
+            ProductViewPanel.Controls.Add(new InventoryInfoControl(new Inventory()));
             StockInventories = new InventoryRepo().GetInventories();
             LoadInventories();
 
@@ -74,9 +75,9 @@ namespace ShopIM.UI.Controller
                 SelectedInventories.Add((Inventory)StockInventoryGrid.SelectedRows[i].DataBoundItem);
              
             }
-            InventoryInfoControlPanel.Panel1.Controls.Clear();
+            ProductViewPanel.Controls.Clear();
             if (SelectedInventories.Count > 0)
-                InventoryInfoControlPanel.Panel1.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
+                ProductViewPanel.Controls.Add(new InventoryInfoControl(SelectedInventories[0]));
 
 
         }
@@ -169,7 +170,7 @@ namespace ShopIM.UI.Controller
             {
                 CartInventories = new List<Inventory>();
                 StockInventories = new List<Inventory>();
-                InventoryInfoControlPanel.Panel1.Controls.Add(new InventoryInfoControl(new Inventory()));
+                ProductViewPanel.Controls.Add(new InventoryInfoControl(new Inventory()));
                 StockInventories = new InventoryRepo().GetInventories();
                 AdminDashboard.UpdateNotification();
                 LoadInventories();

@@ -33,8 +33,8 @@
             this.AddBtn = new MetroFramework.Controls.MetroButton();
             this.SearchButton = new MetroFramework.Controls.MetroButton();
             this.SearchPicker = new System.Windows.Forms.ComboBox();
-            this.SearchBox = new MetroFramework.Controls.MetroTextBox();
             this.productListPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.SearchBox = new MetroFramework.Controls.MetroTextBox();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -44,15 +44,14 @@
             // 
             // backgroundPanel
             // 
-            this.backgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.backgroundPanel.Controls.Add(this.splitContainer1);
             this.backgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backgroundPanel.HorizontalScrollbarBarColor = true;
             this.backgroundPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.backgroundPanel.HorizontalScrollbarSize = 10;
-            this.backgroundPanel.Location = new System.Drawing.Point(10, 10);
+            this.backgroundPanel.Location = new System.Drawing.Point(0, 0);
             this.backgroundPanel.Name = "backgroundPanel";
-            this.backgroundPanel.Size = new System.Drawing.Size(1148, 668);
+            this.backgroundPanel.Size = new System.Drawing.Size(1168, 688);
             this.backgroundPanel.TabIndex = 0;
             this.backgroundPanel.VerticalScrollbarBarColor = true;
             this.backgroundPanel.VerticalScrollbarHighlightOnWheel = false;
@@ -84,7 +83,7 @@
             // 
             this.AddBtn.Location = new System.Drawing.Point(3, 5);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(94, 31);
+            this.AddBtn.Size = new System.Drawing.Size(94, 28);
             this.AddBtn.TabIndex = 2;
             this.AddBtn.Text = "Add";
             this.AddBtn.UseSelectable = true;
@@ -113,6 +112,17 @@
             this.SearchPicker.Size = new System.Drawing.Size(136, 28);
             this.SearchPicker.TabIndex = 20;
             this.SearchPicker.Text = "Name";
+            // 
+            // productListPanel
+            // 
+            this.productListPanel.AutoScroll = true;
+            this.productListPanel.BackColor = System.Drawing.Color.White;
+            this.productListPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.productListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productListPanel.Location = new System.Drawing.Point(0, 0);
+            this.productListPanel.Name = "productListPanel";
+            this.productListPanel.Size = new System.Drawing.Size(1144, 623);
+            this.productListPanel.TabIndex = 3;
             // 
             // SearchBox
             // 
@@ -151,22 +161,12 @@
             this.SearchBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.SearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // productListPanel
-            // 
-            this.productListPanel.AutoScroll = true;
-            this.productListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productListPanel.Location = new System.Drawing.Point(0, 0);
-            this.productListPanel.Name = "productListPanel";
-            this.productListPanel.Size = new System.Drawing.Size(1144, 623);
-            this.productListPanel.TabIndex = 3;
-            // 
             // ProductsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.backgroundPanel);
             this.Name = "ProductsControl";
-            this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(1168, 688);
             this.backgroundPanel.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);

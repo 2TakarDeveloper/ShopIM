@@ -30,24 +30,25 @@
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.ChangePasswordBtn = new MetroFramework.Controls.MetroButton();
-            this.ImageSubmit = new MetroFramework.Controls.MetroLink();
-            this.NameSubmit = new MetroFramework.Controls.MetroLink();
-            this.nameEdit = new MetroFramework.Controls.MetroLink();
             this.AddPictureBtn = new MetroFramework.Controls.MetroButton();
             this.NameTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.UserImage = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AccountBox = new System.Windows.Forms.GroupBox();
-            this.SubmitPassword = new MetroFramework.Controls.MetroLink();
             this.ConfirmPassTextBox = new MetroFramework.Controls.MetroTextBox();
             this.NewPassTextBox = new MetroFramework.Controls.MetroTextBox();
             this.currentPaswordTextBox = new MetroFramework.Controls.MetroTextBox();
             this.ProfileBox = new System.Windows.Forms.GroupBox();
+            this.SubmitPassword = new MetroFramework.Controls.MetroLink();
+            this.ImageSubmit = new MetroFramework.Controls.MetroLink();
+            this.NameSubmit = new MetroFramework.Controls.MetroLink();
+            this.nameEdit = new MetroFramework.Controls.MetroLink();
+            this.UserImage = new System.Windows.Forms.PictureBox();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.AccountBox.SuspendLayout();
             this.ProfileBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -84,41 +85,6 @@
             this.ChangePasswordBtn.Text = "Change Password";
             this.ChangePasswordBtn.UseSelectable = true;
             this.ChangePasswordBtn.Click += new System.EventHandler(this.ChangePasswordBtn_Click);
-            // 
-            // ImageSubmit
-            // 
-            this.ImageSubmit.Image = global::ShopIM.UI.Properties.Resources.done;
-            this.ImageSubmit.ImageSize = 25;
-            this.ImageSubmit.Location = new System.Drawing.Point(184, 37);
-            this.ImageSubmit.Name = "ImageSubmit";
-            this.ImageSubmit.Size = new System.Drawing.Size(35, 35);
-            this.ImageSubmit.TabIndex = 19;
-            this.ImageSubmit.UseSelectable = true;
-            this.ImageSubmit.Visible = false;
-            this.ImageSubmit.Click += new System.EventHandler(this.ImageSubmit_Click);
-            // 
-            // NameSubmit
-            // 
-            this.NameSubmit.Image = global::ShopIM.UI.Properties.Resources.done;
-            this.NameSubmit.ImageSize = 25;
-            this.NameSubmit.Location = new System.Drawing.Point(271, 181);
-            this.NameSubmit.Name = "NameSubmit";
-            this.NameSubmit.Size = new System.Drawing.Size(35, 35);
-            this.NameSubmit.TabIndex = 18;
-            this.NameSubmit.UseSelectable = true;
-            this.NameSubmit.Visible = false;
-            this.NameSubmit.Click += new System.EventHandler(this.NameSubmit_Click);
-            // 
-            // nameEdit
-            // 
-            this.nameEdit.Image = global::ShopIM.UI.Properties.Resources.Setting;
-            this.nameEdit.ImageSize = 25;
-            this.nameEdit.Location = new System.Drawing.Point(230, 179);
-            this.nameEdit.Name = "nameEdit";
-            this.nameEdit.Size = new System.Drawing.Size(35, 35);
-            this.nameEdit.TabIndex = 17;
-            this.nameEdit.UseSelectable = true;
-            this.nameEdit.Click += new System.EventHandler(this.nameEdit_Click);
             // 
             // AddPictureBtn
             // 
@@ -171,18 +137,6 @@
             this.NameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // UserImage
-            // 
-            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.cancel;
-            this.UserImage.InitialImage = global::ShopIM.UI.Properties.Resources.close;
-            this.UserImage.Location = new System.Drawing.Point(8, 8);
-            this.UserImage.Name = "UserImage";
-            this.UserImage.Size = new System.Drawing.Size(170, 169);
-            this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.UserImage.TabIndex = 4;
-            this.UserImage.TabStop = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -203,6 +157,7 @@
             this.AccountBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.AccountBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AccountBox.Controls.Add(this.metroLink1);
             this.AccountBox.Controls.Add(this.SubmitPassword);
             this.AccountBox.Controls.Add(this.ConfirmPassTextBox);
             this.AccountBox.Controls.Add(this.NewPassTextBox);
@@ -216,17 +171,6 @@
             this.AccountBox.TabStop = false;
             this.AccountBox.Text = "Change Password";
             this.AccountBox.Visible = false;
-            // 
-            // SubmitPassword
-            // 
-            this.SubmitPassword.Image = global::ShopIM.UI.Properties.Resources.done;
-            this.SubmitPassword.ImageSize = 25;
-            this.SubmitPassword.Location = new System.Drawing.Point(17, 130);
-            this.SubmitPassword.Name = "SubmitPassword";
-            this.SubmitPassword.Size = new System.Drawing.Size(35, 35);
-            this.SubmitPassword.TabIndex = 19;
-            this.SubmitPassword.UseSelectable = true;
-            this.SubmitPassword.Click += new System.EventHandler(this.SubmitPassword_Click);
             // 
             // ConfirmPassTextBox
             // 
@@ -360,6 +304,74 @@
             this.ProfileBox.TabStop = false;
             this.ProfileBox.Text = "Profile";
             // 
+            // SubmitPassword
+            // 
+            this.SubmitPassword.Image = global::ShopIM.UI.Properties.Resources.done;
+            this.SubmitPassword.ImageSize = 25;
+            this.SubmitPassword.Location = new System.Drawing.Point(17, 130);
+            this.SubmitPassword.Name = "SubmitPassword";
+            this.SubmitPassword.Size = new System.Drawing.Size(35, 35);
+            this.SubmitPassword.TabIndex = 19;
+            this.SubmitPassword.UseSelectable = true;
+            this.SubmitPassword.Click += new System.EventHandler(this.SubmitPassword_Click);
+            // 
+            // ImageSubmit
+            // 
+            this.ImageSubmit.Image = global::ShopIM.UI.Properties.Resources.done;
+            this.ImageSubmit.ImageSize = 25;
+            this.ImageSubmit.Location = new System.Drawing.Point(184, 37);
+            this.ImageSubmit.Name = "ImageSubmit";
+            this.ImageSubmit.Size = new System.Drawing.Size(35, 35);
+            this.ImageSubmit.TabIndex = 19;
+            this.ImageSubmit.UseSelectable = true;
+            this.ImageSubmit.Visible = false;
+            this.ImageSubmit.Click += new System.EventHandler(this.ImageSubmit_Click);
+            // 
+            // NameSubmit
+            // 
+            this.NameSubmit.Image = global::ShopIM.UI.Properties.Resources.done;
+            this.NameSubmit.ImageSize = 25;
+            this.NameSubmit.Location = new System.Drawing.Point(271, 181);
+            this.NameSubmit.Name = "NameSubmit";
+            this.NameSubmit.Size = new System.Drawing.Size(35, 35);
+            this.NameSubmit.TabIndex = 18;
+            this.NameSubmit.UseSelectable = true;
+            this.NameSubmit.Visible = false;
+            this.NameSubmit.Click += new System.EventHandler(this.NameSubmit_Click);
+            // 
+            // nameEdit
+            // 
+            this.nameEdit.Image = global::ShopIM.UI.Properties.Resources.Setting;
+            this.nameEdit.ImageSize = 25;
+            this.nameEdit.Location = new System.Drawing.Point(230, 179);
+            this.nameEdit.Name = "nameEdit";
+            this.nameEdit.Size = new System.Drawing.Size(35, 35);
+            this.nameEdit.TabIndex = 17;
+            this.nameEdit.UseSelectable = true;
+            this.nameEdit.Click += new System.EventHandler(this.nameEdit_Click);
+            // 
+            // UserImage
+            // 
+            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.cancel;
+            this.UserImage.InitialImage = global::ShopIM.UI.Properties.Resources.close;
+            this.UserImage.Location = new System.Drawing.Point(8, 8);
+            this.UserImage.Name = "UserImage";
+            this.UserImage.Size = new System.Drawing.Size(170, 169);
+            this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserImage.TabIndex = 4;
+            this.UserImage.TabStop = false;
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.Image = global::ShopIM.UI.Properties.Resources.close;
+            this.metroLink1.ImageSize = 25;
+            this.metroLink1.Location = new System.Drawing.Point(58, 130);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(35, 35);
+            this.metroLink1.TabIndex = 23;
+            this.metroLink1.UseSelectable = true;
+            // 
             // UserEditControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,10 +380,10 @@
             this.Name = "UserEditControl";
             this.Size = new System.Drawing.Size(700, 497);
             this.metroPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.AccountBox.ResumeLayout(false);
             this.ProfileBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -392,5 +404,6 @@
         private MetroFramework.Controls.MetroButton ChangePasswordBtn;
         private MetroFramework.Controls.MetroTextBox ConfirmPassTextBox;
         private MetroFramework.Controls.MetroTextBox NewPassTextBox;
+        private MetroFramework.Controls.MetroLink metroLink1;
     }
 }

@@ -33,9 +33,9 @@
             this.nameLable = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.ProductImage = new System.Windows.Forms.PictureBox();
             this.EditButton = new MetroFramework.Controls.MetroLink();
             this.CrossButton = new MetroFramework.Controls.MetroLink();
+            this.ProductImage = new System.Windows.Forms.PictureBox();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.metroPanel1.Size = new System.Drawing.Size(184, 269);
+            this.metroPanel1.Size = new System.Drawing.Size(180, 250);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -67,7 +67,7 @@
             this.Type.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Type.AutoSize = true;
             this.Type.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Type.Location = new System.Drawing.Point(74, 237);
+            this.Type.Location = new System.Drawing.Point(74, 211);
             this.Type.Name = "Type";
             this.Type.Size = new System.Drawing.Size(50, 25);
             this.Type.TabIndex = 9;
@@ -78,7 +78,7 @@
             this.nameLable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nameLable.AutoSize = true;
             this.nameLable.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.nameLable.Location = new System.Drawing.Point(74, 212);
+            this.nameLable.Location = new System.Drawing.Point(74, 186);
             this.nameLable.Name = "nameLable";
             this.nameLable.Size = new System.Drawing.Size(62, 25);
             this.nameLable.TabIndex = 8;
@@ -90,7 +90,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(5, 237);
+            this.metroLabel2.Location = new System.Drawing.Point(8, 211);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(53, 25);
             this.metroLabel2.TabIndex = 6;
@@ -102,26 +102,16 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(5, 212);
+            this.metroLabel1.Location = new System.Drawing.Point(8, 186);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(63, 25);
             this.metroLabel1.TabIndex = 5;
             this.metroLabel1.Text = "Name:";
             // 
-            // ProductImage
-            // 
-            this.ProductImage.ErrorImage = global::ShopIM.UI.Properties.Resources.product_images_not_available_img;
-            this.ProductImage.Location = new System.Drawing.Point(8, 33);
-            this.ProductImage.Name = "ProductImage";
-            this.ProductImage.Size = new System.Drawing.Size(170, 169);
-            this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ProductImage.TabIndex = 4;
-            this.ProductImage.TabStop = false;
-            // 
             // EditButton
             // 
             this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditButton.Location = new System.Drawing.Point(91, 3);
+            this.EditButton.Location = new System.Drawing.Point(95, 3);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(55, 23);
             this.EditButton.TabIndex = 3;
@@ -132,7 +122,7 @@
             // CrossButton
             // 
             this.CrossButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CrossButton.Location = new System.Drawing.Point(140, 3);
+            this.CrossButton.Location = new System.Drawing.Point(142, 3);
             this.CrossButton.Name = "CrossButton";
             this.CrossButton.Size = new System.Drawing.Size(35, 23);
             this.CrossButton.TabIndex = 2;
@@ -140,13 +130,23 @@
             this.CrossButton.UseSelectable = true;
             this.CrossButton.Click += new System.EventHandler(this.CrossButton_Click);
             // 
+            // ProductImage
+            // 
+            this.ProductImage.ErrorImage = global::ShopIM.UI.Properties.Resources.product_images_not_available_img;
+            this.ProductImage.Location = new System.Drawing.Point(8, 29);
+            this.ProductImage.Name = "ProductImage";
+            this.ProductImage.Size = new System.Drawing.Size(162, 154);
+            this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductImage.TabIndex = 4;
+            this.ProductImage.TabStop = false;
+            // 
             // ProductInfoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.metroPanel1);
             this.Name = "ProductInfoControl";
-            this.Size = new System.Drawing.Size(184, 269);
+            this.Size = new System.Drawing.Size(180, 250);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).EndInit();

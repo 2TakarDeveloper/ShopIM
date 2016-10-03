@@ -147,6 +147,7 @@ namespace ShopIM.UI
             foreach (var notification in NotificationManager.Notifications)
             {
                 notificationContextMenu.Items.Add(notification.message);
+                
             }
             
             notificationContextMenu.Show(NotificationLink.Left, 30);
@@ -155,6 +156,15 @@ namespace ShopIM.UI
            // ToolStripItemCollection ToolStripItemCollection = new ToolStripItemCollection(NotificationContextMenu,NotificationManager.Notifications);
 
 
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            Header.Text = @"Settings";
+            var settingsControl = new SettingsControl();
+            metroPanelBackground.Controls.Clear();
+            settingsControl.Dock = DockStyle.Fill;
+            metroPanelBackground.Controls.Add(settingsControl);
         }
     }
 }

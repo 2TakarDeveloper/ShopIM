@@ -39,19 +39,18 @@
             this.LockButton = new MetroFramework.Controls.MetroLink();
             this.LogButton = new MetroFramework.Controls.MetroLink();
             this.LogoutButton = new MetroFramework.Controls.MetroLink();
-            this.UserImage = new System.Windows.Forms.PictureBox();
             this.UserButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanelBackground = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.Header = new MetroFramework.Controls.MetroLabel();
             this.NotificationLink = new MetroFramework.Controls.MetroLink();
-            this.metroLink8 = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
+            this.UserImage = new System.Windows.Forms.PictureBox();
             this.metroPanelSide.SuspendLayout();
             this.menuSidePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanelSide
@@ -176,6 +175,7 @@
             this.SettingsButton.UseCustomBackColor = true;
             this.SettingsButton.UseSelectable = true;
             this.SettingsButton.UseStyleColors = true;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // LockButton
             // 
@@ -228,17 +228,6 @@
             this.LogoutButton.UseStyleColors = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
-            // UserImage
-            // 
-            this.UserImage.BackColor = System.Drawing.Color.Transparent;
-            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.UserImage.Location = new System.Drawing.Point(3, 3);
-            this.UserImage.Name = "UserImage";
-            this.UserImage.Size = new System.Drawing.Size(70, 70);
-            this.UserImage.TabIndex = 18;
-            this.UserImage.TabStop = false;
-            // 
             // UserButton
             // 
             this.UserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(138)))), ((int)(((byte)(212)))));
@@ -279,13 +268,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanelBackground.AutoScroll = true;
             this.metroPanelBackground.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroPanelBackground.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.metroPanelBackground.HorizontalScrollbar = true;
             this.metroPanelBackground.HorizontalScrollbarBarColor = true;
             this.metroPanelBackground.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanelBackground.HorizontalScrollbarSize = 10;
-            this.metroPanelBackground.Location = new System.Drawing.Point(223, 149);
+            this.metroPanelBackground.Location = new System.Drawing.Point(223, 131);
             this.metroPanelBackground.Name = "metroPanelBackground";
-            this.metroPanelBackground.Size = new System.Drawing.Size(688, 403);
+            this.metroPanelBackground.Size = new System.Drawing.Size(688, 407);
             this.metroPanelBackground.TabIndex = 2;
             this.metroPanelBackground.UseCustomBackColor = true;
             this.metroPanelBackground.VerticalScrollbar = true;
@@ -306,7 +296,7 @@
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(223, 35);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(688, 72);
+            this.metroPanel2.Size = new System.Drawing.Size(688, 79);
             this.metroPanel2.TabIndex = 3;
             this.metroPanel2.UseCustomBackColor = true;
             this.metroPanel2.VerticalScrollbar = true;
@@ -337,7 +327,7 @@
             this.NotificationLink.Image = global::ShopIM.UI.Properties.Resources.Notification;
             this.NotificationLink.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NotificationLink.ImageSize = 30;
-            this.NotificationLink.Location = new System.Drawing.Point(773, 0);
+            this.NotificationLink.Location = new System.Drawing.Point(814, 0);
             this.NotificationLink.Name = "NotificationLink";
             this.NotificationLink.Size = new System.Drawing.Size(56, 35);
             this.NotificationLink.TabIndex = 21;
@@ -347,20 +337,6 @@
             this.NotificationLink.UseCustomForeColor = true;
             this.NotificationLink.UseSelectable = true;
             this.NotificationLink.Click += new System.EventHandler(this.NotificationLink_Click);
-            // 
-            // metroLink8
-            // 
-            this.metroLink8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLink8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroLink8.Image = global::ShopIM.UI.Properties.Resources.Setting;
-            this.metroLink8.ImageSize = 30;
-            this.metroLink8.Location = new System.Drawing.Point(835, 0);
-            this.metroLink8.Name = "metroLink8";
-            this.metroLink8.Size = new System.Drawing.Size(35, 35);
-            this.metroLink8.TabIndex = 20;
-            this.metroLink8.UseCustomBackColor = true;
-            this.metroLink8.UseCustomForeColor = true;
-            this.metroLink8.UseSelectable = true;
             // 
             // ExitButton
             // 
@@ -377,6 +353,17 @@
             this.ExitButton.UseSelectable = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_click);
             // 
+            // UserImage
+            // 
+            this.UserImage.BackColor = System.Drawing.Color.Transparent;
+            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserImage.Location = new System.Drawing.Point(3, 3);
+            this.UserImage.Name = "UserImage";
+            this.UserImage.Size = new System.Drawing.Size(70, 70);
+            this.UserImage.TabIndex = 18;
+            this.UserImage.TabStop = false;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,7 +372,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.NotificationLink);
-            this.Controls.Add(this.metroLink8);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.metroPanelBackground);
             this.Controls.Add(this.metroPanelSide);
@@ -396,9 +382,9 @@
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.metroPanelSide.ResumeLayout(false);
             this.menuSidePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,7 +396,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroLink UserButton;
         private MetroFramework.Controls.MetroLink ExitButton;
-        private MetroFramework.Controls.MetroLink metroLink8;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private MetroFramework.Controls.MetroLabel Header;
         private MetroFramework.Controls.MetroLink LogButton;
