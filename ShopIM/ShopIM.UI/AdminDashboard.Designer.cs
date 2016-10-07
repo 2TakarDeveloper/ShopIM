@@ -39,6 +39,7 @@
             this.LockButton = new MetroFramework.Controls.MetroLink();
             this.LogButton = new MetroFramework.Controls.MetroLink();
             this.LogoutButton = new MetroFramework.Controls.MetroLink();
+            this.UserImage = new System.Windows.Forms.PictureBox();
             this.UserButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanelBackground = new MetroFramework.Controls.MetroPanel();
@@ -46,11 +47,10 @@
             this.Header = new MetroFramework.Controls.MetroLabel();
             this.NotificationLink = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
-            this.UserImage = new System.Windows.Forms.PictureBox();
             this.metroPanelSide.SuspendLayout();
             this.menuSidePanel.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
+            this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanelSide
@@ -228,6 +228,19 @@
             this.LogoutButton.UseStyleColors = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
+            // UserImage
+            // 
+            this.UserImage.BackColor = System.Drawing.Color.Transparent;
+            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.DefaultUserImage1;
+            this.UserImage.Location = new System.Drawing.Point(3, 3);
+            this.UserImage.Name = "UserImage";
+            this.UserImage.Size = new System.Drawing.Size(70, 70);
+            this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserImage.TabIndex = 18;
+            this.UserImage.TabStop = false;
+            // 
             // UserButton
             // 
             this.UserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(138)))), ((int)(((byte)(212)))));
@@ -353,19 +366,6 @@
             this.ExitButton.UseSelectable = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_click);
             // 
-            // UserImage
-            // 
-            this.UserImage.BackColor = System.Drawing.Color.Transparent;
-            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.DefaultUserImage1;
-            this.UserImage.Location = new System.Drawing.Point(3, 3);
-            this.UserImage.Name = "UserImage";
-            this.UserImage.Size = new System.Drawing.Size(70, 70);
-            this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.UserImage.TabIndex = 18;
-            this.UserImage.TabStop = false;
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,9 +384,9 @@
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.metroPanelSide.ResumeLayout(false);
             this.menuSidePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.ResumeLayout(false);
 
         }

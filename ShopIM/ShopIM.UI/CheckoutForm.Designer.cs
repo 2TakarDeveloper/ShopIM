@@ -141,7 +141,7 @@
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(126, 30);
             this.metroButton1.TabIndex = 40;
-            this.metroButton1.Text = "Confirm Purchase";
+            this.metroButton1.Text = "Create Innovice";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
