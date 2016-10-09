@@ -12,6 +12,7 @@ namespace ShopIM.UI
 {
     public partial class AdminDashboard : MetroForm
     {
+        
         private User User { get; set; }
         private static MetroLink Link { get; set; }
         private Login Login { get; }
@@ -20,6 +21,7 @@ namespace ShopIM.UI
             
             Login = login;
             User = user;
+            SystemSettings.IsNotificationsOn = true;
             InitializeComponent();
             Header.Text = @"Sales";
             Link = NotificationLink;

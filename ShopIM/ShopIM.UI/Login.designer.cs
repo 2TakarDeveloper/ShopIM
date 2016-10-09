@@ -30,14 +30,14 @@
         {
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.LoginButton = new MetroFramework.Controls.MetroButton();
-            this.PasswordField = new MetroFramework.Controls.MetroTextBox();
-            this.UserNameField = new MetroFramework.Controls.MetroTextBox();
-            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.CloseButton = new MetroFramework.Controls.MetroLink();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.LoginButton = new MetroFramework.Controls.MetroButton();
+            this.UserNameField = new MetroFramework.Controls.MetroTextBox();
+            this.PasswordField = new MetroFramework.Controls.MetroTextBox();
+            this.CloseButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +79,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Welcome";
             // 
+            // metroLink1
+            // 
+            this.metroLink1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLink1.Location = new System.Drawing.Point(300, 186);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(75, 23);
+            this.metroLink1.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLink1.TabIndex = 12;
+            this.metroLink1.Text = "About Us";
+            this.metroLink1.UseCustomBackColor = true;
+            this.metroLink1.UseSelectable = true;
+            this.metroLink1.UseStyleColors = true;
+            // 
+            // metroPanel3
+            // 
+            this.metroPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroPanel3.BackgroundImage = global::ShopIM.UI.Properties.Resources.logo;
+            this.metroPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(56, 39);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(231, 170);
+            this.metroPanel3.TabIndex = 11;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(300, 39);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(56, 25);
+            this.metroLabel1.TabIndex = 9;
+            this.metroLabel1.Text = "Login";
+            this.metroLabel1.UseCustomBackColor = true;
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
             // metroPanel1
             // 
             this.metroPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -95,20 +138,6 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroLabel1
-            // 
-            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(300, 39);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(56, 25);
-            this.metroLabel1.TabIndex = 9;
-            this.metroLabel1.Text = "Login";
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseCustomForeColor = true;
-            // 
             // LoginButton
             // 
             this.LoginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -123,44 +152,6 @@
             this.LoginButton.Text = "Login";
             this.LoginButton.UseSelectable = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-            // 
-            // PasswordField
-            // 
-            this.PasswordField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PasswordField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(126)))), ((int)(((byte)(47)))));
-            // 
-            // 
-            // 
-            this.PasswordField.CustomButton.Image = null;
-            this.PasswordField.CustomButton.Location = new System.Drawing.Point(222, 2);
-            this.PasswordField.CustomButton.Name = "";
-            this.PasswordField.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.PasswordField.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.PasswordField.CustomButton.TabIndex = 1;
-            this.PasswordField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.PasswordField.CustomButton.UseSelectable = true;
-            this.PasswordField.CustomButton.Visible = false;
-            this.PasswordField.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.PasswordField.Lines = new string[0];
-            this.PasswordField.Location = new System.Drawing.Point(300, 103);
-            this.PasswordField.MaxLength = 32767;
-            this.PasswordField.Name = "PasswordField";
-            this.PasswordField.PasswordChar = '●';
-            this.PasswordField.PromptText = "Password";
-            this.PasswordField.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.PasswordField.SelectedText = "";
-            this.PasswordField.SelectionLength = 0;
-            this.PasswordField.SelectionStart = 0;
-            this.PasswordField.ShortcutsEnabled = true;
-            this.PasswordField.Size = new System.Drawing.Size(250, 30);
-            this.PasswordField.Style = MetroFramework.MetroColorStyle.Silver;
-            this.PasswordField.TabIndex = 3;
-            this.PasswordField.UseCustomBackColor = true;
-            this.PasswordField.UseSelectable = true;
-            this.PasswordField.UseSystemPasswordChar = true;
-            this.PasswordField.WaterMark = "Password";
-            this.PasswordField.WaterMarkColor = System.Drawing.Color.White;
-            this.PasswordField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // UserNameField
             // 
@@ -201,21 +192,43 @@
             this.UserNameField.WaterMarkColor = System.Drawing.Color.White;
             this.UserNameField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // metroPanel3
+            // PasswordField
             // 
-            this.metroPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroPanel3.BackgroundImage = global::ShopIM.UI.Properties.Resources.logo;
-            this.metroPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroPanel3.HorizontalScrollbarBarColor = true;
-            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(56, 39);
-            this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(231, 170);
-            this.metroPanel3.TabIndex = 11;
-            this.metroPanel3.VerticalScrollbarBarColor = true;
-            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.VerticalScrollbarSize = 10;
+            this.PasswordField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PasswordField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(126)))), ((int)(((byte)(47)))));
+            // 
+            // 
+            // 
+            this.PasswordField.CustomButton.Image = null;
+            this.PasswordField.CustomButton.Location = new System.Drawing.Point(222, 2);
+            this.PasswordField.CustomButton.Name = "";
+            this.PasswordField.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.PasswordField.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.PasswordField.CustomButton.TabIndex = 1;
+            this.PasswordField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.PasswordField.CustomButton.UseSelectable = true;
+            this.PasswordField.CustomButton.Visible = false;
+            this.PasswordField.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.PasswordField.Lines = new string[0];
+            this.PasswordField.Location = new System.Drawing.Point(300, 103);
+            this.PasswordField.MaxLength = 32767;
+            this.PasswordField.Name = "PasswordField";
+            this.PasswordField.PasswordChar = '●';
+            this.PasswordField.PromptText = "Password";
+            this.PasswordField.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.PasswordField.SelectedText = "";
+            this.PasswordField.SelectionLength = 0;
+            this.PasswordField.SelectionStart = 0;
+            this.PasswordField.ShortcutsEnabled = true;
+            this.PasswordField.Size = new System.Drawing.Size(250, 30);
+            this.PasswordField.Style = MetroFramework.MetroColorStyle.Silver;
+            this.PasswordField.TabIndex = 3;
+            this.PasswordField.UseCustomBackColor = true;
+            this.PasswordField.UseSelectable = true;
+            this.PasswordField.UseSystemPasswordChar = true;
+            this.PasswordField.WaterMark = "Password";
+            this.PasswordField.WaterMarkColor = System.Drawing.Color.White;
+            this.PasswordField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // CloseButton
             // 
@@ -233,21 +246,9 @@
             this.CloseButton.UseSelectable = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // metroLink1
-            // 
-            this.metroLink1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLink1.Location = new System.Drawing.Point(300, 186);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(75, 23);
-            this.metroLink1.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroLink1.TabIndex = 12;
-            this.metroLink1.Text = "About Us";
-            this.metroLink1.UseCustomBackColor = true;
-            this.metroLink1.UseSelectable = true;
-            this.metroLink1.UseStyleColors = true;
-            // 
             // Login
             // 
+            this.AcceptButton = this.LoginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
