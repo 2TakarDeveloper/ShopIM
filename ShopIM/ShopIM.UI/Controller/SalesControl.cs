@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using ShopIM.BLL;
 using ShopIM.Entity;
+using System.Drawing;
 
 namespace ShopIM.UI.Controller
 {
@@ -87,9 +88,7 @@ namespace ShopIM.UI.Controller
 
         }
 
-   
-
-        private void metroButton4_Click(object sender, System.EventArgs e)
+        private void addToCart()
         {
             if (SelectedInventories == null) return;
 
@@ -100,19 +99,24 @@ namespace ShopIM.UI.Controller
                     MetroMessageBox.Show(this, "No more item's in Stock", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     return;
-                    
+
                 }
                 inventory.Quantity -= 1;
                 Inventory cartInventory = new Inventory(inventory);
                 cartInventory.Quantity = 1;
-                cartInventory.TotalPrice = cartInventory.Quantity*cartInventory.SellingPrice;
-                cartInventory.TotalCost = cartInventory.Quantity*cartInventory.Cost;
+                cartInventory.TotalPrice = cartInventory.Quantity * cartInventory.SellingPrice;
+                cartInventory.TotalCost = cartInventory.Quantity * cartInventory.Cost;
                 CartInventories.Add(cartInventory);
 
 
             }
             LoadInventories();
             LoadCart();
+        }
+
+        private void metroButton4_Click(object sender, System.EventArgs e)
+        {
+           
         }
 
         private void CartGrid_DoubleClick(object sender, System.EventArgs e)
@@ -192,5 +196,12 @@ namespace ShopIM.UI.Controller
                 
             }
         }
+
+        private void MouseHover(object sender, System.EventArgs e)
+        {
+
+
+            metroButton4.BackColor = Color.Orange;
+        }
     }
-}
+    }

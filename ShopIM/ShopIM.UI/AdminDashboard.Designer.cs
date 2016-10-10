@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.metroPanelSide = new MetroFramework.Controls.MetroPanel();
             this.menuSidePanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -39,7 +40,6 @@
             this.LockButton = new MetroFramework.Controls.MetroLink();
             this.LogButton = new MetroFramework.Controls.MetroLink();
             this.LogoutButton = new MetroFramework.Controls.MetroLink();
-            this.UserImage = new System.Windows.Forms.PictureBox();
             this.UserButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanelBackground = new MetroFramework.Controls.MetroPanel();
@@ -47,10 +47,18 @@
             this.Header = new MetroFramework.Controls.MetroLabel();
             this.NotificationLink = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
+            this.UserImage = new System.Windows.Forms.PictureBox();
+            this.SettingContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maximizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.SettingLink = new MetroFramework.Controls.MetroLink();
+            this.lockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroPanelSide.SuspendLayout();
             this.menuSidePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
+            this.SettingContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanelSide
@@ -228,19 +236,6 @@
             this.LogoutButton.UseStyleColors = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
-            // UserImage
-            // 
-            this.UserImage.BackColor = System.Drawing.Color.Transparent;
-            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.DefaultUserImage1;
-            this.UserImage.Location = new System.Drawing.Point(3, 3);
-            this.UserImage.Name = "UserImage";
-            this.UserImage.Size = new System.Drawing.Size(70, 70);
-            this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.UserImage.TabIndex = 18;
-            this.UserImage.TabStop = false;
-            // 
             // UserButton
             // 
             this.UserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(138)))), ((int)(((byte)(212)))));
@@ -340,7 +335,7 @@
             this.NotificationLink.Image = global::ShopIM.UI.Properties.Resources.Notification;
             this.NotificationLink.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NotificationLink.ImageSize = 30;
-            this.NotificationLink.Location = new System.Drawing.Point(814, 0);
+            this.NotificationLink.Location = new System.Drawing.Point(767, 0);
             this.NotificationLink.Name = "NotificationLink";
             this.NotificationLink.Size = new System.Drawing.Size(56, 35);
             this.NotificationLink.TabIndex = 21;
@@ -366,12 +361,79 @@
             this.ExitButton.UseSelectable = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_click);
             // 
+            // UserImage
+            // 
+            this.UserImage.BackColor = System.Drawing.Color.Transparent;
+            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.DefaultUserImage1;
+            this.UserImage.Location = new System.Drawing.Point(3, 3);
+            this.UserImage.Name = "UserImage";
+            this.UserImage.Size = new System.Drawing.Size(70, 70);
+            this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserImage.TabIndex = 18;
+            this.UserImage.TabStop = false;
+            // 
+            // SettingContextMenu
+            // 
+            this.SettingContextMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SettingContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.minimizeToolStripMenuItem,
+            this.maximizeToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.lockToolStripMenuItem});
+            this.SettingContextMenu.Name = "SettingContextMenu";
+            this.SettingContextMenu.Size = new System.Drawing.Size(153, 98);
+            // 
+            // minimizeToolStripMenuItem
+            // 
+            this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
+            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.minimizeToolStripMenuItem.Text = "Minimize";
+            this.minimizeToolStripMenuItem.Click += new System.EventHandler(this.minimizeToolStripMenuItem_Click);
+            // 
+            // maximizeToolStripMenuItem
+            // 
+            this.maximizeToolStripMenuItem.Name = "maximizeToolStripMenuItem";
+            this.maximizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.maximizeToolStripMenuItem.Text = "Maximize";
+            this.maximizeToolStripMenuItem.Click += new System.EventHandler(this.maximizeToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // SettingLink
+            // 
+            this.SettingLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SettingLink.BackColor = System.Drawing.Color.White;
+            this.SettingLink.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SettingLink.Image = global::ShopIM.UI.Properties.Resources.Setting;
+            this.SettingLink.ImageSize = 25;
+            this.SettingLink.Location = new System.Drawing.Point(838, 0);
+            this.SettingLink.Name = "SettingLink";
+            this.SettingLink.Size = new System.Drawing.Size(35, 35);
+            this.SettingLink.TabIndex = 23;
+            this.SettingLink.UseCustomBackColor = true;
+            this.SettingLink.UseCustomForeColor = true;
+            this.SettingLink.UseSelectable = true;
+            this.SettingLink.Click += new System.EventHandler(this.SettingLink_Click);
+            // 
+            // lockToolStripMenuItem
+            // 
+            this.lockToolStripMenuItem.Name = "lockToolStripMenuItem";
+            this.lockToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lockToolStripMenuItem.Text = "Lock";
+            this.lockToolStripMenuItem.Click += new System.EventHandler(this.lockToolStripMenuItem_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 552);
             this.ControlBox = false;
+            this.Controls.Add(this.SettingLink);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.NotificationLink);
             this.Controls.Add(this.ExitButton);
@@ -384,9 +446,10 @@
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.metroPanelSide.ResumeLayout(false);
             this.menuSidePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
+            this.SettingContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -411,5 +474,11 @@
         private System.Windows.Forms.PictureBox UserImage;
         private System.Windows.Forms.FlowLayoutPanel menuSidePanel;
         public MetroFramework.Controls.MetroLink NotificationLink;
+        private MetroFramework.Controls.MetroContextMenu SettingContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem minimizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maximizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private MetroFramework.Controls.MetroLink SettingLink;
+        private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem;
     }
 }

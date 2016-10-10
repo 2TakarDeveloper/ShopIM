@@ -170,5 +170,26 @@ namespace ShopIM.UI
             settingsControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(settingsControl);
         }
+
+        private void minimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void maximizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void SettingLink_Click(object sender, EventArgs e)
+        {
+            SettingContextMenu.Show(SettingLink, 0, SettingLink.Height);
+        }
+
+        private void lockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var systemForm = new SystemForm(User.UserName, Login, this);
+            systemForm.ShowDialog(this);
+        }
     }
 }

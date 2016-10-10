@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
@@ -38,8 +39,14 @@
             this.UserNameField = new MetroFramework.Controls.MetroTextBox();
             this.PasswordField = new MetroFramework.Controls.MetroTextBox();
             this.CloseButton = new MetroFramework.Controls.MetroLink();
+            this.SettingLink = new MetroFramework.Controls.MetroLink();
+            this.SettingContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maximizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.metroPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.SettingContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel2
@@ -85,17 +92,18 @@
             this.metroLink1.Location = new System.Drawing.Point(300, 186);
             this.metroLink1.Name = "metroLink1";
             this.metroLink1.Size = new System.Drawing.Size(75, 23);
-            this.metroLink1.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLink1.Style = MetroFramework.MetroColorStyle.White;
             this.metroLink1.TabIndex = 12;
-            this.metroLink1.Text = "About Us";
+            this.metroLink1.Text = "&About Us";
             this.metroLink1.UseCustomBackColor = true;
             this.metroLink1.UseSelectable = true;
             this.metroLink1.UseStyleColors = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
             // metroPanel3
             // 
             this.metroPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroPanel3.BackgroundImage = global::ShopIM.UI.Properties.Resources.logo;
+            this.metroPanel3.BackgroundImage = global::ShopIM.UI.Properties.Resources._2takalogo_1_;
             this.metroPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
@@ -246,6 +254,51 @@
             this.CloseButton.UseSelectable = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // SettingLink
+            // 
+            this.SettingLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SettingLink.BackColor = System.Drawing.Color.White;
+            this.SettingLink.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SettingLink.Image = global::ShopIM.UI.Properties.Resources.Setting;
+            this.SettingLink.ImageSize = 25;
+            this.SettingLink.Location = new System.Drawing.Point(646, 5);
+            this.SettingLink.Name = "SettingLink";
+            this.SettingLink.Size = new System.Drawing.Size(29, 29);
+            this.SettingLink.TabIndex = 12;
+            this.SettingLink.UseCustomBackColor = true;
+            this.SettingLink.UseCustomForeColor = true;
+            this.SettingLink.UseSelectable = true;
+            this.SettingLink.Click += new System.EventHandler(this.metroLink2_Click);
+            // 
+            // SettingContextMenu
+            // 
+            this.SettingContextMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SettingContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.minimizeToolStripMenuItem,
+            this.maximizeToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.SettingContextMenu.Name = "SettingContextMenu";
+            this.SettingContextMenu.Size = new System.Drawing.Size(153, 76);
+            // 
+            // minimizeToolStripMenuItem
+            // 
+            this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
+            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.minimizeToolStripMenuItem.Text = "Minimize";
+            this.minimizeToolStripMenuItem.Click += new System.EventHandler(this.minimizeToolStripMenuItem_Click);
+            // 
+            // maximizeToolStripMenuItem
+            // 
+            this.maximizeToolStripMenuItem.Name = "maximizeToolStripMenuItem";
+            this.maximizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.maximizeToolStripMenuItem.Text = "Maximize";
+            this.maximizeToolStripMenuItem.Click += new System.EventHandler(this.maximizeToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 6);
+            // 
             // Login
             // 
             this.AcceptButton = this.LoginButton;
@@ -254,6 +307,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(711, 445);
+            this.Controls.Add(this.SettingLink);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.CloseButton);
             this.MaximizeBox = false;
@@ -266,6 +320,7 @@
             this.metroPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.SettingContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -281,6 +336,11 @@
         private MetroFramework.Controls.MetroTextBox UserNameField;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroLink metroLink1;
+        private MetroFramework.Controls.MetroLink SettingLink;
+        private MetroFramework.Controls.MetroContextMenu SettingContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem minimizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maximizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     }
 }
 

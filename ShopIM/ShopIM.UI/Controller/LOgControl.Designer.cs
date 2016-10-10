@@ -64,7 +64,6 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.metroPanel1.Controls.Add(this.splitContainer1);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
@@ -88,7 +87,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.logTab);
-            this.splitContainer1.Size = new System.Drawing.Size(750, 456);
+            this.splitContainer1.Size = new System.Drawing.Size(754, 460);
             this.splitContainer1.SplitterDistance = 39;
             this.splitContainer1.TabIndex = 17;
             // 
@@ -101,7 +100,7 @@
             this.logTab.Location = new System.Drawing.Point(0, 0);
             this.logTab.Name = "logTab";
             this.logTab.SelectedIndex = 0;
-            this.logTab.Size = new System.Drawing.Size(750, 413);
+            this.logTab.Size = new System.Drawing.Size(754, 417);
             this.logTab.TabIndex = 16;
             // 
             // tabPage1
@@ -112,7 +111,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(742, 380);
+            this.tabPage1.Size = new System.Drawing.Size(746, 384);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sales Log";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -121,7 +120,7 @@
             // 
             this.SalesLogClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SalesLogClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(210)))), ((int)(((byte)(50)))));
-            this.SalesLogClear.Location = new System.Drawing.Point(598, 344);
+            this.SalesLogClear.Location = new System.Drawing.Point(602, 348);
             this.SalesLogClear.Name = "SalesLogClear";
             this.SalesLogClear.Size = new System.Drawing.Size(142, 33);
             this.SalesLogClear.TabIndex = 16;
@@ -141,7 +140,7 @@
             this.ProfileBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ProfileBox.Location = new System.Drawing.Point(6, 6);
             this.ProfileBox.Name = "ProfileBox";
-            this.ProfileBox.Size = new System.Drawing.Size(734, 332);
+            this.ProfileBox.Size = new System.Drawing.Size(738, 336);
             this.ProfileBox.TabIndex = 11;
             this.ProfileBox.TabStop = false;
             this.ProfileBox.Text = "Sales Log List";
@@ -155,7 +154,7 @@
             this.SalesLogTab.HorizontalScrollbarSize = 10;
             this.SalesLogTab.Location = new System.Drawing.Point(3, 18);
             this.SalesLogTab.Name = "SalesLogTab";
-            this.SalesLogTab.Size = new System.Drawing.Size(728, 311);
+            this.SalesLogTab.Size = new System.Drawing.Size(732, 315);
             this.SalesLogTab.TabIndex = 0;
             this.SalesLogTab.VerticalScrollbarBarColor = true;
             this.SalesLogTab.VerticalScrollbarHighlightOnWheel = false;
@@ -206,7 +205,7 @@
             this.SalesLogGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.SalesLogGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.SalesLogGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SalesLogGrid.Size = new System.Drawing.Size(728, 311);
+            this.SalesLogGrid.Size = new System.Drawing.Size(732, 315);
             this.SalesLogGrid.TabIndex = 2;
             // 
             // tabPage2

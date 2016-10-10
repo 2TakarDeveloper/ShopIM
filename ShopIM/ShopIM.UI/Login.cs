@@ -44,5 +44,26 @@ namespace ShopIM.UI
                     MessageBoxIcon.Error);
             }
         }
+
+        private void metroLink1_Click(object sender, EventArgs e)
+        {
+            AboutUs aboutUs = new AboutUs();
+            aboutUs.ShowDialog(this);
+        }
+
+        private void minimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void metroLink2_Click(object sender, EventArgs e)
+        {
+            SettingContextMenu.Show(SettingLink, 0, SettingLink.Height);
+        }
+
+        private void maximizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }
