@@ -116,7 +116,7 @@ namespace ShopIM.UI.Controller
 
         private void metroButton4_Click(object sender, System.EventArgs e)
         {
-           
+            addToCart();
         }
 
         private void CartGrid_DoubleClick(object sender, System.EventArgs e)
