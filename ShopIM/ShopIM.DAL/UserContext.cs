@@ -62,7 +62,6 @@ namespace ShopIM.DAL
             using (var context = new DatabaseContext())
             {
                 return (from user in context.Users
-                        where user.Sl!=1
                         select user).ToList();
 
             }
