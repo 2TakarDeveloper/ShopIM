@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using MetroFramework;
 using ShopIM.BLL;
 
 namespace ShopIM.UI.Controller
@@ -22,6 +24,8 @@ namespace ShopIM.UI.Controller
 
         private void UserLogClear_Click(object sender, EventArgs e)
         {
+            if (MetroMessageBox.Show(this, "Are you Sure?", "Warning", MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question) != DialogResult.OK) return;
             new LogRepo().ClearUserLog();
             UserLogGrid.DataSource = null;
             UserLogGrid.DataSource = new LogRepo().GetUserLog();
@@ -29,6 +33,8 @@ namespace ShopIM.UI.Controller
 
         private void SalesLogClear_Click(object sender, EventArgs e)
         {
+            if (MetroMessageBox.Show(this, "Are you Sure?", "Warning", MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question) != DialogResult.OK) return;
             new LogRepo().ClearSalesLog();
             SalesLogGrid.DataSource = null;
             SalesLogGrid.DataSource = new LogRepo().GetSalesLog();
