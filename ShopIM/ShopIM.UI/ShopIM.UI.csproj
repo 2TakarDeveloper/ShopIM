@@ -27,8 +27,8 @@
     <ProductName>Inventory &amp; Sales Management</ProductName>
     <PublisherName>2TakarDeveloper</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -65,9 +65,7 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
@@ -76,6 +74,16 @@
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>ShopIM.UI_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>InventoryAndSales.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -107,25 +115,27 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutUs.cs">
+    <Compile Include="Forms\AboutUs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutUs.Designer.cs">
+    <Compile Include="Forms\AboutUs.Designer.cs">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckoutForm.cs">
+    <Compile Include="Forms\CheckoutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckoutForm.Designer.cs">
+    <Compile Include="Forms\CheckoutForm.Designer.cs">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\AdminPanelControl.cs">
@@ -164,34 +174,34 @@
     <Compile Include="Controller\UserInfoControl.Designer.cs">
       <DependentUpon>UserInfoControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateAdminForm.cs">
+    <Compile Include="Forms\CreateAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateAdminForm.Designer.cs">
+    <Compile Include="Forms\CreateAdminForm.Designer.cs">
       <DependentUpon>CreateAdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InveontroyForm.cs">
+    <Compile Include="Forms\InveontroyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InveontroyForm.Designer.cs">
+    <Compile Include="Forms\InveontroyForm.Designer.cs">
       <DependentUpon>InveontroyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyCartItem.cs">
+    <Compile Include="Forms\ModifyCartItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyCartItem.Designer.cs">
+    <Compile Include="Forms\ModifyCartItem.Designer.cs">
       <DependentUpon>ModifyCartItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductForm.cs">
+    <Compile Include="Forms\ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductForm.Designer.cs">
+    <Compile Include="Forms\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminDashboard.cs">
+    <Compile Include="Forms\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminDashboard.Designer.cs">
+    <Compile Include="Forms\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\InventoryControl.cs">
@@ -218,10 +228,10 @@
     <Compile Include="Controller\SalesControl.Designer.cs">
       <DependentUpon>SalesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.designer.cs">
+    <Compile Include="Forms\Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -231,22 +241,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SystemForm.cs">
+    <Compile Include="Forms\SystemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemForm.Designer.cs">
+    <Compile Include="Forms\SystemForm.Designer.cs">
       <DependentUpon>SystemForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm.cs">
+    <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm.Designer.cs">
+    <Compile Include="Forms\UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AboutUs.resx">
+    <EmbeddedResource Include="Forms\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckoutForm.resx">
+    <EmbeddedResource Include="Forms\CheckoutForm.resx">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\AdminPanelControl.resx">
@@ -267,19 +277,19 @@
     <EmbeddedResource Include="Controller\UserInfoControl.resx">
       <DependentUpon>UserInfoControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateAdminForm.resx">
+    <EmbeddedResource Include="Forms\CreateAdminForm.resx">
       <DependentUpon>CreateAdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InveontroyForm.resx">
+    <EmbeddedResource Include="Forms\InveontroyForm.resx">
       <DependentUpon>InveontroyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyCartItem.resx">
+    <EmbeddedResource Include="Forms\ModifyCartItem.resx">
       <DependentUpon>ModifyCartItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductForm.resx">
+    <EmbeddedResource Include="Forms\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminDashboard.resx">
+    <EmbeddedResource Include="Forms\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\InventoryControl.resx">
@@ -294,7 +304,7 @@
     <EmbeddedResource Include="Controller\SalesControl.resx">
       <DependentUpon>SalesControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -303,10 +313,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemForm.resx">
+    <EmbeddedResource Include="Forms\SystemForm.resx">
       <DependentUpon>SystemForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm.resx">
+    <EmbeddedResource Include="Forms\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -378,25 +388,18 @@
     <None Include="Resources\done.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\proceed-checkout_zps7104f30b.png" />
     <None Include="Resources\2takalogo.png" />
-    <None Include="Resources\adToCart.png" />
-    <None Include="Resources\CTA-Add-to-Cart-Button-PNG-Graphic-Cave.png" />
+    <Content Include="Custom-Icon-Design-Flatastic-4-Inventory-maintenance.ico" />
+    <Content Include="InventoryAndSales.ico" />
     <Content Include="Resources\DefaultUserImage.jpg" />
     <Content Include="Resources\DefaultUserImage.png" />
-    <Content Include="Resources\left%281%29.png" />
+    <Content Include="Resources\left.png" />
     <None Include="Resources\rsz_banner.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -407,21 +410,6 @@
     <BootstrapperPackage Include="Microsoft.SqlServer.Express.11.0">
       <Visible>False</Visible>
       <ProductName>SQL Server 2012 Express</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.11.1">
-      <Visible>False</Visible>
-      <ProductName>SQL Server 2012 Express LocalDB</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.12.0.x64">
-      <Visible>False</Visible>
-      <ProductName>Microsoft® System CLR Types for SQL Server® 2014 %28x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.12.0.x86">
-      <Visible>False</Visible>
-      <ProductName>Microsoft® System CLR Types for SQL Server® 2014 %28x86%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>

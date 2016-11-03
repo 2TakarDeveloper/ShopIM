@@ -34,14 +34,15 @@ namespace ShopIM.UI.Controller
         {
             StockInventoryGrid.DataSource = null;
             StockInventoryGrid.DataSource = StockInventories;
-            StockInventoryGrid.Columns[0].Visible = false;
-            StockInventoryGrid.Columns[2].Visible = false;
-            StockInventoryGrid.Columns[4].Visible = false;
-            StockInventoryGrid.Columns[7].Visible = false;
-            StockInventoryGrid.Columns[8].Visible = false;
-            StockInventoryGrid.Columns[9].Visible = false;
-            StockInventoryGrid.Columns[10].Visible = false;
-            StockInventoryGrid.Columns[11].Visible = false;
+            int length = StockInventoryGrid.ColumnCount;
+            for (int i = 0; i < length; i++)
+            {
+                StockInventoryGrid.Columns[i].Visible = false;
+            }
+            StockInventoryGrid.Columns[1].Visible = true;
+            StockInventoryGrid.Columns[4].Visible = true;
+            StockInventoryGrid.Columns[8].Visible = true;
+
 
         }
 
@@ -50,16 +51,16 @@ namespace ShopIM.UI.Controller
             CartGrid.DataSource = null;
             CartGrid.DataSource = CartInventories;
 
-            //hidden columns
-            CartGrid.Columns[0].Visible = false;
-            CartGrid.Columns[2].Visible = false;
-            CartGrid.Columns[4].Visible = false;
-            CartGrid.Columns[5].Visible = false;
-            CartGrid.Columns[7].Visible = false;
-            CartGrid.Columns[8].Visible = false;
-            CartGrid.Columns[9].Visible = false;
-            CartGrid.Columns[10].Visible = false;
-            CartGrid.Columns[11].Visible = false;
+
+            int length = CartGrid.ColumnCount;
+            for (int i = 0; i < length; i++)
+            {
+                CartGrid.Columns[i].Visible = false;
+            }
+            CartGrid.Columns[1].Visible = true;
+            CartGrid.Columns[4].Visible = true;
+            CartGrid.Columns[8].Visible = true;
+
 
 
 

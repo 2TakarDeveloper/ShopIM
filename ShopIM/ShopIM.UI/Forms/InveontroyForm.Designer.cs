@@ -37,6 +37,8 @@
             this.DatePicker = new MetroFramework.Controls.MetroDateTime();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DueCost = new System.Windows.Forms.NumericUpDown();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.ProductNamePanel = new MetroFramework.Controls.MetroPanel();
             this.ProductPicker = new System.Windows.Forms.ComboBox();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
@@ -58,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Quantity)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DueCost)).BeginInit();
             this.ProductNamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Threashold)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellingPrice)).BeginInit();
@@ -68,7 +71,7 @@
             // 
             this.Type.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Type.AutoSize = true;
-            this.Type.Location = new System.Drawing.Point(79, 242);
+            this.Type.Location = new System.Drawing.Point(79, 256);
             this.Type.Name = "Type";
             this.Type.Size = new System.Drawing.Size(36, 19);
             this.Type.Style = MetroFramework.MetroColorStyle.White;
@@ -81,7 +84,7 @@
             // 
             this.name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(79, 217);
+            this.name.Location = new System.Drawing.Point(79, 231);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(45, 19);
             this.name.Style = MetroFramework.MetroColorStyle.White;
@@ -96,7 +99,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(9, 236);
+            this.metroLabel2.Location = new System.Drawing.Point(9, 250);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(53, 25);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.White;
@@ -111,7 +114,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(9, 211);
+            this.metroLabel1.Location = new System.Drawing.Point(9, 225);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(63, 25);
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.White;
@@ -163,13 +166,15 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(11, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(208, 332);
+            this.groupBox1.Size = new System.Drawing.Size(208, 359);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Details";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.DueCost);
+            this.groupBox2.Controls.Add(this.metroLabel7);
             this.groupBox2.Controls.Add(this.ProductNamePanel);
             this.groupBox2.Controls.Add(this.metroLabel10);
             this.groupBox2.Controls.Add(this.Threashold);
@@ -191,10 +196,38 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox2.Location = new System.Drawing.Point(225, 26);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(409, 332);
+            this.groupBox2.Size = new System.Drawing.Size(458, 359);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Inventory Details";
+            // 
+            // DueCost
+            // 
+            this.DueCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DueCost.Location = new System.Drawing.Point(177, 225);
+            this.DueCost.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.DueCost.Name = "DueCost";
+            this.DueCost.Size = new System.Drawing.Size(226, 29);
+            this.DueCost.TabIndex = 34;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel7.Location = new System.Drawing.Point(6, 225);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(48, 25);
+            this.metroLabel7.Style = MetroFramework.MetroColorStyle.White;
+            this.metroLabel7.TabIndex = 33;
+            this.metroLabel7.Text = "Due:";
+            this.metroLabel7.UseCustomBackColor = true;
+            this.metroLabel7.UseStyleColors = true;
             // 
             // ProductNamePanel
             // 
@@ -229,7 +262,7 @@
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel10.Location = new System.Drawing.Point(27, 131);
+            this.metroLabel10.Location = new System.Drawing.Point(6, 127);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(103, 25);
             this.metroLabel10.Style = MetroFramework.MetroColorStyle.White;
@@ -254,7 +287,7 @@
             // SellingPrice
             // 
             this.SellingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SellingPrice.Location = new System.Drawing.Point(177, 229);
+            this.SellingPrice.Location = new System.Drawing.Point(177, 256);
             this.SellingPrice.Maximum = new decimal(new int[] {
             9999999,
             0,
@@ -283,7 +316,7 @@
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel9.Location = new System.Drawing.Point(26, 264);
+            this.metroLabel9.Location = new System.Drawing.Point(6, 291);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(131, 25);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.White;
@@ -308,7 +341,7 @@
             this.StockLocation.CustomButton.Visible = false;
             this.StockLocation.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.StockLocation.Lines = new string[0];
-            this.StockLocation.Location = new System.Drawing.Point(177, 264);
+            this.StockLocation.Location = new System.Drawing.Point(177, 291);
             this.StockLocation.MaxLength = 32767;
             this.StockLocation.Name = "StockLocation";
             this.StockLocation.PasswordChar = '\0';
@@ -329,7 +362,7 @@
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(27, 234);
+            this.metroLabel8.Location = new System.Drawing.Point(6, 256);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(110, 25);
             this.metroLabel8.Style = MetroFramework.MetroColorStyle.White;
@@ -344,12 +377,12 @@
             this.PriceLable.AutoSize = true;
             this.PriceLable.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.PriceLable.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.PriceLable.Location = new System.Drawing.Point(27, 200);
+            this.PriceLable.Location = new System.Drawing.Point(6, 194);
             this.PriceLable.Name = "PriceLable";
-            this.PriceLable.Size = new System.Drawing.Size(53, 25);
+            this.PriceLable.Size = new System.Drawing.Size(52, 25);
             this.PriceLable.Style = MetroFramework.MetroColorStyle.White;
             this.PriceLable.TabIndex = 25;
-            this.PriceLable.Text = "Price:";
+            this.PriceLable.Text = "Cost:";
             this.PriceLable.UseCustomBackColor = true;
             this.PriceLable.UseStyleColors = true;
             // 
@@ -359,7 +392,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(27, 166);
+            this.metroLabel6.Location = new System.Drawing.Point(6, 162);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(53, 25);
             this.metroLabel6.Style = MetroFramework.MetroColorStyle.White;
@@ -374,7 +407,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(27, 96);
+            this.metroLabel5.Location = new System.Drawing.Point(6, 92);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(84, 25);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.White;
@@ -389,7 +422,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(27, 61);
+            this.metroLabel4.Location = new System.Drawing.Point(6, 55);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(73, 25);
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.White;
@@ -404,7 +437,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(27, 27);
+            this.metroLabel3.Location = new System.Drawing.Point(6, 30);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(130, 25);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.White;
@@ -450,7 +483,7 @@
             this.SubmitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(210)))), ((int)(((byte)(50)))));
             this.SubmitButton.DisplayFocus = true;
             this.SubmitButton.ForeColor = System.Drawing.Color.White;
-            this.SubmitButton.Location = new System.Drawing.Point(316, 298);
+            this.SubmitButton.Location = new System.Drawing.Point(316, 325);
             this.SubmitButton.Margin = new System.Windows.Forms.Padding(0);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(87, 31);
@@ -466,7 +499,7 @@
             this.metroLink1.BackColor = System.Drawing.Color.Transparent;
             this.metroLink1.Image = global::ShopIM.UI.Properties.Resources.ClosrRedBtn;
             this.metroLink1.ImageSize = 25;
-            this.metroLink1.Location = new System.Drawing.Point(616, -1);
+            this.metroLink1.Location = new System.Drawing.Point(678, -1);
             this.metroLink1.Name = "metroLink1";
             this.metroLink1.Size = new System.Drawing.Size(30, 30);
             this.metroLink1.TabIndex = 21;
@@ -481,7 +514,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(646, 370);
+            this.ClientSize = new System.Drawing.Size(711, 411);
             this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -495,6 +528,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DueCost)).EndInit();
             this.ProductNamePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Threashold)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellingPrice)).EndInit();
@@ -530,5 +564,7 @@
         private System.Windows.Forms.NumericUpDown Threashold;
         private System.Windows.Forms.ComboBox ProductPicker;
         private MetroFramework.Controls.MetroPanel ProductNamePanel;
+        private System.Windows.Forms.NumericUpDown DueCost;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
     }
 }

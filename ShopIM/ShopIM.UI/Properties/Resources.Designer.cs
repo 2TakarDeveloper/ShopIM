@@ -73,16 +73,6 @@ namespace ShopIM.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap adToCart {
-            get {
-                object obj = ResourceManager.GetObject("adToCart", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cancel {
             get {
                 object obj = ResourceManager.GetObject("cancel", resourceCulture);
@@ -133,16 +123,6 @@ namespace ShopIM.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CTA_Add_to_Cart_Button_PNG_Graphic_Cave {
-            get {
-                object obj = ResourceManager.GetObject("CTA-Add-to-Cart-Button-PNG-Graphic-Cave", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DefaultUserImage {
             get {
                 object obj = ResourceManager.GetObject("DefaultUserImage", resourceCulture);
@@ -173,29 +153,9 @@ namespace ShopIM.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap left_1_ {
+        internal static System.Drawing.Bitmap left {
             get {
-                object obj = ResourceManager.GetObject("left(1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo {
-            get {
-                object obj = ResourceManager.GetObject("logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo01 {
-            get {
-                object obj = ResourceManager.GetObject("logo01", resourceCulture);
+                object obj = ResourceManager.GetObject("left", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,16 +176,6 @@ namespace ShopIM.UI.Properties {
         internal static System.Drawing.Bitmap options {
             get {
                 object obj = ResourceManager.GetObject("options", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap proceed_checkout_zps7104f30b {
-            get {
-                object obj = ResourceManager.GetObject("proceed-checkout_zps7104f30b", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

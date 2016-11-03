@@ -72,7 +72,7 @@ namespace ShopIM.UI
         private void CreatePDF()
         {
             //Create PDF
-            string dummyFileName = "Innovice.pdf";
+            string dummyFileName = "Invoice.pdf";
 
 
             SaveFileDialog sf = new SaveFileDialog();

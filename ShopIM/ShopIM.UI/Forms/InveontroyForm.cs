@@ -11,6 +11,8 @@ namespace ShopIM.UI
 {
     public partial class InveontroyForm : Form
     {
+        public Inventory Inventory { get; set; }
+
         public InveontroyForm()
         {
             var productRepo = new ProductRepo();
@@ -44,6 +46,7 @@ namespace ShopIM.UI
             Type.Text = selectedInventory.Product.Type;
             VendorTextBox.Text = selectedInventory.Vendor;
             Quantity.Value = selectedInventory.Quantity;
+            DueCost.Value = (decimal) selectedInventory.Due;
             Threashold.Value = selectedInventory.Threashold;
             DatePicker.Value = selectedInventory.PurchaseDate;
             Price.Value = (decimal) selectedInventory.Cost;
@@ -51,7 +54,7 @@ namespace ShopIM.UI
             StockLocation.Text = selectedInventory.StockLocation;
         }
 
-        public Inventory Inventory { get; set; }
+        
 
 
         private void metroLink1_Click(object sender, EventArgs e)
@@ -86,8 +89,10 @@ namespace ShopIM.UI
 
                 Inventory = new Inventory
                 {
+                    
                     Cost = (double) Price.Value,
                     ProductName = name.Text,
+                    Due = (double)DueCost.Value,
                     PurchaseDate = DatePicker.Value,
                     Quantity = (int) Quantity.Value,
                     SellingPrice = (double) SellingPrice.Value,
@@ -95,6 +100,9 @@ namespace ShopIM.UI
                     Threashold = (int) Threashold.Value,
                     Vendor = VendorTextBox.Text
                 };
+                
+                
+
                 Inventory.TotalCost = Inventory.Cost*Inventory.Quantity;
                 Inventory.TotalPrice = Inventory.SellingPrice*Inventory.Quantity;
 

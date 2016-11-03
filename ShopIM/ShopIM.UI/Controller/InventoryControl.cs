@@ -25,18 +25,17 @@ namespace ShopIM.UI.Controller
         private void AddBtn_Click(object sender, EventArgs e)
         {
             var inveontroyForm = new InveontroyForm {Text = @"Add New Inventory"};
-            if (inveontroyForm.ShowDialog() == DialogResult.OK)
-            {
-                new InventoryRepo().AddInventory(inveontroyForm.Inventory);
-                LoadInventories();
-            }
+            if (inveontroyForm.ShowDialog() != DialogResult.OK) return;
+            new InventoryRepo().AddInventory(inveontroyForm.Inventory);
+            LoadInventories();
         }
 
         private void LoadInventories()
         {
-            if(SystemSettings.IsNotificationsOn)
-                AdminDashboard.UpdateNotification();
+            
             var inventories = new InventoryRepo().GetInventories();
+            if (SystemSettings.IsNotificationsOn)
+                AdminDashboard.UpdateNotification();
             InventoryGrid.DataSource = null;
             InventoryGrid.DataSource = inventories;
             InventoryGrid.Columns[0].Visible = false;
@@ -65,9 +64,9 @@ namespace ShopIM.UI.Controller
             {
                 var inveontroyForm = new InveontroyForm(SelectedInventories[0]) {Text = @"Edit Inventory"};
 
-                if (inveontroyForm.ShowDialog() == DialogResult.OK)
-                    if (new InventoryRepo().UpdateInventory(inveontroyForm.Inventory, SelectedInventories[0]))
-                        LoadInventories();
+                if (inveontroyForm.ShowDialog() != DialogResult.OK) return;
+                if (new InventoryRepo().UpdateInventory(inveontroyForm.Inventory, SelectedInventories[0]))
+                    LoadInventories();
             }
         }
 
@@ -97,13 +96,11 @@ namespace ShopIM.UI.Controller
         {
             if (Searchpicker.Text == @"Name")
             {
-                if (!string.IsNullOrWhiteSpace(SearchBox.Text))
-                {
-                    var inventories = new InventoryRepo().SearchByName(SearchBox.Text);
-                    InventoryGrid.DataSource = null;
-                    InventoryGrid.DataSource = inventories;
-                    InventoryGrid.Columns[9].Visible = false;
-                }
+                if (string.IsNullOrWhiteSpace(SearchBox.Text)) return;
+                var inventories = new InventoryRepo().SearchByName(SearchBox.Text);
+                InventoryGrid.DataSource = null;
+                InventoryGrid.DataSource = inventories;
+                InventoryGrid.Columns[9].Visible = false;
             }
             else if (Searchpicker.Text == @"Price Range")
             {

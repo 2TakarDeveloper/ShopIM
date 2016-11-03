@@ -49,6 +49,8 @@ namespace ShopIM.UI
             {
                 //next page
                 var adminDashboard = new AdminDashboard(user, this);
+                UserNameField.Text = "";
+                PasswordField.Text = "";
                 adminDashboard.Show();
                 Hide();
             }

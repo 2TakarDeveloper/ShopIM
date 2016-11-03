@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using ShopIM.Entity;
 using System.Linq;
+using ShopIM.Library;
 
 namespace ShopIM.DAL
 {
     public class InventoryContext
     {
-
+       
         public List<Inventory> GetInventories()
         {
             List<Inventory> InventoryList=new List<Inventory>();
@@ -19,11 +20,38 @@ namespace ShopIM.DAL
                         from inventory in context.Inventories
                         join product in context.Products on inventory.ProductName equals product.Name
                         select new { inventory,product };
+
+                NotificationManager.Notifications=new List<Notification>();
+
                 foreach (var inventory in inventories)
                 {
-                    Inventory i = new Inventory();
-                    i = inventory.inventory;
+                    var i = inventory.inventory;
                     i.Product = inventory.product;
+                    //Update Notifications according to statusChange
+                    if (i.Due > 0)
+                    {
+                        i.Status = "Due";
+                        NotificationManager.Notifications.Add(new Notification(i.ProductName+" Has Due Payment"));
+                    }
+                    if (i.Quantity == 0)
+                    {
+                        i.Status = "Out Of Stock";
+                        NotificationManager.Notifications.Add(new Notification(i.ProductName + " is out of stock"));
+                    }
+                    else if (i.Quantity < i.Threashold)
+                    {
+                        i.Status = "Stock Short";
+                        NotificationManager.Notifications.Add(new Notification(i.ProductName + " is Short On stock"));
+                        
+                    }
+                   
+                    else
+                    {
+                        i.Status = "In Stock";
+                    }
+                    
+
+
                     InventoryList.Add(i);
 
                 }
@@ -96,7 +124,7 @@ namespace ShopIM.DAL
                     I.StockLocation = inventory.StockLocation;
                     I.Threashold = inventory.Threashold;
                     I.Vendor = inventory.Vendor;
-
+                    I.Due = inventory.Due;
                     context.SaveChanges();
                     return true;
                 }
@@ -113,31 +141,7 @@ namespace ShopIM.DAL
 
         }
 
-        public List<Notification> CheckAvailablity()
-        {
-            using (var context = new DatabaseContext())
-            {
-                List<Inventory> I = (from inventory in context.Inventories
-                                          where inventory.Quantity<inventory.Threashold
-                                         select inventory).ToList();
-               
-
-
-                List<Notification> notifications=new List<Notification>();
-
-                foreach (var inventory in I)
-                {
-                    
-                    Notification n = new Notification(inventory.ProductName+" Is short on stock");
-                    notifications.Add(n);
-
-
-                }
-
-                return notifications;
-
-            }
-        }
+       
 
         public List<Inventory> SearchWithName(string name)
         {

@@ -26,7 +26,7 @@ namespace ShopIM.UI.Controller
             if (SettingsToggle.Checked)
             {
                 SystemSettings.IsNotificationsOn = true;
-                new InventoryRepo().CheckAvailability();
+               
             }
             else
             {

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.StatusLable = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.DueLable = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.Type = new MetroFramework.Controls.MetroLabel();
             this.StockLocation = new MetroFramework.Controls.MetroLabel();
             this.PurchaseDate = new MetroFramework.Controls.MetroLabel();
@@ -54,6 +58,11 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.metroPanel1.Controls.Add(this.StatusLable);
+            this.metroPanel1.Controls.Add(this.metroLabel12);
+            this.metroPanel1.Controls.Add(this.DueLable);
+            this.metroPanel1.Controls.Add(this.metroLabel11);
             this.metroPanel1.Controls.Add(this.Type);
             this.metroPanel1.Controls.Add(this.StockLocation);
             this.metroPanel1.Controls.Add(this.PurchaseDate);
@@ -74,6 +83,7 @@
             this.metroPanel1.Controls.Add(this.metroLabel1);
             this.metroPanel1.Controls.Add(this.ProductImage);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroPanel1.ForeColor = System.Drawing.Color.Black;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
@@ -82,9 +92,55 @@
             this.metroPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.metroPanel1.Size = new System.Drawing.Size(225, 473);
             this.metroPanel1.TabIndex = 1;
+            this.metroPanel1.UseCustomBackColor = true;
+            this.metroPanel1.UseCustomForeColor = true;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // StatusLable
+            // 
+            this.StatusLable.AutoSize = true;
+            this.StatusLable.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.StatusLable.ForeColor = System.Drawing.Color.Yellow;
+            this.StatusLable.Location = new System.Drawing.Point(111, 416);
+            this.StatusLable.Name = "StatusLable";
+            this.StatusLable.Size = new System.Drawing.Size(29, 19);
+            this.StatusLable.TabIndex = 26;
+            this.StatusLable.Text = "null";
+            this.StatusLable.UseCustomBackColor = true;
+            this.StatusLable.UseCustomForeColor = true;
+            this.StatusLable.UseMnemonic = false;
+            this.StatusLable.UseStyleColors = true;
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel12.Location = new System.Drawing.Point(7, 416);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel12.TabIndex = 25;
+            this.metroLabel12.Text = "Status:";
+            // 
+            // DueLable
+            // 
+            this.DueLable.AutoSize = true;
+            this.DueLable.Location = new System.Drawing.Point(112, 340);
+            this.DueLable.Name = "DueLable";
+            this.DueLable.Size = new System.Drawing.Size(41, 19);
+            this.DueLable.TabIndex = 24;
+            this.DueLable.Text = "Price:";
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel11.Location = new System.Drawing.Point(7, 340);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(37, 19);
+            this.metroLabel11.TabIndex = 23;
+            this.metroLabel11.Text = "Due:";
             // 
             // Type
             // 
@@ -98,7 +154,7 @@
             // StockLocation
             // 
             this.StockLocation.AutoSize = true;
-            this.StockLocation.Location = new System.Drawing.Point(112, 378);
+            this.StockLocation.Location = new System.Drawing.Point(111, 397);
             this.StockLocation.Name = "StockLocation";
             this.StockLocation.Size = new System.Drawing.Size(96, 19);
             this.StockLocation.TabIndex = 21;
@@ -107,7 +163,7 @@
             // PurchaseDate
             // 
             this.PurchaseDate.AutoSize = true;
-            this.PurchaseDate.Location = new System.Drawing.Point(112, 359);
+            this.PurchaseDate.Location = new System.Drawing.Point(112, 378);
             this.PurchaseDate.Name = "PurchaseDate";
             this.PurchaseDate.Size = new System.Drawing.Size(95, 19);
             this.PurchaseDate.TabIndex = 20;
@@ -116,7 +172,7 @@
             // SellingPrice
             // 
             this.SellingPrice.AutoSize = true;
-            this.SellingPrice.Location = new System.Drawing.Point(112, 340);
+            this.SellingPrice.Location = new System.Drawing.Point(112, 359);
             this.SellingPrice.Name = "SellingPrice";
             this.SellingPrice.Size = new System.Drawing.Size(83, 19);
             this.SellingPrice.TabIndex = 19;
@@ -181,7 +237,7 @@
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(8, 378);
+            this.metroLabel8.Location = new System.Drawing.Point(8, 397);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(101, 19);
             this.metroLabel8.TabIndex = 12;
@@ -191,7 +247,7 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(8, 359);
+            this.metroLabel7.Location = new System.Drawing.Point(6, 378);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(100, 19);
             this.metroLabel7.TabIndex = 11;
@@ -201,7 +257,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(8, 340);
+            this.metroLabel6.Location = new System.Drawing.Point(8, 359);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(84, 19);
             this.metroLabel6.TabIndex = 10;
@@ -213,9 +269,9 @@
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel5.Location = new System.Drawing.Point(8, 321);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(40, 19);
             this.metroLabel5.TabIndex = 9;
-            this.metroLabel5.Text = "Price:";
+            this.metroLabel5.Text = "Cost:";
             // 
             // metroLabel4
             // 
@@ -273,7 +329,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.metroPanel1);
-          //  this.Name = "InventoryInfoControl";
+        
             this.Size = new System.Drawing.Size(225, 473);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
@@ -304,5 +360,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel StatusLable;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel DueLable;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
     }
 }
