@@ -222,10 +222,10 @@
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel7.Location = new System.Drawing.Point(6, 225);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(48, 25);
+            this.metroLabel7.Size = new System.Drawing.Size(49, 25);
             this.metroLabel7.Style = MetroFramework.MetroColorStyle.White;
             this.metroLabel7.TabIndex = 33;
-            this.metroLabel7.Text = "Due:";
+            this.metroLabel7.Text = "Paid:";
             this.metroLabel7.UseCustomBackColor = true;
             this.metroLabel7.UseStyleColors = true;
             // 

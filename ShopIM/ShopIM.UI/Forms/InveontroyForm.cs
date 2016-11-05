@@ -12,7 +12,7 @@ namespace ShopIM.UI
     public partial class InveontroyForm : Form
     {
         public Inventory Inventory { get; set; }
-
+        private bool Modify { get; set; }
         public InveontroyForm()
         {
             var productRepo = new ProductRepo();
@@ -23,7 +23,7 @@ namespace ShopIM.UI
 
         public InveontroyForm(Inventory selectedInventory)
         {
-          
+            Modify = true;
 
             InitializeComponent();
             try
@@ -92,7 +92,7 @@ namespace ShopIM.UI
                     
                     Cost = (double) Price.Value,
                     ProductName = name.Text,
-                    Due = (double)DueCost.Value,
+                  
                     PurchaseDate = DatePicker.Value,
                     Quantity = (int) Quantity.Value,
                     SellingPrice = (double) SellingPrice.Value,
@@ -105,6 +105,21 @@ namespace ShopIM.UI
 
                 Inventory.TotalCost = Inventory.Cost*Inventory.Quantity;
                 Inventory.TotalPrice = Inventory.SellingPrice*Inventory.Quantity;
+                if (!Modify)
+                {
+                    Inventory.Due = Inventory.TotalCost;
+                }
+
+                if (Inventory.Due - (double) DueCost.Value >= 0)
+                {
+                    Inventory.Due -= (double) DueCost.Value;
+                }
+                else
+                {
+                    Inventory.Due = 0;
+                }
+                
+                
 
                 DialogResult = DialogResult.OK;
             }
