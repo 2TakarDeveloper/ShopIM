@@ -8,7 +8,7 @@ using ShopIM.Entity;
 using ShopIM.Library;
 using ShopIM.UI.Controller;
 
-namespace ShopIM.UI
+namespace ShopIM.UI.Forms
 {
     public partial class AdminDashboard : MetroForm
     {

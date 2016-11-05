@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using MetroFramework;
 using ShopIM.BLL;
 using ShopIM.Entity;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using Font = iTextSharp.text.Font;
 using Rectangle = iTextSharp.text.Rectangle;
-namespace ShopIM.UI
+namespace ShopIM.UI.Forms
 {
     public partial class CheckoutForm : Form
     {

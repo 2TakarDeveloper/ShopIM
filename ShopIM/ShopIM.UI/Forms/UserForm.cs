@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using ShopIM.Entity;
 
-namespace ShopIM.UI
+namespace ShopIM.UI.Forms
 {
     public partial class UserForm : Form
     {

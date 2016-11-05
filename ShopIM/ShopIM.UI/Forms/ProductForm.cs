@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using ShopIM.Entity;
 
-namespace ShopIM.UI
+namespace ShopIM.UI.Forms
 {
     public partial class ProductForm : Form
     {

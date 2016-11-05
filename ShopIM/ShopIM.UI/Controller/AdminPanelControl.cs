@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using ShopIM.BLL;
 using ShopIM.Entity;
+using ShopIM.UI.Forms;
 
 namespace ShopIM.UI.Controller
 {

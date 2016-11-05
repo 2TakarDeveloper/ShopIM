@@ -1,4 +1,4 @@
-﻿namespace ShopIM.UI
+﻿namespace ShopIM.UI.Forms
 {
     partial class CreateAdminForm
     {

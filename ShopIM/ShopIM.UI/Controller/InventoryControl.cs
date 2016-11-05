@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using ShopIM.BLL;
 using ShopIM.Entity;
 using ShopIM.Library;
+using ShopIM.UI.Forms;
 
 namespace ShopIM.UI.Controller
 {

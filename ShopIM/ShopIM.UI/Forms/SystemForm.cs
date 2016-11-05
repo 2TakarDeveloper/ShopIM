@@ -5,7 +5,7 @@ using MetroFramework.Forms;
 using ShopIM.BLL;
 using ShopIM.Library;
 
-namespace ShopIM.UI
+namespace ShopIM.UI.Forms
 {
     public partial class SystemForm : MetroForm
     {
