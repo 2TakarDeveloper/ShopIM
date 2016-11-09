@@ -40,6 +40,7 @@
     <Compile Include="Notification.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="ProductStatisticInfo.cs" />
     <Compile Include="SalesLog.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

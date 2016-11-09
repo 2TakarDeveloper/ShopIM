@@ -9,24 +9,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
+using ShopIM.Entity;
 
 namespace ShopIM.UI.Controller
 {
     public partial class Chart : UserControl
     {
-        public Chart(List<String> NameList, List<double> PriceList)
+        public Chart(List<ProductStatisticInfo> productStatisticInfos)
         {
             InitializeComponent();
-            DrawPriceVsMonthChart(NameList, PriceList);
-           // DrawPriceVsMonthPie();
+            DrawPriceVsMonthChart(productStatisticInfos);
+            DrawPriceVsMonthPie(productStatisticInfos);
         }
-        public void DrawPriceVsMonthChart(List<String> NameList, List<Double> PriceList)
+        public void DrawPriceVsMonthChart(List<ProductStatisticInfo> productStatisticInfos)
         {
+            List<double> PriceList=new List<double>();
+            List<string> NameList=new List<string>();
+            foreach (var productStat in productStatisticInfos)
+            {
+                PriceList.Add(productStat.Value);
+                NameList.Add(productStat.Key);
+            }
+
+
             //Creating columns using price list
             ColumnSeries columns = new ColumnSeries();
             ChartValues<double> chartVal = new ChartValues<double>(PriceList);
             columns.Values = chartVal;
-            columns.Title = "Montly Prices";
+            columns.Title = "Monthly Prices";
 
             //Addming columns to Series
             SeriesCollection Seriesx = new SeriesCollection();
@@ -49,41 +59,31 @@ namespace ShopIM.UI.Controller
             PriceChart.AxisY.Add(yAxis);
         }
 
-        public void DrawPriceVsMonthPie()
+        public void DrawPriceVsMonthPie(List<ProductStatisticInfo> productStatisticInfos)
         {
+            List<PieSeries> pieSeries = new List<PieSeries>();
 
-            PieChart.Series = new SeriesCollection
+            foreach (var productStat in productStatisticInfos)
             {
-                new PieSeries
+                pieSeries.Add(new PieSeries
                 {
-                    Title = "Maria",
-                    Values = new ChartValues<double> {3},
-                    PushOut = 15,
+                    Title = productStat.Key,
+                    Values = new ChartValues<double> { productStat.Value },
                     DataLabels = true,
-                   // LabelPoint = labelPoint
-                },
-                new PieSeries
-                {
-                    Title = "Charles",
-                    Values = new ChartValues<double> {4},
-                    DataLabels = true,
-                   // LabelPoint = labelPoint
-                },
-                new PieSeries
-                {
-                    Title = "Frida",
-                    Values = new ChartValues<double> {6},
-                    DataLabels = true,
-                  //  LabelPoint = labelPoint
-                },
-                new PieSeries
-                {
-                    Title = "Frederic",
-                    Values = new ChartValues<double> {2},
-                    DataLabels = true,
-                   // LabelPoint = labelPoint
-                }
-            };
+                    // LabelPoint = labelPoint
+                });
+            }
+
+            PieChart.Series = new SeriesCollection();
+
+            foreach (var series in pieSeries)
+            {
+                PieChart.Series.Add(series);
+            }
+
+
+
+
 
             PieChart.LegendLocation = LegendLocation.Bottom;
         }

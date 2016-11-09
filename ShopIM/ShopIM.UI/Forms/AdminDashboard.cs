@@ -8,6 +8,8 @@ using ShopIM.Entity;
 using ShopIM.Library;
 using ShopIM.UI.Controller;
 using System.Collections.Generic;
+using System.Linq;
+using ShopIM.BLL;
 
 namespace ShopIM.UI.Forms
 {
@@ -195,20 +197,31 @@ namespace ShopIM.UI.Forms
 
         private void StatisticButton_Click(object sender, EventArgs e)
         {
-            List<String> nameList = new List<string>();
-            nameList.Add("January");
-            nameList.Add("February");
-            nameList.Add("March");
+            List<ProductStatisticInfo> productStatisticInfos=new List<ProductStatisticInfo>();
 
-            List<double> priceList = new List<double>();
-            priceList.Add(50.0);
-            priceList.Add(70);
-            priceList.Add(100);
+            var monthlyLog = new LogRepo().GetSalesLog().GroupBy(x => x.SoldDate.Month).Select(g =>
+                    new
+                     {
+                         Month = g.Key.ToString(),
+                         MonthlyProfit = g.Sum(x => x.NetProfit)
+                     });
+
+
+
+           
+   
+
+            foreach (var log in monthlyLog)
+            {   
+               productStatisticInfos.Add(new ProductStatisticInfo(log.Month,log.MonthlyProfit));
+            }
+
+           
 
 
 
             Header.Text = @"Settings";
-            var charts = new Chart(nameList, priceList);
+            var charts = new Chart(productStatisticInfos);
             metroPanelBackground.Controls.Clear();
             charts.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(charts);
