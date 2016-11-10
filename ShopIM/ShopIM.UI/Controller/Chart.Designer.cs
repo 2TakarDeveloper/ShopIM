@@ -92,10 +92,10 @@
             this.HeaderLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.HeaderLbl.Location = new System.Drawing.Point(9, 10);
             this.HeaderLbl.Name = "HeaderLbl";
-            this.HeaderLbl.Size = new System.Drawing.Size(80, 25);
+            this.HeaderLbl.Size = new System.Drawing.Size(88, 25);
             this.HeaderLbl.Style = MetroFramework.MetroColorStyle.Silver;
             this.HeaderLbl.TabIndex = 0;
-            this.HeaderLbl.Text = "Statistic";
+            this.HeaderLbl.Text = "Statistics";
             this.HeaderLbl.UseCustomBackColor = true;
             this.HeaderLbl.UseCustomForeColor = true;
             // 
@@ -120,7 +120,7 @@
             this.ColumnChartPage.Padding = new System.Windows.Forms.Padding(5);
             this.ColumnChartPage.Size = new System.Drawing.Size(638, 376);
             this.ColumnChartPage.TabIndex = 0;
-            this.ColumnChartPage.Text = "Monthly Price";
+            this.ColumnChartPage.Text = "Column Index";
             this.ColumnChartPage.UseVisualStyleBackColor = true;
             // 
             // PriceChart
@@ -140,7 +140,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(638, 376);
             this.tabPage1.TabIndex = 1;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Pie Chart";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // PieChart

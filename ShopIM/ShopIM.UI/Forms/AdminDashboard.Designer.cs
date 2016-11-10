@@ -40,6 +40,7 @@
             this.LockButton = new MetroFramework.Controls.MetroLink();
             this.LogButton = new MetroFramework.Controls.MetroLink();
             this.LogoutButton = new MetroFramework.Controls.MetroLink();
+            this.StatisticButton = new MetroFramework.Controls.MetroLink();
             this.UserImage = new System.Windows.Forms.PictureBox();
             this.UserButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
@@ -54,7 +55,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.lockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingLink = new MetroFramework.Controls.MetroLink();
-            this.StatisticButton = new MetroFramework.Controls.MetroLink();
             this.metroPanelSide.SuspendLayout();
             this.menuSidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
@@ -237,6 +237,23 @@
             this.LogoutButton.UseSelectable = true;
             this.LogoutButton.UseStyleColors = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
+            // StatisticButton
+            // 
+            this.StatisticButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.StatisticButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.StatisticButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.StatisticButton.Location = new System.Drawing.Point(1, 417);
+            this.StatisticButton.Margin = new System.Windows.Forms.Padding(1);
+            this.StatisticButton.Name = "StatisticButton";
+            this.StatisticButton.Size = new System.Drawing.Size(215, 50);
+            this.StatisticButton.Style = MetroFramework.MetroColorStyle.White;
+            this.StatisticButton.TabIndex = 28;
+            this.StatisticButton.Text = "Statistics";
+            this.StatisticButton.UseCustomBackColor = true;
+            this.StatisticButton.UseSelectable = true;
+            this.StatisticButton.UseStyleColors = true;
+            this.StatisticButton.Click += new System.EventHandler(this.StatisticButton_Click);
             // 
             // UserImage
             // 
@@ -428,23 +445,6 @@
             this.SettingLink.UseCustomForeColor = true;
             this.SettingLink.UseSelectable = true;
             this.SettingLink.Click += new System.EventHandler(this.SettingLink_Click);
-            // 
-            // StatisticButton
-            // 
-            this.StatisticButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.StatisticButton.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.StatisticButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.StatisticButton.Location = new System.Drawing.Point(1, 417);
-            this.StatisticButton.Margin = new System.Windows.Forms.Padding(1);
-            this.StatisticButton.Name = "StatisticButton";
-            this.StatisticButton.Size = new System.Drawing.Size(215, 50);
-            this.StatisticButton.Style = MetroFramework.MetroColorStyle.White;
-            this.StatisticButton.TabIndex = 28;
-            this.StatisticButton.Text = "Statistic";
-            this.StatisticButton.UseCustomBackColor = true;
-            this.StatisticButton.UseSelectable = true;
-            this.StatisticButton.UseStyleColors = true;
-            this.StatisticButton.Click += new System.EventHandler(this.StatisticButton_Click);
             // 
             // AdminDashboard
             // 
