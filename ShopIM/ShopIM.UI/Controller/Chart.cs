@@ -19,12 +19,16 @@ namespace ShopIM.UI.Controller
         public Chart()
         {
             InitializeComponent();
-           
+            ProductBox.DataSource=new ProductRepo().GetProducts();
+           // UpdateCharts();
         }
+
+
 
 
         public void DrawColumnChart(List<ProductStatisticInfo> productStatisticInfos)
         {
+          
             List<double> PriceList=new List<double>();
             List<string> NameList=new List<string>();
             foreach (var productStat in productStatisticInfos)
@@ -38,7 +42,7 @@ namespace ShopIM.UI.Controller
             ColumnSeries columns = new ColumnSeries();
             ChartValues<double> chartVal = new ChartValues<double>(PriceList);
             columns.Values = chartVal;
-            columns.Title = "Monthly Prices";
+            columns.Title = "Net Profit Over Time";
 
             //Addming columns to Series
             SeriesCollection Seriesx = new SeriesCollection();
@@ -46,14 +50,20 @@ namespace ShopIM.UI.Controller
 
             //Creating X axis using name list
             Axis xAxis = new Axis();
-            xAxis.Title = "Sales";
+            xAxis.Title = "Time";
             xAxis.Labels = NameList;
             
 
             //Creating Y axis 
             Axis yAxis = new Axis();
-            yAxis.Title = "Prices";
+            yAxis.Title = "Profit";
             yAxis.LabelFormatter = value => value.ToString("N");
+
+            //Refresh
+
+            ColumnChart.Series.Clear();
+            ColumnChart.AxisX.Clear();
+            ColumnChart.AxisY.Clear();
 
             //adding series , axis x and y to pricechart(Column chart)
             ColumnChart.Series = Seriesx;
@@ -61,10 +71,26 @@ namespace ShopIM.UI.Controller
             ColumnChart.AxisY.Add(yAxis);
         }
 
+        private void UpdateCharts()
+        {
+            if (SelectionBox.Text == @"Overall")
+            {
+                DrawColumnChart(Log(TimeBox.Text));
+                DrawPieChart(Log(TimeBox.Text));
+            }
+            else
+            {
+                if (ProductBox.SelectedItem == null) return;
+                DrawColumnChart(Log(TimeBox.Text, ProductBox.SelectedItem.ToString()));
+                DrawPieChart(Log(TimeBox.Text, ProductBox.SelectedItem.ToString()));
+            }
+        }
+
+
         public void DrawPieChart(List<ProductStatisticInfo> productStatisticInfos)
         {
             Func<ChartPoint, string> labelPoint = chartPoint =>
-               string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+                    $"{chartPoint.Y} ({chartPoint.Participation:P})";
 
             SeriesCollection seriesCollection = new SeriesCollection();
 
@@ -171,8 +197,23 @@ namespace ShopIM.UI.Controller
 
         private void TimeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-             DrawColumnChart(Log(TimeBox.Text));
-             DrawPieChart(Log(TimeBox.Text)); 
+            UpdateCharts();
+             
+        }
+
+
+       
+      
+
+        private void ProductBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateCharts();
+        }
+
+        private void SelectionBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProductBox.Visible = SelectionBox.Text != @"Overall";
+            UpdateCharts();
         }
     }
  }
