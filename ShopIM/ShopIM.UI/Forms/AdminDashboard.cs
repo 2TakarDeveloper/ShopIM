@@ -7,6 +7,7 @@ using MetroFramework.Forms;
 using ShopIM.Entity;
 using ShopIM.Library;
 using ShopIM.UI.Controller;
+using System.Collections.Generic;
 
 namespace ShopIM.UI.Forms
 {
@@ -190,6 +191,27 @@ namespace ShopIM.UI.Forms
         {
             var systemForm = new SystemForm(User.UserName, Login, this);
             systemForm.ShowDialog(this);
+        }
+
+        private void StatisticButton_Click(object sender, EventArgs e)
+        {
+            List<String> nameList = new List<string>();
+            nameList.Add("January");
+            nameList.Add("February");
+            nameList.Add("March");
+
+            List<double> priceList = new List<double>();
+            priceList.Add(50.0);
+            priceList.Add(70);
+            priceList.Add(100);
+
+
+
+            Header.Text = @"Settings";
+            var charts = new Chart(nameList, priceList);
+            metroPanelBackground.Controls.Clear();
+            charts.Dock = DockStyle.Fill;
+            metroPanelBackground.Controls.Add(charts);
         }
     }
 }

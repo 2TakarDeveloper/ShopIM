@@ -40,6 +40,7 @@
             this.LockButton = new MetroFramework.Controls.MetroLink();
             this.LogButton = new MetroFramework.Controls.MetroLink();
             this.LogoutButton = new MetroFramework.Controls.MetroLink();
+            this.UserImage = new System.Windows.Forms.PictureBox();
             this.UserButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanelBackground = new MetroFramework.Controls.MetroPanel();
@@ -47,17 +48,17 @@
             this.Header = new MetroFramework.Controls.MetroLabel();
             this.NotificationLink = new MetroFramework.Controls.MetroLink();
             this.ExitButton = new MetroFramework.Controls.MetroLink();
-            this.UserImage = new System.Windows.Forms.PictureBox();
             this.SettingContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maximizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.SettingLink = new MetroFramework.Controls.MetroLink();
             this.lockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SettingLink = new MetroFramework.Controls.MetroLink();
+            this.StatisticButton = new MetroFramework.Controls.MetroLink();
             this.metroPanelSide.SuspendLayout();
             this.menuSidePanel.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
+            this.metroPanel2.SuspendLayout();
             this.SettingContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +96,7 @@
             this.menuSidePanel.Controls.Add(this.LockButton);
             this.menuSidePanel.Controls.Add(this.LogButton);
             this.menuSidePanel.Controls.Add(this.LogoutButton);
+            this.menuSidePanel.Controls.Add(this.StatisticButton);
             this.menuSidePanel.Location = new System.Drawing.Point(0, 80);
             this.menuSidePanel.Name = "menuSidePanel";
             this.menuSidePanel.Size = new System.Drawing.Size(217, 437);
@@ -236,6 +238,19 @@
             this.LogoutButton.UseStyleColors = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
+            // UserImage
+            // 
+            this.UserImage.BackColor = System.Drawing.Color.Transparent;
+            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.DefaultUserImage1;
+            this.UserImage.Location = new System.Drawing.Point(3, 3);
+            this.UserImage.Name = "UserImage";
+            this.UserImage.Size = new System.Drawing.Size(70, 70);
+            this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserImage.TabIndex = 18;
+            this.UserImage.TabStop = false;
+            // 
             // UserButton
             // 
             this.UserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(138)))), ((int)(((byte)(212)))));
@@ -361,19 +376,6 @@
             this.ExitButton.UseSelectable = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_click);
             // 
-            // UserImage
-            // 
-            this.UserImage.BackColor = System.Drawing.Color.Transparent;
-            this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.DefaultUserImage1;
-            this.UserImage.Location = new System.Drawing.Point(3, 3);
-            this.UserImage.Name = "UserImage";
-            this.UserImage.Size = new System.Drawing.Size(70, 70);
-            this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.UserImage.TabIndex = 18;
-            this.UserImage.TabStop = false;
-            // 
             // SettingContextMenu
             // 
             this.SettingContextMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -383,26 +385,33 @@
             this.toolStripMenuItem1,
             this.lockToolStripMenuItem});
             this.SettingContextMenu.Name = "SettingContextMenu";
-            this.SettingContextMenu.Size = new System.Drawing.Size(153, 98);
+            this.SettingContextMenu.Size = new System.Drawing.Size(132, 76);
             // 
             // minimizeToolStripMenuItem
             // 
             this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
-            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.minimizeToolStripMenuItem.Text = "Minimize";
             this.minimizeToolStripMenuItem.Click += new System.EventHandler(this.minimizeToolStripMenuItem_Click);
             // 
             // maximizeToolStripMenuItem
             // 
             this.maximizeToolStripMenuItem.Name = "maximizeToolStripMenuItem";
-            this.maximizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.maximizeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.maximizeToolStripMenuItem.Text = "Maximize";
             this.maximizeToolStripMenuItem.Click += new System.EventHandler(this.maximizeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 6);
+            // 
+            // lockToolStripMenuItem
+            // 
+            this.lockToolStripMenuItem.Name = "lockToolStripMenuItem";
+            this.lockToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.lockToolStripMenuItem.Text = "Lock";
+            this.lockToolStripMenuItem.Click += new System.EventHandler(this.lockToolStripMenuItem_Click);
             // 
             // SettingLink
             // 
@@ -420,12 +429,22 @@
             this.SettingLink.UseSelectable = true;
             this.SettingLink.Click += new System.EventHandler(this.SettingLink_Click);
             // 
-            // lockToolStripMenuItem
+            // StatisticButton
             // 
-            this.lockToolStripMenuItem.Name = "lockToolStripMenuItem";
-            this.lockToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.lockToolStripMenuItem.Text = "Lock";
-            this.lockToolStripMenuItem.Click += new System.EventHandler(this.lockToolStripMenuItem_Click);
+            this.StatisticButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.StatisticButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.StatisticButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.StatisticButton.Location = new System.Drawing.Point(1, 417);
+            this.StatisticButton.Margin = new System.Windows.Forms.Padding(1);
+            this.StatisticButton.Name = "StatisticButton";
+            this.StatisticButton.Size = new System.Drawing.Size(215, 50);
+            this.StatisticButton.Style = MetroFramework.MetroColorStyle.White;
+            this.StatisticButton.TabIndex = 28;
+            this.StatisticButton.Text = "Statistic";
+            this.StatisticButton.UseCustomBackColor = true;
+            this.StatisticButton.UseSelectable = true;
+            this.StatisticButton.UseStyleColors = true;
+            this.StatisticButton.Click += new System.EventHandler(this.StatisticButton_Click);
             // 
             // AdminDashboard
             // 
@@ -446,9 +465,9 @@
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.metroPanelSide.ResumeLayout(false);
             this.menuSidePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
             this.SettingContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -480,5 +499,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private MetroFramework.Controls.MetroLink SettingLink;
         private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem;
+        private MetroFramework.Controls.MetroLink StatisticButton;
     }
 }
