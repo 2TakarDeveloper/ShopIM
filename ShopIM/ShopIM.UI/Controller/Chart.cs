@@ -19,7 +19,7 @@ namespace ShopIM.UI.Controller
         {
             InitializeComponent();
             DrawPriceVsMonthChart(productStatisticInfos);
-            DrawPriceVsMonthPie(productStatisticInfos);
+            //DrawPriceVsMonthPie(productStatisticInfos);
         }
         public void DrawPriceVsMonthChart(List<ProductStatisticInfo> productStatisticInfos)
         {
@@ -61,31 +61,34 @@ namespace ShopIM.UI.Controller
 
         public void DrawPriceVsMonthPie(List<ProductStatisticInfo> productStatisticInfos)
         {
-            List<PieSeries> pieSeries = new List<PieSeries>();
+            //List<PieSeries> pieSeries = new List<PieSeries>();
 
-            foreach (var productStat in productStatisticInfos)
-            {
-                pieSeries.Add(new PieSeries
-                {
-                    Title = productStat.Key,
-                    Values = new ChartValues<double> { productStat.Value },
-                    DataLabels = true,
-                    // LabelPoint = labelPoint
-                });
-            }
+            //foreach (var productStat in productStatisticInfos)
+            //{
+            //    pieSeries.Add(new PieSeries
+            //    {
+            //        Title = productStat.Key,
+            //        Values = new ChartValues<double> { productStat.Value },
+            //        DataLabels = true,
+            //        // LabelPoint = labelPoint
+            //    });
+            //}
 
-            PieChart.Series = new SeriesCollection();
+            //PieChart.Series = new SeriesCollection();
 
-            foreach (var series in pieSeries)
-            {
-                PieChart.Series.Add(series);
-            }
-
-
+            //foreach (var series in pieSeries)
+            //{
+            //    PieChart.Series.Add(series);
+            //}
 
 
 
-            PieChart.LegendLocation = LegendLocation.Bottom;
+
+
+            //PieChart.LegendLocation = LegendLocation.Bottom;
+
+          
+
         }
     }
 
