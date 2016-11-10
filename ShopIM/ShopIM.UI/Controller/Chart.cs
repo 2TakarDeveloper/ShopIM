@@ -54,9 +54,9 @@ namespace ShopIM.UI.Controller
             yAxis.LabelFormatter = value => value.ToString("N");
 
             //adding series , axis x and y to pricechart(Column chart)
-            PriceChart.Series = Seriesx;
-            PriceChart.AxisX.Add(xAxis);
-            PriceChart.AxisY.Add(yAxis);
+            ColumnChart.Series = Seriesx;
+            ColumnChart.AxisX.Add(xAxis);
+            ColumnChart.AxisY.Add(yAxis);
         }
 
         public void DrawPriceVsMonthPie(List<ProductStatisticInfo> productStatisticInfos)
@@ -64,60 +64,23 @@ namespace ShopIM.UI.Controller
             Func<ChartPoint, string> labelPoint = chartPoint =>
                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
-            List<double> PriceList = new List<double>();
-            List<string> NameList = new List<string>();
-            NameList.Add("Shihab");
-            NameList.Add("Shihab2");
-            NameList.Add("Shihab3");
+            SeriesCollection seriesCollection = new SeriesCollection();
 
-            List<PieSeries> pieList = new List<PieSeries>();
-            foreach(String name in NameList)
+            foreach (var productInfo in productStatisticInfos)
             {
-                PieSeries pieSlice = new PieSeries();
-                pieSlice.Title = name;
-                pieSlice.Values = new ChartValues<double> { 10 };
-                //PushOut = 15,
-                pieSlice.DataLabels = true;
-                pieSlice.LabelPoint = labelPoint;
-                pieList.Add(pieSlice);
+                seriesCollection.Add(new PieSeries
+                {
+                    Title = productInfo.Key,
+                    Values = new ChartValues<double> { productInfo.Value },
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                });
             }
-            pieChart1.Series = new SeriesCollection(pieList);
-            pieChart1.LegendLocation = LegendLocation.Bottom;
-            
-         /*   pieChart1.Series = new SeriesCollection
-            {
-                new PieSeries
-                {
-                    Title = "Maria",
-                    Values = new ChartValues<double> {3},
-                    PushOut = 15,
-                    DataLabels = true,
-                    LabelPoint = labelPoint
-                },
-                new PieSeries
-                {
-                    Title = "Charles",
-                    Values = new ChartValues<double> {4},
-                    DataLabels = true,
-                    LabelPoint = labelPoint
-                },
-                new PieSeries
-                {
-                    Title = "Frida",
-                    Values = new ChartValues<double> {6},
-                    DataLabels = true,
-                    LabelPoint = labelPoint
-                },
-                new PieSeries
-                {
-                    Title = "Frederic",
-                    Values = new ChartValues<double> {2},
-                    DataLabels = true,
-                    LabelPoint = labelPoint
-                }
-            };*/
+          
 
-            //pieChart1.LegendLocation = LegendLocation.Bottom;
+            pieChart.Series = seriesCollection;
+          
+            pieChart.LegendLocation = LegendLocation.Bottom;
         }
     }
  }

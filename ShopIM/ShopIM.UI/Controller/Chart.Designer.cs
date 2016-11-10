@@ -30,21 +30,21 @@
         {
             this.backgroundPanel = new MetroFramework.Controls.MetroPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.HeaderLbl = new MetroFramework.Controls.MetroLabel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.ColumnChartPage = new System.Windows.Forms.TabPage();
-            this.PriceChart = new LiveCharts.WinForms.CartesianChart();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.HeaderLbl = new MetroFramework.Controls.MetroLabel();
+            this.TabControl = new System.Windows.Forms.TabControl();
+            this.ColumnChartPage = new System.Windows.Forms.TabPage();
+            this.ColumnChart = new LiveCharts.WinForms.CartesianChart();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pieChart = new LiveCharts.WinForms.PieChart();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.TabControl.SuspendLayout();
             this.ColumnChartPage.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -84,10 +84,47 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.TabControl);
             this.splitContainer1.Size = new System.Drawing.Size(646, 461);
             this.splitContainer1.SplitterDistance = 48;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(264, 10);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 26);
+            this.comboBox3.TabIndex = 4;
+            this.comboBox3.Visible = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Net Profit"});
+            this.comboBox1.Location = new System.Drawing.Point(391, 10);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 26);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Weekly",
+            "Monthly",
+            "Yearly"});
+            this.comboBox2.Location = new System.Drawing.Point(518, 10);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 26);
+            this.comboBox2.TabIndex = 2;
             // 
             // HeaderLbl
             // 
@@ -104,21 +141,21 @@
             this.HeaderLbl.UseCustomBackColor = true;
             this.HeaderLbl.UseCustomForeColor = true;
             // 
-            // tabControl1
+            // TabControl
             // 
-            this.tabControl1.Controls.Add(this.ColumnChartPage);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(646, 409);
-            this.tabControl1.TabIndex = 0;
+            this.TabControl.Controls.Add(this.ColumnChartPage);
+            this.TabControl.Controls.Add(this.tabPage1);
+            this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabControl.Location = new System.Drawing.Point(0, 0);
+            this.TabControl.Name = "TabControl";
+            this.TabControl.SelectedIndex = 0;
+            this.TabControl.Size = new System.Drawing.Size(646, 409);
+            this.TabControl.TabIndex = 0;
             // 
             // ColumnChartPage
             // 
-            this.ColumnChartPage.Controls.Add(this.PriceChart);
+            this.ColumnChartPage.Controls.Add(this.ColumnChart);
             this.ColumnChartPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ColumnChartPage.Location = new System.Drawing.Point(4, 29);
             this.ColumnChartPage.Name = "ColumnChartPage";
@@ -128,18 +165,18 @@
             this.ColumnChartPage.Text = "Column Index";
             this.ColumnChartPage.UseVisualStyleBackColor = true;
             // 
-            // PriceChart
+            // ColumnChart
             // 
-            this.PriceChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PriceChart.Location = new System.Drawing.Point(5, 5);
-            this.PriceChart.Name = "PriceChart";
-            this.PriceChart.Size = new System.Drawing.Size(628, 366);
-            this.PriceChart.TabIndex = 0;
-            this.PriceChart.Text = "cartesianChart1";
+            this.ColumnChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ColumnChart.Location = new System.Drawing.Point(5, 5);
+            this.ColumnChart.Name = "ColumnChart";
+            this.ColumnChart.Size = new System.Drawing.Size(628, 366);
+            this.ColumnChart.TabIndex = 0;
+            this.ColumnChart.Text = "cartesianChart1";
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.pieChart1);
+            this.tabPage1.Controls.Add(this.pieChart);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -148,44 +185,14 @@
             this.tabPage1.Text = "Pie Chart";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // pieChart
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(518, 10);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 26);
-            this.comboBox2.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(391, 10);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(264, 10);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 26);
-            this.comboBox3.TabIndex = 4;
-            // 
-            // pieChart1
-            // 
-            this.pieChart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pieChart1.Location = new System.Drawing.Point(3, 3);
-            this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(632, 370);
-            this.pieChart1.TabIndex = 0;
-            this.pieChart1.Text = "pieChart1";
+            this.pieChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pieChart.Location = new System.Drawing.Point(3, 3);
+            this.pieChart.Name = "pieChart";
+            this.pieChart.Size = new System.Drawing.Size(632, 370);
+            this.pieChart.TabIndex = 0;
+            this.pieChart.Text = "pieChart1";
             // 
             // Chart
             // 
@@ -200,7 +207,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.TabControl.ResumeLayout(false);
             this.ColumnChartPage.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -212,13 +219,13 @@
         private MetroFramework.Controls.MetroPanel backgroundPanel;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private MetroFramework.Controls.MetroLabel HeaderLbl;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl TabControl;
         private System.Windows.Forms.TabPage ColumnChartPage;
-        private LiveCharts.WinForms.CartesianChart PriceChart;
+        private LiveCharts.WinForms.CartesianChart ColumnChart;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private LiveCharts.WinForms.PieChart pieChart1;
+        private LiveCharts.WinForms.PieChart pieChart;
     }
 }
