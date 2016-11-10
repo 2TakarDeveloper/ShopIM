@@ -118,6 +118,7 @@ namespace ShopIM.UI.Forms
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
+          
             Login.Show();
             Close();
         }

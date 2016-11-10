@@ -19,7 +19,7 @@ namespace ShopIM.UI.Controller
         {
             InitializeComponent();
             DrawPriceVsMonthChart(productStatisticInfos);
-            //DrawPriceVsMonthPie(productStatisticInfos);
+            DrawPriceVsMonthPie(productStatisticInfos);
         }
         public void DrawPriceVsMonthChart(List<ProductStatisticInfo> productStatisticInfos)
         {
@@ -61,38 +61,68 @@ namespace ShopIM.UI.Controller
 
         public void DrawPriceVsMonthPie(List<ProductStatisticInfo> productStatisticInfos)
         {
-            //List<PieSeries> pieSeries = new List<PieSeries>();
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+               string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
-            //foreach (var productStat in productStatisticInfos)
-            //{
-            //    pieSeries.Add(new PieSeries
-            //    {
-            //        Title = productStat.Key,
-            //        Values = new ChartValues<double> { productStat.Value },
-            //        DataLabels = true,
-            //        // LabelPoint = labelPoint
-            //    });
-            //}
+            List<double> PriceList = new List<double>();
+            List<string> NameList = new List<string>();
+            NameList.Add("Shihab");
+            NameList.Add("Shihab2");
+            NameList.Add("Shihab3");
 
-            //PieChart.Series = new SeriesCollection();
+            List<PieSeries> pieList = new List<PieSeries>();
+            foreach(String name in NameList)
+            {
+                PieSeries pieSlice = new PieSeries();
+                pieSlice.Title = name;
+                pieSlice.Values = new ChartValues<double> { 10 };
+                //PushOut = 15,
+                pieSlice.DataLabels = true;
+                pieSlice.LabelPoint = labelPoint;
+                pieList.Add(pieSlice);
+            }
+            pieChart1.Series = new SeriesCollection(pieList);
+            pieChart1.LegendLocation = LegendLocation.Bottom;
+            
+         /*   pieChart1.Series = new SeriesCollection
+            {
+                new PieSeries
+                {
+                    Title = "Maria",
+                    Values = new ChartValues<double> {3},
+                    PushOut = 15,
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                },
+                new PieSeries
+                {
+                    Title = "Charles",
+                    Values = new ChartValues<double> {4},
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                },
+                new PieSeries
+                {
+                    Title = "Frida",
+                    Values = new ChartValues<double> {6},
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                },
+                new PieSeries
+                {
+                    Title = "Frederic",
+                    Values = new ChartValues<double> {2},
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                }
+            };*/
 
-            //foreach (var series in pieSeries)
-            //{
-            //    PieChart.Series.Add(series);
-            //}
-
-
-
-
-
-            //PieChart.LegendLocation = LegendLocation.Bottom;
-
-          
-
+            //pieChart1.LegendLocation = LegendLocation.Bottom;
         }
     }
+ }
 
 
-}
+
     
 
