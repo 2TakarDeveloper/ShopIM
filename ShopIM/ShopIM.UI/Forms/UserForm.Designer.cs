@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.TypePicker = new System.Windows.Forms.ComboBox();
             this.ConfirmtextBox = new MetroFramework.Controls.MetroTextBox();
@@ -36,25 +35,12 @@
             this.PasswordTextBox = new MetroFramework.Controls.MetroTextBox();
             this.NameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.SubmitButton = new MetroFramework.Controls.MetroButton();
-            this.ProductImage = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.ProductImage = new System.Windows.Forms.PictureBox();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // metroLink1
-            // 
-            this.metroLink1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLink1.BackColor = System.Drawing.Color.Transparent;
-            this.metroLink1.Image = global::ShopIM.UI.Properties.Resources.ClosrRedBtn;
-            this.metroLink1.ImageSize = 25;
-            this.metroLink1.Location = new System.Drawing.Point(283, 2);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(30, 30);
-            this.metroLink1.TabIndex = 5;
-            this.metroLink1.UseCustomBackColor = true;
-            this.metroLink1.UseSelectable = true;
-            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
             // metroPanel1
             // 
@@ -235,6 +221,31 @@
             this.SubmitButton.UseSelectable = true;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox1.Location = new System.Drawing.Point(12, 38);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(301, 411);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "User Details";
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLink1.BackColor = System.Drawing.Color.Transparent;
+            this.metroLink1.Image = global::ShopIM.UI.Properties.Resources.ClosrRedBtn;
+            this.metroLink1.ImageSize = 25;
+            this.metroLink1.Location = new System.Drawing.Point(283, 2);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(30, 30);
+            this.metroLink1.TabIndex = 5;
+            this.metroLink1.UseCustomBackColor = true;
+            this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
+            // 
             // ProductImage
             // 
             this.ProductImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -248,17 +259,6 @@
             this.ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProductImage.TabIndex = 4;
             this.ProductImage.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(12, 38);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 411);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "User Details";
             // 
             // UserForm
             // 
