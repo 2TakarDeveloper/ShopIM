@@ -32,7 +32,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.TimeBox = new System.Windows.Forms.ComboBox();
             this.HeaderLbl = new MetroFramework.Controls.MetroLabel();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.ColumnChartPage = new System.Windows.Forms.TabPage();
@@ -78,7 +78,7 @@
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel1.Controls.Add(this.comboBox3);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox2);
+            this.splitContainer1.Panel1.Controls.Add(this.TimeBox);
             this.splitContainer1.Panel1.Controls.Add(this.HeaderLbl);
             // 
             // splitContainer1.Panel2
@@ -112,19 +112,20 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 26);
             this.comboBox1.TabIndex = 3;
             // 
-            // comboBox2
+            // TimeBox
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.TimeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeBox.FormattingEnabled = true;
+            this.TimeBox.Items.AddRange(new object[] {
             "Weekly",
             "Monthly",
             "Yearly"});
-            this.comboBox2.Location = new System.Drawing.Point(518, 10);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 26);
-            this.comboBox2.TabIndex = 2;
+            this.TimeBox.Location = new System.Drawing.Point(518, 10);
+            this.TimeBox.Name = "TimeBox";
+            this.TimeBox.Size = new System.Drawing.Size(121, 26);
+            this.TimeBox.TabIndex = 2;
+            this.TimeBox.SelectedIndexChanged += new System.EventHandler(this.TimeBox_SelectedIndexChanged);
             // 
             // HeaderLbl
             // 
@@ -225,7 +226,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox TimeBox;
         private LiveCharts.WinForms.PieChart pieChart;
     }
 }

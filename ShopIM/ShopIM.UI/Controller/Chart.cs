@@ -9,19 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
+using ShopIM.BLL;
 using ShopIM.Entity;
 
 namespace ShopIM.UI.Controller
 {
     public partial class Chart : UserControl
     {
-        public Chart(List<ProductStatisticInfo> productStatisticInfos)
+        public Chart()
         {
             InitializeComponent();
-            DrawPriceVsMonthChart(productStatisticInfos);
-            DrawPriceVsMonthPie(productStatisticInfos);
+           
         }
-        public void DrawPriceVsMonthChart(List<ProductStatisticInfo> productStatisticInfos)
+
+
+        public void DrawColumnChart(List<ProductStatisticInfo> productStatisticInfos)
         {
             List<double> PriceList=new List<double>();
             List<string> NameList=new List<string>();
@@ -59,7 +61,7 @@ namespace ShopIM.UI.Controller
             ColumnChart.AxisY.Add(yAxis);
         }
 
-        public void DrawPriceVsMonthPie(List<ProductStatisticInfo> productStatisticInfos)
+        public void DrawPieChart(List<ProductStatisticInfo> productStatisticInfos)
         {
             Func<ChartPoint, string> labelPoint = chartPoint =>
                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
@@ -81,6 +83,96 @@ namespace ShopIM.UI.Controller
             pieChart.Series = seriesCollection;
           
             pieChart.LegendLocation = LegendLocation.Bottom;
+        }
+
+        private List<ProductStatisticInfo> Log(string groupby)
+        {
+            List<ProductStatisticInfo> Log=new List<ProductStatisticInfo>();
+
+            switch (groupby)
+            {
+                case "Monthly":
+
+                    var monthlyLog = new LogRepo().GetSalesLog().GroupBy(x => x.SoldDate.Month).Select(g =>
+                        new
+                        {
+                            Month = g.Key.ToString(),
+                            MonthlyProfit = g.Sum(x => x.NetProfit)
+                        });
+                    Log = monthlyLog.Select(log => new ProductStatisticInfo(log.Month, log.MonthlyProfit)).ToList();
+                    break;
+                case "Yearly":
+
+                    var yearlyLog = new LogRepo().GetSalesLog().GroupBy(x => x.SoldDate.Year).Select(g =>
+                        new
+                        {
+                            Month = g.Key.ToString(),
+                            MonthlyProfit = g.Sum(x => x.NetProfit)
+                        });
+                    Log = yearlyLog.Select(log => new ProductStatisticInfo(log.Month, log.MonthlyProfit)).ToList();
+                    break;
+                case "Weekly":
+
+                    var weeklyLog = new LogRepo().GetSalesLog().GroupBy(x => x.SoldDate.DayOfWeek).Select(g =>
+                        new
+                        {
+                            Month = g.Key.ToString(),
+                            MonthlyProfit = g.Sum(x => x.NetProfit)
+                        });
+                    Log = weeklyLog.Select(log => new ProductStatisticInfo(log.Month, log.MonthlyProfit)).ToList();
+                    break;
+            }
+
+
+            return Log;
+        }
+
+
+        private List<ProductStatisticInfo> Log(string groupby,string productName)
+        {    
+            List<ProductStatisticInfo> Log = new List<ProductStatisticInfo>();
+
+            switch (groupby)
+            {
+                case "Monthly":
+                    var monthlyLog = new LogRepo().GetSalesLog().Where(x => x.ProductName == productName).GroupBy(x => x.SoldDate.Month).Select(g =>
+                        new
+                        {
+                            Month = g.Key.ToString(),
+                            MonthlyProfit = g.Sum(x => x.NetProfit)
+                        });
+                    Log = monthlyLog.Select(log => new ProductStatisticInfo(log.Month, log.MonthlyProfit)).ToList();
+                    break;
+
+                case "Yearly":
+                    var yearlyLog = new LogRepo().GetSalesLog().Where(x => x.ProductName == productName).GroupBy(x => x.SoldDate.Year).Select(g =>
+                        new
+                        {
+                            Month = g.Key.ToString(),
+                            MonthlyProfit = g.Sum(x => x.NetProfit)
+                        });
+                    Log = yearlyLog.Select(log => new ProductStatisticInfo(log.Month, log.MonthlyProfit)).ToList();
+                    break;
+
+                case "Weekly":
+                    var weeklyLog = new LogRepo().GetSalesLog().Where(x => x.ProductName == productName).GroupBy(x => x.SoldDate.DayOfWeek).Select(g =>
+                        new
+                        {
+                            Month = g.Key.ToString(),
+                            MonthlyProfit = g.Sum(x => x.NetProfit)
+                        });
+                    Log = weeklyLog.Select(log => new ProductStatisticInfo(log.Month, log.MonthlyProfit)).ToList();
+                    break;
+            }
+
+
+            return Log;
+        }
+
+        private void TimeBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             DrawColumnChart(Log(TimeBox.Text));
+             DrawPieChart(Log(TimeBox.Text)); 
         }
     }
  }

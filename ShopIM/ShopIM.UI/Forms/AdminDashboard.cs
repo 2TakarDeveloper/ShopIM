@@ -198,31 +198,8 @@ namespace ShopIM.UI.Forms
 
         private void StatisticButton_Click(object sender, EventArgs e)
         {
-            List<ProductStatisticInfo> productStatisticInfos=new List<ProductStatisticInfo>();
-
-            var monthlyLog = new LogRepo().GetSalesLog().GroupBy(x => x.SoldDate.Month).Select(g =>
-                    new
-                     {
-                         Month = g.Key.ToString(),
-                         MonthlyProfit = g.Sum(x => x.NetProfit)
-                     });
-
-
-
-           
-   
-
-            foreach (var log in monthlyLog)
-            {   
-               productStatisticInfos.Add(new ProductStatisticInfo(log.Month,log.MonthlyProfit));
-            }
-
-           
-
-
-
-            Header.Text = @"Settings";
-            var charts = new Chart(productStatisticInfos);
+            Header.Text = @"Statistics";
+            var charts = new Chart();
             metroPanelBackground.Controls.Clear();
             charts.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Add(charts);
