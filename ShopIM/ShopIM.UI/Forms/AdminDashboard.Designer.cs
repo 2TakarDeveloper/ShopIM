@@ -94,9 +94,9 @@
             this.menuSidePanel.Controls.Add(this.InventoryButton);
             this.menuSidePanel.Controls.Add(this.SettingsButton);
             this.menuSidePanel.Controls.Add(this.LockButton);
+            this.menuSidePanel.Controls.Add(this.StatisticButton);
             this.menuSidePanel.Controls.Add(this.LogButton);
             this.menuSidePanel.Controls.Add(this.LogoutButton);
-            this.menuSidePanel.Controls.Add(this.StatisticButton);
             this.menuSidePanel.Location = new System.Drawing.Point(0, 80);
             this.menuSidePanel.Name = "menuSidePanel";
             this.menuSidePanel.Size = new System.Drawing.Size(217, 437);
@@ -209,7 +209,7 @@
             this.LogButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
             this.LogButton.FontSize = MetroFramework.MetroLinkSize.Tall;
             this.LogButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.LogButton.Location = new System.Drawing.Point(1, 313);
+            this.LogButton.Location = new System.Drawing.Point(1, 365);
             this.LogButton.Margin = new System.Windows.Forms.Padding(1);
             this.LogButton.Name = "LogButton";
             this.LogButton.Size = new System.Drawing.Size(215, 50);
@@ -226,7 +226,7 @@
             this.LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
             this.LogoutButton.FontSize = MetroFramework.MetroLinkSize.Tall;
             this.LogoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.LogoutButton.Location = new System.Drawing.Point(1, 365);
+            this.LogoutButton.Location = new System.Drawing.Point(1, 417);
             this.LogoutButton.Margin = new System.Windows.Forms.Padding(1);
             this.LogoutButton.Name = "LogoutButton";
             this.LogoutButton.Size = new System.Drawing.Size(215, 50);
@@ -243,7 +243,7 @@
             this.StatisticButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
             this.StatisticButton.FontSize = MetroFramework.MetroLinkSize.Tall;
             this.StatisticButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.StatisticButton.Location = new System.Drawing.Point(1, 417);
+            this.StatisticButton.Location = new System.Drawing.Point(1, 313);
             this.StatisticButton.Margin = new System.Windows.Forms.Padding(1);
             this.StatisticButton.Name = "StatisticButton";
             this.StatisticButton.Size = new System.Drawing.Size(215, 50);
