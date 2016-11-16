@@ -57,6 +57,9 @@ namespace ShopIM.UI.Controller
 
             //adding series , axis x and y to pricechart(Column chart)
             ColumnChart.Series = Seriesx;
+
+            ColumnChart.AxisX.Clear();
+            ColumnChart.AxisY.Clear();
             ColumnChart.AxisX.Add(xAxis);
             ColumnChart.AxisY.Add(yAxis);
         }
