@@ -20,7 +20,7 @@ namespace ShopIM.UI.Controller
         {
             InitializeComponent();
             ProductBox.DataSource=new ProductRepo().GetProducts();
-           // UpdateCharts();
+        
         }
 
 
@@ -60,10 +60,12 @@ namespace ShopIM.UI.Controller
             yAxis.LabelFormatter = value => value.ToString("N");
 
             //Refresh
-
-            ColumnChart.Series.Clear();
-            ColumnChart.AxisX.Clear();
-            ColumnChart.AxisY.Clear();
+        
+                ColumnChart.Series.Clear();
+             
+                ColumnChart.AxisX.Clear();
+   
+                ColumnChart.AxisY.Clear();
 
             //adding series , axis x and y to pricechart(Column chart)
             ColumnChart.Series = Seriesx;
@@ -114,12 +116,14 @@ namespace ShopIM.UI.Controller
         private List<ProductStatisticInfo> Log(string groupby)
         {
             List<ProductStatisticInfo> Log=new List<ProductStatisticInfo>();
+            var statdata =
+                new LogRepo().GetSalesLog().Where(x => x.SoldDate >= FromDate.Value && x.SoldDate <= toDate.Value);
 
             switch (groupby)
             {
                 case "Monthly":
 
-                    var monthlyLog = new LogRepo().GetSalesLog().GroupBy(x => x.SoldDate.Month).Select(g =>
+                    var monthlyLog = statdata.GroupBy(x => x.SoldDate.Month).Select(g =>
                         new
                         {
                             Month = g.Key.ToString(),
@@ -129,7 +133,7 @@ namespace ShopIM.UI.Controller
                     break;
                 case "Yearly":
 
-                    var yearlyLog = new LogRepo().GetSalesLog().GroupBy(x => x.SoldDate.Year).Select(g =>
+                    var yearlyLog = statdata.GroupBy(x => x.SoldDate.Year).Select(g =>
                         new
                         {
                             Month = g.Key.ToString(),
@@ -139,7 +143,7 @@ namespace ShopIM.UI.Controller
                     break;
                 case "Weekly":
 
-                    var weeklyLog = new LogRepo().GetSalesLog().GroupBy(x => x.SoldDate.DayOfWeek).Select(g =>
+                    var weeklyLog = statdata.GroupBy(x => x.SoldDate.DayOfWeek).Select(g =>
                         new
                         {
                             Month = g.Key.ToString(),
@@ -157,11 +161,14 @@ namespace ShopIM.UI.Controller
         private List<ProductStatisticInfo> Log(string groupby,string productName)
         {    
             List<ProductStatisticInfo> Log = new List<ProductStatisticInfo>();
-
+            var statData =
+                new LogRepo().GetSalesLog()
+                    .Where(
+                        x => x.ProductName == productName && x.SoldDate >= FromDate.Value && x.SoldDate <= toDate.Value);
             switch (groupby)
             {
                 case "Monthly":
-                    var monthlyLog = new LogRepo().GetSalesLog().Where(x => x.ProductName == productName).GroupBy(x => x.SoldDate.Month).Select(g =>
+                    var monthlyLog =statData.GroupBy(x => x.SoldDate.Month).Select(g =>
                         new
                         {
                             Month = g.Key.ToString(),
@@ -171,7 +178,7 @@ namespace ShopIM.UI.Controller
                     break;
 
                 case "Yearly":
-                    var yearlyLog = new LogRepo().GetSalesLog().Where(x => x.ProductName == productName).GroupBy(x => x.SoldDate.Year).Select(g =>
+                    var yearlyLog = statData.GroupBy(x => x.SoldDate.Year).Select(g =>
                         new
                         {
                             Month = g.Key.ToString(),
@@ -181,7 +188,7 @@ namespace ShopIM.UI.Controller
                     break;
 
                 case "Weekly":
-                    var weeklyLog = new LogRepo().GetSalesLog().Where(x => x.ProductName == productName).GroupBy(x => x.SoldDate.DayOfWeek).Select(g =>
+                    var weeklyLog = statData.GroupBy(x => x.SoldDate.DayOfWeek).Select(g =>
                         new
                         {
                             Month = g.Key.ToString(),
@@ -213,6 +220,16 @@ namespace ShopIM.UI.Controller
         private void SelectionBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ProductBox.Visible = SelectionBox.Text != @"Overall";
+            UpdateCharts();
+        }
+
+        private void FromDate_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateCharts();
+        }
+
+        private void toDate_ValueChanged(object sender, EventArgs e)
+        {
             UpdateCharts();
         }
     }

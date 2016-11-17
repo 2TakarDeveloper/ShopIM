@@ -26,6 +26,7 @@ namespace ShopIM.UI.Controller
             }
 
             Type.Text = inventory.Product!= null ? inventory.Product.Type : "";
+            Name.Text = inventory.ProductName;
             DueLable.Text = inventory.Due.ToString();
             Vendor.Text = inventory.Vendor;
             Quantity.Text = inventory.Quantity.ToString();

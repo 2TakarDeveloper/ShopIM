@@ -30,6 +30,7 @@
         {
             this.backgroundPanel = new MetroFramework.Controls.MetroPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.SelectionBox = new System.Windows.Forms.ComboBox();
             this.ProductBox = new System.Windows.Forms.ComboBox();
             this.TimeBox = new System.Windows.Forms.ComboBox();
             this.HeaderLbl = new MetroFramework.Controls.MetroLabel();
@@ -38,7 +39,10 @@
             this.ColumnChart = new LiveCharts.WinForms.CartesianChart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pieChart = new LiveCharts.WinForms.PieChart();
-            this.SelectionBox = new System.Windows.Forms.ComboBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.FromDate = new MetroFramework.Controls.MetroDateTime();
+            this.toDate = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -60,7 +64,7 @@
             this.backgroundPanel.Location = new System.Drawing.Point(0, 0);
             this.backgroundPanel.Name = "backgroundPanel";
             this.backgroundPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.backgroundPanel.Size = new System.Drawing.Size(670, 485);
+            this.backgroundPanel.Size = new System.Drawing.Size(759, 520);
             this.backgroundPanel.TabIndex = 0;
             this.backgroundPanel.VerticalScrollbarBarColor = true;
             this.backgroundPanel.VerticalScrollbarHighlightOnWheel = false;
@@ -76,6 +80,10 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitContainer1.Panel1.Controls.Add(this.toDate);
+            this.splitContainer1.Panel1.Controls.Add(this.metroLabel2);
+            this.splitContainer1.Panel1.Controls.Add(this.FromDate);
+            this.splitContainer1.Panel1.Controls.Add(this.metroLabel1);
             this.splitContainer1.Panel1.Controls.Add(this.SelectionBox);
             this.splitContainer1.Panel1.Controls.Add(this.ProductBox);
             this.splitContainer1.Panel1.Controls.Add(this.TimeBox);
@@ -85,9 +93,24 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.TabControl);
-            this.splitContainer1.Size = new System.Drawing.Size(646, 461);
-            this.splitContainer1.SplitterDistance = 48;
+            this.splitContainer1.Size = new System.Drawing.Size(735, 496);
+            this.splitContainer1.SplitterDistance = 73;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // SelectionBox
+            // 
+            this.SelectionBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectionBox.FormattingEnabled = true;
+            this.SelectionBox.Items.AddRange(new object[] {
+            "Single Product",
+            "Overall"});
+            this.SelectionBox.Location = new System.Drawing.Point(350, 41);
+            this.SelectionBox.Name = "SelectionBox";
+            this.SelectionBox.Size = new System.Drawing.Size(121, 26);
+            this.SelectionBox.TabIndex = 5;
+            this.SelectionBox.Text = "Overall";
+            this.SelectionBox.SelectedIndexChanged += new System.EventHandler(this.SelectionBox_SelectedIndexChanged);
             // 
             // ProductBox
             // 
@@ -96,7 +119,7 @@
             this.ProductBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ProductBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductBox.FormattingEnabled = true;
-            this.ProductBox.Location = new System.Drawing.Point(391, 10);
+            this.ProductBox.Location = new System.Drawing.Point(478, 40);
             this.ProductBox.Name = "ProductBox";
             this.ProductBox.Size = new System.Drawing.Size(121, 26);
             this.ProductBox.TabIndex = 4;
@@ -112,7 +135,7 @@
             "Weekly",
             "Monthly",
             "Yearly"});
-            this.TimeBox.Location = new System.Drawing.Point(518, 10);
+            this.TimeBox.Location = new System.Drawing.Point(605, 40);
             this.TimeBox.Name = "TimeBox";
             this.TimeBox.Size = new System.Drawing.Size(121, 26);
             this.TimeBox.TabIndex = 2;
@@ -143,7 +166,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(646, 409);
+            this.TabControl.Size = new System.Drawing.Size(735, 419);
             this.TabControl.TabIndex = 0;
             // 
             // ColumnChartPage
@@ -153,7 +176,7 @@
             this.ColumnChartPage.Location = new System.Drawing.Point(4, 29);
             this.ColumnChartPage.Name = "ColumnChartPage";
             this.ColumnChartPage.Padding = new System.Windows.Forms.Padding(5);
-            this.ColumnChartPage.Size = new System.Drawing.Size(638, 376);
+            this.ColumnChartPage.Size = new System.Drawing.Size(727, 386);
             this.ColumnChartPage.TabIndex = 0;
             this.ColumnChartPage.Text = "Column Index";
             this.ColumnChartPage.UseVisualStyleBackColor = true;
@@ -163,7 +186,7 @@
             this.ColumnChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ColumnChart.Location = new System.Drawing.Point(5, 5);
             this.ColumnChart.Name = "ColumnChart";
-            this.ColumnChart.Size = new System.Drawing.Size(628, 366);
+            this.ColumnChart.Size = new System.Drawing.Size(717, 376);
             this.ColumnChart.TabIndex = 0;
             this.ColumnChart.Text = "cartesianChart1";
             // 
@@ -187,20 +210,42 @@
             this.pieChart.TabIndex = 0;
             this.pieChart.Text = "pieChart1";
             // 
-            // SelectionBox
+            // metroLabel1
             // 
-            this.SelectionBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SelectionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectionBox.FormattingEnabled = true;
-            this.SelectionBox.Items.AddRange(new object[] {
-            "Single Product",
-            "Overall"});
-            this.SelectionBox.Location = new System.Drawing.Point(263, 11);
-            this.SelectionBox.Name = "SelectionBox";
-            this.SelectionBox.Size = new System.Drawing.Size(121, 26);
-            this.SelectionBox.TabIndex = 5;
-            this.SelectionBox.Text = "Overall";
-            this.SelectionBox.SelectedIndexChanged += new System.EventHandler(this.SelectionBox_SelectedIndexChanged);
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(230, 10);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel1.TabIndex = 6;
+            this.metroLabel1.Text = "From";
+            // 
+            // FromDate
+            // 
+            this.FromDate.Location = new System.Drawing.Point(277, 5);
+            this.FromDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.FromDate.Name = "FromDate";
+            this.FromDate.Size = new System.Drawing.Size(200, 29);
+            this.FromDate.TabIndex = 7;
+            this.FromDate.Value = new System.DateTime(2015, 2, 1, 0, 0, 0, 0);
+            this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
+            // 
+            // toDate
+            // 
+            this.toDate.Location = new System.Drawing.Point(526, 5);
+            this.toDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.toDate.Name = "toDate";
+            this.toDate.Size = new System.Drawing.Size(200, 29);
+            this.toDate.TabIndex = 9;
+            this.toDate.ValueChanged += new System.EventHandler(this.toDate_ValueChanged);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(498, 10);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(22, 19);
+            this.metroLabel2.TabIndex = 8;
+            this.metroLabel2.Text = "To";
             // 
             // Chart
             // 
@@ -208,7 +253,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.backgroundPanel);
             this.Name = "Chart";
-            this.Size = new System.Drawing.Size(670, 485);
+            this.Size = new System.Drawing.Size(759, 520);
             this.backgroundPanel.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -235,5 +280,9 @@
         private System.Windows.Forms.ComboBox TimeBox;
         private LiveCharts.WinForms.PieChart pieChart;
         private System.Windows.Forms.ComboBox SelectionBox;
+        private MetroFramework.Controls.MetroDateTime toDate;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroDateTime FromDate;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }
