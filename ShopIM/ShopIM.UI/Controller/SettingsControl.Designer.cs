@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.SettingsToggle = new MetroFramework.Controls.MetroToggle();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.SpeechToggle = new MetroFramework.Controls.MetroToggle();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.SettingsToggle = new MetroFramework.Controls.MetroToggle();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,29 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings Panel";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(64, 87);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(55, 19);
+            this.metroLabel2.TabIndex = 3;
+            this.metroLabel2.Text = "Speech:";
+            // 
+            // SpeechToggle
+            // 
+            this.SpeechToggle.AutoSize = true;
+            this.SpeechToggle.Checked = true;
+            this.SpeechToggle.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.SpeechToggle.Location = new System.Drawing.Point(161, 82);
+            this.SpeechToggle.Name = "SpeechToggle";
+            this.SpeechToggle.Size = new System.Drawing.Size(80, 24);
+            this.SpeechToggle.TabIndex = 2;
+            this.SpeechToggle.Text = "On";
+            this.SpeechToggle.UseSelectable = true;
+            this.SpeechToggle.CheckedChanged += new System.EventHandler(this.SpeechToggle_CheckedChanged);
             // 
             // metroLabel1
             // 
@@ -76,27 +99,6 @@
             this.SettingsToggle.Text = "On";
             this.SettingsToggle.UseSelectable = true;
             this.SettingsToggle.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(64, 87);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(55, 19);
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "Speech:";
-            // 
-            // SpeechToggle
-            // 
-            this.SpeechToggle.AutoSize = true;
-            this.SpeechToggle.Location = new System.Drawing.Point(161, 82);
-            this.SpeechToggle.Name = "SpeechToggle";
-            this.SpeechToggle.Size = new System.Drawing.Size(80, 24);
-            this.SpeechToggle.TabIndex = 2;
-            this.SpeechToggle.Text = "Off";
-            this.SpeechToggle.UseSelectable = true;
-            this.SpeechToggle.CheckedChanged += new System.EventHandler(this.SpeechToggle_CheckedChanged);
             // 
             // SettingsControl
             // 

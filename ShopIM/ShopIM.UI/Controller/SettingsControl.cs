@@ -20,6 +20,7 @@ namespace ShopIM.UI.Controller
         {
             InitializeComponent();
             SettingsToggle.CheckState = SystemSettings.IsNotificationsOn ? CheckState.Checked : CheckState.Unchecked;
+            SpeechToggle.CheckState = SystemSettings.IsSpeechOn ? CheckState.Checked : CheckState.Unchecked;
         }
 
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
@@ -41,15 +42,7 @@ namespace ShopIM.UI.Controller
 
         private void SpeechToggle_CheckedChanged(object sender, EventArgs e)
         {
-            if (SettingsToggle.Checked)
-            {
-                SystemSettings.IsSpeechOn = true;
-
-            }
-            else
-            {
-                SystemSettings.IsSpeechOn = false;
-            }
+            SystemSettings.IsSpeechOn = SpeechToggle.Checked;
         }
     }
 }

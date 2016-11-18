@@ -190,10 +190,10 @@
             this.HeaderLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.HeaderLbl.Location = new System.Drawing.Point(9, 5);
             this.HeaderLbl.Name = "HeaderLbl";
-            this.HeaderLbl.Size = new System.Drawing.Size(139, 50);
+            this.HeaderLbl.Size = new System.Drawing.Size(145, 50);
             this.HeaderLbl.Style = MetroFramework.MetroColorStyle.Silver;
             this.HeaderLbl.TabIndex = 0;
-            this.HeaderLbl.Text = "Statistics\r\n(Price Vs Time)";
+            this.HeaderLbl.Text = "Statistics\r\n(Profit Vs Time)";
             this.HeaderLbl.UseCustomBackColor = true;
             this.HeaderLbl.UseCustomForeColor = true;
             // 
@@ -236,7 +236,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(727, 386);
+            this.tabPage1.Size = new System.Drawing.Size(731, 390);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Pie Chart";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -246,7 +246,7 @@
             this.pieChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pieChart.Location = new System.Drawing.Point(3, 3);
             this.pieChart.Name = "pieChart";
-            this.pieChart.Size = new System.Drawing.Size(721, 380);
+            this.pieChart.Size = new System.Drawing.Size(725, 384);
             this.pieChart.TabIndex = 0;
             this.pieChart.Text = "pieChart1";
             // 

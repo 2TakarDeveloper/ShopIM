@@ -16,17 +16,27 @@ namespace ShopIM.UI.Forms
     public partial class AdminDashboard : MetroForm
     {
         
-        private User User { get; set; }
+        private User User { get;}
         private static MetroLink Link { get; set; }
         private Login Login { get; }
-        private static int NotificationCount;
+
+
+        private void LoadSettings()
+        {
+            SystemSettings.IsNotificationsOn = true;
+            SystemSettings.IsSpeechOn = true;
+        }
+
+
         public AdminDashboard(User user, Login login)
         {
             
             Login = login;
             User = user;
-            SystemSettings.IsNotificationsOn = true;
+            LoadSettings(); 
             InitializeComponent();
+       
+
             Header.Text = @"Sales";
             Link = NotificationLink;
             if (User.UserType != "Admin")
@@ -55,25 +65,21 @@ namespace ShopIM.UI.Forms
                 UserImage.Image = UserImage.ErrorImage;
 
             }
-            //Speech.WelcomeUser(user.UserName,user.UserType);
-          
+            Speech.ReadString("Welcome"+User.UserName);
+
             LoadSales();
             
             if(SystemSettings.IsNotificationsOn)
             UpdateNotification();
-           // Speech.NotificationUnchecked(NotificationManager.Notifications.Count.ToString());
-            //NotificationCount = NotificationManager.Notifications.Count;
+       
         }
 
         public static void UpdateNotification()
         {
-           /*if(NotificationCount <NotificationManager.Notifications.Count)
-            {
-                Speech.NewNotification((NotificationManager.Notifications.Count-NotificationCount).ToString());
-                NotificationCount = NotificationManager.Notifications.Count;
-            }*/
+            
             Link.Text = @"(" + NotificationManager.Notifications.Count + @")";
-          
+            Speech.ReadString("You have " + NotificationManager.Notifications.Count + " Notification");
+
         }
 
         private void ExitButton_click(object sender, EventArgs e)
@@ -162,7 +168,7 @@ namespace ShopIM.UI.Forms
 
         private void NotificationLink_Click(object sender, EventArgs e)
         {
-            Speech.ReadNotification();
+            //Speech.ReadNotification();
             ContextMenuStrip notificationContextMenu=new ContextMenuStrip();
             notificationContextMenu.Show(SettingLink, 0, NotificationLink.Height);
             foreach (var notification in NotificationManager.Notifications)
@@ -188,12 +194,12 @@ namespace ShopIM.UI.Forms
 
         private void minimizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void maximizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            WindowState = FormWindowState.Maximized;
         }
 
         private void SettingLink_Click(object sender, EventArgs e)
