@@ -16,7 +16,7 @@ namespace ShopIM.UI.Forms
         private User User { get;}
         private static MetroLink Link { get; set; }
         private Login Login { get; }
-
+        static int NotificationCounter { get; set; }
 
         
 
@@ -27,7 +27,7 @@ namespace ShopIM.UI.Forms
             User = user;
            
             InitializeComponent();
-
+            NotificationCounter = NotificationManager.Notifications.Count;
 
             SystemSettings.LoadSettings();
 
@@ -72,6 +72,8 @@ namespace ShopIM.UI.Forms
         {
             
             Link.Text = @"(" + NotificationManager.Notifications.Count + @")";
+            if(NotificationCounter== NotificationManager.Notifications.Count)return;
+            NotificationCounter = NotificationManager.Notifications.Count;
             Speech.ReadString("You have " + NotificationManager.Notifications.Count + " Notification");
 
         }

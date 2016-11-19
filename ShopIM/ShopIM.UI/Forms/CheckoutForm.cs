@@ -105,7 +105,7 @@ namespace ShopIM.UI.Forms
                     //setupTable
                     PdfPTable table = new PdfPTable(5);
                     
-                    PdfPCell cell = new PdfPCell(new Phrase("Abir Flower Shop"));        
+                    PdfPCell cell = new PdfPCell(new Phrase(NameTextBox.Text));        
                     cell.Colspan = 5;
                     cell.HorizontalAlignment = 1; 
                     table.AddCell(cell);
@@ -121,13 +121,13 @@ namespace ShopIM.UI.Forms
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
 
-                    cell = new PdfPCell(new Phrase("2/3 hazi Golamrosul Market(2nd floor), Tinpuler Matha,Jublee Road,Chittagong."));
+                    cell = new PdfPCell(new Phrase(AddressTextBox.Text));
                     cell.Colspan = 5;
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
 
 
-                    cell = new PdfPCell(new Phrase("Mobile : 01818655875,01943364636 ,Telephone:621858"));
+                    cell = new PdfPCell(new Phrase(ContactTextBox.Text));
                     cell.Colspan = 5;
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
