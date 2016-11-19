@@ -12,7 +12,7 @@ namespace ShopIM.UI.Forms
 {
     public partial class CheckoutForm : Form
     {
-        private List<Inventory> Inventories { get; set; }
+        private List<Inventory> Inventories { get; }
         private String UserName { get; set; }
 
         public CheckoutForm(List<Inventory> inventories,string userName )
@@ -23,12 +23,16 @@ namespace ShopIM.UI.Forms
             CheckoutGrid.DataSource = Inventories;
             CheckoutGrid.Columns[0].Visible = false;
             CheckoutGrid.Columns[2].Visible = false;
-            CheckoutGrid.Columns[4].Visible = false;
+            CheckoutGrid.Columns[3].Visible = false;
+            
             CheckoutGrid.Columns[5].Visible = false;
+            CheckoutGrid.Columns[6].Visible = false;
             CheckoutGrid.Columns[7].Visible = false;
             CheckoutGrid.Columns[9].Visible = false;
-            CheckoutGrid.Columns[10].Visible = false;
             CheckoutGrid.Columns[11].Visible = false;
+            CheckoutGrid.Columns[12].Visible = false;
+            CheckoutGrid.Columns[13].Visible = false;
+
 
             double grandTotal=0;
 
