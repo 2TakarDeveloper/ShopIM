@@ -21,21 +21,18 @@ namespace ShopIM.UI.Forms
         private Login Login { get; }
 
 
-        private void LoadSettings()
-        {
-            SystemSettings.IsNotificationsOn = true;
-            SystemSettings.IsSpeechOn = true;
-        }
-
+        
 
         public AdminDashboard(User user, Login login)
         {
             
             Login = login;
             User = user;
-            LoadSettings(); 
+           
             InitializeComponent();
-       
+
+
+            SystemSettings.LoadSettings();
 
             Header.Text = @"Sales";
             Link = NotificationLink;

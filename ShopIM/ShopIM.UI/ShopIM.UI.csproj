@@ -423,6 +423,9 @@
     <None Include="Resources\done.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Settings.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\2takalogo.png" />
     <Content Include="Custom-Icon-Design-Flatastic-4-Inventory-maintenance.ico" />
     <Content Include="InventoryAndSales.ico" />

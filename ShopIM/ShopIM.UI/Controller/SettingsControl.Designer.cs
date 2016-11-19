@@ -33,6 +33,7 @@
             this.SpeechToggle = new MetroFramework.Controls.MetroToggle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.SettingsToggle = new MetroFramework.Controls.MetroToggle();
+            this.SaveButton = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +43,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.SaveButton);
             this.groupBox1.Controls.Add(this.metroLabel2);
             this.groupBox1.Controls.Add(this.SpeechToggle);
             this.groupBox1.Controls.Add(this.metroLabel1);
@@ -100,6 +102,16 @@
             this.SettingsToggle.UseSelectable = true;
             this.SettingsToggle.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
             // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(64, 278);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(240, 38);
+            this.SaveButton.TabIndex = 5;
+            this.SaveButton.Text = "Save Settings";
+            this.SaveButton.UseSelectable = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
             // SettingsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,5 +132,6 @@
         private MetroFramework.Controls.MetroToggle SettingsToggle;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroToggle SpeechToggle;
+        private MetroFramework.Controls.MetroButton SaveButton;
     }
 }

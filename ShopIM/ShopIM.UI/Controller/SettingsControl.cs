@@ -44,5 +44,10 @@ namespace ShopIM.UI.Controller
         {
             SystemSettings.IsSpeechOn = SpeechToggle.Checked;
         }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SystemSettings.SaveSettings();
+        }
     }
 }

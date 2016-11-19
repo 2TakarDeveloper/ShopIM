@@ -86,7 +86,7 @@ namespace ShopIM.UI.Forms
                 //get appdata/local
                 var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
                 //Folder location defined
-                var destinationPath = Path.Combine(appDataPath, @"2takarDeveloper\IMSM\");
+                var destinationPath = Path.Combine(appDataPath, @"2takarDeveloper\IMSM\Images");
                 if (!Directory.Exists(destinationPath))
                     Directory.CreateDirectory(destinationPath);
 
