@@ -19,6 +19,7 @@ namespace ShopIM.UI.Forms
         private User User { get; set; }
         private static MetroLink Link { get; set; }
         private Login Login { get; }
+        private static int NotificationCount;
         public AdminDashboard(User user, Login login)
         {
             
@@ -54,18 +55,25 @@ namespace ShopIM.UI.Forms
                 UserImage.Image = UserImage.ErrorImage;
 
             }
-
-
+            //Speech.WelcomeUser(user.UserName,user.UserType);
+          
             LoadSales();
             
             if(SystemSettings.IsNotificationsOn)
             UpdateNotification();
+           // Speech.NotificationUnchecked(NotificationManager.Notifications.Count.ToString());
+            //NotificationCount = NotificationManager.Notifications.Count;
         }
 
         public static void UpdateNotification()
         {
-            
+           /*if(NotificationCount <NotificationManager.Notifications.Count)
+            {
+                Speech.NewNotification((NotificationManager.Notifications.Count-NotificationCount).ToString());
+                NotificationCount = NotificationManager.Notifications.Count;
+            }*/
             Link.Text = @"(" + NotificationManager.Notifications.Count + @")";
+          
         }
 
         private void ExitButton_click(object sender, EventArgs e)
@@ -154,7 +162,9 @@ namespace ShopIM.UI.Forms
 
         private void NotificationLink_Click(object sender, EventArgs e)
         {
+            Speech.ReadNotification();
             ContextMenuStrip notificationContextMenu=new ContextMenuStrip();
+            notificationContextMenu.Show(SettingLink, 0, NotificationLink.Height);
             foreach (var notification in NotificationManager.Notifications)
             {
                 notificationContextMenu.Items.Add(notification.message);

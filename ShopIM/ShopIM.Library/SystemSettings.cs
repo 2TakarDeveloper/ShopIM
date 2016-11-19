@@ -11,5 +11,6 @@ namespace ShopIM.Library
        
         public static bool IsSystemLocked { get; set; }
         public  static bool IsNotificationsOn { get; set; }
+        public static bool IsSpeechOn { get; set; }
     }
 }

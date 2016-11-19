@@ -38,5 +38,18 @@ namespace ShopIM.UI.Controller
            
             AdminDashboard.UpdateNotification();
         }
+
+        private void SpeechToggle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SettingsToggle.Checked)
+            {
+                SystemSettings.IsSpeechOn = true;
+
+            }
+            else
+            {
+                SystemSettings.IsSpeechOn = false;
+            }
+        }
     }
 }

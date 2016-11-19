@@ -31,6 +31,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.SettingsToggle = new MetroFramework.Controls.MetroToggle();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.SpeechToggle = new MetroFramework.Controls.MetroToggle();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,6 +42,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.metroLabel2);
+            this.groupBox1.Controls.Add(this.SpeechToggle);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.Controls.Add(this.SettingsToggle);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,6 +77,27 @@
             this.SettingsToggle.UseSelectable = true;
             this.SettingsToggle.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(64, 87);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(55, 19);
+            this.metroLabel2.TabIndex = 3;
+            this.metroLabel2.Text = "Speech:";
+            // 
+            // SpeechToggle
+            // 
+            this.SpeechToggle.AutoSize = true;
+            this.SpeechToggle.Location = new System.Drawing.Point(161, 82);
+            this.SpeechToggle.Name = "SpeechToggle";
+            this.SpeechToggle.Size = new System.Drawing.Size(80, 24);
+            this.SpeechToggle.TabIndex = 2;
+            this.SpeechToggle.Text = "Off";
+            this.SpeechToggle.UseSelectable = true;
+            this.SpeechToggle.CheckedChanged += new System.EventHandler(this.SpeechToggle_CheckedChanged);
+            // 
             // SettingsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,5 +116,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroToggle SettingsToggle;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroToggle SpeechToggle;
     }
 }
