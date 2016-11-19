@@ -87,7 +87,10 @@ namespace ShopIM.BLL
             return true;
         }
 
-      
 
+        public List<Inventory> SearchByPriceRange(int low, int high)
+        {
+            return  new InventoryContext().SearchWithPriceRange(high,low);
+        }
     }
 }

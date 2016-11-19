@@ -31,17 +31,17 @@ namespace ShopIM.DAL
                     if (i.Due > 0)
                     {
                         i.Status = "Due";
-                        NotificationManager.Notifications.Add(new Notification(i.ProductName+" Has Due Payment"));
+                        NotificationManager.Notifications.Add(new Notification(i.ProductName,"Has Due Payment"));
                     }
                     if (i.Quantity == 0)
                     {
                         i.Status = "Out Of Stock";
-                        NotificationManager.Notifications.Add(new Notification(i.ProductName + " is out of stock"));
+                        NotificationManager.Notifications.Add(new Notification(i.ProductName , "is out of stock"));
                     }
                     else if (i.Quantity < i.Threashold)
                     {
                         i.Status = "Stock Short";
-                        NotificationManager.Notifications.Add(new Notification(i.ProductName + " is Short On stock"));
+                        NotificationManager.Notifications.Add(new Notification(i.ProductName ,"is Short On stock"));
                         
                     }
                    
@@ -171,7 +171,21 @@ namespace ShopIM.DAL
         {
             using (var context = new DatabaseContext())
             {
-                return (from inventory in context.Inventories where inventory.Cost <=upper && inventory.Cost>=lower select  inventory).ToList();
+                List<Inventory> InventoryList=new List<Inventory>();
+                var inventories =
+                       from inventory in context.Inventories
+                       join product in context.Products on inventory.ProductName equals product.Name
+                       where inventory.SellingPrice<=upper && inventory.SellingPrice>=lower
+                       select new { inventory, product };
+                foreach (var inventory in inventories)
+                {
+                    Inventory i = new Inventory();
+                    i = inventory.inventory;
+                    i.Product = inventory.product;
+                    InventoryList.Add(i);
+
+                }
+                return InventoryList;
             }
         }
 

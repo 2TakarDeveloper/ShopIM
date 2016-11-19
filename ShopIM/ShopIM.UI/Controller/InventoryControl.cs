@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using MetroFramework;
 using ShopIM.BLL;
 using ShopIM.Entity;
 using ShopIM.Library;
@@ -105,12 +106,37 @@ namespace ShopIM.UI.Controller
             }
             else if (Searchpicker.Text == @"Price Range")
             {
-                if (!string.IsNullOrWhiteSpace(SearchBox.Text))
+                if (string.IsNullOrWhiteSpace(SearchBox.Text)) return;
+                try
                 {
-                    //implement later
+                    int low, high;
+                    string input = SearchBox.Text;
+                    string[] x = input.Split('-');
+                    low = int.Parse(x[0]);
+                    high = int.Parse(x[1]);
+                    var inventories = new InventoryRepo().SearchByPriceRange(low,high);
+                    InventoryGrid.DataSource = null;
+                    InventoryGrid.DataSource = inventories;
+                    InventoryGrid.Columns[9].Visible = false;
+                }
+                catch (Exception)
+                {
+                    MetroMessageBox.Show(this, "Not in correct Format", "Error", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Information);
                 }
             }
 
         }
+
+        public void NotificationClicked(string name)
+        {
+            var inventories = new InventoryRepo().SearchByName(name);
+            InventoryGrid.DataSource = null;
+            InventoryGrid.DataSource = inventories;
+            InventoryGrid.Columns[9].Visible = false;
+        }
+
+
+
     }
 }

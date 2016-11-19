@@ -4,18 +4,21 @@ namespace ShopIM.Entity
 {
     public class Notification
     {
-        public Notification()
-        {
-        }
+       
 
-        public Notification(string message)
+        public Notification(string name, string message)
         {
-            this.message = message;
+            Message = message;
+            Name = name;
+            ToolTip = name +" "+ message;
         }
 
         [Key]
-        public int Sl { get; set; }
 
-        public string message { get; set; }
+        public string Name { get;  }
+        public string ToolTip { get; }
+        public string Message { get; set; }
+
+       
     }
 }

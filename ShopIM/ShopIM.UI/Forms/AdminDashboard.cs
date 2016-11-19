@@ -7,9 +7,6 @@ using MetroFramework.Forms;
 using ShopIM.Entity;
 using ShopIM.Library;
 using ShopIM.UI.Controller;
-using System.Collections.Generic;
-using System.Linq;
-using ShopIM.BLL;
 
 namespace ShopIM.UI.Forms
 {
@@ -166,18 +163,31 @@ namespace ShopIM.UI.Forms
         private void NotificationLink_Click(object sender, EventArgs e)
         {
             //Speech.ReadNotification();
-            ContextMenuStrip notificationContextMenu=new ContextMenuStrip();
-            notificationContextMenu.Show(SettingLink, 0, NotificationLink.Height);
+            ContextMenu notificationContextMenu=new ContextMenu();
+         
             foreach (var notification in NotificationManager.Notifications)
             {
-                notificationContextMenu.Items.Add(notification.message);
+                MenuItem menuItem = new MenuItem(notification.ToolTip);
+                menuItem.Click += delegate { NotificationClick(notification.Name); };
+                notificationContextMenu.MenuItems.Add(menuItem);
                 
             }
-            
-            notificationContextMenu.Show(NotificationLink,NotificationLink.Location,ToolStripDropDownDirection.BelowLeft);
+
+            notificationContextMenu.Show(NotificationLink,NotificationLink.Location);
            
 
 
+        }
+
+        private void NotificationClick(string notification)
+        {
+            var inventoryControl = new InventoryControl();
+            metroPanelBackground.Controls.Clear();
+            inventoryControl.Dock = DockStyle.Fill;
+            metroPanelBackground.Controls.Add(inventoryControl);
+            Header.Text = @"Inventory";
+            inventoryControl.NotificationClicked(notification);
+            
         }
 
         private void SettingsButton_Click(object sender, EventArgs e)
