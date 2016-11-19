@@ -30,6 +30,10 @@
         {
             this.backgroundPanel = new MetroFramework.Controls.MetroPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.toDate = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.FromDate = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.SelectionBox = new System.Windows.Forms.ComboBox();
             this.ProductBox = new System.Windows.Forms.ComboBox();
             this.TimeBox = new System.Windows.Forms.ComboBox();
@@ -39,10 +43,6 @@
             this.ColumnChart = new LiveCharts.WinForms.CartesianChart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pieChart = new LiveCharts.WinForms.PieChart();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.FromDate = new MetroFramework.Controls.MetroDateTime();
-            this.toDate = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -55,7 +55,6 @@
             // 
             // backgroundPanel
             // 
-            this.backgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.backgroundPanel.Controls.Add(this.splitContainer1);
             this.backgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backgroundPanel.HorizontalScrollbarBarColor = true;
@@ -93,9 +92,50 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.TabControl);
-            this.splitContainer1.Size = new System.Drawing.Size(735, 496);
+            this.splitContainer1.Size = new System.Drawing.Size(739, 500);
             this.splitContainer1.SplitterDistance = 73;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // toDate
+            // 
+            this.toDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.toDate.Location = new System.Drawing.Point(530, 5);
+            this.toDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.toDate.Name = "toDate";
+            this.toDate.Size = new System.Drawing.Size(200, 29);
+            this.toDate.TabIndex = 9;
+            this.toDate.ValueChanged += new System.EventHandler(this.toDate_ValueChanged);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(502, 15);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(22, 19);
+            this.metroLabel2.TabIndex = 8;
+            this.metroLabel2.Text = "To";
+            // 
+            // FromDate
+            // 
+            this.FromDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FromDate.Location = new System.Drawing.Point(296, 5);
+            this.FromDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.FromDate.Name = "FromDate";
+            this.FromDate.Size = new System.Drawing.Size(200, 29);
+            this.FromDate.TabIndex = 7;
+            this.FromDate.Value = new System.DateTime(2015, 2, 1, 0, 0, 0, 0);
+            this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(249, 15);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel1.TabIndex = 6;
+            this.metroLabel1.Text = "From";
             // 
             // SelectionBox
             // 
@@ -105,7 +145,7 @@
             this.SelectionBox.Items.AddRange(new object[] {
             "Single Product",
             "Overall"});
-            this.SelectionBox.Location = new System.Drawing.Point(350, 41);
+            this.SelectionBox.Location = new System.Drawing.Point(296, 40);
             this.SelectionBox.Name = "SelectionBox";
             this.SelectionBox.Size = new System.Drawing.Size(121, 26);
             this.SelectionBox.TabIndex = 5;
@@ -119,9 +159,9 @@
             this.ProductBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ProductBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductBox.FormattingEnabled = true;
-            this.ProductBox.Location = new System.Drawing.Point(478, 40);
+            this.ProductBox.Location = new System.Drawing.Point(550, 40);
             this.ProductBox.Name = "ProductBox";
-            this.ProductBox.Size = new System.Drawing.Size(121, 26);
+            this.ProductBox.Size = new System.Drawing.Size(180, 26);
             this.ProductBox.TabIndex = 4;
             this.ProductBox.Visible = false;
             this.ProductBox.SelectedIndexChanged += new System.EventHandler(this.ProductBox_SelectedIndexChanged);
@@ -135,7 +175,7 @@
             "Weekly",
             "Monthly",
             "Yearly"});
-            this.TimeBox.Location = new System.Drawing.Point(605, 40);
+            this.TimeBox.Location = new System.Drawing.Point(423, 40);
             this.TimeBox.Name = "TimeBox";
             this.TimeBox.Size = new System.Drawing.Size(121, 26);
             this.TimeBox.TabIndex = 2;
@@ -148,12 +188,12 @@
             this.HeaderLbl.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.HeaderLbl.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.HeaderLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.HeaderLbl.Location = new System.Drawing.Point(9, 10);
+            this.HeaderLbl.Location = new System.Drawing.Point(9, 5);
             this.HeaderLbl.Name = "HeaderLbl";
-            this.HeaderLbl.Size = new System.Drawing.Size(88, 25);
+            this.HeaderLbl.Size = new System.Drawing.Size(139, 50);
             this.HeaderLbl.Style = MetroFramework.MetroColorStyle.Silver;
             this.HeaderLbl.TabIndex = 0;
-            this.HeaderLbl.Text = "Statistics";
+            this.HeaderLbl.Text = "Statistics\r\n(Price Vs Time)";
             this.HeaderLbl.UseCustomBackColor = true;
             this.HeaderLbl.UseCustomForeColor = true;
             // 
@@ -166,7 +206,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(735, 419);
+            this.TabControl.Size = new System.Drawing.Size(739, 423);
             this.TabControl.TabIndex = 0;
             // 
             // ColumnChartPage
@@ -176,7 +216,7 @@
             this.ColumnChartPage.Location = new System.Drawing.Point(4, 29);
             this.ColumnChartPage.Name = "ColumnChartPage";
             this.ColumnChartPage.Padding = new System.Windows.Forms.Padding(5);
-            this.ColumnChartPage.Size = new System.Drawing.Size(727, 386);
+            this.ColumnChartPage.Size = new System.Drawing.Size(731, 390);
             this.ColumnChartPage.TabIndex = 0;
             this.ColumnChartPage.Text = "Column Index";
             this.ColumnChartPage.UseVisualStyleBackColor = true;
@@ -186,7 +226,7 @@
             this.ColumnChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ColumnChart.Location = new System.Drawing.Point(5, 5);
             this.ColumnChart.Name = "ColumnChart";
-            this.ColumnChart.Size = new System.Drawing.Size(717, 376);
+            this.ColumnChart.Size = new System.Drawing.Size(721, 380);
             this.ColumnChart.TabIndex = 0;
             this.ColumnChart.Text = "cartesianChart1";
             // 
@@ -196,7 +236,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(638, 376);
+            this.tabPage1.Size = new System.Drawing.Size(727, 386);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Pie Chart";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -206,46 +246,9 @@
             this.pieChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pieChart.Location = new System.Drawing.Point(3, 3);
             this.pieChart.Name = "pieChart";
-            this.pieChart.Size = new System.Drawing.Size(632, 370);
+            this.pieChart.Size = new System.Drawing.Size(721, 380);
             this.pieChart.TabIndex = 0;
             this.pieChart.Text = "pieChart1";
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(230, 10);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(41, 19);
-            this.metroLabel1.TabIndex = 6;
-            this.metroLabel1.Text = "From";
-            // 
-            // FromDate
-            // 
-            this.FromDate.Location = new System.Drawing.Point(277, 5);
-            this.FromDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.FromDate.Name = "FromDate";
-            this.FromDate.Size = new System.Drawing.Size(200, 29);
-            this.FromDate.TabIndex = 7;
-            this.FromDate.Value = new System.DateTime(2015, 2, 1, 0, 0, 0, 0);
-            this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
-            // 
-            // toDate
-            // 
-            this.toDate.Location = new System.Drawing.Point(526, 5);
-            this.toDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.toDate.Name = "toDate";
-            this.toDate.Size = new System.Drawing.Size(200, 29);
-            this.toDate.TabIndex = 9;
-            this.toDate.ValueChanged += new System.EventHandler(this.toDate_ValueChanged);
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(498, 10);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(22, 19);
-            this.metroLabel2.TabIndex = 8;
-            this.metroLabel2.Text = "To";
             // 
             // Chart
             // 

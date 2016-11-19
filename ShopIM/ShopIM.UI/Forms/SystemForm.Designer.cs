@@ -69,26 +69,23 @@
             this.PasswordField.CustomButton.UseSelectable = true;
             this.PasswordField.CustomButton.Visible = false;
             this.PasswordField.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.PasswordField.Lines = new string[] {
-        "admin"};
+            this.PasswordField.Lines = new string[0];
             this.PasswordField.Location = new System.Drawing.Point(237, 108);
             this.PasswordField.MaxLength = 32767;
             this.PasswordField.Name = "PasswordField";
             this.PasswordField.PasswordChar = '●';
-     
             this.PasswordField.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.PasswordField.SelectedText = "";
             this.PasswordField.SelectionLength = 0;
             this.PasswordField.SelectionStart = 0;
             this.PasswordField.ShortcutsEnabled = true;
             this.PasswordField.Size = new System.Drawing.Size(338, 30);
-            this.PasswordField.Style = MetroFramework.MetroColorStyle.Silver;
+            this.PasswordField.Style = MetroFramework.MetroColorStyle.Yellow;
             this.PasswordField.TabIndex = 3;
-            this.PasswordField.Text = "admin";
+            this.PasswordField.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PasswordField.UseCustomBackColor = true;
             this.PasswordField.UseSelectable = true;
             this.PasswordField.UseSystemPasswordChar = true;
-            this.PasswordField.WaterMark = "Password";
             this.PasswordField.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PasswordField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -151,7 +148,8 @@
             this.Name = "SystemForm";
             this.Resizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Style = MetroFramework.MetroColorStyle.Black;
+            this.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.SystemForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

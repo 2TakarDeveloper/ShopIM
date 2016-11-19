@@ -37,9 +37,9 @@
             this.EditBtn = new MetroFramework.Controls.MetroButton();
             this.AddBtn = new MetroFramework.Controls.MetroButton();
             this.SearchButton = new MetroFramework.Controls.MetroButton();
+            this.SearchBox = new MetroFramework.Controls.MetroTextBox();
             this.UserSplitContainer = new System.Windows.Forms.SplitContainer();
             this.UserGrid = new MetroFramework.Controls.MetroGrid();
-            this.SearchBox = new MetroFramework.Controls.MetroTextBox();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -93,9 +93,9 @@
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(208, 7);
+            this.DeleteBtn.Location = new System.Drawing.Point(172, 8);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(94, 28);
+            this.DeleteBtn.Size = new System.Drawing.Size(87, 27);
             this.DeleteBtn.TabIndex = 4;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseSelectable = true;
@@ -103,9 +103,9 @@
             // 
             // EditBtn
             // 
-            this.EditBtn.Location = new System.Drawing.Point(108, 7);
+            this.EditBtn.Location = new System.Drawing.Point(87, 8);
             this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(94, 28);
+            this.EditBtn.Size = new System.Drawing.Size(79, 26);
             this.EditBtn.TabIndex = 3;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseSelectable = true;
@@ -113,9 +113,9 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(8, 6);
+            this.AddBtn.Location = new System.Drawing.Point(8, 8);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(94, 28);
+            this.AddBtn.Size = new System.Drawing.Size(73, 26);
             this.AddBtn.TabIndex = 2;
             this.AddBtn.Text = "Add";
             this.AddBtn.UseSelectable = true;
@@ -124,12 +124,50 @@
             // SearchButton
             // 
             this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchButton.Location = new System.Drawing.Point(1076, 6);
+            this.SearchButton.Location = new System.Drawing.Point(1076, 8);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(82, 28);
             this.SearchButton.TabIndex = 21;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseSelectable = true;
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.SearchBox.CustomButton.Image = global::ShopIM.UI.Properties.Resources.search;
+            this.SearchBox.CustomButton.Location = new System.Drawing.Point(222, 2);
+            this.SearchBox.CustomButton.Name = "";
+            this.SearchBox.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.SearchBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.SearchBox.CustomButton.TabIndex = 1;
+            this.SearchBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.SearchBox.CustomButton.UseSelectable = true;
+            this.SearchBox.CustomButton.Visible = false;
+            this.SearchBox.DisplayIcon = true;
+            this.SearchBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.SearchBox.Icon = global::ShopIM.UI.Properties.Resources.search;
+            this.SearchBox.Lines = new string[0];
+            this.SearchBox.Location = new System.Drawing.Point(820, 6);
+            this.SearchBox.MaxLength = 32767;
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.PasswordChar = '\0';
+            this.SearchBox.PromptText = "Search";
+            this.SearchBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.SearchBox.SelectedText = "";
+            this.SearchBox.SelectionLength = 0;
+            this.SearchBox.SelectionStart = 0;
+            this.SearchBox.ShortcutsEnabled = true;
+            this.SearchBox.ShowClearButton = true;
+            this.SearchBox.Size = new System.Drawing.Size(250, 30);
+            this.SearchBox.Style = MetroFramework.MetroColorStyle.Orange;
+            this.SearchBox.TabIndex = 19;
+            this.SearchBox.UseSelectable = true;
+            this.SearchBox.WaterMark = "Search";
+            this.SearchBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.SearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // UserSplitContainer
             // 
@@ -194,44 +232,6 @@
             this.UserGrid.Style = MetroFramework.MetroColorStyle.Orange;
             this.UserGrid.TabIndex = 0;
             this.UserGrid.Click += new System.EventHandler(this.UserGrid_Click);
-            // 
-            // SearchBox
-            // 
-            this.SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.SearchBox.CustomButton.Image = global::ShopIM.UI.Properties.Resources.search;
-            this.SearchBox.CustomButton.Location = new System.Drawing.Point(222, 2);
-            this.SearchBox.CustomButton.Name = "";
-            this.SearchBox.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.SearchBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SearchBox.CustomButton.TabIndex = 1;
-            this.SearchBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.SearchBox.CustomButton.UseSelectable = true;
-            this.SearchBox.CustomButton.Visible = false;
-            this.SearchBox.DisplayIcon = true;
-            this.SearchBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.SearchBox.Icon = global::ShopIM.UI.Properties.Resources.search;
-            this.SearchBox.Lines = new string[0];
-            this.SearchBox.Location = new System.Drawing.Point(820, 6);
-            this.SearchBox.MaxLength = 32767;
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.PasswordChar = '\0';
-            this.SearchBox.PromptText = "Search";
-            this.SearchBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.SearchBox.SelectedText = "";
-            this.SearchBox.SelectionLength = 0;
-            this.SearchBox.SelectionStart = 0;
-            this.SearchBox.ShortcutsEnabled = true;
-            this.SearchBox.ShowClearButton = true;
-            this.SearchBox.Size = new System.Drawing.Size(250, 30);
-            this.SearchBox.Style = MetroFramework.MetroColorStyle.Orange;
-            this.SearchBox.TabIndex = 19;
-            this.SearchBox.UseSelectable = true;
-            this.SearchBox.WaterMark = "Search";
-            this.SearchBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.SearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // TableViewControl
             // 

@@ -77,6 +77,7 @@ namespace ShopIM.UI.Forms
         private void ProductButton_Click(object sender, EventArgs e)
         {
             var productsControl = new ProductsControl();
+            productsControl.Dock = DockStyle.Fill;
             metroPanelBackground.Controls.Clear();
             metroPanelBackground.Controls.Add(productsControl);
             Header.Text = @"Products";

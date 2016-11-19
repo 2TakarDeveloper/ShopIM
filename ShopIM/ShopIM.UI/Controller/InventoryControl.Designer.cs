@@ -96,9 +96,9 @@
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(203, 6);
+            this.DeleteBtn.Location = new System.Drawing.Point(203, 9);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(94, 31);
+            this.DeleteBtn.Size = new System.Drawing.Size(73, 26);
             this.DeleteBtn.TabIndex = 4;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseSelectable = true;
@@ -106,9 +106,9 @@
             // 
             // EditBtn
             // 
-            this.EditBtn.Location = new System.Drawing.Point(103, 6);
+            this.EditBtn.Location = new System.Drawing.Point(103, 9);
             this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(94, 31);
+            this.EditBtn.Size = new System.Drawing.Size(85, 26);
             this.EditBtn.TabIndex = 3;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseSelectable = true;
@@ -116,9 +116,9 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(3, 6);
+            this.AddBtn.Location = new System.Drawing.Point(17, 8);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(94, 31);
+            this.AddBtn.Size = new System.Drawing.Size(80, 27);
             this.AddBtn.TabIndex = 2;
             this.AddBtn.Text = "Add";
             this.AddBtn.UseSelectable = true;
@@ -129,7 +129,7 @@
             this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchButton.Location = new System.Drawing.Point(1072, 6);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(82, 28);
+            this.SearchButton.Size = new System.Drawing.Size(75, 29);
             this.SearchButton.TabIndex = 21;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseSelectable = true;
@@ -144,7 +144,7 @@
             this.Searchpicker.Items.AddRange(new object[] {
             "Name",
             "Price Range"});
-            this.Searchpicker.Location = new System.Drawing.Point(674, 6);
+            this.Searchpicker.Location = new System.Drawing.Point(674, 8);
             this.Searchpicker.Name = "Searchpicker";
             this.Searchpicker.Size = new System.Drawing.Size(136, 28);
             this.Searchpicker.TabIndex = 20;
@@ -212,12 +212,12 @@
             this.InventoryGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.InventoryGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.InventoryGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.InventoryGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.InventoryGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.InventoryGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -226,7 +226,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.InventoryGrid.DefaultCellStyle = dataGridViewCellStyle2;
@@ -239,16 +239,17 @@
             this.InventoryGrid.ReadOnly = true;
             this.InventoryGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.InventoryGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.InventoryGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.InventoryGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.InventoryGrid.Size = new System.Drawing.Size(939, 637);
+            this.InventoryGrid.Style = MetroFramework.MetroColorStyle.Orange;
             this.InventoryGrid.TabIndex = 0;
             this.InventoryGrid.Click += new System.EventHandler(this.InventoryGrid_Click);
             // 

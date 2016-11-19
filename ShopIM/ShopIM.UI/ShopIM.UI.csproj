@@ -212,12 +212,6 @@
     <Compile Include="Forms\CreateAdminForm.Designer.cs">
       <DependentUpon>CreateAdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\InveontroyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateAdminForm.resx">
       <DependentUpon>CreateAdminForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InveontroyForm.resx">
       <DependentUpon>InveontroyForm.cs</DependentUpon>
