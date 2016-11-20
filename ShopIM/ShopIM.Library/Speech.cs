@@ -17,9 +17,6 @@ namespace ShopIM.Library
             synth.SpeakAsync(speech);
         }
       
-      
-      
-
     }
 }
 
