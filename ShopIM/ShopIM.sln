@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopIM.BLL", "ShopIM.BLL\Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopIM.Library", "ShopIM.Library\ShopIM.Library.csproj", "{6FEAFE62-6BBD-4063-867D-0A725DE8C9FB}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ShopIM.Installer", "ShopIM.Installer\ShopIM.Installer.vdproj", "{32179D13-08B4-4053-92E3-4C65EB162D4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,14 @@ Global
 		{6FEAFE62-6BBD-4063-867D-0A725DE8C9FB}.Release|x64.Build.0 = Release|Any CPU
 		{6FEAFE62-6BBD-4063-867D-0A725DE8C9FB}.Release|x86.ActiveCfg = Release|Any CPU
 		{6FEAFE62-6BBD-4063-867D-0A725DE8C9FB}.Release|x86.Build.0 = Release|Any CPU
+		{32179D13-08B4-4053-92E3-4C65EB162D4F}.Debug|Any CPU.ActiveCfg = Debug
+		{32179D13-08B4-4053-92E3-4C65EB162D4F}.Debug|ARM.ActiveCfg = Debug
+		{32179D13-08B4-4053-92E3-4C65EB162D4F}.Debug|x64.ActiveCfg = Debug
+		{32179D13-08B4-4053-92E3-4C65EB162D4F}.Debug|x86.ActiveCfg = Debug
+		{32179D13-08B4-4053-92E3-4C65EB162D4F}.Release|Any CPU.ActiveCfg = Release
+		{32179D13-08B4-4053-92E3-4C65EB162D4F}.Release|ARM.ActiveCfg = Release
+		{32179D13-08B4-4053-92E3-4C65EB162D4F}.Release|x64.ActiveCfg = Release
+		{32179D13-08B4-4053-92E3-4C65EB162D4F}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
