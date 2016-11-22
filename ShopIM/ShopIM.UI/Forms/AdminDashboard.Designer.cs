@@ -38,9 +38,9 @@
             this.InventoryButton = new MetroFramework.Controls.MetroLink();
             this.SettingsButton = new MetroFramework.Controls.MetroLink();
             this.LockButton = new MetroFramework.Controls.MetroLink();
+            this.StatisticButton = new MetroFramework.Controls.MetroLink();
             this.LogButton = new MetroFramework.Controls.MetroLink();
             this.LogoutButton = new MetroFramework.Controls.MetroLink();
-            this.StatisticButton = new MetroFramework.Controls.MetroLink();
             this.UserImage = new System.Windows.Forms.PictureBox();
             this.UserButton = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
@@ -67,8 +67,8 @@
             this.metroPanelSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.metroPanelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
-            this.metroPanelSide.Controls.Add(this.menuSidePanel);
             this.metroPanelSide.Controls.Add(this.UserImage);
+            this.metroPanelSide.Controls.Add(this.menuSidePanel);
             this.metroPanelSide.Controls.Add(this.UserButton);
             this.metroPanelSide.Controls.Add(this.metroPanel1);
             this.metroPanelSide.HorizontalScrollbarBarColor = true;
@@ -204,6 +204,23 @@
             this.LockButton.UseStyleColors = true;
             this.LockButton.Click += new System.EventHandler(this.LockButton_Click);
             // 
+            // StatisticButton
+            // 
+            this.StatisticButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.StatisticButton.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.StatisticButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.StatisticButton.Location = new System.Drawing.Point(1, 313);
+            this.StatisticButton.Margin = new System.Windows.Forms.Padding(1);
+            this.StatisticButton.Name = "StatisticButton";
+            this.StatisticButton.Size = new System.Drawing.Size(215, 50);
+            this.StatisticButton.Style = MetroFramework.MetroColorStyle.White;
+            this.StatisticButton.TabIndex = 28;
+            this.StatisticButton.Text = "Statistics";
+            this.StatisticButton.UseCustomBackColor = true;
+            this.StatisticButton.UseSelectable = true;
+            this.StatisticButton.UseStyleColors = true;
+            this.StatisticButton.Click += new System.EventHandler(this.StatisticButton_Click);
+            // 
             // LogButton
             // 
             this.LogButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
@@ -238,32 +255,15 @@
             this.LogoutButton.UseStyleColors = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
-            // StatisticButton
-            // 
-            this.StatisticButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.StatisticButton.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.StatisticButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.StatisticButton.Location = new System.Drawing.Point(1, 313);
-            this.StatisticButton.Margin = new System.Windows.Forms.Padding(1);
-            this.StatisticButton.Name = "StatisticButton";
-            this.StatisticButton.Size = new System.Drawing.Size(215, 50);
-            this.StatisticButton.Style = MetroFramework.MetroColorStyle.White;
-            this.StatisticButton.TabIndex = 28;
-            this.StatisticButton.Text = "Statistics";
-            this.StatisticButton.UseCustomBackColor = true;
-            this.StatisticButton.UseSelectable = true;
-            this.StatisticButton.UseStyleColors = true;
-            this.StatisticButton.Click += new System.EventHandler(this.StatisticButton_Click);
-            // 
             // UserImage
             // 
             this.UserImage.BackColor = System.Drawing.Color.Transparent;
             this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.UserImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.UserImage.ErrorImage = global::ShopIM.UI.Properties.Resources.DefaultUserImage1;
-            this.UserImage.Location = new System.Drawing.Point(3, 3);
+            this.UserImage.Location = new System.Drawing.Point(0, 0);
             this.UserImage.Name = "UserImage";
-            this.UserImage.Size = new System.Drawing.Size(70, 70);
+            this.UserImage.Size = new System.Drawing.Size(80, 79);
             this.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UserImage.TabIndex = 18;
             this.UserImage.TabStop = false;
@@ -273,9 +273,9 @@
             this.UserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(138)))), ((int)(((byte)(212)))));
             this.UserButton.FontSize = MetroFramework.MetroLinkSize.Medium;
             this.UserButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.UserButton.Location = new System.Drawing.Point(0, 0);
+            this.UserButton.Location = new System.Drawing.Point(74, 0);
             this.UserButton.Name = "UserButton";
-            this.UserButton.Size = new System.Drawing.Size(217, 77);
+            this.UserButton.Size = new System.Drawing.Size(143, 79);
             this.UserButton.Style = MetroFramework.MetroColorStyle.White;
             this.UserButton.TabIndex = 16;
             this.UserButton.Text = "    User";

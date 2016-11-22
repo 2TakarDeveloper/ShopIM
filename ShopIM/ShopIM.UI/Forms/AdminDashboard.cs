@@ -39,6 +39,7 @@ namespace ShopIM.UI.Forms
                 ProductButton.Dispose();
                 InventoryButton.Dispose();
                 LogButton.Dispose();
+                StatisticButton.Dispose();
                
             }
 
