@@ -5,6 +5,7 @@ using System.Diagnostics;
 using ShopIM.Entity;
 using System.Linq;
 using ShopIM.Library;
+using System.Data.Linq.SqlClient;
 
 namespace ShopIM.DAL
 {
@@ -151,13 +152,36 @@ namespace ShopIM.DAL
                 var inventories =
                         from inventory in context.Inventories
                         join product in context.Products on inventory.ProductName equals product.Name
-                        where inventory.Product.Name==name
+                        where product.Name.Contains(name)
                         select new { inventory, product };
                 foreach (var inventory in inventories)
                 {
-                    Inventory i = new Inventory();
-                    i = inventory.inventory;
+                    var i = inventory.inventory;
                     i.Product = inventory.product;
+
+                    //Update Notifications according to statusChange
+                    if (i.Due > 0)
+                    {
+                        i.Status = "Due";
+                        
+                    }
+                    if (i.Quantity == 0)
+                    {
+                        i.Status = "Out Of Stock";
+                       
+                    }
+                    else if (i.Quantity < i.Threashold)
+                    {
+                        i.Status = "Stock Short";
+
+                    }
+
+                    else
+                    {
+                        i.Status = "In Stock";
+                    }
+
+
                     InventoryList.Add(i);
 
                 }

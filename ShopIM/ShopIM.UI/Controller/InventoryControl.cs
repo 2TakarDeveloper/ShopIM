@@ -82,49 +82,17 @@ namespace ShopIM.UI.Controller
            
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Searchpicker.Text == @"Name")
-            {
-                SearchBox.WaterMark = "Ex.Rose";
-            }
-            else if (Searchpicker.Text == @"Price Range")
-            {
-                SearchBox.WaterMark = "Ex:100-1000";
-            }
-        }
+      
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            if (Searchpicker.Text == @"Name")
-            {
-                if (string.IsNullOrWhiteSpace(SearchBox.Text)) return;
-                var inventories = new InventoryRepo().SearchByName(SearchBox.Text);
-                InventoryGrid.DataSource = null;
+            List<Inventory> inventories=new List<Inventory>();
+            inventories = new InventoryRepo().SearchByName(string.IsNullOrWhiteSpace(SearchBox.Text) ? "" : SearchBox.Text);
+            InventoryGrid.DataSource = null;
                 InventoryGrid.DataSource = inventories;
                 InventoryGrid.Columns[9].Visible = false;
-            }
-            else if (Searchpicker.Text == @"Price Range")
-            {
-                if (string.IsNullOrWhiteSpace(SearchBox.Text)) return;
-                try
-                {
-                    int low, high;
-                    string input = SearchBox.Text;
-                    string[] x = input.Split('-');
-                    low = int.Parse(x[0]);
-                    high = int.Parse(x[1]);
-                    var inventories = new InventoryRepo().SearchByPriceRange(low,high);
-                    InventoryGrid.DataSource = null;
-                    InventoryGrid.DataSource = inventories;
-                    InventoryGrid.Columns[9].Visible = false;
-                }
-                catch (Exception)
-                {
-                    MetroMessageBox.Show(this, "Not in correct Format", "Error", MessageBoxButtons.OKCancel,
-                        MessageBoxIcon.Information);
-                }
-            }
+            
+          
 
         }
 

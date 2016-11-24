@@ -186,24 +186,14 @@ namespace ShopIM.UI.Controller
             }
         }
 
-        private void SearchButton_Click(object sender, System.EventArgs e)
+     
+
+   
+
+        private void SearchTextBox_TextChanged(object sender, System.EventArgs e)
         {
-            if (SearchPicker.Text ==@"Name")
-            {
-                if (!string.IsNullOrWhiteSpace(SearchTextBox.Text))
-                {
-                    StockInventories = new InventoryRepo().SearchByName(SearchTextBox.Text);
-                    LoadInventories();
-                }
-                
-            }
-        }
-
-        private void MouseHover(object sender, System.EventArgs e)
-        {
-
-
-            metroButton4.BackColor = Color.Orange;
+            StockInventories = new InventoryRepo().SearchByName(string.IsNullOrWhiteSpace(SearchTextBox.Text) ? "" : SearchTextBox.Text);
+            LoadInventories();
         }
     }
-    }
+ }
