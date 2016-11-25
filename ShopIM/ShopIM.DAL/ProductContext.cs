@@ -63,7 +63,7 @@ namespace ShopIM.DAL
         {
             using (var context = new DatabaseContext())
             {
-                return (from product in context.Products where product.Name==productName select product).ToList();
+                return (from product in context.Products where product.Name.Contains(productName) select product).ToList();
 
             }
 
@@ -74,7 +74,7 @@ namespace ShopIM.DAL
         {
             using (var context = new DatabaseContext())
             {
-                return (from product in context.Products where product.Type == Type select product).ToList();
+                return (from product in context.Products where product.Type.Contains(Type) select product).ToList();
 
             }
 

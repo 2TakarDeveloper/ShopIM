@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using MetroFramework;
 using ShopIM.BLL;
+using ShopIM.Entity;
 using ShopIM.UI.Forms;
 
 namespace ShopIM.UI.Controller
@@ -58,35 +60,27 @@ namespace ShopIM.UI.Controller
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            if (SearchPicker.Text == @"Name")
+            List<Product> products=new  List<Product>();
+
+            switch (SearchPicker.Text)
             {
-                if (!string.IsNullOrWhiteSpace(SearchBox.Text))
-                {
-                    var products = new ProductRepo().SearchByName(SearchBox.Text);
-        
-                    productListPanel.Controls.Clear();
-
-                    foreach (var product in products)
-                    {
-                        var productsControl = new ProductInfoControl(product);
-                        productListPanel.Controls.Add(productsControl);
-                    }
-
-                }
+                case @"Name":
+                    products = new ProductRepo().SearchByName(string.IsNullOrWhiteSpace(SearchBox.Text) ? "" : SearchBox.Text);
+                    break;
+                case @"Type":
+                    products = new ProductRepo().SearchByType(string.IsNullOrWhiteSpace(SearchBox.Text) ? "" : SearchBox.Text);
+                    break;
             }
-            else if (SearchPicker.Text == @"Type")
+
+            productListPanel.Controls.Clear();
+            foreach (var product in products)
             {
-                if (string.IsNullOrWhiteSpace(SearchBox.Text)) return;
-                var products = new ProductRepo().SearchByType(SearchBox.Text);
-
-                productListPanel.Controls.Clear();
-
-                foreach (var product in products)
-                {
-                    var productsControl = new ProductInfoControl(product);
-                    productListPanel.Controls.Add(productsControl);
-                }
+                var productsControl = new ProductInfoControl(product);
+                productListPanel.Controls.Add(productsControl);
             }
+
+
+
         }
     }
 }

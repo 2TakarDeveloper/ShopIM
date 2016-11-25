@@ -31,7 +31,6 @@
             this.backgroundPanel = new MetroFramework.Controls.MetroPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.AddBtn = new MetroFramework.Controls.MetroButton();
-            this.SearchButton = new MetroFramework.Controls.MetroButton();
             this.SearchPicker = new System.Windows.Forms.ComboBox();
             this.SearchBox = new MetroFramework.Controls.MetroTextBox();
             this.productListPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -68,7 +67,6 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.AddBtn);
-            this.splitContainer1.Panel1.Controls.Add(this.SearchButton);
             this.splitContainer1.Panel1.Controls.Add(this.SearchPicker);
             this.splitContainer1.Panel1.Controls.Add(this.SearchBox);
             this.splitContainer1.Panel1.Margin = new System.Windows.Forms.Padding(5);
@@ -90,17 +88,6 @@
             this.AddBtn.UseSelectable = true;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // SearchButton
-            // 
-            this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchButton.Location = new System.Drawing.Point(1022, 5);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(75, 26);
-            this.SearchButton.TabIndex = 21;
-            this.SearchButton.Text = "Search";
-            this.SearchButton.UseSelectable = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
             // SearchPicker
             // 
             this.SearchPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -110,7 +97,7 @@
             this.SearchPicker.Items.AddRange(new object[] {
             "Name",
             "Type"});
-            this.SearchPicker.Location = new System.Drawing.Point(624, 5);
+            this.SearchPicker.Location = new System.Drawing.Point(705, 3);
             this.SearchPicker.Name = "SearchPicker";
             this.SearchPicker.Size = new System.Drawing.Size(136, 28);
             this.SearchPicker.TabIndex = 20;
@@ -135,7 +122,7 @@
             this.SearchBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.SearchBox.Icon = global::ShopIM.UI.Properties.Resources.search;
             this.SearchBox.Lines = new string[0];
-            this.SearchBox.Location = new System.Drawing.Point(766, 5);
+            this.SearchBox.Location = new System.Drawing.Point(847, 3);
             this.SearchBox.MaxLength = 32767;
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.PasswordChar = '\0';
@@ -153,6 +140,7 @@
             this.SearchBox.WaterMark = "Search";
             this.SearchBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.SearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchButton_Click);
             // 
             // productListPanel
             // 
@@ -188,7 +176,6 @@
         private MetroFramework.Controls.MetroButton AddBtn;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.FlowLayoutPanel productListPanel;
-        private MetroFramework.Controls.MetroButton SearchButton;
         private System.Windows.Forms.ComboBox SearchPicker;
         private MetroFramework.Controls.MetroTextBox SearchBox;
     }

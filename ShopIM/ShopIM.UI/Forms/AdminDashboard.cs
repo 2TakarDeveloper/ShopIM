@@ -60,7 +60,7 @@ namespace ShopIM.UI.Forms
                 UserImage.Image = UserImage.ErrorImage;
 
             }
-            Speech.ReadString("Welcome"+User.UserName);
+       
 
             LoadSales();
             
@@ -73,7 +73,7 @@ namespace ShopIM.UI.Forms
         {
             
             Link.Text = @"(" + NotificationManager.Notifications.Count + @")";
-            if(NotificationCounter== NotificationManager.Notifications.Count)return;
+            if(NotificationCounter< NotificationManager.Notifications.Count)return;
             NotificationCounter = NotificationManager.Notifications.Count;
             Speech.ReadString("You have " + NotificationManager.Notifications.Count + " Notification");
 
