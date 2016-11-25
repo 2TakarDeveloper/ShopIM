@@ -121,6 +121,7 @@ namespace ShopIM.UI.Forms
         private void LockButton_Click(object sender, EventArgs e)
         {
             var systemForm = new SystemForm(User.UserName, Login, this);
+            SystemSettings.IsSystemLocked = true;
             systemForm.ShowDialog(this);
         }
 
@@ -184,6 +185,7 @@ namespace ShopIM.UI.Forms
 
         private void NotificationClick(string notification)
         {
+            if (User.UserType != "Admin") return;
             var inventoryControl = new InventoryControl();
             metroPanelBackground.Controls.Clear();
             inventoryControl.Dock = DockStyle.Fill;
